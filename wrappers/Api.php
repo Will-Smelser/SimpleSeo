@@ -7,6 +7,7 @@
  *  class method = A method that exists in the parent class
  * @uses HtmlBodyWrap 
  * @author Will
+ * @package api/body
  *
  */
 class Body extends HtmlBodyWrap{
@@ -22,6 +23,7 @@ class Body extends HtmlBodyWrap{
  * }
  * @uses HtmlHeadWrap
  * @author Will
+ * @package api/head
  *
  */
 class Head extends HtmlHeadWrap{
@@ -37,6 +39,7 @@ class Head extends HtmlHeadWrap{
  * }
  * @uses ServerWrap
  * @author Will
+ * @package api/server
  *
  */
 class Server extends ServerWrap{
@@ -52,6 +55,7 @@ class Server extends ServerWrap{
  * }
  * @uses SocialWrap
  * @author Will
+ * @package api/social
  *
  */
 class Social extends SocialWrap{
@@ -66,6 +70,7 @@ class Social extends SocialWrap{
  *  class method = A method that exists in the parent class
  * } 
  * @author Will
+ * @package api/google
  *
  */
 class Google extends GoogleWrap{
@@ -80,6 +85,7 @@ class Google extends GoogleWrap{
  *  class method = A method that exists in the parent class
  * }
  * @author Will
+ * @package api/moz
  *
  */
 class Moz extends MozWrap{
@@ -94,6 +100,7 @@ class Moz extends MozWrap{
  *  class method = A method that exists in the parent class
  * }
  * @author Will
+ * @package api/semrush
  *
  */
 class SemRush extends SemRushWrap{

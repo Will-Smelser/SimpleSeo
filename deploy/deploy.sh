@@ -63,7 +63,7 @@ git checkout tags/$tagname > /dev/null
 #
 # PHPDOC
 #
-$(cd wrappers && phpdoc.bat -d . -f ../class/ServerInfo.php,../api/header.php,../config.php,../class/Node.php,../class/GoogleInfo.php -t ../phpdoc --template simpleseo)
+$(cd wrappers && phpdoc.bat -d . -f ../class/ServerInfo.php,../api/header.php,../config.php,../class/Node.php,../class/GoogleInfo.php -t ../apidocs --template simpleseo)
 
 
 

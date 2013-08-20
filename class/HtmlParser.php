@@ -9,13 +9,23 @@ require_once 'Node.php';
  *
  */
 class HtmlParser{
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	public $dom = null;
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	public $host = null;
 	
 	/**
 	 * Constructor
 	 * @param unknown $str Raw HTML to parse for a tag
 	 * @param unknown $url The url where HTML came from.
+	 * @ignore
 	 */
 	public function HtmlParser($str, $url){
 		$this->dom =  $str;

@@ -2,13 +2,40 @@
 
 class HtmlHeadWrap{
 	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	private $parser;
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	private $meta;
 	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	private $html; //html or xhtml
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	private $version;
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	private $type; //transition, strict
 	
+	/**
+	 * @ignore
+	 * @param HtmlParser $parser
+	 */
 	public function HtmlHeadWrap(HtmlParser $parser){
 		$this->parser = $parser;	
 	}
@@ -164,6 +191,7 @@ class HtmlHeadWrap{
 	/**
 	 * Used as a helper function to check for the meta tag.  Used to save
 	 * repeated parsing if the meta information has already been parsed.
+	 * @ignore
 	 */
 	private function getMeta(){
 		if(empty($this->meta))

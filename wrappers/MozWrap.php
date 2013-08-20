@@ -5,9 +5,22 @@ require_once SEO_PATH_CLASS . 'HtmlParser.php';
 
 class MozWrap{
 	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	public $url;
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	public $moz;
 	
+	/**
+	 * @ignore
+	 * @param unknown $url
+	 */
 	public function MozWrap($url){
 		$this->url = $url;
 		

@@ -2,6 +2,11 @@
 require_once SEO_PATH_CLASS . 'GoogleInfo.php';
 
 class GoogleWrap extends GoogleInfo {
+	
+	/**
+	 * @ignore
+	 * @param unknown $url
+	 */
 	public function GoogleWrap($url){
 		$url = preg_replace('@https?://@i','',$url);
 		parent::__construct($url);

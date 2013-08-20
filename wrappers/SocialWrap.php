@@ -3,13 +3,34 @@
 require_once SEO_PATH_VENDORS . 'seostats/src/seostats.php';
 
 class SocialWrap{
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	private $url;
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	private $stats;
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	private $social;
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	private $fb;
 	
 	/**
 	 * Constructor
+	 * @ignore
 	 * @param String $url The url of the page to run social tests on
 	 */
 	public function SocialWrap($url){
@@ -111,6 +132,10 @@ class SocialWrap{
 		return $this->social->getVKontakteShares();
 	}
 	
+	/**
+	 * @ignore
+	 * @return unknown
+	 */
 	private function getFb(){
 		if(empty($this->fb))
 			$this->fb = $this->social->getFacebookShares();

@@ -3,14 +3,29 @@
 include SEO_PATH_CLASS . 'WordCount.php';
 
 class HtmlBodyWrap{
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	protected $anchors;
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	public $parser;
 	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	public $wc;
 	
 	/**
 	 * Constructor
 	 * @param HtmlParser $parser The html parser to use.
+	 * @ignore
 	 */
 	public function HtmlBodyWrap(HtmlParser $parser){
 		$this->parser = $parser;
@@ -88,6 +103,14 @@ class HtmlBodyWrap{
 		return $result;
 	}
 	
+	/**
+	 * @ignore
+	 * @param unknown $arg
+	 * @param unknown $arg1
+	 * @param unknown $argIndex
+	 * @param unknown $default
+	 * @return Ambigous <number, unknown>
+	 */
 	private function getDefault($arg, $arg1, $argIndex, $default){
 		//came from api, arguments are an array
 		if(is_array($arg1)){
@@ -157,6 +180,10 @@ class HtmlBodyWrap{
 		return $temp->getPhrasesWithWord($word);
 	}
 	
+	/**
+	 * @ignore
+	 * @return unknown
+	 */
 	private function getWC(){
 		if(!is_object($this->wc))
 			$this->wc = new WordCount($this->parser->dom);
@@ -273,6 +300,7 @@ class HtmlBodyWrap{
 	 * Get a list of all anchors
 	 * @return Array An array of Node elements
 	 * @uses Node
+	 * @ignore
 	 */
 	private function getAnchors(){
 		if(!empty($this->anchors))

@@ -3,6 +3,11 @@ require_once SEO_PATH_CLASS . 'ServerInfo.php';
 require_once SEO_PATH_CLASS . 'Whois.php';
 
 class ServerWrap extends ServerInfo {
+	
+	/**
+	 * @ignore
+	 * @param unknown $url
+	 */
 	public function ServerWrap($url){
 		parent::__construct($url);
 	}

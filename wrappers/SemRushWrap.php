@@ -2,13 +2,47 @@
 require_once SEO_PATH_VENDORS . 'seostats/src/seostats.php';
 
 class SemRushWrap{
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	public $url;
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	public $sem;
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	public $semDR; //domain rank
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	public $semOK; //organic key words
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	public $stats;
 	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	public $params;
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	public $paramsExt = array(		
 		"DR" => array(
 				"Ac" => "Estimated Ad Expense",
@@ -44,6 +78,10 @@ class SemRushWrap{
 		)
 	);
 	
+	/**
+	 * @ignore
+	 * @param unknown $url
+	 */
 	public function SemRushWrap($url){
 		$this->stats = new SEOstats($url);
 		$this->sem =  $this->stats->SEMRush();
@@ -51,6 +89,13 @@ class SemRushWrap{
 		$this->params = $this->sem->getParams();
 	}
 	
+	/**
+	 * @ignore
+	 * @param string $type
+	 * @param string $key
+	 * @param string $data
+	 * @return string
+	 */
 	private function getPhrase($type='OK', $key=null, $data=null){
 		if(isset($this->paramsExt[$type][$key.'-before']))
 			$data = $this->paramsExt[$type][$key.'-before'] . $data;

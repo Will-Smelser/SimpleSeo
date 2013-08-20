@@ -10,17 +10,52 @@ require_once 'Services/W3C/HTMLValidator.php';
 require_once SEO_PATH_HELPERS.'Utility.php';
 
 class ServerInfo{
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	protected $url;
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	public $rawHeader;
 	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	private $response;
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	public $header;
 	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	private $lastW3Cerrors;
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	private $lastW3Cwarnings;
 	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	private $loadTime;
 	
+	/**
+	 * @ignore
+	 * @param unknown $url
+	 */
 	public function ServerInfo($url){
 		$this->url = $url;	
 		$this->doRequest();
@@ -31,6 +66,7 @@ class ServerInfo{
 	
 	/**
 	 * Just wraps making curl requests
+	 * @ignore
 	 */
 	private function doRequest(){
 		
@@ -63,6 +99,8 @@ class ServerInfo{
 	 * other headers are stored in $this->header as key:value
 	 * pairs where the key has been mad lowercase.
 	 *    - strtolower(<field name>) => <value>
+	 *    
+	 * @ignore
 	 */
 	private function parseHeader(){
 		$lines = explode("\n", $this->rawHeader);
@@ -127,8 +165,22 @@ class ServerInfo{
 		return ($result === false) ? false : true;
 	}
 	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	private $w3cCalled = false;
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	private $w3cValid = false;
+	
+	/**
+	 * @ignore
+	 * @throws Exception
+	 */
 	private function initW3c(){
 		if(!$this->w3cCalled){
 			$this->w3cCalled = true;

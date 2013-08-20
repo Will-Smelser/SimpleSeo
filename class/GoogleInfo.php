@@ -2,11 +2,34 @@
 require_once SEO_PATH_VENDORS . 'seostats/src/seostats.php';
 
 class GoogleInfo{
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	public $cx = "AIzaSyA_wkenQWzwHcxuaozcfIc_gcuMo9E09TM";//google for SEO project key
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	public $url;
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	public $stats;
+	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	public $google;
 	
+	/**
+	 * @ignore
+	 * @var unknown
+	 */
 	public function GoogleInfo($url){
 		if(empty($url)) return;
 		$url = preg_replace('@https?://@i','',$url);
@@ -15,11 +38,19 @@ class GoogleInfo{
 		$this->url = $url;
 	}
 	
+	/**
+	 * @ignore
+	 * @param unknown $obj
+	 */
 	public function setStats($obj){
 		$this->stats = $obj;
 		$this->url = $obj->getUrl();
 	}
 	
+	/**
+	 * @ignore
+	 * @param unknown $obj
+	 */
 	public function setGoogle($obj){
 		$this->google = $obj;
 	}

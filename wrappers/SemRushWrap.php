@@ -1,4 +1,6 @@
 <?php
+namespace api;
+
 require_once SEO_PATH_VENDORS . 'seostats/src/seostats.php';
 
 class SemRushWrap{

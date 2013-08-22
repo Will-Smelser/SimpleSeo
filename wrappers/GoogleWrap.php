@@ -1,4 +1,6 @@
 <?php 
+namespace api;
+
 require_once SEO_PATH_CLASS . 'GoogleInfo.php';
 
 class GoogleWrap extends GoogleInfo {

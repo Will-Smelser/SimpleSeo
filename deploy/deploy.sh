@@ -63,9 +63,13 @@ git checkout tags/$tagname > /dev/null
 #
 # PHPDOC
 #
-$(cd wrappers && phpdoc.bat -d . -f ../class/ServerInfo.php,../api/header.php,../config.php,../class/Node.php,../class/GoogleInfo.php -t ../apidocs --template simpleseo)
+$(cd wrappers && phpdoc.bat -d . -f ../class/ServerInfo.php,../api/header.php,../config.php,../class/Node.php,../class/GoogleInfo.php,../class/helpers/ApiResponse.php  -t ../apidocs --template simpleseo)
 
-
+#
+# Delete Deploy Directory
+#
+echo -e "Deleting deploy directory..."
+rm -Rf deploy
 
 echo -e "\nMake tarball of tagged branch..."
 echo "zip -r ${tarball} *"
@@ -121,7 +125,7 @@ EOF
 echo -e "\nFTP Complete..."
 
 echo -e "\nRun ${phpdeployrun} script"
-curloutput=$(curl -I "${phpdeployrun}" | grep HTTP/1)
+curloutput=$(curl -i ${phpdeployrun} | grep HTTP/1)
 
 if [ "${curloutput}" != "HTTP/1.1 200 OK" ]; then
 	echo -e "FAILE: deploy script did not run"

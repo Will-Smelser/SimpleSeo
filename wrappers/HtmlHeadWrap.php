@@ -1,5 +1,7 @@
 <?php
 
+namespace api;
+
 class HtmlHeadWrap{
 	
 	/**

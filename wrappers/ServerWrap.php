@@ -1,4 +1,7 @@
 <?php
+
+namespace api;
+
 require_once SEO_PATH_CLASS . 'ServerInfo.php';
 require_once SEO_PATH_CLASS . 'Whois.php';
 

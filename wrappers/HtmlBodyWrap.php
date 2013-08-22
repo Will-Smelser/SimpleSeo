@@ -1,7 +1,18 @@
 <?php
+namespace api;
 
 include SEO_PATH_CLASS . 'WordCount.php';
 
+/**
+ * <p>These methods focus on parsing a web page's body.</p>  
+ * <p>
+ * All methods return an array which is converted to appropriate
+ * response object (JSON). 
+ * </p>
+ * @see ApiResponseJSON
+ * @author Will
+ *
+ */
 class HtmlBodyWrap{
 	
 	/**
@@ -33,9 +44,10 @@ class HtmlBodyWrap{
 	
 	/**
 	 * Get all h1 tags
+	 * 
 	 * @see HtmlParser->getTags()
 	 * @see Node
-	 * @return Array An array of Node elements of 'h1' type
+	 * @return mixed An array of Node elements of 'h1' type
 	 */
 	public function checkH1(){
 		return $this->parser->getTags('h1');		
@@ -45,7 +57,7 @@ class HtmlBodyWrap{
 	 * Get all h2 tags
 	 * @see HtmlParser->getTags()
 	 * @see Node
-	 * @return Array An array of Node elements of h2 type
+	 * @return mixed An array of Node elements of h2 type
 	 */
 	public function checkH2(){
 		return $this->parser->getTags('h2');
@@ -55,7 +67,7 @@ class HtmlBodyWrap{
 	 * Get all h3 tags
 	 * @see HtmlParser->getTags()
 	 * @see Node
-	 * @return Array An array of Node elements of h3 type
+	 * @return mixed An array of Node elements of h3 type
 	 */
 	public function checkH3(){
 		return $this->parser->getTags('h3');
@@ -65,7 +77,7 @@ class HtmlBodyWrap{
 	 * Get all h4 tags
 	 * @see HtmlParser->getTags()
 	 * @see Node
-	 * @return Array An array of Node elements of h4 type
+	 * @return mixed An array of Node elements of h4 type
 	 */
 	public function checkH4(){
 		return $this->parser->getTags('h4');
@@ -73,7 +85,7 @@ class HtmlBodyWrap{
 	
 	/**
 	 * Get a list of key words, top 25
-	 * @return Array An array of Word
+	 * @return mixed An array of Word
 	 * @see Word
 	 */
 	public function getKeyWords($count=25){
@@ -87,7 +99,7 @@ class HtmlBodyWrap{
 	/**
 	 * Get phrases for the top words
 	 * @param number $words The top words to search, defaul is 5
-	 * @return array An array of <word> => <array of phrases>. <word> is the normalized word;  
+	 * @return mixed An array of <word> => <array of phrases>. <word> is the normalized word;  
 	 */
 	public function getPhrases($words=5){
 		if(is_array($words))
@@ -109,7 +121,7 @@ class HtmlBodyWrap{
 	 * @param unknown $arg1
 	 * @param unknown $argIndex
 	 * @param unknown $default
-	 * @return Ambigous <number, unknown>
+	 * @return int
 	 */
 	private function getDefault($arg, $arg1, $argIndex, $default){
 		//came from api, arguments are an array
@@ -220,6 +232,8 @@ class HtmlBodyWrap{
 	
 	/**
 	 * Get an array of style Nodes.
+	 * 
+	 * @return mixed An array object
 	 */
 	public function checkInlineStyle(){
 		return $this->parser->getTags('style');		

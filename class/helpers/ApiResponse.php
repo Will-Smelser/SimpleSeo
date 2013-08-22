@@ -1,9 +1,13 @@
 <?php
+
+namespace api\responses;
+
 class ApiCodes {
 	static $success = array("200 OK","Success");
 	static $badRequest = array("400 Bad Request","Invalid Request");
 	static $systemError = array("500 Internal Server Error", "Internal Error");
 }
+
 
 class ApiResponse{
 	protected $apiCode;//=ApiCodes::success;
@@ -81,7 +85,6 @@ class ApiResponse{
 		return $result;
 	}
 }
-
 
 class ApiResponseJSON extends ApiResponse{
 	function doPrint(){

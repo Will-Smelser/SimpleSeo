@@ -8,7 +8,7 @@ class Head extends Controller{
 		
 		$content = file_get_contents($_GET['request']);
 		$parser = new HtmlParser($content, $_GET['request']);		
-		$head = new HtmlHeadWrap($parser);
+		$head = new \api\HtmlHeadWrap($parser);
 		
 		$this->exec($head, $method, $args);
 	}

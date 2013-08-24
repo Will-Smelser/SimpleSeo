@@ -9,7 +9,7 @@ class SemRush extends Controller{
 	public function SemRush($method,$args=null){
 		parent::__construct($method, $args);
 		
-		$obj = new SemRushWrap($_GET['request']);
+		$obj = new \api\SemRushWrap($_GET['request']);
 		
 		$this->exec($obj, $method, $args);
 	}

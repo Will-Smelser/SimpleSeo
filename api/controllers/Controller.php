@@ -24,14 +24,14 @@ class Controller{
 	public static function shutdown(){
 		global $FATAL_ERROR;
 		if($FATAL_ERROR){
-			$api = new ApiResponseJSON();
+			$api = new \api\responses\ApiResponseJSON();
 			echo $api->failure("Fatal Internal System Error - No Trace Available",ApiCodes::$systemError)->doPrint();
 		}
 	}
 	
 	private function execGroup(&$obj, $method, $args){
 		$results = array();
-			
+		
 		foreach(explode('|', $method) as $mthd){
 			$api = new ApiResponseJSON();
 			
@@ -72,6 +72,7 @@ class Controller{
 	}
 	
 	public function execWrapper(&$obj, $method, $args){
+		
 		if(strstr($method, '|'))
 			return $this->execGroup($obj, $method, $args);
 			
@@ -91,14 +92,16 @@ class Controller{
 		global $FATAL_ERROR;
 		
 		$result = null;
-		$api = new ApiResponseJSON();
+		$api = new \api\responses\ApiResponseJSON();
 		
 		try{
+			
 			$result = $this->execWrapper($obj, $method, $args);
 			
 		//if the exception made its way up here then it is a top level error
 		//meaning it is most likely the failure of a single method call
 		}catch(Exception  $e){
+			
 			$this->error = true;
 			
 			$api->setData($result);

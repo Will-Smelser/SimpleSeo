@@ -9,7 +9,7 @@ class Moz extends Controller{
 	public function Moz($method, $args=null){
 		parent::__construct($method, $args);
 		
-		$moz = new MozWrap($_GET['request']);
+		$moz = new \api\MozWrap($_GET['request']);
 		
 		$this->exec($moz, $method, $args);
 	}

@@ -9,7 +9,7 @@ class Server extends Controller{
 	public function Server($method, $args=null){
 		parent::__construct($method, $args);
 		
-		$server = new ServerWrap($_GET['request']);
+		$server = new \api\ServerWrap($_GET['request']);
 		
 		$this->exec($server, $method, $args);
 	}

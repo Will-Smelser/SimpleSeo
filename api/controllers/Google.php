@@ -10,7 +10,7 @@ class Google extends Controller{
 		parent::__construct($method, $args);
 		
 		$url = preg_replace('@https?://@i','',$_GET['request']);
-		$google = new GoogleWrap($url);
+		$google = new \api\GoogleWrap($url);
 		
 		$this->exec($google, $method, $args);
 	}

@@ -38,7 +38,7 @@ class HtmlBodyWrap{
 	 * @param HtmlParser $parser The html parser to use.
 	 * @ignore
 	 */
-	public function HtmlBodyWrap(HtmlParser $parser){
+	public function __construct($parser){
 		$this->parser = $parser;
 	}
 	
@@ -57,7 +57,30 @@ class HtmlBodyWrap{
 	 * Get all h2 tags
 	 * @see HtmlParser->getTags()
 	 * @see Node
+	 * @api
 	 * @return mixed An array of Node elements of h2 type
+	 *  
+	 *  <json>
+		{
+			"response":"Success",
+			"error":false,
+			"msg":"Success",
+			"data":[
+				{
+					"hash":"0000000031800cf80000000019d4543d",
+					"host":"www.willsmelser.com",
+					"raw":"<h1 id=\"blog-name\"><a href=\"http:\/\/mediocredeveloper.com\/wp\">Mediocre Developer<\/a><\/h1>",
+					"tag":"h1",
+					"attributes":{
+						"id":"blog-name"
+					},
+					"textStart":19,
+					"textEnd":83,
+					"text":"<a href=\"http:\/\/mediocredeveloper.com\/wp\">Mediocre Developer<\/a>"
+				}
+			]
+		}
+		</json>
 	 */
 	public function checkH2(){
 		return $this->parser->getTags('h2');
@@ -233,7 +256,7 @@ class HtmlBodyWrap{
 	/**
 	 * Get an array of style Nodes.
 	 * 
-	 * @return mixed An array object
+	 * @return array An array object
 	 */
 	public function checkInlineStyle(){
 		return $this->parser->getTags('style');		

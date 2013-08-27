@@ -8,7 +8,7 @@ class HtmlHeadWrap{
 	 * @ignore
 	 * @var unknown
 	 */
-	private $parser;
+	public $parser;
 	
 	/**
 	 * @ignore
@@ -38,13 +38,35 @@ class HtmlHeadWrap{
 	 * @ignore
 	 * @param HtmlParser $parser
 	 */
-	public function HtmlHeadWrap(HtmlParser $parser){
-		$this->parser = $parser;	
+	public function __construct($parser){
+		$this->parser = $parser;
 	}
 	
 	/**
 	 * Get the title element
-	 * @return unknown|NULL
+	 * @return responses\ApiResponseJSON JSON object
+	 <p>
+	 <b>Sample Request:</b> 
+	 <api-request><api-line><api-rmethod>GET</api-rmethod><api-base>/api/head/</api-base><api-var>%method%</api-var>?request=<api-var>www.willsmelser.com</api-var></api-line></api-request>
+	 <b>Sample Response:</b>
+	 <json>
+{
+    "response":"Success",
+    "error":false,
+    "msg":"Success",
+    "data":{
+        "hash":"00000000205ca01800000000088c5028",
+        "host":"www.willsmelser.com",
+        "raw":"<title>Mediocre Developer<\/title>",
+        "tag":"title",
+        "attributes":null,
+        "textStart":7,
+        "textEnd":25,
+        "text":"Mediocre Developer"
+    }
+}	 
+	 </json>
+	 </p>
 	 */
 	public function getTitle(){
 		$titles = $this->parser->getTags('title');
@@ -55,13 +77,30 @@ class HtmlHeadWrap{
 	}
 	
 	/**
-	 * Get the Meta Description tag content
-	 * @return String|NULL The "content" attribute in the meta tag with attribute "name" or NULL if none exists
+	 * Get the Meta Description tag content.
+	 * The "content" attribute in the meta tag with attribute "name" or NULL if none exists
+	 * @return responses\ApiResponseJSON JSON object
+	 <p>
+	 <b>Sample Request:</b> 
+	 <api-request><api-line><api-rmethod>GET</api-rmethod><api-base>/api/head/</api-base><api-var>%method%</api-var>?request=<api-var>www.willsmelser.com</api-var></api-line></api-request>
+	 <b>Sample Response:</b>
+	 <json>
+{
+    "response":"Success",
+    "error":false,
+    "msg":"Success",
+    "data":"Get ready to learn SEO. Start with the Beginner's Guide to SEO and work your way through our up-to-date resources on how to perform essential SEO tasks."
+}	 
+	 </json>
+	 </p>
+
 	 */
 	public function getMetaDesc(){
 		foreach($this->parser->getTags("meta") as $entry){
-			if(isset($entry->attributes['description']) && $entry->attributes['description'] === 'description'){
-				return $entry->attributes['content'];
+			if(isset($entry->attributes)){
+				if(isset($entry->attributes['name']) && strtolower($entry->attributes['name'])==='description'){
+					return isset($entry->attributes['content'])?$entry->attributes['content']:null;
+				}
 			}
 		}
 		
@@ -69,30 +108,61 @@ class HtmlHeadWrap{
 	}
 	
 	/**
-	 * Get the meta keywords content
-	 * @return String|NULL The "content" attribute of meta tag with attribute "keywords"
+	 * Get the meta keywords content. The "content" attribute of meta tag with attribute "keywords"
+	 * @return responses\ApiResponseJSON JSON object
+	 <p>
+	 <b>Sample Request:</b> 
+	 <api-request><api-line><api-rmethod>GET</api-rmethod><api-base>/api/head/</api-base><api-var>%method%</api-var>?request=<api-var>www.willsmelser.com</api-var></api-line></api-request>
+	 <b>Sample Response:</b>
+	 <json>
+{
+    "response":"Success",
+    "error":false,
+    "msg":"Success",
+    "data":"HTML,CSS,XML,JavaScript,DOM,jQuery,ASP.NET,PHP,SQL,colors,tutorial,programming,development,training,learning,quiz,primer,lessons,reference,examples,source code,demos,tips,color table,w3c,cascading style sheets,active server pages,Web building,Webmaster"
+}	 
+	 </json>
+	 </p>
+
 	 */
 	public function getMetaKeywords(){
 		foreach($this->parser->getTags("meta") as $entry){
-			if(isset($entry->attributes['keywords']) && $entry->attributes['keywords'] === 'description'){
-				return $entry->attributes['content'];
+			if(isset($entry->attributes)){
+				if(isset($entry->attributes['name']) && strtolower($entry->attributes['name'])==='keywords'){
+					return isset($entry->attributes['content'])?$entry->attributes['content']:null;
+				}
 			}
 		}
-		
+				
 		return null;
 	}
 
 	/**
 	 * Determine the doctype.
-	 * @return string|NULL The doctype in following format :<br/>
-	 * {code}
+	 * The doctype in following format :<br/>
+	 * <code>
 	 * <html> <version> [type]
 	 * 
 	 * html = "HTML", "XHTML", "XML", etc...
 	 * varsion = 5, 4.01, etc...
 	 * type = [optional] transitional, strict, Frameset, etc... 
-	 * {/code} 
+	 * </code> 
 	 * 
+	 * @return responses\ApiResponseJSON JSON object
+	 <p>
+	 <b>Sample Request:</b> 
+	 <api-request><api-line><api-rmethod>GET</api-rmethod><api-base>/api/head/</api-base><api-var>%method%</api-var>?request=<api-var>www.willsmelser.com</api-var></api-line></api-request>
+	 <b>Sample Response:</b>
+	 <json>
+{
+    "response":"Success",
+    "error":false,
+    "msg":"Success",
+    "data":"xhtml 1.0 transitional"
+}	 
+	 </json>
+	 </p>
+
 	 */
 	public function getDoctype(){
 		if(!empty($this->html))
@@ -122,7 +192,21 @@ class HtmlHeadWrap{
 	
 	/**
 	 * Match the meta tag with attribute "http-equiv" and return the charset value
-	 * @return String|NULL Returns null if none is found
+	 * @return responses\ApiResponseJSON JSON object
+	 <p>
+	 <b>Sample Request:</b> 
+	 <api-request><api-line><api-rmethod>GET</api-rmethod><api-base>/api/head/</api-base><api-var>%method%</api-var>?request=<api-var>www.willsmelser.com</api-var></api-line></api-request>
+	 <b>Sample Response:</b>
+	 <json>
+{
+    "response":"Success",
+    "error":false,
+    "msg":"Success",
+    "data":"UTF-8"
+}	 
+	 </json>
+	 </p>
+
 	 */
 	public function getEncoding(){
 		foreach($this->getMeta() as $meta){
@@ -138,13 +222,27 @@ class HtmlHeadWrap{
 	
 	/**
 	 * Attempt to find the lang attribute or xml:lang attribute of document
-	 * @return String|NULL Returns null if no lang attribute is found
+	 * @return responses\ApiResponseJSON JSON object
+	 <p>
+	 <b>Sample Request:</b> 
+	 <api-request><api-line><api-rmethod>GET</api-rmethod><api-base>/api/head/</api-base><api-var>%method%</api-var>?request=<api-var>www.willsmelser.com</api-var></api-line></api-request>
+	 <b>Sample Response:</b>
+	 <json>
+{
+    "response":"Success",
+    "error":false,
+    "msg":"Success",
+    "data":null
+}	 
+	 </json>
+	 </p>
+
 	 */
 	public function getLang(){
 		//need to check what type this is
 		$this->getDoctype();
 		$html = $this->parser->getTags('html');
-		
+		var_dump($html->attributes);exit;
 		if(empty($html))
 			return null;
 		
@@ -154,8 +252,19 @@ class HtmlHeadWrap{
 	}
 	
 	/**
-	 * Returns a fully qualified link (http://... included) to the favicon or NULL. 
-	 * @return String|NULL The fully qualified url or NULL if none found
+	 * Returns a fully qualified link (http://... included) to the favicon or NULL. Will check
+	 * for link tag with the 'rel' attribute for favicon.
+	 * 
+	 * @return responses\ApiResponseJSON JSON object
+	 <p>
+	 <b>Sample Request:</b> 
+	 <api-request><api-line><api-rmethod>GET</api-rmethod><api-base>/api/head/</api-base><api-var>%method%</api-var>?request=<api-var>www.willsmelser.com</api-var></api-line></api-request>
+	 <b>Sample Response:</b>
+	 <json>
+	 
+	 </json>
+	 </p>
+
 	 */
 	public function getFavicon(){
 		$result = false;
@@ -175,10 +284,21 @@ class HtmlHeadWrap{
 	}
 	
 	/**
-	 * Verify that the "default" favicon exists or not.  It is not preferred to set your favicon
-	 * this way.  However, by default browsers will attempt this.
-	 * @return String|NULL Make a request to default favicon location.  If this request fails, return null, 
-	 * otherwise return the default fully qualified favicon location. 
+	 * Make a request to default favicon location (http://host.tld/favicon).  If this request fails, return null, 
+	 * otherwise return the default fully qualified favicon location.  
+	 * 
+	 * @see getFavicon
+	 * 
+	 * @return responses\ApiResponseJSON JSON object
+	 <p>
+	 <b>Sample Request:</b> 
+	 <api-request><api-line><api-rmethod>GET</api-rmethod><api-base>/api/head/</api-base><api-var>%method%</api-var>?request=<api-var>www.willsmelser.com</api-var></api-line></api-request>
+	 <b>Sample Response:</b>
+	 <json>
+	 
+	 </json>
+	 </p>
+ 
 	 */
 	public function getFaviconNoTag(){
 		//check for favicon

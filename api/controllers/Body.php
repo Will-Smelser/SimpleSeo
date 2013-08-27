@@ -7,7 +7,7 @@ class Body extends Controller{
 	public function Body($method,$args=null){
 		
 		parent::__construct($method, $args);
-		error_reporting(E_ALL);
+		
 		$content = file_get_contents($_GET['request']);
 		
 		$parser = new HtmlParser($content, $_GET['request']);

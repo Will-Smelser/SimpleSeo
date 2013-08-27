@@ -54,22 +54,25 @@ class Controller{
 	
 	public function execAll(&$obj, $method, $args){
 		$results = array();
-			
+		$api = new \api\responses\ApiResponseJSON();
+		
 		foreach(get_class_methods($obj) as $mthd){
-			if(stripos($method,'~'.$mthd) === false && $this->isValidMethod($obj, $mthd, $this->skip)){
+			if(stripos($method,'~'.$mthd) === false && $this->isValidMethod($obj, $mthd, $this->skip) && $mthd !== '__construct'){
 				try{
-					$results[$mthd] = $api->success("Success", $obj->$mthd($args))->toArray();
+					$temp = $obj->$mthd($args);
+					$results[$mthd] = $api->success("Success", $temp)->toArray();
 				}catch(Exception $e){
 					$this->error = true;
-					$temp = new ApiResponseJSON();
+					$temp = new \api\responses\ApiResponseJSON();
 					$err = Controller::errMsg($e->getMessage(),$e->getLine(),$e->getFile());
 					$results[$mthd] = $temp->failure($err)->toArray();
 				}
 			}
 		}
-			
+		
 		return $results;
 	}
+	
 	
 	public function execWrapper(&$obj, $method, $args){
 		
@@ -77,11 +80,11 @@ class Controller{
 			return $this->execGroup($obj, $method, $args);
 			
 		//run all api methods
-		else if(stripos($method,'all')!==false)
+		else if(stripos($method,'all')!==false){
 			return $this->execAll($obj, $method, $args);
 				
 		//method doesnt exist, or is a skip method
-		else if(!$this->isValidMethod($obj, $method, $this->skip))
+		}else if(!$this->isValidMethod($obj, $method, $this->skip))
 			throw new BadMethodCallException("No Method - $method");
 			
 		//just run method

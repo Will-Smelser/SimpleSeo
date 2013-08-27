@@ -50,7 +50,7 @@ class HtmlBodyWrap{
 	 * @return responses\ApiResponseJSON JSON object
 	 * <p>
 	 * <b>Sample Request:</b> 
-	 <api-request><api-line><api-rmethod>GET</api-rmethod><api-base>/api/body/</api-base><api-var>{method}</api-var>?request=<api-var>www.willsmelser.com</api-var></api-line></api-request>
+	 <api-request><api-line><api-rmethod>GET</api-rmethod><api-base>/api/body/</api-base><api-var>%method%</api-var>?request=<api-var>www.willsmelser.com</api-var></api-line></api-request>
 	 <b>Sample Response:</b>
 	 * 	<json>
 		{
@@ -87,7 +87,7 @@ class HtmlBodyWrap{
 	 * @return object JSON object
 	 * <p>
 	 * <b>Sample Request:</b> 
-	 <api-request><api-line><api-rmethod>GET</api-rmethod><api-base>/api/body/</api-base><api-var>checkH2</api-var>?request=<api-var>www.willsmelser.com</api-var></api-line></api-request>
+	 <api-request><api-line><api-rmethod>GET</api-rmethod><api-base>/api/body/</api-base><api-var>%method%</api-var>?request=<api-var>www.willsmelser.com</api-var></api-line></api-request>
 	 <b>Sample Response:</b>
 	 <json>
 	 {

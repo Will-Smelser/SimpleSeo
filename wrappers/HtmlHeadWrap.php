@@ -232,7 +232,7 @@ class HtmlHeadWrap{
     "response":"Success",
     "error":false,
     "msg":"Success",
-    "data":null
+    "data":"en-US"
 }	 
 	 </json>
 	 </p>
@@ -240,15 +240,17 @@ class HtmlHeadWrap{
 	 */
 	public function getLang(){
 		//need to check what type this is
-		$this->getDoctype();
 		$html = $this->parser->getTags('html');
-		var_dump($html->attributes);exit;
-		if(empty($html))
+		
+		if(empty($html) || !isset($html[0]))
 			return null;
 		
-		$key = ($this->html === 'html') ? 'lang' : 'xml:lang';
-		
-		return (isset($html->attributes[$key])) ? $html->attributes[$key] : null; 
+		if(isset($html[0]->attributes['lang'])){
+			return $html[0]->attributes['lang'];
+		}elseif(isset($html[0]->attributes['xml:lang'])){
+			return $html[0]->attributes['xml:lang'];
+		}
+		return null; 
 	}
 	
 	/**
@@ -261,7 +263,12 @@ class HtmlHeadWrap{
 	 <api-request><api-line><api-rmethod>GET</api-rmethod><api-base>/api/head/</api-base><api-var>%method%</api-var>?request=<api-var>www.willsmelser.com</api-var></api-line></api-request>
 	 <b>Sample Response:</b>
 	 <json>
-	 
+{
+    "response":"Success",
+    "error":false,
+    "msg":"Success",
+    "data":"http:\/\/inedo.com\/Resources\/Images\/Icons\/favicon.ico"
+}	 
 	 </json>
 	 </p>
 
@@ -295,17 +302,27 @@ class HtmlHeadWrap{
 	 <api-request><api-line><api-rmethod>GET</api-rmethod><api-base>/api/head/</api-base><api-var>%method%</api-var>?request=<api-var>www.willsmelser.com</api-var></api-line></api-request>
 	 <b>Sample Response:</b>
 	 <json>
-	 
+{
+    "response":"Success",
+    "error":false,
+    "msg":"Success",
+    "data":"http:\/\/www.w3schools.com\/favicon.ico"
+}	 
 	 </json>
 	 </p>
  
 	 */
 	public function getFaviconNoTag(){
-		//check for favicon
-		@$url = file_get_contents('http://'.$this->parser->host.'/favicon');
+		global $SUPRESS_ERROR;
+
+		$SUPRESS_ERROR = true;
+		
+		@$url = file_get_contents('http://'.$this->parser->host.'/favicon.ico');
 		if(!empty($url)){
-			return 'http://'.$this->parser->host.'/favicon';
+			return 'http://'.$this->parser->host.'/favicon.ico';
 		}
+		
+		$SUPRESS_ERROR = false;
 		
 		return null;
 	}

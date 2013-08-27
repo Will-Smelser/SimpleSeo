@@ -4,6 +4,7 @@ require_once SEO_PATH_HELPERS . 'ApiResponse.php';
 require_once SEO_PATH_HELPERS . 'Vars.php';
 
 $FATAL_ERROR = true;
+$SUPRESS_ERROR = false;
 
 class Controller{
 	public $skip = array();
@@ -25,7 +26,7 @@ class Controller{
 		global $FATAL_ERROR;
 		if($FATAL_ERROR){
 			$api = new \api\responses\ApiResponseJSON();
-			echo $api->failure("Fatal Internal System Error - No Trace Available",ApiCodes::$systemError)->doPrint();
+			echo $api->failure("Fatal Internal System Error - No Trace Available",\api\responses\ApiCodes::$systemError)->doPrint();
 		}
 	}
 	
@@ -33,7 +34,7 @@ class Controller{
 		$results = array();
 		
 		foreach(explode('|', $method) as $mthd){
-			$api = new ApiResponseJSON();
+			$api = new \api\responses\ApiResponseJSON();
 			
 			try{
 				if($this->isValidMethod($obj, $mthd, $this->skip))
@@ -43,7 +44,7 @@ class Controller{
 				}
 			}catch(Exception $e){
 				$this->error = true;
-				$temp = new ApiResponseJSON();
+				$temp = new \api\responses\ApiResponseJSON();
 				$err = Controller::errMsg($e->getMessage(),$e->getLine(),$e->getFile());
 				$results[$mthd] = $temp->failure($err)->toArray();
 			}
@@ -149,6 +150,8 @@ class Controller{
 	 * @return boolean
 	 */
 	public static function handleError($errno, $errstr, $errfile, $errline){
+		global $SUPRESS_ERROR;
+		if($SUPRESS_ERROR) return false;
 		
 		//trap warnings also
 		switch($errno){

@@ -4,7 +4,7 @@ namespace api;
 
 require_once SEO_PATH_VENDORS . 'seostats/src/seostats.php';
 
-class SocialWrap{
+class Social{
 	
 	/**
 	 * @ignore
@@ -35,10 +35,11 @@ class SocialWrap{
 	 * @ignore
 	 * @param String $url The url of the page to run social tests on
 	 */
-	public function SocialWrap($url){
+	public function __construct($url){
+		
 		if(empty($url)) return;
-	
-		$this->stats = new SEOstats($url);
+		
+		$this->stats = new \SEOstats($url);
 		$this->social = $this->stats->Social();
 		$this->url = $url;
 	}

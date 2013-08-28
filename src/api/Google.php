@@ -3,13 +3,13 @@ namespace api;
 
 require_once SEO_PATH_CLASS . 'GoogleInfo.php';
 
-class GoogleWrap extends GoogleInfo {
+class Google extends GoogleInfo {
 	
 	/**
 	 * @ignore
 	 * @param unknown $url
 	 */
-	public function GoogleWrap($url){
+	public function __construct($url){
 		$url = preg_replace('@https?://@i','',$url);
 		parent::__construct($url);
 	}

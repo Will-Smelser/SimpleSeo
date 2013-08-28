@@ -3,7 +3,7 @@ namespace api;
 
 require_once SEO_PATH_VENDORS . 'seostats/src/seostats.php';
 
-class SemRushWrap{
+class SemRush{
 	
 	/**
 	 * @ignore
@@ -84,8 +84,8 @@ class SemRushWrap{
 	 * @ignore
 	 * @param unknown $url
 	 */
-	public function SemRushWrap($url){
-		$this->stats = new SEOstats($url);
+	public function __construct($url){
+		$this->stats = new \SEOstats($url);
 		$this->sem =  $this->stats->SEMRush();
 		$this->url = $url;
 		$this->params = $this->sem->getParams();

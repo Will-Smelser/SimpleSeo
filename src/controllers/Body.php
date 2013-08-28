@@ -1,6 +1,7 @@
 <?php
+
 require_once SEO_PATH_CLASS . 'HtmlParser.php';
-require_once SEO_PATH_WRAPPERS . 'HtmlBodyWrap.php';
+require_once SEO_PATH_WRAPPERS . 'Body.php';
 
 class Body extends Controller{
 	
@@ -11,7 +12,7 @@ class Body extends Controller{
 		$content = file_get_contents($_GET['request']);
 		
 		$parser = new HtmlParser($content, $_GET['request']);
-		$html = new \api\HtmlBodyWrap($parser, $_GET['request']);
+		$html = new \api\Body($parser, $_GET['request']);
 		
 		$this->exec($html, $method, $args);
 	}

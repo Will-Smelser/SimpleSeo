@@ -1,6 +1,6 @@
 <?php
 require_once SEO_PATH_CLASS . 'HtmlParser.php';
-require_once SEO_PATH_WRAPPERS . 'HtmlHeadWrap.php';
+require_once SEO_PATH_WRAPPERS . 'Head.php';
 
 class Head extends Controller{
 	
@@ -10,9 +10,8 @@ class Head extends Controller{
 
 		$content = file_get_contents($_GET['request']);
 
-		error_reporting(E_ALL);
 		$parser = new HtmlParser($content, $_GET['request']);
-		$head = new \api\HtmlHeadWrap($parser);
+		$head = new \api\Head($parser);
 		
 		$this->exec($head, $method, $args);
 	}

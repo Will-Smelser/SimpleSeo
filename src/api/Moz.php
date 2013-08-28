@@ -5,7 +5,7 @@ namespace api;
 require_once SEO_PATH_CLASS . 'MozConnect.php';
 require_once SEO_PATH_CLASS . 'HtmlParser.php';
 
-class MozWrap{
+class Moz{
 	
 	/**
 	 * @ignore
@@ -23,10 +23,10 @@ class MozWrap{
 	 * @ignore
 	 * @param unknown $url
 	 */
-	public function MozWrap($url){
+	public function __construct($url){
 		$this->url = $url;
 		
-		$this->moz = new MozConnect('willsmelser@gmail.com','Will1480');
+		$this->moz = new \MozConnect('willsmelser@gmail.com','Will1480');
 		
 	}
 	
@@ -35,9 +35,9 @@ class MozWrap{
 	 * @return multitype:NULL
 	 */
 	public function getMozLinks(){
-		$html = $this->moz->getData(MozServices::OSE, $this->url);
+		$html = $this->moz->getData(\MozServices::OSE, $this->url);
 		file_put_contents('moz-links.txt',$html);
-		$parser = new HtmlParser($html,$this->url);
+		$parser = new \HtmlParser($html,$this->url);
 		$data = $parser->getTags('td');
 		
 		
@@ -55,9 +55,9 @@ class MozWrap{
 	 * @return multitype:
 	 */
 	public function getMozJustDiscovered(){
-		$html = $this->moz->getData(MozServices::JD, $this->url);
+		$html = $this->moz->getData(\MozServices::JD, $this->url);
 		file_put_contents('just-discovered.txt',$html);
-		$parser = new HtmlParser($html,$this->url);
+		$parser = new \HtmlParser($html,$this->url);
 		
 		$tables = $parser->getTags('table');
 		
@@ -75,11 +75,11 @@ class MozWrap{
 			//moz has data
 			if(!empty($table)){
 				
-				$p2 = new HtmlParser($table->raw, $this->url);
+				$p2 = new \HtmlParser($table->raw, $this->url);
 				$rows = $p2->getTags('tr');
 				
 				foreach($rows as $tr){
-					$p3 = new HtmlParser($tr->raw, $this->url);
+					$p3 = new \HtmlParser($tr->raw, $this->url);
 					$tds = $p3->getTags('td');
 					
 					if(!empty($tds[0]->text)){

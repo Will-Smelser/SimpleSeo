@@ -5,13 +5,13 @@ namespace api;
 require_once SEO_PATH_CLASS . 'ServerInfo.php';
 require_once SEO_PATH_CLASS . 'Whois.php';
 
-class ServerWrap extends ServerInfo {
+class Server extends \ServerInfo {
 	
 	/**
 	 * @ignore
 	 * @param unknown $url
 	 */
-	public function ServerWrap($url){
+	public function __construct($url){
 		parent::__construct($url);
 	}
 	
@@ -28,7 +28,7 @@ class ServerWrap extends ServerInfo {
 		$ltd = array_pop($parts);
 		$name = array_pop($parts);
 		
-		return Whois::lookup($name.'.'.$ltd);
+		return \Whois::lookup($name.'.'.$ltd);
 	}
 }
 ?>

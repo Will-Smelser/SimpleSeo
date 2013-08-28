@@ -2,7 +2,7 @@
 
 namespace api;
 
-class HtmlHeadWrap{
+class Head{
 	
 	/**
 	 * @ignore

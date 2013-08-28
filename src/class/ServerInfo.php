@@ -56,7 +56,7 @@ class ServerInfo{
 	 * @ignore
 	 * @param unknown $url
 	 */
-	public function ServerInfo($url){
+	public function __construct($url){
 		$this->url = $url;	
 		$this->doRequest();
 		$this->parseHeader();

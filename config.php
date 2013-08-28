@@ -9,11 +9,12 @@ $base_path = str_replace('\\', '/', $base_path);
 
 define('SEO_PATH_ROOT', $base_path);
 define('SEO_PATH_API',SEO_PATH_ROOT.'api/');
-define('SEO_PATH_CONTROLLERS',SEO_PATH_API.'controllers/');
-define('SEO_PATH_CLASS',SEO_PATH_ROOT.'class/');
-define('SEO_PATH_WRAPPERS',SEO_PATH_ROOT.'wrappers/');
+define('SEO_PATH_CLASS',SEO_PATH_ROOT.'src/class/');
+define('SEO_PATH_WRAPPERS',SEO_PATH_ROOT.'src/api/');
+define('SEO_PATH_VENDORS',SEO_PATH_ROOT.'src/vendors/');
+define('SEO_PATH_CONTROLLERS',SEO_PATH_ROOT.'src/controllers/');
+
 define('SEO_PATH_HELPERS',SEO_PATH_CLASS.'helpers/');
-define('SEO_PATH_VENDORS',SEO_PATH_ROOT.'vendors/');
 
 
 $root = $_SERVER['DOCUMENT_ROOT'];
@@ -30,5 +31,4 @@ define('SEO_URI_CLASS',SEO_URI_BASE.'class/');
 define('SEO_URI_HELPERS', SEO_URI_CLASS.'helpers/');
 define('SEO_URI_REPORTS', SEO_URI_BASE . 'reports/');
 
-error_reporting(E_ALL);
 ?>

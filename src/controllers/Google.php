@@ -1,6 +1,6 @@
 <?php
 
-require_once SEO_PATH_WRAPPERS . 'GoogleWrap.php';
+require_once SEO_PATH_WRAPPERS . 'Google.php';
 
 class Google extends Controller{
 	
@@ -11,7 +11,7 @@ class Google extends Controller{
 		parent::__construct($method, $args);
 		
 		$url = preg_replace('@https?://@i','',$_GET['request']);
-		$google = new \api\GoogleWrap($url);
+		$google = new \api\Google($url);
 		
 		$this->exec($google, $method, $args);
 	}

@@ -63,7 +63,7 @@ git checkout tags/$tagname > /dev/null
 #
 # PHPDOC
 #
-$(cd wrappers && phpdoc.bat -d . -f ../class/ServerInfo.php,../api/header.php,../config.php,../class/Node.php,../class/GoogleInfo.php,../class/helpers/ApiResponse.php  -t ../apidocs --template simpleseo)
+$(cd ../api && phpdoc.bat -d . -f ../class/ServerInfo.php,../../api/header.php,../../config.php,../class/Node.php,../class/GoogleInfo.php,../class/helpers/ApiResponse.php  -t ../apidocs --template simpleseo)
 
 #
 # Delete Deploy Directory

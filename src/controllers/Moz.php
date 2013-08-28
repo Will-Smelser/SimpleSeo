@@ -1,6 +1,6 @@
 <?php
 
-require_once SEO_PATH_WRAPPERS . 'MozWrap.php';
+require_once SEO_PATH_WRAPPERS . 'Moz.php';
 
 class Moz extends Controller{
 	
@@ -9,7 +9,7 @@ class Moz extends Controller{
 	public function Moz($method, $args=null){
 		parent::__construct($method, $args);
 		
-		$moz = new \api\MozWrap($_GET['request']);
+		$moz = new \api\Moz($_GET['request']);
 		
 		$this->exec($moz, $method, $args);
 	}

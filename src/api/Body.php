@@ -13,7 +13,7 @@ include SEO_PATH_CLASS . 'WordCount.php';
  * @author Will
  *
  */
-class HtmlBodyWrap{
+class Body{
 	
 	/**
 	 * @ignore
@@ -881,7 +881,7 @@ class HtmlBodyWrap{
 	 </p>
 	 */
 	public function checkImages(){
-		require_once "../class/ImageParser.php";
+		require_once SEO_PATH_CLASS . "ImageParser.php";
 		
 		$imgs = $this->parser->getTags('img');
 		return \ImageParser::checkActualDimsThreaded($imgs);

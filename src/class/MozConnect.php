@@ -41,7 +41,7 @@ class MozConnect{
 	private $loginAttempt = 0;
 	
 	
-	public function MozConnect($user, $pass){
+	public function __construct($user, $pass){
 		$this->user = $user;
 		$this->pass = $pass;
 		$this->base64user = base64_encode($user);

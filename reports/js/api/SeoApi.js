@@ -1,13 +1,6 @@
-(function(){
+SeoApi = function(namespace, jsLoc){	
 	
-	var el = document.getElementById('seo-api-init');
-	var namespace = el.getAttribute('name-space');
-	var jsLoc = el.getAttribute('src').split('/');
-	jsLoc.pop();
-	jsLoc = jsLoc.join('/');
-	
-	
-	window[namespace] = {
+	return {
 		currentApiObject:null,
 			
 		/**
@@ -31,9 +24,8 @@
 				api = null;
 			}
 			
-			
 			$.ajax({
-			  url: jsLoc + '/SeoApi.'+apiObject+'.js',
+			  url: jsLoc + namespace + '/' + apiObject+'.js',
 			  dataType: "script",
 			  cache: true,
 			  success: function(){
@@ -133,5 +125,4 @@
 		}
 			
 	};
-
-})();
+};

@@ -1,5 +1,8 @@
-(function(){
-	var namespace = document.getElementById('seo-api-init').getAttribute('name-space');
+(function(ns){
+	var namespace = ns;
+	if(typeof ns === "undefined"){
+		nsamespace = document.getElementById('seo-api-init').getAttribute('name-space');
+	}
 	
 	if(typeof window[namespace] === "undefined") window[namespace] = {};
 	
@@ -37,4 +40,4 @@
 			console.log(data);
 		}*/
 	};
-})();
+})(/*namespace*/);

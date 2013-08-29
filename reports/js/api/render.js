@@ -1,5 +1,8 @@
-(function(){
-	var namespace = document.getElementById('seo-api-init').getAttribute('name-space');
+(function(ns){
+	var namespace = ns;
+	if(typeof ns === "undefined"){
+		nsamespace = document.getElementById('seo-api-init').getAttribute('name-space');
+	}
 	
 	window[namespace].render = {
 	newEl : function (elName){
@@ -51,4 +54,4 @@
 		return $tbl;
 	}
 
-}})();
+}})(/*namespace*/);

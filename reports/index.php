@@ -16,21 +16,39 @@ function printLoading(){
 }
 
 ?><!DOCTYPE html>
+<html>
 <head>
 
 <title>SimpleSEO Report</title>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="http://<?php echo SEO_HOST . '/' . SEO_URI_REPORTS; ?>js/SeoApi.js" id="seo-api-init" name-space="SeoApi"></script>
+<script src="http://<?php echo SEO_HOST . '/' . SEO_URI_API_JS; ?>SeoApi/SeoApi.js" ></script>
 
 <script>
+
+/**
+ * Here is an example of using the supplied javascript framework for
+ * dynamically loading api classes and making requests.
+ */
 var url = "<?php echo isset($_GET['url']) ? urlencode($_GET['url']):''; ?>";
 var api = "<?php echo 'http://'.SEO_HOST.'/'.SEO_URI_API; ?>";
 
 window.SeoReport = "<?php echo 'http://'.SEO_HOST.'/'.SEO_URI_REPORTS; ?>";
+
+/**
+ * An example of how to use other namesapces to load content.  This allows for
+ * multithreaded download of content.  Should be considered that each request
+ * to the API requires the api to download the content again and reparse things.
+ *//*
+SeoApi2 = new SeoApi('SeoApi2','http://<?php echo SEO_HOST . '/' . SEO_URI_API_JS; ?>');
+SeoApi2.load('body').depends('render').addMethod('checkH1','#body-header-tags').exec(url);
+*/
+
+SeoApi = new SeoApi('SeoApi','http://<?php echo SEO_HOST . '/' . SEO_URI_API_JS; ?>');
+
+//loads the 
 SeoApi.load(api,'base');
 SeoApi.load('render');
-
 
 SeoApi.load('google').depends('render')
 	.addMethod('getPageRank','#google-pr')
@@ -58,7 +76,7 @@ SeoApi.load('body').depends('render')
 SeoApi.load('head').depends('render')
 	.addMethod('all',"#head-info")
 	.exec(url);
-	
+
 SeoApi.load('server').depends('render')
 	.addMethod('getWhois','#server-whois')
 	.addMethod('getHeaderResponseLine','#server-general-info')
@@ -83,6 +101,7 @@ SeoApi.load('semrush').depends('render')
 SeoApi.load('social').depends('render')
 	.addMethod('all','#social')
 	.exec(url);
+
 </script>
 <script src="http://<?php echo SEO_HOST . '/' . SEO_URI_REPORTS; ?>js/basic.js"></script>
 

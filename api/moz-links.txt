@@ -7,7 +7,7 @@
 
   <meta name="description" content="Open Site Explorer is Moz's Search Engine for Links. Perform competitive link research, explore backlinks, anchor text, and more for free." />
   <meta content="authenticity_token" name="csrf-param" />
-<meta content="tAdDm9epCyeBJ10dYQCao1OANN3J/rIA14jt3i/OerQ=" name="csrf-token" />
+<meta content="ESmFw6Iywbvj7LhpsfRwVh7MHPKOkyCcYhAzaa9Lt4w=" name="csrf-token" />
   <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/themes/ui-lightness/jquery-ui.css" media="all" rel="stylesheet" type="text/css" />
   <link href="/stylesheets/jquery.ui.selectmenu.css?1375244263" media="all" rel="stylesheet" type="text/css" />
   <link href="/stylesheets/application.css?1375244263" media="all" rel="stylesheet" type="text/css" />
@@ -26,7 +26,7 @@
   <link rel="shortcut icon" href="/favicon.ico?v=2" />
   
   <script>
-    window._token = "tAdDm9epCyeBJ10dYQCao1OANN3J/rIA14jt3i/OerQ=";
+    window._token = "ESmFw6Iywbvj7LhpsfRwVh7MHPKOkyCcYhAzaa9Lt4w=";
   </script>
     <script>
     // If we are filtering links coming from a single domain
@@ -1463,7 +1463,7 @@
    adroll_segments = "opensiteexplorer"
   </script>
   
-  <!-- This page served from ose2 -->
+  <!-- This page served from ose5 -->
 </body>
 </html>
 

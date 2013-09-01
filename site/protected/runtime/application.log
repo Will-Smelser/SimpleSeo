@@ -1,0 +1,597 @@
+2013/08/30 06:33:06 [error] [php] include(WebUser.php): failed to open stream: No such file or directory (C:\xampp\htdocs\simple-seo-api.com\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\YiiBase.php(196): import()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CModule.php(386): createComponent()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CModule.php(103): CWebApplication->getComponent()
+#3 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\user\controllers\RegistrationController.php(28): CWebApplication->__get()
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CInlineAction.php(49): RegistrationController->actionRegistration()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(286): RegistrationController->runAction()
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): RegistrationController->runActionWithFilters()
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): RegistrationController->run()
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CWebApplication->run()
+REQUEST_URI=/site/index.php?r=user/registration
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\user\controllers\RegistrationController.php (28)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (13)
+2013/08/31 21:58:24 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(61): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights
+---
+2013/08/31 21:58:49 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(61): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/install')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights/install
+---
+2013/08/31 22:06:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(61): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/install')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights/install
+---
+2013/08/31 22:10:42 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(61): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/install')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights/install
+---
+2013/08/31 22:11:29 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(61): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/install')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights/install
+---
+2013/08/31 22:19:06 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(61): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/install')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights/install
+---
+2013/08/31 22:19:39 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(61): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights
+---
+2013/08/31 22:19:44 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(61): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/install')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights/install
+---
+2013/08/31 22:21:46 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(61): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/install')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights/install
+---
+2013/08/31 22:27:26 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(61): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/install')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights/install
+---
+2013/08/31 22:32:51 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(61): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights
+---
+2013/08/31 22:32:53 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(61): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights
+---
+2013/08/31 22:32:57 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(61): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/install')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights/install
+---
+2013/08/31 22:37:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights/index".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/index')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/site/index.php?r=rights/index
+---
+2013/08/31 22:37:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(61): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights/
+---
+2013/08/31 22:37:11 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(61): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights
+---
+2013/08/31 22:47:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(61): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/install')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights/install
+---
+2013/08/31 22:47:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(61): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/install')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights/install
+---
+2013/08/31 22:50:37 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(61): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/install')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights/install
+---
+2013/08/31 22:50:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights/run".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/run')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/site/index.php?r=rights/run
+---
+2013/08/31 22:50:53 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(61): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights
+---
+2013/08/31 22:55:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights/run".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/run')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/site/index.php?r=rights/run
+---
+2013/08/31 22:55:53 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(62): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights
+---
+2013/08/31 22:57:49 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(62): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights
+---
+2013/08/31 22:58:17 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(62): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights
+---
+2013/08/31 22:58:54 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(62): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights
+---
+2013/08/31 22:58:59 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(62): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/install')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights/install
+---
+2013/08/31 22:59:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(62): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/install')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights/install
+---
+2013/08/31 23:00:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(62): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/install')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights/install
+---
+2013/08/31 23:00:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(62): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights
+---
+2013/08/31 23:01:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(62): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights
+---
+2013/08/31 23:02:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(61): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights
+---
+2013/08/31 23:02:40 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'There must be at least one superuser!' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php(61): RAuthorizer->getSuperusers()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1144): InstallController->accessRules()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/site/index.php?r=rights
+---
+2013/08/31 23:03:37 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1217 Cannot delete or update a parent row: a foreign key constraint fails. The SQL statement executed was: drop table if exists authitem.
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RInstaller.php (105)
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php (90)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (14)
+2013/08/31 23:04:34 [error] [php] Use of undefined constant exi - assumed 'exi' (C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php:301)
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): InstallController->filterAccessControl()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): InstallController->runActionWithFilters()
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): InstallController->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CWebApplication->run()
+REQUEST_URI=/site/index.php?r=rights
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RAuthorizer.php (301)
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php (61)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (14)
+2013/08/31 23:27:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1217 Cannot delete or update a parent row: a foreign key constraint fails. The SQL statement executed was: drop table if exists authitem.
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RInstaller.php (105)
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php (90)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (14)
+2013/08/31 23:27:42 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1217 Cannot delete or update a parent row: a foreign key constraint fails. The SQL statement executed was: drop table if exists authitem.
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RInstaller.php (105)
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php (90)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (14)
+2013/08/31 23:29:30 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1217 Cannot delete or update a parent row: a foreign key constraint fails. The SQL statement executed was: drop table if exists authitem.
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RInstaller.php (105)
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php (90)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (14)
+2013/08/31 23:29:38 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1217 Cannot delete or update a parent row: a foreign key constraint fails. The SQL statement executed was: drop table if exists authitem.
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RInstaller.php (105)
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php (90)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (14)
+2013/08/31 23:31:31 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1217 Cannot delete or update a parent row: a foreign key constraint fails. The SQL statement executed was: drop table if exists authitem.
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RInstaller.php (105)
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php (90)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (14)
+2013/08/31 23:31:36 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1217 Cannot delete or update a parent row: a foreign key constraint fails. The SQL statement executed was: drop table if exists authitem.
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RInstaller.php (105)
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php (90)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (14)
+2013/08/31 23:32:19 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1217 Cannot delete or update a parent row: a foreign key constraint fails. The SQL statement executed was: drop table if exists authitem.
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RInstaller.php (105)
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php (90)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (14)
+2013/08/31 23:32:22 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1217 Cannot delete or update a parent row: a foreign key constraint fails. The SQL statement executed was: drop table if exists authitem.
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RInstaller.php (105)
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php (90)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (14)
+2013/08/31 23:33:49 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1217 Cannot delete or update a parent row: a foreign key constraint fails. The SQL statement executed was: drop table if exists authitem.
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RInstaller.php (105)
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php (90)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (14)
+2013/08/31 23:34:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1217 Cannot delete or update a parent row: a foreign key constraint fails. The SQL statement executed was: drop table if exists authitem.
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RInstaller.php (105)
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php (90)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (14)
+2013/08/31 23:34:51 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1217 Cannot delete or update a parent row: a foreign key constraint fails. The SQL statement executed was: drop table if exists authitem.
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RInstaller.php (105)
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php (90)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (14)
+2013/08/31 23:37:23 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'simple-seo-api.authitem' doesn't exist. The SQL statement executed was: SELECT COUNT(*) FROM authitem.
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RInstaller.php (183)
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php (43)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (14)
+2013/08/31 23:37:23 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1065 Query was empty. The SQL statement executed was: .
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RInstaller.php (105)
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php (90)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (14)
+2013/08/31 23:37:37 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1217 Cannot delete or update a parent row: a foreign key constraint fails. The SQL statement executed was: drop table if exists authitem.
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RInstaller.php (105)
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php (90)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (14)
+2013/08/31 23:40:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1217 Cannot delete or update a parent row: a foreign key constraint fails. The SQL statement executed was: drop table if exists authitem.
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RInstaller.php (106)
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php (90)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (14)
+2013/08/31 23:42:30 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'simple-seo-api.authitem' doesn't exist. The SQL statement executed was: SELECT COUNT(*) FROM authitem.
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RInstaller.php (184)
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php (43)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (14)
+2013/08/31 23:42:30 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1065 Query was empty. The SQL statement executed was: .
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RInstaller.php (106)
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php (90)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (14)
+2013/08/31 23:43:45 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'simple-seo-api.authitem' doesn't exist. The SQL statement executed was: SELECT COUNT(*) FROM authitem.
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RInstaller.php (184)
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\InstallController.php (43)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (14)
+2013/09/01 00:05:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights')
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\simple-seo-api.com\site\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/site/index.php?r=rights
+---

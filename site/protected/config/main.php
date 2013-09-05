@@ -1,5 +1,8 @@
 <?php
 error_reporting(E_ALL);
+$mysqlhost = (strpos($_SERVER['HTTP_HOST'],'.local') > 0) ?
+	'localhost' : 'simpleseoapi.db.10693638.hostedresource.com';
+
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
 
@@ -18,8 +21,6 @@ return array(
 		'application.components.*',
 		'application.modules.user.models.*',
 		'application.modules.user.components.*',
-		'application.modules.rights.*',
-		'application.modules.rights.components.*',
 	),
 
 	'modules'=>array(
@@ -27,7 +28,7 @@ return array(
 		
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'password',
+			'password'=>'Enter Your Password Here',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
@@ -63,27 +64,20 @@ return array(
 				# page after logout
 				'returnLogoutUrl' => array('/user/login'),
 		),
-		'rights'=>array(
-			'superuserName'=>'admin',
-			'userNameColumn'=>'username',
-			'install'=>false,
-		),
 		
 	),
 
 	// application components
 	'components'=>array(
 		'user'=>array(
-			'class'=>'RWebUser',
-             // enable cookie-based authentication
-             'allowAutoLogin'=>true,
-             'loginUrl'=>array('/user/login'),
+			// enable cookie-based authentication
+			// enable cookie-based authentication
+			'allowAutoLogin'=>true,
+			'loginUrl' => array('/user/login'),
 		),
-		'authManager'=>array(
-				'class'=>'RDbAuthManager',
-		),
+		
 		// uncomment the following to enable URLs in path-format
-		/*
+		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
@@ -92,7 +86,6 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
-		*/
 		/*
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
@@ -101,12 +94,12 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=simple-seo-api',
+			'connectionString' => "mysql:host=$mysqlhost;dbname=simpleseoapi",
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
+			'username' => 'simpleseoapi',
+			'password' => 'Simple1480!',
 			'charset' => 'utf8',
-			'tablePrefix' => '',//'tbl_',
+			'tablePrefix' => '',
 		),
 		
 		'errorHandler'=>array(

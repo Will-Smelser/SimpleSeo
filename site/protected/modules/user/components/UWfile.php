@@ -63,6 +63,7 @@ class UWfile {
 				$old_file = $model->getAttribute($field_varname);
 				if ($old_file&&file_exists($old_file))
 					unlink($old_file);
+				$value='';
 			} else {
 				$value = $model->getAttribute($field_varname);
 			}
@@ -75,7 +76,12 @@ class UWfile {
 	 * @return string
 	 */
 	public function viewAttribute($model,$field) {
-		return CHtml::link($model->getAttribute($field->varname),'/'.$model->getAttribute($field->varname));
+		$file = $model->getAttribute($field->varname);
+		if ($file) {
+			$file = Yii::app()->baseUrl.'/'.$file;
+			return CHtml::link($file,$file);
+		} else
+			return '';
 	}
 		
 	/**

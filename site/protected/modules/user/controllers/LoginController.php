@@ -4,6 +4,18 @@ class LoginController extends Controller
 {
 	public $defaultAction = 'login';
 
+	public function actions()
+	{
+		return array(
+				'oauth' => array(
+						'class'=>'ext.hoauth.HOAuthAction',
+				),
+				'oauthadmin' => array(
+						'class'=>'ext.hoauth.HOAuthAdminAction',
+				),
+		);
+	}
+	
 	/**
 	 * Displays the login page
 	 */
@@ -18,14 +30,14 @@ class LoginController extends Controller
 				// validate user input and redirect to previous page if valid
 				if($model->validate()) {
 					$this->lastViset();
-					if ('/index.php')
+					if (strpos(Yii::app()->user->returnUrl,'/index.php')!==false)
 						$this->redirect(Yii::app()->controller->module->returnUrl);
 					else
 						$this->redirect(Yii::app()->user->returnUrl);
 				}
 			}
 			// display the login form
-			$this->render('/user/login',array('model'=>$model,));
+			$this->render('/user/login',array('model'=>$model));
 		} else
 			$this->redirect(Yii::app()->controller->module->returnUrl);
 	}

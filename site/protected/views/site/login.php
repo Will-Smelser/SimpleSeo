@@ -44,6 +44,8 @@ $this->breadcrumbs=array(
 		<?php echo $form->label($model,'rememberMe'); ?>
 		<?php echo $form->error($model,'rememberMe'); ?>
 	</div>
+	
+	<?php $this->widget('ext.hoauth.widgets.HOAuth'); ?>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Login'); ?>

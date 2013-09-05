@@ -56,13 +56,17 @@ class Profile extends UActiveRecord
 			if ($field->other_validator) {
 				if (strpos($field->other_validator,'{')===0) {
 					$validator = (array)CJavaScript::jsonDecode($field->other_validator);
-					$field_rule = array($field->varname, key($validator));
-					$field_rule = array_merge($field_rule,(array)$validator[key($validator)]);
+					foreach ($validator as $name=>$val) {
+						$field_rule = array($field->varname, $name);
+						$field_rule = array_merge($field_rule,(array)$validator[$name]);
+						if ($field->error_message) $field_rule['message'] = UserModule::t($field->error_message);
+						array_push($rules,$field_rule);
+					}
 				} else {
 					$field_rule = array($field->varname, $field->other_validator);
+					if ($field->error_message) $field_rule['message'] = UserModule::t($field->error_message);
+					array_push($rules,$field_rule);
 				}
-				if ($field->error_message) $field_rule['message'] = UserModule::t($field->error_message);
-				array_push($rules,$field_rule);
 			} elseif ($field->field_type=='DATE') {
 				$field_rule = array($field->varname, 'type', 'type' => 'date', 'dateFormat' => 'yyyy-mm-dd', 'allowEmpty'=>true);
 				if ($field->error_message) $field_rule['message'] = UserModule::t($field->error_message);
@@ -93,7 +97,7 @@ class Profile extends UActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		$relations = array(
-			'user'=>array(self::HAS_ONE, 'User', 'user_id'),
+			'user'=>array(self::HAS_ONE, 'User', 'id'),
 		);
 		if (isset(Yii::app()->getModule('user')->profileRelations)) $relations = array_merge($relations,Yii::app()->getModule('user')->profileRelations);
 		return $relations;
@@ -110,7 +114,7 @@ class Profile extends UActiveRecord
 		$model=$this->getFields();
 		
 		foreach ($model as $field)
-			$labels[$field->varname] = UserModule::t($field->title);
+			$labels[$field->varname] = ((Yii::app()->getModule('user')->fieldsMessage)?UserModule::t($field->title,array(),Yii::app()->getModule('user')->fieldsMessage):UserModule::t($field->title));
 			
 		return $labels;
 	}

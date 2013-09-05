@@ -1,4 +1,12 @@
 <?php
+/**
+ * Yii-User module
+ * 
+ * @author Mikhail Mangushev <mishamx@gmail.com> 
+ * @link http://yii-user.googlecode.com/
+ * @license http://www.opensource.org/licenses/bsd-license.php
+ * @version $Id: UserModule.php 105 2011-02-16 13:05:56Z mishamx $
+ */
 
 class UserModule extends CWebModule
 {
@@ -52,6 +60,8 @@ class UserModule extends CWebModule
 	public $returnUrl = array("/user/profile");
 	public $returnLogoutUrl = array("/user/login");
 	
+	public $fieldsMessage = '';
+	
 	/**
 	 * @var array
 	 * @desc User model relation from other models
@@ -83,6 +93,12 @@ class UserModule extends CWebModule
 	static private $_admin;
 	static private $_admins;
 	
+	/**
+	 * @var array
+	 * @desc Behaviors for models
+	 */
+	public $componentBehaviors=array();
+	
 	public function init()
 	{
 		// this method is called when the module is being created
@@ -93,6 +109,14 @@ class UserModule extends CWebModule
 			'user.models.*',
 			'user.components.*',
 		));
+	}
+	
+	public function getBehaviorsFor($componentName){
+        if (isset($this->componentBehaviors[$componentName])) {
+            return $this->componentBehaviors[$componentName];
+        } else {
+            return array();
+        }
 	}
 
 	public function beforeControllerAction($controller, $action)
@@ -121,7 +145,7 @@ class UserModule extends CWebModule
 	 * @return hash string.
 	 */
 	public static function encrypting($string="") {
-		$hash = Yii::app()->controller->module->hash;
+		$hash = Yii::app()->getModule('user')->hash;
 		if ($hash=="md5")
 			return md5($string);
 		if ($hash=="sha1")
@@ -137,8 +161,8 @@ class UserModule extends CWebModule
 	public static function doCaptcha($place = '') {
 		if(!extension_loaded('gd'))
 			return false;
-		if (in_array($place, Yii::app()->controller->module->captcha))
-			return Yii::app()->controller->module->captcha[$place];
+		if (in_array($place, Yii::app()->getModule('user')->captcha))
+			return Yii::app()->getModule('user')->captcha[$place];
 		return false;
 	}
 	

@@ -11,9 +11,9 @@ class AdminController extends Controller
 	 */
 	public function filters()
 	{
-		return array(
+		return CMap::mergeArray(parent::filters(),array(
 			'accessControl', // perform access control for CRUD operations
-		);
+		));
 	}
 	/**
 	 * Specifies the access control rules.
@@ -83,7 +83,7 @@ class AdminController extends Controller
 					$profile->save();
 				}
 				$this->redirect(array('view','id'=>$model->id));
-			}
+			} else $profile->validate();
 		}
 
 		$this->render('create',array(
@@ -114,7 +114,7 @@ class AdminController extends Controller
 				$model->save();
 				$profile->save();
 				$this->redirect(array('view','id'=>$model->id));
-			}
+			} else $profile->validate();
 		}
 
 		$this->render('update',array(

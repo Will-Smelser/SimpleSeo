@@ -15,9 +15,9 @@ class ProfileFieldController extends Controller
 	 */
 	public function filters()
 	{
-		return array(
+		return CMap::mergeArray(parent::filters(),array(
 			'accessControl', // perform access control for CRUD operations
-		);
+		));
 	}
 
 	/**
@@ -96,75 +96,75 @@ class ProfileFieldController extends Controller
 			'INTEGER':{
 				'hide':['match','other_validator','widgetparams'],
 				'val':{
-					field_size:10,
-					default:'0',
-					range:'',
-					widgetparams:'',
-				},
+					'field_size':10,
+					'default':'0',
+					'range':'',
+					'widgetparams':''
+				}
 			},
 			'VARCHAR':{
 				'hide':['widgetparams'],
 				'val':{
-					field_size:255,
-					default:'',
-					range:'',
-					widgetparams:'',
-				},
+					'field_size':255,
+					'default':'',
+					'range':'',
+					'widgetparams':''
+				}
 			},
 			'TEXT':{
 				'hide':['field_size','range','widgetparams'],
 				'val':{
-					field_size:0,
-					default:'',
-					range:'',
-					widgetparams:'',
-				},
+					'field_size':0,
+					'default':'',
+					'range':'',
+					'widgetparams':''
+				}
 			},
 			'DATE':{
 				'hide':['field_size','field_size_min','match','range','widgetparams'],
 				'val':{
-					field_size:0,
-					default:'0000-00-00',
-					range:'',
-					widgetparams:'',
-				},
+					'field_size':0,
+					'default':'0000-00-00',
+					'range':'',
+					'widgetparams':''
+				}
 			},
 			'FLOAT':{
 				'hide':['match','other_validator','widgetparams'],
 				'val':{
-					field_size:'10,2',
-					default:'0.00',
-					range:'',
-					widgetparams:'',
-				},
+					'field_size':'10,2',
+					'default':'0.00',
+					'range':'',
+					'widgetparams':''
+				}
 			},
 			'BOOL':{
 				'hide':['field_size','field_size_min','match','widgetparams'],
 				'val':{
-					field_size:0,
-					default:0,
-					range:'1==".UserModule::t('Yes').";0==".UserModule::t('No')."',
-					widgetparams:'',
-				},
+					'field_size':0,
+					'default':0,
+					'range':'1==".UserModule::t('Yes').";0==".UserModule::t('No')."',
+					'widgetparams':''
+				}
 			},
 			'BLOB':{
 				'hide':['field_size','field_size_min','match','widgetparams'],
 				'val':{
-					field_size:0,
-					default:'',
-					range:'',
-					widgetparams:'',
-				},
+					'field_size':0,
+					'default':'',
+					'range':'',
+					'widgetparams':''
+				}
 			},
 			'BINARY':{
 				'hide':['field_size','field_size_min','match','widgetparams'],
 				'val':{
-					field_size:0,
-					default:'',
-					range:'',
-					widgetparams:'',
-				},
-			},
+					'field_size':0,
+					'default':'',
+					'range':'',
+					'widgetparams':''
+				}
+			}
 		};
 			
 	function showWidgetList(type) {
@@ -316,6 +316,7 @@ class ProfileFieldController extends Controller
 	public function actionCreate()
 	{
 		$model=new ProfileField;
+		$scheme = get_class(Yii::app()->db->schema);
 		if(isset($_POST['ProfileField']))
 		{
 			$model->attributes=$_POST['ProfileField'];
@@ -333,16 +334,17 @@ class ProfileFieldController extends Controller
 					$sql .= '('.$model->field_size.')';
 				$sql .= ' NOT NULL ';
 				
-				if ($model->default)
-					$sql .= " DEFAULT '".$model->default."'";
-				else
-					$sql .= ((
-								$model->field_type=='TEXT'
-								||$model->field_type=='VARCHAR'
-								||$model->field_type=='BLOB'
-								||$model->field_type=='BINARY'
-							)?" DEFAULT ''":(($model->field_type=='DATE')?" DEFAULT '0000-00-00'":" DEFAULT 0"));
-				
+				if ($model->field_type!='TEXT'&&$model->field_type!='BLOB'||$scheme!='CMysqlSchema') {
+					if ($model->default)
+						$sql .= " DEFAULT '".$model->default."'";
+					else
+						$sql .= ((
+									$model->field_type=='TEXT'
+									||$model->field_type=='VARCHAR'
+									||$model->field_type=='BLOB'
+									||$model->field_type=='BINARY'
+								)?" DEFAULT ''":(($model->field_type=='DATE')?" DEFAULT '0000-00-00'":" DEFAULT 0"));
+				}
 				$model->dbConnection->createCommand($sql)->execute();
 				$model->save();
 				$this->redirect(array('view','id'=>$model->id));
@@ -384,12 +386,59 @@ class ProfileFieldController extends Controller
 		if(Yii::app()->request->isPostRequest)
 		{
 			// we only allow deletion via POST request
+			$scheme = get_class(Yii::app()->db->schema);
 			$model = $this->loadModel();
-			$sql = 'ALTER TABLE '.Profile::model()->tableName().' DROP `'.$model->varname.'`';
-			if ($model->dbConnection->createCommand($sql)->execute()) {
-				$model->delete();
+			if ($scheme=='CSqliteSchema') {
+				$attr = Profile::model()->attributes;
+				unset($attr[$model->varname]);
+				$attr = array_keys($attr);
+				$connection=Yii::app()->db;
+				$transaction=$connection->beginTransaction();
+				$status=true;
+				try
+				{
+					$sql = '';
+				    $connection->createCommand(
+				    	"CREATE TEMPORARY TABLE ".Profile::model()->tableName()."_backup (".implode(',',$attr).")"
+				    )->execute();
+				    
+				    $connection->createCommand(
+				    	"INSERT INTO ".Profile::model()->tableName()."_backup SELECT ".implode(',',$attr)." FROM ".Profile::model()->tableName()
+				    )->execute();
+				    
+				    $connection->createCommand(
+				    	"DROP TABLE ".Profile::model()->tableName()
+				    )->execute();
+				    
+				    $connection->createCommand(
+				    	"CREATE TABLE ".Profile::model()->tableName()." (".implode(',',$attr).")"
+				    )->execute();
+				    
+				    $connection->createCommand(
+				    	"INSERT INTO ".Profile::model()->tableName()." SELECT ".implode(',',$attr)." FROM ".Profile::model()->tableName()."_backup"
+				    )->execute();
+				    
+				    $connection->createCommand(
+				    	"DROP TABLE ".Profile::model()->tableName()."_backup"
+				    )->execute();
+				    
+				    $transaction->commit();
+				}
+				catch(Exception $e) 
+				{
+				    $transaction->rollBack();
+				    $status=false;
+				}
+				if ($status) {
+					$model->delete();
+				}
+				
+			} else {
+				$sql = 'ALTER TABLE '.Profile::model()->tableName().' DROP `'.$model->varname.'`';
+				if ($model->dbConnection->createCommand($sql)->execute()) {
+					$model->delete();
+				}
 			}
-			// ALTER TABLE `profiles` DROP `field`
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_POST['ajax']))

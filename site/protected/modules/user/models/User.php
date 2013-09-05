@@ -6,10 +6,6 @@ class User extends CActiveRecord
 	const STATUS_ACTIVE=1;
 	const STATUS_BANED=-1;
 	
-	public $username;
-	public $password;
-	public $email;
-	
 	/**
 	 * The followings are the available columns in table 'users':
 	 * @var integer $id
@@ -22,6 +18,18 @@ class User extends CActiveRecord
 	 * @var integer $superuser
 	 * @var integer $status
 	 */
+	
+	/**
+	 * Returns User model by its email
+	 *
+	 * @param string $email
+	 * @access public
+	 * @return User
+	 */
+	public function findByEmail($email)
+	{
+		return self::model()->findByAttributes(array('email' => $email));
+	}
 
 	/**
 	 * Returns the static model of the specified AR class.
@@ -54,7 +62,7 @@ class User extends CActiveRecord
 			array('password', 'length', 'max'=>128, 'min' => 4,'message' => UserModule::t("Incorrect password (minimal length 4 symbols).")),
 			array('email', 'email'),
 			array('username', 'unique', 'message' => UserModule::t("This user's name already exists.")),
-			array('email', 'unique', 'message' => UserModule::t("This user's email adress already exists.")),
+			array('email', 'unique', 'message' => UserModule::t("This user's email address already exists.")),
 			array('username', 'match', 'pattern' => '/^[A-Za-z0-9_]+$/u','message' => UserModule::t("Incorrect symbols (A-z0-9).")),
 			array('status', 'in', 'range'=>array(self::STATUS_NOACTIVE,self::STATUS_ACTIVE,self::STATUS_BANED)),
 			array('superuser', 'in', 'range'=>array(0,1)),
@@ -66,7 +74,7 @@ class User extends CActiveRecord
 			array('email', 'email'),
 			array('username', 'unique', 'message' => UserModule::t("This user's name already exists.")),
 			array('username', 'match', 'pattern' => '/^[A-Za-z0-9_]+$/u','message' => UserModule::t("Incorrect symbols (A-z0-9).")),
-			array('email', 'unique', 'message' => UserModule::t("This user's email adress already exists.")),
+			array('email', 'unique', 'message' => UserModule::t("This user's email address already exists.")),
 		):array()));
 	}
 

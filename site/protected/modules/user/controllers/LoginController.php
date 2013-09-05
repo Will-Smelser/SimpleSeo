@@ -9,10 +9,10 @@ class LoginController extends Controller
 		return array(
 				'oauth' => array(
 						'class'=>'ext.hoauth.HOAuthAction',
-				),
+				),/*
 				'oauthadmin' => array(
 						'class'=>'ext.hoauth.HOAuthAdminAction',
-				),
+				),*/
 		);
 	}
 	

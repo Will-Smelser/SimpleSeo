@@ -16,20 +16,20 @@ $host = (strpos($_SERVER['HTTP_HOST'],'.local') > 0) ?
 
 return 
 	array(
-		"base_url" => "http://$host/login/oauth", 
+		"base_url" => "http://$host/user/login/oauth", 
 
 		"providers" => array ( 
 			// openid providers
 			"OpenID" => array (
-				"enabled" => true
+				"enabled" => false
 			),
 
 			"AOL"  => array ( 
-				"enabled" => true 
+				"enabled" => false 
 			),
 
 			"Yahoo" => array ( 
-				"enabled" => true,
+				"enabled" => false,
 				"keys"    => array ( "id" => "", "secret" => "" )
 			),
 
@@ -44,28 +44,28 @@ return
 			),
 
 			"Twitter" => array ( 
-				"enabled" => true,
+				"enabled" => false,
 				"keys"    => array ( "key" => "", "secret" => "" ) 
 			),
 
 			// windows live
 			"Live" => array ( 
-				"enabled" => true,
+				"enabled" => false,
 				"keys"    => array ( "id" => "", "secret" => "" ) 
 			),
 
 			"MySpace" => array ( 
-				"enabled" => true,
+				"enabled" => false,
 				"keys"    => array ( "key" => "", "secret" => "" ) 
 			),
 
 			"LinkedIn" => array ( 
-				"enabled" => true,
+				"enabled" => false,
 				"keys"    => array ( "key" => "", "secret" => "" ) 
 			),
 
 			"Foursquare" => array (
-				"enabled" => true,
+				"enabled" => false,
 				"keys"    => array ( "id" => "", "secret" => "" ) 
 			),
 		),

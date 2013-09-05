@@ -341,6 +341,10 @@ class HOAuthAction extends CAction
 				// sign user in
 				if($accessCode === 1)
 				{
+					//update the last login time
+					$user->lastvisit = time();
+					$user->save();
+					
 					$identity = $this->useYiiUser
 					? new DummyUserIdentity($user->primaryKey, $user->email)
 					: new UserIdentity($user->email, null);
@@ -429,10 +433,10 @@ class HOAuthAction extends CAction
 
 		if(!$form->validateUser())
 		{
-		$this->controller->render(self::ALIAS.'.views.form', array(
-				'form' => $form,
-		));
-		Yii::app()->end();
+			$this->controller->render(self::ALIAS.'.views.form', array(
+					'form' => $form,
+			));
+			Yii::app()->end();
 		}
 
 		// updating attributes in $user model (if needed)
@@ -454,8 +458,9 @@ class HOAuthAction extends CAction
 			if(!$user->save())
 				throw new Exception("1. Error, while saving {$this->model} model:\n\n" . var_export($user->errors, true));
 
-			//$authorizer = Yii::app()->getModule("rights")->getAuthorizer();
-			//$authorizer->authManager->assign('User', $user->primaryKey);
+			$rights = Yii::app()->getModule("rights");
+			$authorizer = $rights->getAuthorizer();
+			$authorizer->authManager->assign($rights->defaultRole, $user->primaryKey);
 			
 			// trying to send activation email
 			$this->sendActivationMail($user);

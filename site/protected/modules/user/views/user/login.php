@@ -44,6 +44,8 @@ $this->breadcrumbs=array(
 		<?php echo CHtml::activeCheckBox($model,'rememberMe'); ?>
 		<?php echo CHtml::activeLabelEx($model,'rememberMe'); ?>
 	</div>
+	
+	<?php $this->widget('ext.hoauth.widgets.HOAuth'); ?>
 
 	<div class="row submit">
 		<?php echo CHtml::submitButton(UserModule::t("Login")); ?>

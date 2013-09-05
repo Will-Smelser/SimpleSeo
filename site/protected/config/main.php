@@ -21,6 +21,8 @@ return array(
 		'application.components.*',
 		'application.modules.user.models.*',
 		'application.modules.user.components.*',
+		'application.modules.rights.*',
+		'application.modules.rights.components.*',
 	),
 
 	'modules'=>array(
@@ -34,6 +36,7 @@ return array(
 		),
 			
 		'user'=>array(
+				
 				# encrypting method (php hash function)
 				'hash' => 'md5',
 		
@@ -63,6 +66,17 @@ return array(
 		
 				# page after logout
 				'returnLogoutUrl' => array('/user/login'),
+				
+				'tableUsers' => 'users',
+				'tableProfiles' => 'profiles',
+				'tableProfileFields' => 'profiles_fields',
+		),
+		'rights'=>array(
+				'install'=>false,
+				'superuserName'=>'admin',
+				'userIdColumn'=>'id', // Name of the user id column in the database.
+				'userNameColumn'=>'username',
+				'defaultRole'=>'Basic'
 		),
 		
 	),
@@ -70,10 +84,17 @@ return array(
 	// application components
 	'components'=>array(
 		'user'=>array(
-			// enable cookie-based authentication
+			'class'=>'RWebUser',
+			
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 			'loginUrl' => array('/user/login'),
+		),
+		
+		'authManager'=>array(
+				'class'=>'RDbAuthManager',
+				'connectionID'=>'db',
+				'defaultRoles'=>array('Authenticated', 'Guest'),
 		),
 		
 		// uncomment the following to enable URLs in path-format
@@ -114,11 +135,11 @@ return array(
 					'levels'=>'error, warning',
 				),
 				// uncomment the following to show log messages on web pages
-				/*
+				
 				array(
 					'class'=>'CWebLogRoute',
 				),
-				*/
+				
 			),
 		),
 	),

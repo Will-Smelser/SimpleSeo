@@ -19,6 +19,7 @@ class SiteController extends Controller
 						'class'=>'CViewAction',
 				),
 
+				/*
 				'oauth' => array(
 						// the list of additional properties of this action is below
 						'class'=>'ext.hoauth.HOAuthAction',
@@ -45,6 +46,7 @@ class SiteController extends Controller
 				'oauthadmin' => array(
 						'class'=>'ext.hoauth.HOAuthAdminAction',
 				),
+				*/
 		);
 	}
 
@@ -104,6 +106,10 @@ class SiteController extends Controller
 	 */
 	public function actionLogin()
 	{
+		$this->redirect(Yii::app()->getModule('user')->loginUrl);
+		Yii::app()->end();
+		
+		/*
 		$model=new LoginForm;
 
 		// if it is ajax validation request
@@ -123,6 +129,7 @@ class SiteController extends Controller
 		}
 		// display the login form
 		$this->render('login',array('model'=>$model));
+		*/
 	}
 
 	/**
@@ -130,7 +137,10 @@ class SiteController extends Controller
 	 */
 	public function actionLogout()
 	{
-		Yii::app()->user->logout();
-		$this->redirect(Yii::app()->homeUrl);
+		$this->redirect(Yii::app()->getModule('user')->logoutUrl);
+		Yii::app()->end();
+		
+		//Yii::app()->user->logout();
+		//$this->redirect(Yii::app()->homeUrl);
 	}
 }

@@ -1059,3 +1059,1399 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/index.php/user/oauth
 ---
+2013/09/05 05:29:11 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights')
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/rights
+HTTP_REFERER=http://simple-seo-api.local/index.php/user/profile
+---
+2013/09/05 05:34:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/05 05:34:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/05 05:35:16 [error] [php] session_regenerate_id(): Session object destruction failed (C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CHttpSession.php:181)
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\auth\CWebUser.php(233): RWebUser->changeIdentity()
+#1 C:\xampp\htdocs\simple-seo-api.com\site\protected\extensions\hoauth\HOAuthAction.php(352): RWebUser->login()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\protected\extensions\hoauth\HOAuthAction.php(260): HOAuthAction->oAuth()
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CAction.php(76): HOAuthAction->run()
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(308): HOAuthAction->runWithParams()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(286): LoginController->runAction()
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): LoginController->runActionWithFilters()
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): LoginController->run()
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/user/login/oauth/provider/Facebook
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\extensions\hoauth\HOAuthAction.php (352)
+in C:\xampp\htdocs\simple-seo-api.com\site\protected\extensions\hoauth\HOAuthAction.php (260)
+in C:\xampp\htdocs\simple-seo-api.com\site\index.php (13)
+2013/09/05 05:47:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights')
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/rights
+HTTP_REFERER=http://simple-seo-api.local/index.php/user
+---
+2013/09/05 05:48:38 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights')
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/rights
+HTTP_REFERER=http://simple-seo-api.local/index.php/user/profile/edit
+---
+2013/09/05 23:26:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/permissions
+---
+2013/09/05 23:26:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/permissions
+---
+2013/09/05 23:26:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\AuthItemController.php:563
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\AuthItemController.php(308): AuthItemController->loadModel()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CInlineAction.php(49): AuthItemController->actionUpdate()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php/rights/authItem/update/name/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/update/name/User.Default.Index
+---
+2013/09/05 23:26:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights
+---
+2013/09/05 23:26:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/assignme...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/assignment/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/assignment/view
+---
+2013/09/05 23:26:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/permissions
+---
+2013/09/05 23:27:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/permissions
+---
+2013/09/05 23:27:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\AuthItemController.php:563
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\AuthItemController.php(308): AuthItemController->loadModel()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CInlineAction.php(49): AuthItemController->actionUpdate()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php/rights/authItem/update/name/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/update/name/User.Default.Index
+---
+2013/09/05 23:27:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights
+---
+2013/09/05 23:32:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/assignme...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/assignment/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/assignment/view
+---
+2013/09/05 23:33:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights
+---
+2013/09/05 23:33:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/permissions
+---
+2013/09/05 23:33:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/generate
+---
+2013/09/05 23:33:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/roles
+---
+2013/09/05 23:33:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/tasks
+---
+2013/09/05 23:33:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/operations
+---
+2013/09/05 23:33:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/operations
+---
+2013/09/05 23:33:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/operations
+---
+2013/09/05 23:33:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/operations
+---
+2013/09/05 23:33:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/operations
+---
+2013/09/05 23:33:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/operations
+---
+2013/09/05 23:34:25 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php:62
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RightsFilter.php(57): RController->accessDenied()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(38): RightsFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php(36): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/user/view/...')
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/user/user/view/id/1
+HTTP_REFERER=http://simple-seo-api.local/index.php/user
+---
+2013/09/05 23:34:31 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights')
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/rights
+HTTP_REFERER=http://simple-seo-api.local/index.php/user
+---
+2013/09/05 23:34:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights
+---
+2013/09/05 23:36:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php:62
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RightsFilter.php(57): RController->accessDenied()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(38): RightsFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php(36): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('contact')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/contact')
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/site/contact
+HTTP_REFERER=http://simple-seo-api.local/index.php/user/profile
+---
+2013/09/05 23:36:29 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php:62
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RightsFilter.php(57): RController->accessDenied()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(38): RightsFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php(36): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('contact')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/contact')
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/site/contact
+HTTP_REFERER=http://simple-seo-api.local/index.php/user/profile
+---
+2013/09/05 23:36:33 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php:62
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RightsFilter.php(57): RController->accessDenied()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(38): RightsFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php(36): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site')
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/site
+---
+2013/09/05 23:37:16 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php:62
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RightsFilter.php(57): RController->accessDenied()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(38): RightsFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php(36): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site')
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/site
+---
+2013/09/05 23:37:39 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php:62
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RightsFilter.php(57): RController->accessDenied()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(38): RightsFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php(36): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site')
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/site/
+---
+2013/09/05 23:37:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/operations
+---
+2013/09/05 23:37:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/permissions
+---
+2013/09/05 23:38:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/assignme...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/assignment/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/assignment/view
+---
+2013/09/05 23:38:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/permissions
+---
+2013/09/05 23:38:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/generate
+---
+2013/09/05 23:38:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/permissions
+---
+2013/09/05 23:38:49 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php:62
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RightsFilter.php(57): RController->accessDenied()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(38): RightsFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php(36): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site')
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/site/
+---
+2013/09/05 23:39:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/operations
+---
+2013/09/05 23:39:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/operations
+---
+2013/09/05 23:39:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/permissions
+---
+2013/09/05 23:39:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\AuthItemController.php:563
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\AuthItemController.php(308): AuthItemController->loadModel()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CInlineAction.php(49): AuthItemController->actionUpdate()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php/rights/authItem/update/name/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/update/name/Site.%252A
+---
+2013/09/05 23:39:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/operations
+---
+2013/09/05 23:39:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/tasks
+---
+2013/09/05 23:40:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/tasks
+---
+2013/09/06 00:18:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/tasks
+---
+2013/09/06 00:18:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/tasks
+---
+2013/09/06 00:18:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/tasks
+---
+2013/09/06 00:19:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/tasks
+---
+2013/09/06 00:19:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/tasks
+---
+2013/09/06 00:19:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/tasks
+---
+2013/09/06 00:19:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/tasks
+---
+2013/09/06 00:19:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/authItem/operations
+---
+2013/09/06 00:20:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights/rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/rights.c...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/rights/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights/
+---
+2013/09/06 00:20:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights
+---
+2013/09/06 00:20:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights
+---
+2013/09/06 00:22:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "users".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('users')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('users')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/users')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/users
+---
+2013/09/06 00:22:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('user')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('user')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/user')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/user
+---
+2013/09/06 00:22:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('user')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('user')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/user/login')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/user/login
+---
+2013/09/06 00:30:10 [error] [exception.CException] exception 'CException' with message 'Alias "application.extensions.mbmenu.MbMenu" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('application.ext...', true)
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'application.ext...', Array)
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('application.ext...', Array)
+#3 C:\xampp\htdocs\simple-seo-api.com\site\themes\shadow_dancer\views\layouts\main.php(61): CBaseController->widget('application.ext...', Array)
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div class="con...')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div class="con...')
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(206): COutputProcessor->run()
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#11 C:\xampp\htdocs\simple-seo-api.com\site\themes\shadow_dancer\views\layouts\column1.php(7): CBaseController->endContent()
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#14 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#15 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CViewAction.php(140): CController->render('pages/interface')
+#16 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CAction.php(76): CViewAction->run()
+#17 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#18 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(286): CController->runAction(Object(CViewAction))
+#19 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#20 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('page')
+#21 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/page')
+#22 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/index.php/site/page?view=interface
+HTTP_REFERER=http://simple-seo-api.local/index.php/site/page?view=buttons_and_icons
+---
+2013/09/06 00:32:09 [error] [exception.CException] exception 'CException' with message 'Alias "application.extensions.fullcalendar.FullcalendarGraphWidget" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('application.ext...', true)
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'application.ext...', Array)
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('application.ext...', Array)
+#3 C:\xampp\htdocs\simple-seo-api.com\site\themes\shadow_dancer\views\site\pages\about.php(25): CBaseController->widget('application.ext...', Array)
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(782): CController->renderPartial('pages/about', NULL, true)
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CViewAction.php(140): CController->render('pages/about')
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CAction.php(76): CViewAction->run()
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(286): CController->runAction(Object(CViewAction))
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#13 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('page')
+#14 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/page')
+#15 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/index.php/site/page?view=about
+HTTP_REFERER=http://simple-seo-api.local/index.php/site/index
+---
+2013/09/06 00:33:16 [error] [exception.CException] exception 'CException' with message 'Alias "application.extensions.fullcalendar.FullcalendarGraphWidget" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('application.ext...', true)
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'application.ext...', Array)
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('application.ext...', Array)
+#3 C:\xampp\htdocs\simple-seo-api.com\site\themes\shadow_dancer\views\site\pages\about.php(25): CBaseController->widget('application.ext...', Array)
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(782): CController->renderPartial('pages/about', NULL, true)
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CViewAction.php(140): CController->render('pages/about')
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CAction.php(76): CViewAction->run()
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(286): CController->runAction(Object(CViewAction))
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#13 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('page')
+#14 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/page')
+#15 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/index.php/site/page?view=about
+HTTP_REFERER=http://simple-seo-api.local/index.php/site/index
+---
+2013/09/06 00:52:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/rights.css
+HTTP_REFERER=http://simple-seo-api.local/index.php/rights
+---
+2013/09/06 00:55:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 00:56:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 00:57:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 00:58:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 01:06:22 [error] [exception.CException] exception 'CException' with message 'AssignmentController has an extra endWidget(CContentDecorator) call in its view.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php:210
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#1 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\views\layouts\main.php(25): CBaseController->endContent()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\controllers\AssignmentController.php(74): CController->render('view', Array)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CInlineAction.php(49): AssignmentController->actionView()
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#16 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights')
+#17 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/rights
+HTTP_REFERER=http://simple-seo-api.local/user/profile
+---
+2013/09/06 01:06:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 01:08:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 01:09:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 01:09:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 01:11:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 01:11:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 01:16:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 01:16:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 01:16:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 01:17:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/assignme...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/assignment/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/assignment/view
+---
+2013/09/06 01:17:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/assignme...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/assignment/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/assignment/view
+---
+2013/09/06 01:17:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/assignme...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/assignment/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/assignment/view
+---
+2013/09/06 01:17:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/assignme...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/assignment/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/assignment/view
+---
+2013/09/06 01:18:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/assignme...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/assignment/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/assignment/view
+---
+2013/09/06 01:18:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 01:18:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 01:19:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 01:21:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 01:21:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 01:23:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 01:23:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 01:24:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 01:33:32 [error] [exception.CException] exception 'CException' with message 'RWebUser and its behaviors do not have a method or closure named "isAdmin".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\themes\shadow_dancer\views\layouts\main.php(35): CComponent->__call('isAdmin', Array)
+#1 C:\xampp\htdocs\simple-seo-api.com\site\themes\shadow_dancer\views\layouts\main.php(35): RWebUser->isAdmin()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div class="con...')
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div class="con...')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(206): COutputProcessor->run()
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\simple-seo-api.com\site\themes\shadow_dancer\views\layouts\column1.php(7): CBaseController->endContent()
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\user\controllers\ProfileController.php(56): CController->render('edit', Array)
+#14 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CInlineAction.php(49): ProfileController->actionEdit()
+#15 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('edit')
+#19 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/profile/ed...')
+#20 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/user/profile/edit
+HTTP_REFERER=http://simple-seo-api.local/user/profile
+---
+2013/09/06 01:33:45 [error] [exception.CException] exception 'CException' with message 'Property "RWebUser.isAdmin" is not defined.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\auth\CWebUser.php(146): CComponent->__get('isAdmin')
+#1 C:\xampp\htdocs\simple-seo-api.com\site\themes\shadow_dancer\views\layouts\main.php(35): CWebUser->__get('isAdmin')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div class="con...')
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div class="con...')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(206): COutputProcessor->run()
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\simple-seo-api.com\site\themes\shadow_dancer\views\layouts\column1.php(7): CBaseController->endContent()
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\user\controllers\ProfileController.php(56): CController->render('edit', Array)
+#14 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CInlineAction.php(49): ProfileController->actionEdit()
+#15 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('edit')
+#19 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/profile/ed...')
+#20 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/user/profile/edit
+HTTP_REFERER=http://simple-seo-api.local/user/profile
+---
+2013/09/06 01:34:01 [error] [exception.CException] exception 'CException' with message 'Property "ProfileController.isAdmin" is not defined.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\themes\shadow_dancer\views\layouts\main.php(35): CComponent->__get('isAdmin')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div class="con...')
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div class="con...')
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(206): COutputProcessor->run()
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#8 C:\xampp\htdocs\simple-seo-api.com\site\themes\shadow_dancer\views\layouts\column1.php(7): CBaseController->endContent()
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\user\controllers\ProfileController.php(56): CController->render('edit', Array)
+#13 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CInlineAction.php(49): ProfileController->actionEdit()
+#14 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('edit')
+#18 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/profile/ed...')
+#19 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/user/profile/edit
+HTTP_REFERER=http://simple-seo-api.local/user/profile
+---
+2013/09/06 01:34:25 [error] [exception.CException] exception 'CException' with message 'Property "UserModule.isAdmin" is not defined.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CModule.php(105): CComponent->__get('isAdmin')
+#1 C:\xampp\htdocs\simple-seo-api.com\site\themes\shadow_dancer\views\layouts\main.php(35): CModule->__get('isAdmin')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div class="con...')
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div class="con...')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(206): COutputProcessor->run()
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\simple-seo-api.com\site\themes\shadow_dancer\views\layouts\column1.php(7): CBaseController->endContent()
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\user\controllers\ProfileController.php(56): CController->render('edit', Array)
+#14 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CInlineAction.php(49): ProfileController->actionEdit()
+#15 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('edit')
+#19 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/profile/ed...')
+#20 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/user/profile/edit
+HTTP_REFERER=http://simple-seo-api.local/user/profile
+---
+2013/09/06 01:48:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 01:48:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/assignme...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/assignment/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/assignment/view
+---
+2013/09/06 01:48:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/authItem/operations
+---
+2013/09/06 01:48:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/authItem/tasks
+---
+2013/09/06 01:48:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/authItem/roles
+---
+2013/09/06 01:48:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/authItem/permissions
+---
+2013/09/06 01:48:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/assignme...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/assignment/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/assignment/view
+---
+2013/09/06 01:48:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/06 01:48:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/06 01:53:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/06 01:53:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/authItem/operations
+---
+2013/09/06 01:53:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/assignme...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/assignment/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/assignment/view
+---
+2013/09/06 01:53:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/authItem/permissions
+---
+2013/09/06 01:53:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/authItem/roles
+---
+2013/09/06 01:53:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/authItem/permissions
+---
+2013/09/06 01:53:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/authItem/generate
+---

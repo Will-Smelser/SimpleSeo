@@ -471,11 +471,6 @@ class HOAuthAction extends CAction
 				// merge the $userProfile data into $profile
 				$this->mergeProfiles($userProfile,$profile);
 				
-				if(!$profile->validate()){
-					
-					echo "FAILED"; exit;
-				}
-				
 				if(!$profile->save())
 					throw new Exception("Error, while saving " . get_class($profile) . "	model:\n\n" . var_export($user->errors, true));
 			}

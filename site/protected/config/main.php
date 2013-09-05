@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL);
+
 $mysqlhost = (strpos($_SERVER['HTTP_HOST'],'.local') > 0) ?
 	'localhost' : 'simpleseoapi.db.10693638.hostedresource.com';
 
@@ -10,6 +10,8 @@ $mysqlhost = (strpos($_SERVER['HTTP_HOST'],'.local') > 0) ?
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
+		
+	'theme'=>'shadow_dancer',
 	'name'=>'My Web Application',
 
 	// preloading 'log' component
@@ -72,11 +74,28 @@ return array(
 				'tableProfileFields' => 'profiles_fields',
 		),
 		'rights'=>array(
-				'install'=>false,
-				'superuserName'=>'admin',
-				'userIdColumn'=>'id', // Name of the user id column in the database.
-				'userNameColumn'=>'username',
-				'defaultRole'=>'Basic'
+				
+			  
+			   'superuserName'=>'admin',
+			   'userIdColumn'=>'id', // Name of the user id column in the database.
+			   'userNameColumn'=>'username',
+ 			   'defaultRole'=>'Basic',
+               'superuserName'=>'Admin', // Name of the role with super user privileges. 
+               'authenticatedName'=>'Authenticated',  // Name of the authenticated user role. 
+               'userIdColumn'=>'id', // Name of the user id column in the database. 
+               'userNameColumn'=>'username',  // Name of the user name column in the database. 
+               'enableBizRule'=>true,  // Whether to enable authorization item business rules. 
+               'enableBizRuleData'=>true,   // Whether to enable data for business rules. 
+               'displayDescription'=>true,  // Whether to use item description instead of name. 
+               'flashSuccessKey'=>'RightsSuccess', // Key to use for setting success flash messages. 
+               'flashErrorKey'=>'RightsError', // Key to use for setting error flash messages. 
+ 
+               'baseUrl'=>'/rights', // Base URL for Rights. Change if module is nested. 
+               'layout'=>'rights.views.layouts.main',  // Layout to use for displaying Rights. 
+               'appLayout'=>'webroot.themes.shadow_dancer.views.layouts.main', // Application layout. 
+               'cssFile'=>'rights.css', // Style sheet file to use for Rights. 
+               'install'=>false,  // Whether to enable installer. 
+               'debug'=>false, 
 		),
 		
 	),
@@ -100,6 +119,7 @@ return array(
 		// uncomment the following to enable URLs in path-format
 		
 		'urlManager'=>array(
+			'showScriptName'=>false, //hide the index.php
 			'urlFormat'=>'path',
 			'rules'=>array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',

@@ -18,35 +18,6 @@ class SiteController extends Controller
 				'page'=>array(
 						'class'=>'CViewAction',
 				),
-
-				/*
-				'oauth' => array(
-						// the list of additional properties of this action is below
-						'class'=>'ext.hoauth.HOAuthAction',
-						// Yii alias for your user's model, or simply class name, when it already on yii's import path
-						// default value of this property is: User
-						'model' => 'User',
-						// map model attributes to attributes of user's social profile
-						// model attribute => profile attribute
-						// the list of avaible attributes is below
-						'attributes' => array(
-								'email' => 'email',
-								//'firstname' => 'firstName',
-								//'lastname' => 'lastName',
-								//'gender' => 'genderShort',
-								//'birthday' => 'birthDate',
-								// you can also specify additional values,
-								// that will be applied to your model (eg. account activation status)
-								'status' => 1,
-						),
-				),
-				// this is an admin action that will help you to configure HybridAuth
-				// (you must delete this action, when you'll be ready with configuration, or
-				// specify rules for admin role. User shouldn't have access to this action!)
-				'oauthadmin' => array(
-						'class'=>'ext.hoauth.HOAuthAdminAction',
-				),
-				*/
 		);
 	}
 
@@ -102,45 +73,20 @@ class SiteController extends Controller
 	}
 
 	/**
-	 * Displays the login page
+	 * Login is handled by User controller.
 	 */
 	public function actionLogin()
 	{
 		$this->redirect(Yii::app()->getModule('user')->loginUrl);
 		Yii::app()->end();
-		
-		/*
-		$model=new LoginForm;
-
-		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-
-		// collect user input data
-		if(isset($_POST['LoginForm']))
-		{
-			$model->attributes=$_POST['LoginForm'];
-			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
-		}
-		// display the login form
-		$this->render('login',array('model'=>$model));
-		*/
 	}
 
 	/**
-	 * Logs out the current user and redirect to homepage.
+	 * Logout is handled by User controller
 	 */
 	public function actionLogout()
 	{
 		$this->redirect(Yii::app()->getModule('user')->logoutUrl);
 		Yii::app()->end();
-		
-		//Yii::app()->user->logout();
-		//$this->redirect(Yii::app()->homeUrl);
 	}
 }

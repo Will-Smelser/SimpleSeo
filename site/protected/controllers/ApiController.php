@@ -1,5 +1,11 @@
 <?php
-error_reporting(E_ALL);
+
+/**
+ * Have to create a dummy identity class in order to
+ * login user
+ * @author Will
+ *
+ */
 class SwitchIdentity extends CBaseUserIdentity {
 	private $_id;
 	private $_name;
@@ -21,6 +27,12 @@ class SwitchIdentity extends CBaseUserIdentity {
 		return true;
 	}
 }
+
+/**
+ * The actual ApiController
+ * @author Will
+ *
+ */
 class ApiController extends RController
 {
 	private $apiController = null;

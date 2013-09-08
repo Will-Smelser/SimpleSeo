@@ -37,9 +37,7 @@ return array(
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
 			
-		'modules'=>array(
-				'api',
-		),
+		'reports'=>array(),
 			
 		'user'=>array(
 				
@@ -159,10 +157,10 @@ return array(
 					'levels'=>'error, warning',
 				),
 				// uncomment the following to show log messages on web pages
-				/*
+				
 				array(
 					'class'=>'CWebLogRoute',
-				),*/
+				),
 				
 			),
 		),

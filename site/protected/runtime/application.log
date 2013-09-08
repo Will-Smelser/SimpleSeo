@@ -2843,3 +2843,766 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/favicon.ico
 ---
+2013/09/08 15:11:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/08 15:11:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CViewAction.php:112
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CViewAction.php(123): CViewAction->resolveView('index')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CAction.php(76): CViewAction->run()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(286): CController->runAction(Object(CViewAction))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('page')
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/page/about')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/site/page/about
+---
+2013/09/08 15:12:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CViewAction.php:112
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CViewAction.php(123): CViewAction->resolveView('index')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CAction.php(76): CViewAction->run()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(286): CController->runAction(Object(CViewAction))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('page')
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/page/view=...')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php/site/page/view=about
+---
+2013/09/08 15:12:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CViewAction.php:112
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CViewAction.php(123): CViewAction->resolveView('index')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CAction.php(76): CViewAction->run()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(286): CController->runAction(Object(CViewAction))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('page')
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/page/viewa...')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php/site/page/viewabout
+---
+2013/09/08 15:30:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api-docs/images/favicon.ico".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api-docs/images...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/api-docs/images/favicon.ico
+---
+2013/09/08 15:44:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "reports".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('reports')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/reports
+---
+2013/09/08 15:44:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "reports".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('reports')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/reports/
+---
+2013/09/08 15:44:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "reports/index".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('reports/index')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/reports/index
+---
+2013/09/08 15:45:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "reports/default/index".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('reports/default...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/reports/default/index
+---
+2013/09/08 15:45:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "reports/default".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('reports/default')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/reports/default
+---
+2013/09/08 15:46:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "reports/default".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('reports/default')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/reports/default
+---
+2013/09/08 15:49:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "reports/default".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('reports/default')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/reports/default
+---
+2013/09/08 15:50:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "reports".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('reports')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/reports
+---
+2013/09/08 15:51:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "reports".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('reports')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/reports
+---
+2013/09/08 16:08:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/css/form.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/css/form.css
+HTTP_REFERER=http://simple-seo-api.local/reports
+---
+2013/09/08 16:08:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/css/main.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/css/main.css
+HTTP_REFERER=http://simple-seo-api.local/reports
+---
+2013/09/08 16:08:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/css/screen.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/css/screen.css
+HTTP_REFERER=http://simple-seo-api.local/reports
+---
+2013/09/08 16:08:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/css/buttons.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/css/buttons.css
+HTTP_REFERER=http://simple-seo-api.local/reports
+---
+2013/09/08 16:08:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/css/icons.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/css/icons.css
+HTTP_REFERER=http://simple-seo-api.local/reports
+---
+2013/09/08 16:08:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/css/tables.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/css/tables.css
+HTTP_REFERER=http://simple-seo-api.local/reports
+---
+2013/09/08 16:08:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/images/logo.png".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/images/logo.png
+HTTP_REFERER=http://simple-seo-api.local/reports
+---
+2013/09/08 16:08:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/css/print.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/css/print.css
+HTTP_REFERER=http://simple-seo-api.local/reports
+---
+2013/09/08 18:40:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/08 18:50:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api-docs/images/favicon.ico".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api-docs/images...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/api-docs/images/favicon.ico
+---
+2013/09/08 19:00:07 [error] [exception.CException] exception 'CException' with message 'Property "DefaultController.configFile" is not defined.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\reports\controllers\DefaultController.php(7): CComponent->__set('configFile', 'C:\xampp\htdocs...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(306): DefaultController->beforeAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('reports')
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/reports/
+---
+2013/09/08 19:00:40 [error] [exception.CException] exception 'CException' with message 'Property "DefaultController.configFile" is not defined.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\reports\controllers\DefaultController.php(7): CComponent->__set('configFile', 'C:\xampp\htdocs...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(306): DefaultController->beforeAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('reports')
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/reports/
+---
+2013/09/08 19:00:58 [error] [exception.CException] exception 'CException' with message 'Property "DefaultController.configFile" is not defined.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\reports\controllers\DefaultController.php(7): CComponent->__set('configFile', 'C:\xampp\htdocs...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(306): DefaultController->beforeAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('')
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('reports')
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/reports/
+---
+2013/09/08 19:05:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/api/js/SeoApi/SeoApi.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/api/js/SeoApi/SeoApi.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:05:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/reports/css/custom-theme/jquery-ui-1.10.3.custom.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/reports/css/custom-theme/jquery-ui-1.10.3.custom.css
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:05:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/reports/css/report_basic.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/reports/css/report_basic.css
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:05:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/reports/js/jquery-ui-1.10.3.custom.min.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/reports/js/jquery-ui-1.10.3.custom.min.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:05:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/reports/js/basic.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/reports/js/basic.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:05:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/reports/images/loading.gif".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/reports/images/loading.gif
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:05:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/reports/images/loading.gif".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/reports/images/loading.gif
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:06:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/api/js//SeoApi.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/api/js//SeoApi.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:06:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/reports/js/basic.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/reports/js/basic.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:06:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/reports/js/jquery-ui-1.10.3.custom.min.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/reports/js/jquery-ui-1.10.3.custom.min.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:06:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/reports/css/report_basic.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/reports/css/report_basic.css
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:07:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/reports/css/custom-theme/jquery-ui-1.10.3.custom.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/reports/css/custom-theme/jquery-ui-1.10.3.custom.css
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:07:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/reports/images/loading.gif".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/reports/images/loading.gif
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:07:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/reports/images/loading.gif".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/reports/images/loading.gif
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:07:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/reports/css/custom-theme/jquery-ui-1.10.3.custom.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/reports/css/custom-theme/jquery-ui-1.10.3.custom.css
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:07:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/reports/js/jquery-ui-1.10.3.custom.min.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/reports/js/jquery-ui-1.10.3.custom.min.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:07:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/api/js/SeoApi.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/api/js/SeoApi.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:07:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/reports/css/report_basic.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/reports/css/report_basic.css
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:07:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/reports/js/basic.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/reports/js/basic.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:07:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/reports/images/loading.gif".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/reports/images/loading.gif
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:08:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/api/js/SeoApi.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/api/js/SeoApi.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:08:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/api/js/SeoApi.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/api/js/SeoApi.js
+---
+2013/09/08 19:09:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/api/js/SeoApi.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/api/js/SeoApi.js
+---
+2013/09/08 19:09:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/js/SeoApi.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/js/SeoApi.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:10:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/js/api/SeoApi/head.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/js/api/SeoApi/head.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:10:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/js/api/SeoApi/google.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/js/api/SeoApi/google.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:10:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/js/api/SeoApi/body.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/js/api/SeoApi/body.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:10:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/js/api/SeoApi/base.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/js/api/SeoApi/base.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:10:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/js/api/SeoApi/server.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/js/api/SeoApi/server.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:10:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/js/api/SeoApi/render.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/js/api/SeoApi/render.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:10:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/js/api/SeoApi/moz.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/js/api/SeoApi/moz.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:10:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/js/api/SeoApi/social.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/js/api/SeoApi/social.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:10:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/js/api/SeoApi/semrush.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/js/api/SeoApi/semrush.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:14:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/js/api/NaN.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/js/api/NaN.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:19:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/js/api/NaN.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/js/api/NaN.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:23:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/js/api/NaN.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/js/api/NaN.js
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:27:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "reports/index.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('reports/index.p...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/reports/index.php?target=willsmelser.com
+HTTP_REFERER=http://simple-seo-api.local/reports/
+---
+2013/09/08 19:56:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/api/body/checkH1|checkH2|checkH3|checkH4|getKeyWords|getPhrases|checkLinkTags|checkInlineCSS|checkInlineStyle|getInternalAnchor|getExternalAnchors|checkForFrames|checkForIframes|checkForFlash|checkImages".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/api/body/checkH1%7CcheckH2%7CcheckH3%7CcheckH4%7CgetKeyWords%7CgetPhrases%7CcheckLinkTags%7CcheckInlineCSS%7CcheckInlineStyle%7CgetInternalAnchor%7CgetExternalAnchors%7CcheckForFrames%7CcheckForIframes%7CcheckForFlash%7CcheckImages?request=reports
+HTTP_REFERER=http://simple-seo-api.local/reports?target=willsmelser.com
+---
+2013/09/08 20:05:25 [error] [exception.ErrorException] exception 'ErrorException' with message 'CLASS: Body, LINE: 12, MSG: file_get_contents(): php_network_getaddresses: getaddrinfo failed: No such host is known. ' in C:\xampp\htdocs\simple-seo-api.com\site\protected\extensions\seo\controllers\Body.php:12
+Stack trace:
+#0 [internal function]: Controller->handleError(2, 'file_get_conten...', 'C:\xampp\htdocs...', 12, Array)
+#1 C:\xampp\htdocs\simple-seo-api.com\site\protected\extensions\seo\controllers\Body.php(12): file_get_contents('http://reports')
+#2 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(104): Body->Body('checkH1|checkH2...', Array)
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(306): ApiController->beforeAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('body')
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/body/checkH...')
+#13 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/api/body/checkH1%7CcheckH2%7CcheckH3%7CcheckH4%7CgetKeyWords%7CgetPhrases%7CcheckLinkTags%7CcheckInlineCSS%7CcheckInlineStyle%7CgetInternalAnchor%7CgetExternalAnchors%7CcheckForFrames%7CcheckForIframes%7CcheckForFlash%7CcheckImages?request=reports&key=0d49b3910216d445ab7ae098cbdc6adf
+HTTP_REFERER=http://simple-seo-api.local/reports?target=willsmelser.com
+---
+2013/09/08 20:05:49 [error] [exception.ErrorException] exception 'ErrorException' with message 'CLASS: Body, LINE: 12, MSG: file_get_contents(): php_network_getaddresses: getaddrinfo failed: No such host is known. ' in C:\xampp\htdocs\simple-seo-api.com\site\protected\extensions\seo\controllers\Body.php:12
+Stack trace:
+#0 [internal function]: Controller->handleError(2, 'file_get_conten...', 'C:\xampp\htdocs...', 12, Array)
+#1 C:\xampp\htdocs\simple-seo-api.com\site\protected\extensions\seo\controllers\Body.php(12): file_get_contents('http://reports')
+#2 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(104): Body->Body('checkH1|checkH2...', Array)
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(306): ApiController->beforeAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('body')
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/body/checkH...')
+#13 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/api/body/checkH1%7CcheckH2%7CcheckH3%7CcheckH4%7CgetKeyWords%7CgetPhrases%7CcheckLinkTags%7CcheckInlineCSS%7CcheckInlineStyle%7CgetInternalAnchor%7CgetExternalAnchors%7CcheckForFrames%7CcheckForIframes%7CcheckForFlash%7CcheckImages?request=reports&key=0d49b3910216d445ab7ae098cbdc6adf
+---
+2013/09/08 20:06:22 [error] [exception.ErrorException] exception 'ErrorException' with message 'CLASS: Body, LINE: 12, MSG: file_get_contents(): php_network_getaddresses: getaddrinfo failed: No such host is known. ' in C:\xampp\htdocs\simple-seo-api.com\site\protected\extensions\seo\controllers\Body.php:12
+Stack trace:
+#0 [internal function]: Controller->handleError(2, 'file_get_conten...', 'C:\xampp\htdocs...', 12, Array)
+#1 C:\xampp\htdocs\simple-seo-api.com\site\protected\extensions\seo\controllers\Body.php(12): file_get_contents('http://reports')
+#2 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(104): Body->Body('checkH1|checkH2...', Array)
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(306): ApiController->beforeAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('body')
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/body/checkH...')
+#13 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/api/body/checkH1%7CcheckH2%7CcheckH3%7CcheckH4%7CgetKeyWords%7CgetPhrases%7CcheckLinkTags%7CcheckInlineCSS%7CcheckInlineStyle%7CgetInternalAnchor%7CgetExternalAnchors%7CcheckForFrames%7CcheckForIframes%7CcheckForFlash%7CcheckImages?request=reports&key=0d49b3910216d445ab7ae098cbdc6adf
+HTTP_REFERER=http://simple-seo-api.local/reports?target=http%3A%2F%2Fwww.willsmelser.com
+---
+2013/09/08 20:06:57 [error] [exception.ErrorException] exception 'ErrorException' with message 'CLASS: Body, LINE: 12, MSG: file_get_contents(): php_network_getaddresses: getaddrinfo failed: No such host is known. ' in C:\xampp\htdocs\simple-seo-api.com\site\protected\extensions\seo\controllers\Body.php:12
+Stack trace:
+#0 [internal function]: Controller->handleError(2, 'file_get_conten...', 'C:\xampp\htdocs...', 12, Array)
+#1 C:\xampp\htdocs\simple-seo-api.com\site\protected\extensions\seo\controllers\Body.php(12): file_get_contents('http://reports')
+#2 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(104): Body->Body('checkH1|checkH2...', Array)
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(306): ApiController->beforeAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('body')
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/body/checkH...')
+#13 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/api/body/checkH1%7CcheckH2%7CcheckH3%7CcheckH4%7CgetKeyWords%7CgetPhrases%7CcheckLinkTags%7CcheckInlineCSS%7CcheckInlineStyle%7CgetInternalAnchor%7CgetExternalAnchors%7CcheckForFrames%7CcheckForIframes%7CcheckForFlash%7CcheckImages?request=reports&key=0d49b3910216d445ab7ae098cbdc6adf
+---
+2013/09/08 20:07:13 [error] [exception.ErrorException] exception 'ErrorException' with message 'CLASS: Body, LINE: 12, MSG: file_get_contents(): php_network_getaddresses: getaddrinfo failed: No such host is known. ' in C:\xampp\htdocs\simple-seo-api.com\site\protected\extensions\seo\controllers\Body.php:12
+Stack trace:
+#0 [internal function]: Controller->handleError(2, 'file_get_conten...', 'C:\xampp\htdocs...', 12, Array)
+#1 C:\xampp\htdocs\simple-seo-api.com\site\protected\extensions\seo\controllers\Body.php(12): file_get_contents('http://reports')
+#2 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(104): Body->Body('checkH1', Array)
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(306): ApiController->beforeAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('body')
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/body/checkH...')
+#13 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/api/body/checkH1?request=reports&key=0d49b3910216d445ab7ae098cbdc6adf
+---
+2013/09/08 20:08:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.w3schools.com%2Fimages%2Fshare_delicious.gif&arg1=00000000641738a30000000072a8575f&arg2=16&arg3=16
+---
+2013/09/08 20:08:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.w3schools.com%2Fimages%2Fshare_email.gif&arg1=00000000641738a20000000072a8575f&arg2=16&arg3=16
+---
+2013/09/08 20:08:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.w3schools.com%2Fimages%2Fshare_reddit.gif&arg1=00000000641738a40000000072a8575f&arg2=16&arg3=16
+---
+2013/09/08 20:08:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.w3schools.com%2Fimages%2Fshare_facebook.gif&arg1=00000000641738a00000000072a8575f&arg2=16&arg3=16
+---
+2013/09/08 20:08:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.w3schools.com%2Fimages%2Fshare_digg.gif&arg1=00000000641738a50000000072a8575f&arg2=16&arg3=16
+---
+2013/09/08 20:08:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.w3schools.com%2Fimages%2Fshare_twitter.gif&arg1=00000000641738a10000000072a8575f&arg2=16&arg3=16
+---
+2013/09/08 20:08:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.w3schools.com%2Fimages%2Fw3schoolslogoNEW310113.gif&arg1=000000006417385f0000000072a8575f&arg2=336&arg3=69
+---
+2013/09/08 20:08:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.w3schools.com%2Fimages%2Fshare_stumbleupon.gif&arg1=00000000641738a60000000072a8575f&arg2=16&arg3=16
+---

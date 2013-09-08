@@ -22,6 +22,7 @@ class RightsFilter extends CFilter
 		$allow = true;
 
 		$user = Yii::app()->getUser();
+		
 		$controller = $filterChain->controller;
 		$action = $filterChain->action;
 

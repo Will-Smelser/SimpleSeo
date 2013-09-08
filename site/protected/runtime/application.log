@@ -2455,3 +2455,391 @@ Stack trace:
 REQUEST_URI=/rights/authItem/rights.css
 HTTP_REFERER=http://simple-seo-api.local/rights/authItem/generate
 ---
+2013/09/07 18:24:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/07 20:17:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "head".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('head')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('head')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/head/getLan...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/api/head/getLang?request=http://www.w3schools.com/tags/ref_language_codes.asp
+---
+2013/09/07 20:26:14 [error] [exception.CException] exception 'CException' with message 'CInlineAction and its behaviors do not have a method or closure named "getParams".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(9): CComponent->__call('getParams', Array)
+#1 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(9): CInlineAction->getParams()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(306): ApiController->beforeAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('head')
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/head/getLan...')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/api/head/getLang?request=http://www.w3schools.com/tags/ref_language_codes.asp
+---
+2013/09/07 20:27:48 [error] [exception.CException] exception 'CException' with message 'CInlineAction and its behaviors do not have a method or closure named "getActionParams".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(9): CComponent->__call('getActionParams', Array)
+#1 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(9): CInlineAction->getActionParams()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(306): ApiController->beforeAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('head')
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/head/getLan...')
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/api/head/getLang?request=http://www.w3schools.com/tags/ref_language_codes.asp
+---
+2013/09/07 20:30:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "bhead".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('bhead')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('bhead')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/bhead/getLa...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/api/bhead/getLang?request=http://www.w3schools.com/tags/ref_language_codes.asp
+---
+2013/09/07 21:31:43 [error] [exception.CException] exception 'CException' with message 'CWebApplication and its behaviors do not have a method or closure named "setUser".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(16): CComponent->__call('setUser', Array)
+#1 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(16): CWebApplication->setUser(Object(User))
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(281): ApiController->init()
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/head/getLan...')
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/api/head/getLang?request=http://www.w3schools.com/tags/ref_language_codes.asp&key=0d49b3910216d445ab7ae098cbdc6adf
+---
+2013/09/07 21:31:47 [error] [exception.CException] exception 'CException' with message 'CWebApplication and its behaviors do not have a method or closure named "setUser".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(16): CComponent->__call('setUser', Array)
+#1 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(16): CWebApplication->setUser(Object(User))
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(281): ApiController->init()
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/head/getLan...')
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/api/head/getLang?request=http://www.w3schools.com/tags/ref_language_codes.asp&key=0d49b3910216d445ab7ae098cbdc6adf
+---
+2013/09/07 21:33:59 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.user" is read only.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:170
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(16): CComponent->__set('user', Object(User))
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(281): ApiController->init()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/head/getLan...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/api/head/getLang?request=http://www.w3schools.com/tags/ref_language_codes.asp&key=0d49b3910216d445ab7ae098cbdc6adf
+---
+2013/09/07 21:34:03 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.user" is read only.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:170
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(16): CComponent->__set('user', Object(User))
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(281): ApiController->init()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/head/getLan...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/api/head/getLang?request=http://www.w3schools.com/tags/ref_language_codes.asp&key=0d49b3910216d445ab7ae098cbdc6adf
+---
+2013/09/07 21:49:19 [error] [exception.CException] exception 'CException' with message 'User and its behaviors do not have a method or closure named "chanageIdentity".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('chanageIdentity', Array)
+#1 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(41): CActiveRecord->__call('chanageIdentity', Array)
+#2 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(41): User->chanageIdentity(Object(SwitchIdentity))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(281): ApiController->init()
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/head/getLan...')
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/api/head/getLang?request=http://www.w3schools.com/tags/ref_language_codes.asp&key=0d49b3910216d445ab7ae098cbdc6adf
+---
+2013/09/07 21:49:22 [error] [exception.CException] exception 'CException' with message 'User and its behaviors do not have a method or closure named "chanageIdentity".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('chanageIdentity', Array)
+#1 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(41): CActiveRecord->__call('chanageIdentity', Array)
+#2 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(41): User->chanageIdentity(Object(SwitchIdentity))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(281): ApiController->init()
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/head/getLan...')
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/api/head/getLang?request=http://www.w3schools.com/tags/ref_language_codes.asp&key=0d49b3910216d445ab7ae098cbdc6adf
+---
+2013/09/07 21:51:24 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php:62
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RightsFilter.php(57): RController->accessDenied()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(38): RightsFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php(36): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('head')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/head/getLan...')
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/api/head/getLang?request=http://www.w3schools.com/tags/ref_language_codes.asp&key=0d49b3910216d445ab7ae098cbdc6adf
+---
+2013/09/07 21:51:27 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php:62
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RightsFilter.php(57): RController->accessDenied()
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(38): RightsFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php(36): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('head')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/head/getLan...')
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/api/head/getLang?request=http://www.w3schools.com/tags/ref_language_codes.asp&key=0d49b3910216d445ab7ae098cbdc6adf
+---
+2013/09/07 21:52:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/07 21:52:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/authItem/permissions
+---
+2013/09/07 21:52:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/authItem/generate
+---
+2013/09/07 21:52:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/authItem/permissions
+---
+2013/09/07 21:56:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/07 21:56:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/authItem/permissions
+---
+2013/09/07 21:56:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/authItem/operations
+---
+2013/09/07 21:56:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights
+---
+2013/09/07 21:56:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rights.css".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('rights.css')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('rights.css')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/rights/authItem/rights.css
+HTTP_REFERER=http://simple-seo-api.local/rights/authItem/roles
+---
+2013/09/07 22:05:44 [error] [exception.CException] exception 'CException' with message 'RWebUser and its behaviors do not have a method or closure named "isGuest".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(45): CComponent->__call('isGuest', Array)
+#1 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(45): RWebUser->isGuest()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(306): ApiController->beforeAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php(36): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('head')
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/head/getLan...')
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/api/head/getLang?request=http://www.w3schools.com/tags/ref_language_codes.asp&key=0d49b3910216d445ab7ae098cbdc6adf
+---
+2013/09/07 22:05:51 [error] [exception.CException] exception 'CException' with message 'RWebUser and its behaviors do not have a method or closure named "isGuest".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(45): CComponent->__call('isGuest', Array)
+#1 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(45): RWebUser->isGuest()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(306): ApiController->beforeAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php(36): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('head')
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/head/getLan...')
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/api/head/getLang?request=http://www.w3schools.com/tags/ref_language_codes.asp&key=0d49b3910216d445ab7ae098cbdc6adf
+---
+2013/09/07 22:06:21 [error] [exception.CException] exception 'CException' with message 'RWebUser and its behaviors do not have a method or closure named "isGuest".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(45): CComponent->__call('isGuest', Array)
+#1 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(45): RWebUser->isGuest()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(306): ApiController->beforeAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php(36): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('head')
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/head/getLan...')
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/api/head/getLang?request=http://www.w3schools.com/tags/ref_language_codes.asp&key=0d49b3910216d445ab7ae098cbdc6adf
+---
+2013/09/07 22:06:23 [error] [exception.CException] exception 'CException' with message 'RWebUser and its behaviors do not have a method or closure named "isGuest".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(45): CComponent->__call('isGuest', Array)
+#1 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(45): RWebUser->isGuest()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(306): ApiController->beforeAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php(36): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('head')
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/head/getLan...')
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/api/head/getLang?request=http://www.w3schools.com/tags/ref_language_codes.asp&key=0d49b3910216d445ab7ae098cbdc6adf
+---
+2013/09/07 22:06:56 [error] [exception.CException] exception 'CException' with message 'RWebUser and its behaviors do not have a method or closure named "isGuest".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(45): CComponent->__call('isGuest', Array)
+#1 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(45): RWebUser->isGuest()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(306): ApiController->beforeAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php(36): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('head')
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/head/getLan...')
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/api/head/getLang?request=http://www.w3schools.com/tags/ref_language_codes.asp&key=0d49b3910216d445ab7ae098cbdc6adf
+---
+2013/09/07 22:07:39 [error] [exception.CException] exception 'CException' with message 'RWebUser and its behaviors do not have a method or closure named "isGuest".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(46): CComponent->__call('isGuest', Array)
+#1 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(46): RWebUser->isGuest()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(306): ApiController->beforeAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php(36): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('head')
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/head/getLan...')
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/api/head/getLang?request=http://www.w3schools.com/tags/ref_language_codes.asp&key=0d49b3910216d445ab7ae098cbdc6adf
+---
+2013/09/07 22:07:42 [error] [exception.CException] exception 'CException' with message 'RWebUser and its behaviors do not have a method or closure named "isGuest".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(46): CComponent->__call('isGuest', Array)
+#1 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\ApiController.php(46): RWebUser->isGuest()
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(306): ApiController->beforeAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\simple-seo-api.com\site\protected\modules\rights\components\RController.php(36): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('head')
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/head/getLan...')
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/api/head/getLang?request=http://www.w3schools.com/tags/ref_language_codes.asp&key=0d49b3910216d445ab7ae098cbdc6adf
+---
+2013/09/08 03:01:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---

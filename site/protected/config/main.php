@@ -32,9 +32,13 @@ return array(
 		
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'Enter Your Password Here',
+			'password'=>'Willis1480',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
+		),
+			
+		'modules'=>array(
+				'api',
 		),
 			
 		'user'=>array(
@@ -86,7 +90,7 @@ return array(
                'userNameColumn'=>'username',  // Name of the user name column in the database. 
                'enableBizRule'=>true,  // Whether to enable authorization item business rules. 
                'enableBizRuleData'=>true,   // Whether to enable data for business rules. 
-               'displayDescription'=>true,  // Whether to use item description instead of name. 
+               'displayDescription'=>false,  // Whether to use item description instead of name. 
                'flashSuccessKey'=>'RightsSuccess', // Key to use for setting success flash messages. 
                'flashErrorKey'=>'RightsError', // Key to use for setting error flash messages. 
  
@@ -155,10 +159,10 @@ return array(
 					'levels'=>'error, warning',
 				),
 				// uncomment the following to show log messages on web pages
-				
+				/*
 				array(
 					'class'=>'CWebLogRoute',
-				),
+				),*/
 				
 			),
 		),

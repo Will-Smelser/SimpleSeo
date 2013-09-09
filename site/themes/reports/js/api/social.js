@@ -1,15 +1,9 @@
 (function(ns){
-	var namespace = ns;
-	if(typeof ns === "undefined"){
-		namespace = document.getElementById('seo-api-init').getAttribute('name-space');
-	}
-	
-	if(typeof window[namespace] === "undefined") window[namespace] = {};
+	var namespace = $('script[data-seoapi-ns]').attr('data-seoapi-ns');
 	
 	window[namespace].social = {
 		//ensure render gets loaded
 		init:function(){
-			window[namespace].load('render');
 			this.render = window[namespace].render;
 		},
 		dependencies: ['render'],
@@ -78,4 +72,4 @@
 			console.log(data);
 		}*/
 	};
-})(/*namespace*/);
+})();

@@ -1,6 +1,9 @@
-SeoApi = function(namespace, jsLoc, apiKey){	
-	
-	return {
+SeoApi = function(jsLoc, apiKey){
+	//find itself and set the namespace attribute
+	var namespace = $('script[data-seoapi-ns]').attr('data-seoapi-ns');
+	window[namespace] = {};
+	window[namespace].api = {
+		noExtend:'base,render',
 		key:apiKey,
 		currentApiObject:null,
 			
@@ -19,22 +22,26 @@ SeoApi = function(namespace, jsLoc, apiKey){
 		 * @param callback A callback to be executed after load and merge
 		 */
 		load : function(api, apiObject, callback){
-			
+			var scope = this;
 			if(typeof apiObject == "undefined"){
 				apiObject = api;
 				api = null;
 			}
 			
+			//dont bother attempting to reload things, jquery takes care of this too
+			//but short circuit things that have already been loaded
+			console.log('load called',apiObject,namespace,window[namespace]);
+			if(typeof window[namespace][apiObject] !== "undefined") return;
+			
 			$.ajax({
-			  url: jsLoc /*+ namespace + '/'*/ + apiObject+'.js',
+			  url: jsLoc + apiObject+'.js',
 			  dataType: "script",
 			  cache: true,
 			  success: function(){
-				  
-				  //TODO fix this!
-				  //window[namespace].waitOn('base', function(){
-				  window[namespace].ready(function(){
-					  if(apiObject !== 'base')
+				  //use the ready function to execute script once the load is complete
+				  scope.ready(function(){
+					  //some object should not be extending base class
+					  if(scope.noExtend.indexOf(apiObject)<0)
 						  window[namespace][apiObject] = $.extend(true, {}, window[namespace].base, window[namespace][apiObject]);
 
 					  if(api !== null)
@@ -45,7 +52,7 @@ SeoApi = function(namespace, jsLoc, apiKey){
 					  
 					  if(typeof callback === "function") callback();
 					  
-				  });
+				  }());
 				  
 			  },
 			  failure: function(){
@@ -83,6 +90,7 @@ SeoApi = function(namespace, jsLoc, apiKey){
 		addMethod : function(method,target){
 			var apiObject = this.currentApiObject;
 			this.ready(function(){
+				console.log('Adding method',namespace,apiObject,method,target);
 				window[namespace][apiObject].addMethod(method,target);
 			});
 			
@@ -113,17 +121,30 @@ SeoApi = function(namespace, jsLoc, apiKey){
 			var scope = this;
 			var ready = true;
 			for(dep in this.dependencies){
-				if(typeof window[namespace][this.dependencies[dep]] === "undefined"){
-					
+				if(typeof window[namespace][scope.dependencies[dep]] === "undefined"
+					|| typeof window[namespace][scope.dependencies[dep]].isReady !== "function"
+				){
+					ready = false;
+					break;
+				}
+				
+				try{
+					if(window[namespace][scope.dependencies[dep]].isReady()) continue;
+				}catch(e){
+					//the object might have existed, but fully loaded
 					ready = false;
 					break;
 				}
 			}
 			
-			(!ready)? setTimeout(function(){scope.ready(callback);},50) : callback();
+			if(!ready)
+				setTimeout(function(){scope.ready(callback);},50);
+			else if(typeof callback === "function")
+				callback();
 			
-			return this;
+			return scope;
 		}
 			
 	};
+	return window[namespace].api;
 };

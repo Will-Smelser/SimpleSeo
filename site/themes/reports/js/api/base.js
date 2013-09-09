@@ -1,10 +1,5 @@
-(function(ns){
-	var namespace = ns;
-	if(typeof ns === "undefined"){
-		namespace = document.getElementById('seo-api-init').getAttribute('name-space');
-	}
-
-	if(typeof window[namespace] == "undefined") window[namespace] = {};
+(function(){
+	var namespace = $('script[data-seoapi-ns]').attr('data-seoapi-ns');
 	
 	window[namespace].base = {
 	
@@ -18,6 +13,10 @@
 	 * The api url where request should be made
 	 */
 	api : '',
+	
+	isReady : function(){
+		return true;
+	},
 	
 	/**
 	 * Once the data is load ensure body is loaded before calling callbacks
@@ -186,4 +185,4 @@
 				
 	}
 };
-})(/*namespace*/);
+})();

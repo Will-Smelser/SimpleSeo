@@ -1,10 +1,11 @@
-(function(ns){
-	var namespace = ns;
-	if(typeof ns === "undefined"){
-		namespace = document.getElementById('seo-api-init').getAttribute('name-space');
-	}
+(function(){
+	var namespace = $('script[data-seoapi-ns]').attr('data-seoapi-ns');
 	
 	window[namespace].render = {
+	
+	isReady : function(){
+		return true;
+	},	
 	newEl : function (elName){
 		return $(document.createElement(elName));
 	},

@@ -36,19 +36,19 @@ SeoApi2 = new SeoApi('SeoApi2','http://<?php echo SEO_HOST . '/' . SEO_URI_API_J
 SeoApi2.load('body').depends('render').addMethod('checkH1','#body-header-tags').exec(url);
 */
 var key = '0d49b3910216d445ab7ae098cbdc6adf';
-SeoApi = new SeoApi('SeoApi','http://<?php echo SEO_HOST . '/' . SEO_URI_API_JS; ?>',key);
+seo = new SeoApi('http://<?php echo SEO_HOST . '/' . SEO_URI_API_JS; ?>',key);
 
 //loads the 
-SeoApi.load(api,'base');
-SeoApi.load('render');
+seo.load(api,'base');
+seo.load('render');
 
 
-SeoApi.load('google').depends('render')
+seo.load('google').depends('render')
 	.addMethod('getPageRank','#google-pr')
 	.addMethod('getBacklinks','#google-backlinks')
 	.exec(url);
-	
-SeoApi.load('body').depends('render')
+
+seo.load('body').depends('render')
 	.addMethod('checkH1','#body-header-tags')
 	.addMethod('checkH2','#body-header-tags')
 	.addMethod('checkH3','#body-header-tags')
@@ -65,12 +65,12 @@ SeoApi.load('body').depends('render')
 	.addMethod('checkForFlash','#body-bad-stuff')
 	.addMethod('checkImages','#body-images')
 	.exec(url);
-	
-SeoApi.load('head').depends('render')
+
+seo.load('head').depends('render')
 	.addMethod('all',"#head-info")
 	.exec(url);
 
-SeoApi.load('server').depends('render')
+seo.load('server').depends('render')
 	.addMethod('getWhois','#server-whois')
 	.addMethod('getHeaderResponseLine','#server-general-info')
 	.addMethod('getLoadTime','#server-general-info')
@@ -81,17 +81,17 @@ SeoApi.load('server').depends('render')
 	.addMethod('getValidateW3Cwarnings','#w3c-warning')
 	.exec(url);
 
-SeoApi.load('moz').depends('render')
+seo.load('moz').depends('render')
 	.addMethod('getMozLinks','#moz-link')
 	.addMethod('getMozJustDiscovered','#moz-disc')
 	.exec(url);
 
-SeoApi.load('semrush').depends('render')
+seo.load('semrush').depends('render')
 	.addMethod('getDomainReport','#semrush-domain')
 	.addMethod('getKeyWordsReport','#semrush-keywords')
 	.exec(url);
 
-SeoApi.load('social').depends('render')
+seo.load('social').depends('render')
 	.addMethod('all','#social')
 	.exec(url);
 

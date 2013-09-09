@@ -1,14 +1,9 @@
-(function(ns){
-	var namespace = ns;
-	if(typeof ns === "undefined"){
-		namespace = document.getElementById('seo-api-init').getAttribute('name-space');
-	}
-	
-	if(typeof window[namespace] === "undefined") window[namespace] = {};
+(function(){
+	var namespace = $('script[data-seoapi-ns]').attr('data-seoapi-ns');
 	
 	window[namespace].google = {
 		//ensure render gets loaded
-		init:function(){window[namespace].load('render');},
+		init:function(){},
 		dependencies: ['render'],
 		apiController : 'google',
 		
@@ -40,4 +35,4 @@
 			console.log(data);
 		}*/
 	};
-})(/*namespace*/);
+})();

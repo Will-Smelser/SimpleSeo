@@ -1,18 +1,18 @@
-(function(ns){
-	var namespace = ns;
-	if(typeof ns === "undefined"){
-		namespace = document.getElementById('seo-api-init').getAttribute('name-space');
-	}
-	
-	if(typeof window[namespace] === "undefined") window[namespace] = {};
+(function(){
+	var namespace = $('script[data-seoapi-ns]').attr('data-seoapi-ns');
 	
 	window[namespace].body = {
 		apiController : 'body',
-		dependencies: ['render'],
+		dependencies: ['render','base'],
+		render : null,
 			
 		init:function(){
-			window[namespace].load('render');
+			//window[namespace].load('render');
 			this.render = window[namespace].render;
+		},
+		
+		isReady : function(){
+			return true;
 		},
 		
 		render_all : function(data, $target){
@@ -195,4 +195,4 @@
 			console.log(data);
 		}*/
 	};
-})(/*namespace*/);
+})();

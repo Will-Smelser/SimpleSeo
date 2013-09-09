@@ -1,18 +1,17 @@
-(function(ns){
-	var namespace = ns;
-	if(typeof ns === "undefined"){
-		namespace = document.getElementById('seo-api-init').getAttribute('name-space');
-	}
-	
-	if(typeof window[namespace] === "undefined") window[namespace] = {};
+(function(){
+	var namespace = $('script[data-seoapi-ns]').attr('data-seoapi-ns');
 	
 	window[namespace].head = {
 		apiController : 'head',
-		dependencies: ['render'],
+		dependencies: ['render','base'],
+		render : null,
 		
 		init:function(){
-			window[namespace].load('render');
 			this.render = window[namespace].render;
+		},
+		
+		isReady : function(){
+			return true;
 		},
 		
 		render_all : function(data,$target){
@@ -33,7 +32,6 @@
 		},
 		
 		render_getMetaDesc : function(data,$target){
-			console.log(data);
 			$target.append(
 				this.render.newLi('Meta Description',this.getText(data))
 			);
@@ -83,4 +81,4 @@
 			console.log(data);
 		}*/
 	};
-})(/*namespace*/);
+})();

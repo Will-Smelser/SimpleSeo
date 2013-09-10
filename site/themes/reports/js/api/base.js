@@ -18,6 +18,8 @@
 		return true;
 	},
 	
+	dependencies : [],
+	
 	/**
 	 * Once the data is load ensure body is loaded before calling callbacks
 	 */
@@ -106,7 +108,7 @@
 		  }
 		});
 	},
-	exec : function(url, callback, errCallback){
+	execute : function(url, callback, errCallback){
 		var scope = this;
 		this.url = url;
 		var req = this.buildRequest(url);

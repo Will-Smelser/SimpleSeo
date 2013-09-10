@@ -10,10 +10,6 @@
 			this.render = window[namespace].render;
 		},
 		
-		isReady : function(){
-			return true;
-		},
-		
 		render_all : function(data,$target){
 			this.render_getTitle(data.getTitle.data,$target);
 			this.render_getMetaDesc(data.getMetaDesc.data, $target);

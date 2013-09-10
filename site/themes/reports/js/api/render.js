@@ -2,6 +2,8 @@
 	var namespace = $('script[data-seoapi-ns]').attr('data-seoapi-ns');
 	
 	window[namespace].render = {
+			
+	dependencies : [],
 	
 	isReady : function(){
 		return true;

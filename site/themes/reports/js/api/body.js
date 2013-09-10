@@ -11,10 +11,6 @@
 			this.render = window[namespace].render;
 		},
 		
-		isReady : function(){
-			return true;
-		},
-		
 		render_all : function(data, $target){
 			var scope = this;
 			for(var x in scope){

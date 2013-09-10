@@ -36,65 +36,67 @@ SeoApi2 = new SeoApi('SeoApi2','http://<?php echo SEO_HOST . '/' . SEO_URI_API_J
 SeoApi2.load('body').depends('render').addMethod('checkH1','#body-header-tags').exec(url);
 */
 var key = '0d49b3910216d445ab7ae098cbdc6adf';
-seo = new SeoApi('http://<?php echo SEO_HOST . '/' . SEO_URI_API_JS; ?>',key);
+seo = new SeoApi('http://<?php echo SEO_HOST . '/' . SEO_URI_API_JS; ?>',api,key);
 
 //loads the 
-seo.load(api,'base');
+seo.load('base');
 seo.load('render');
 
-
+/*
 seo.load('google').depends('render')
-	.addMethod('getPageRank','#google-pr')
-	.addMethod('getBacklinks','#google-backlinks')
+	.addApiMethod('getPageRank','#google-pr')
+	.addApiMethod('getBacklinks','#google-backlinks')
 	.exec(url);
-
+*/
 seo.load('body').depends('render')
-	.addMethod('checkH1','#body-header-tags')
-	.addMethod('checkH2','#body-header-tags')
-	.addMethod('checkH3','#body-header-tags')
-	.addMethod('checkH4','#body-header-tags')
-	.addMethod('getKeyWords','#body-keywords')
-	.addMethod('getPhrases','#body-keywords2')
-	.addMethod('checkLinkTags','#body-inline-style')
-	.addMethod('checkInlineCSS','#body-inline-style')
-	.addMethod('checkInlineStyle','#body-inline-style')
-	.addMethod('getInternalAnchor','#body-anchors')
-	.addMethod('getExternalAnchors','#body-anchors')
-	.addMethod('checkForFrames','#body-bad-stuff')
-	.addMethod('checkForIframes','#body-bad-stuff')
-	.addMethod('checkForFlash','#body-bad-stuff')
-	.addMethod('checkImages','#body-images')
+	.addApiMethod('checkH1','#body-header-tags')
+	.addApiMethod('checkH2','#body-header-tags')
+	.addApiMethod('checkH3','#body-header-tags')
+	.addApiMethod('checkH4','#body-header-tags')
+	.addApiMethod('getKeyWords','#body-keywords')
+	.addApiMethod('getPhrases','#body-keywords2')
+	.addApiMethod('checkLinkTags','#body-inline-style')
+	.addApiMethod('checkInlineCSS','#body-inline-style')
+	.addApiMethod('checkInlineStyle','#body-inline-style')
+	.addApiMethod('getInternalAnchor','#body-anchors')
+	.addApiMethod('getExternalAnchors','#body-anchors')
+	.addApiMethod('checkForFrames','#body-bad-stuff')
+	.addApiMethod('checkForIframes','#body-bad-stuff')
+	.addApiMethod('checkForFlash','#body-bad-stuff')
+	.addApiMethod('checkImages','#body-images')
 	.exec(url);
 
-seo.load('head').depends('render')
-	.addMethod('all',"#head-info")
+/*
+seo.load('head')
+	.depends('render')
+	.addApiMethod('all',"#head-info")
 	.exec(url);
 
 seo.load('server').depends('render')
-	.addMethod('getWhois','#server-whois')
-	.addMethod('getHeaderResponseLine','#server-general-info')
-	.addMethod('getLoadTime','#server-general-info')
-	.addMethod('isGzip','#server-general-info')
-	.addMethod('getServer','#server-general-info')
-	.addMethod('validateW3C','#w3c-general')
-	.addMethod('getValidateW3Cerrors','#w3c-error')
-	.addMethod('getValidateW3Cwarnings','#w3c-warning')
+	.addApiMethod('getWhois','#server-whois')
+	.addApiMethod('getHeaderResponseLine','#server-general-info')
+	.addApiMethod('getLoadTime','#server-general-info')
+	.addApiMethod('isGzip','#server-general-info')
+	.addApiMethod('getServer','#server-general-info')
+	.addApiMethod('validateW3C','#w3c-general')
+	.addApiMethod('getValidateW3Cerrors','#w3c-error')
+	.addApiMethod('getValidateW3Cwarnings','#w3c-warning')
 	.exec(url);
 
 seo.load('moz').depends('render')
-	.addMethod('getMozLinks','#moz-link')
-	.addMethod('getMozJustDiscovered','#moz-disc')
+	.addApiMethod('getMozLinks','#moz-link')
+	.addApiMethod('getMozJustDiscovered','#moz-disc')
 	.exec(url);
 
 seo.load('semrush').depends('render')
-	.addMethod('getDomainReport','#semrush-domain')
-	.addMethod('getKeyWordsReport','#semrush-keywords')
+	.addApiMethod('getDomainReport','#semrush-domain')
+	.addApiMethod('getKeyWordsReport','#semrush-keywords')
 	.exec(url);
 
 seo.load('social').depends('render')
-	.addMethod('all','#social')
+	.addApiMethod('all','#social')
 	.exec(url);
-
+*/
 <?php } ?>
 	
 </script>

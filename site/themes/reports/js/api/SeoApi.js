@@ -9,6 +9,7 @@ SeoApi = function(jsLoc, apiLoc, apiKey){
 		noExtend:'base,render,',//trailing comma is a must
 		key:apiKey,
 		currentApiObject:null,
+		name:null,
 		methods:[],
 			
 		/**
@@ -23,44 +24,42 @@ SeoApi = function(jsLoc, apiLoc, apiKey){
 		 * to apiObject and api is set to null.
 		 * @param api  The url of seo api
 		 * @param apiObject The api controller to load
-		 * @param callback A callback to be executed after load and merge
 		 */
-		load : function(apiObject, callback, name){
+		load : function(apiObject, name, callback){
 			
 			if(typeof name === "undefined")
 				name = apiObject;
 			
 			var self = $.extend(true,{},this);
 			
-			if(self.noExtend.indexOf(self.currentApiObject+',')<0)
-				self.currentApiObject = name;
+			self.currentApiObject = apiObject;
+			self.name = name;
 			
 			//has to wait on itself to load
-			self.depends(apiObject);
+			self.depends(name);
 			
-			self._downloadSelf(name);
+			self._downloadSelf(apiObject,name);
 			
 			return self;
 		},
 		
-		_downloadSelf : function(name){
+		_downloadSelf : function(apiObject,name){
 			var scope = this;
 			$.ajax({
-				  url: jsLoc + scope.currentApiObject+'.js',
+				  url: jsLoc + apiObject+'.js',
 				  dataType: "script",
 				  cache: true,
 				  success: function(){
 					  //use the ready function to execute script once the load is complete
 					  scope.ready(function(){
 						  
+						  //someone just wants to extend base
+						  //if(apiObject === "base" && name === "base"){
+							//  window[namespace][name] = $.extend(true, {}, window[namespace].base)
+						  
 						  //some object should not be extending base class
-						  if(scope.noExtend.indexOf(scope.currentApiObject+',')<0){
-							  
+						  if(scope.noExtend.indexOf(apiObject+',')<0)  
 							  window[namespace][name] = $.extend(true, {}, window[namespace].base, window[namespace][scope.currentApiObject]);
-							  console.log('Extending ',name,scope,window[namespace][name]);
-						  }else{
-							  console.log('Not Extending', name);
-						  }
 							  
 						  //set the api url
 						  window[namespace][name].api = apiLoc;
@@ -70,7 +69,7 @@ SeoApi = function(jsLoc, apiLoc, apiKey){
 						  
 						  if(typeof callback === "function") callback();
 						  
-					  },scope.currentApiObject);
+					  },name);
 					  
 				  },
 				  failure: function(){
@@ -112,8 +111,8 @@ SeoApi = function(jsLoc, apiLoc, apiKey){
 			
 			this.ready(function(){
 				for(var x in scope.methods)
-					window[namespace][scope.currentApiObject].addMethod(scope.methods[x].m,scope.methods[x].t);
-				window[namespace][scope.currentApiObject].execute(url+'&key='+scope.key, callback, errCallback);
+					window[namespace][scope.name].addMethod(scope.methods[x].m,scope.methods[x].t);
+				window[namespace][scope.name].execute(url+'&key='+scope.key, callback, errCallback);
 			});
 			
 			return this;

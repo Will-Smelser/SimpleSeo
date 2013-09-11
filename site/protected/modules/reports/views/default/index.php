@@ -48,7 +48,7 @@ seo.load('google').depends('render')
 	.addApiMethod('getBacklinks','#google-backlinks')
 	.exec(url);
 */
-seo.load('body').depends('render')
+seo.load('body','test').depends('render')
 	.addApiMethod('checkH1','#body-header-tags')
 	.addApiMethod('checkH2','#body-header-tags')
 	.addApiMethod('checkH3','#body-header-tags')
@@ -66,11 +66,15 @@ seo.load('body').depends('render')
 	.addApiMethod('checkImages','#body-images')
 	.exec(url);
 
-/*
+
 seo.load('head')
 	.depends('render')
 	.addApiMethod('all',"#head-info")
 	.exec(url);
+
+seo.load('head','head2')
+	.addApiMethod('getTitle',function(result){console.log(result);}).
+	exec('http://www.willsmelser.com');
 
 seo.load('server').depends('render')
 	.addApiMethod('getWhois','#server-whois')
@@ -82,7 +86,7 @@ seo.load('server').depends('render')
 	.addApiMethod('getValidateW3Cerrors','#w3c-error')
 	.addApiMethod('getValidateW3Cwarnings','#w3c-warning')
 	.exec(url);
-
+/*
 seo.load('moz').depends('render')
 	.addApiMethod('getMozLinks','#moz-link')
 	.addApiMethod('getMozJustDiscovered','#moz-disc')

@@ -120,7 +120,8 @@ SeoApi = function(jsLoc, apiLoc, apiKey){
 		
 		dependencies : ['base'],
 		depends : function(apiObject){
-			this.dependencies.push(apiObject);
+			if(!$.inArray(apiObject, this.dependencies))
+				this.dependencies.push(apiObject);
 			return this;
 		},
 		

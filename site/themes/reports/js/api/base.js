@@ -136,7 +136,6 @@
 			
 			if(scope.waitOnLoad){
 				$(document).ready(function(){
-					console.log('document is loaded');
 					callback.call(scope, resp);
 				});
 			}else{

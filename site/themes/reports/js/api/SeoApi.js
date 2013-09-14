@@ -6,172 +6,136 @@ SeoApi = function(jsLoc, apiLoc, apiKey){
 	
 	window[namespace] = {};
 	window[namespace].api = {
-		noExtend:'base,render,',//trailing comma is a must
-		key:apiKey,
-		currentApiObject:null,
-		name:null,
-		methods:[],
-			
-		/**
-		 * Can be overwritten, called after
-		 * the object has finished loading
-		 */
-		init:function(){},
 		
-		/**
-		 * Takes 1 or 2 parameters
-		 * apiObject is null, then api variable is copied 
-		 * to apiObject and api is set to null.
-		 * @param api  The url of seo api
-		 * @param apiObject The api controller to load
-		 */
-		load : function(apiObject, name, callback){
-			
-			if(typeof name === "undefined")
-				name = apiObject;
+		key:apiKey,
+		
+		object:null,
+		name:null,
+		
+		
+		api:null,
+		
+		dependencies:[],
+		depends : function(apiObject){
+			if($.inArray(apiObject, this.dependencies) < 0)
+				this.dependencies.push(apiObject);
+			return this;
+		},
+		
+		methods : [],
+		addMethod : function(method,target){
+			console.log("Adding",method,target,this.methods);
+			//save method to local copy
+			this.methods.push({'m':method,'t':target});
+
+			return this;
+		},
+		
+		init : function(apiObject){
+			return this.load(apiObject,apiObject);
+		},
+		
+		extendBase : function(apiObject, name){
+			return this.load(apiObject,name,'base');
+		},
+		
+		load : function(apiObject, name, extend){
 			
 			var self = $.extend(true,{},this);
 			
-			self.currentApiObject = apiObject;
+			if(typeof name === "undefined")
+				name = Math.floor(Math.random() * 10000);
+			
+			self.object = apiObject;
 			self.name = name;
 			
-			//has to wait on itself to load
 			self.depends(name);
+			self.depends(extend);
+			self.depends(apiObject);
 			
-			self._downloadSelf(apiObject,name);
-			
-			return self;
-		},
-		
-		_downloadSelf : function(apiObject,name){
-			var scope = this;
 			$.ajax({
 				  url: jsLoc + apiObject+'.js',
 				  dataType: "script",
 				  cache: true,
 				  success: function(){
-					  //use the ready function to execute script once the load is complete
-					  scope.ready(function(){
-						  
-						  //someone just wants to extend base
-						  //if(apiObject === "base" && name === "base"){
-							//  window[namespace][name] = $.extend(true, {}, window[namespace].base)
-						  
-						  //some object should not be extending base class
-						  if(scope.noExtend.indexOf(apiObject+',')<0)  
-							  window[namespace][name] = $.extend(true, {}, window[namespace].base, window[namespace][scope.currentApiObject]);
-							  
-						  //set the api url
-						  window[namespace][name].api = apiLoc;
-						  
-						  if(typeof window[namespace][name].init === 'function')
-							  window[namespace][name].init();
-						  
-						  if(typeof callback === "function") callback();
-						  
-					  },name);
-					  
+					  self._loadSuccess(apiObject, name, extend);
 				  },
 				  failure: function(){
 					  console.log("Failed to load api object ("+name+")");
 					  window[namespace][name] = {};
 				  }
 			});
+			return self;
 		},
 		
-		/**
-		 * 
-		 * @param apiObject
-		 * @param targetObj Should be "base"
-		 * @param object
-		 */
-		extend : function(apiObject, targetObj, object){
-			var scope = this;
-			if(typeof window[namespace][targetObj] === "undefined"){
-				setTimeout(function(){scope.extend(apiObject, targetObj, object);},50);
-			}else{
-				if(typeof window[namespace][apiObject] === "undefined")
-					window[namespace][apiObject] = {};
-				
-				$.extend(true,window[namespace][apiObject],window[namespace][targetObj],object);				
-			}
-		},
-		
-		//calling exec without everything being loaded is a problem.
-		addApiMethod : function(method,target){
-			console.log("Adding",method,target,this.methods);
-			//save method to local copy
-			this.methods.push({'m':method,'t':target});
+		_extend : function(name, extend, obj){
 			
-			return this;
 		},
 		
-		exec : function(url, callback, errCallback){
-			var scope = this;
-			
-			this.ready(function(){
-				for(var x in scope.methods)
-					window[namespace][scope.name].addMethod(scope.methods[x].m,scope.methods[x].t);
-				window[namespace][scope.name].execute(url+'&key='+scope.key, callback, errCallback);
-			});
-			
-			return this;
+		_loadSuccess : function(apiObject, name, extend){
+			if(typeof extend === "undefined")
+				  window[namespace][name] = $.extend(true, {}, window[namespace][apiObject]);
+			  else
+				  self.ready(function(){
+					  window[namespace][name] = $.extend(true, {}, window[namespace][extend], window[namespace][apiObject]);
+				  }, name);
+			  
+			  //set the api url
+			  window[namespace][name].api = apiLoc;
 		},
 		
-		dependencies : ['base'],
-		depends : function(apiObject){
-			if(!$.inArray(apiObject, this.dependencies))
-				this.dependencies.push(apiObject);
-			return this;
-		},
-		
-		/**
-		 * Wait till all dependencies are ready
-		 * @param callback Callback to fire one all the dependencies are loaded
-		 * @param except A dependecy to skip, usually called by itself 
-		 * when waiting on its dependencies to load.
-		 * @returns self
-		 */
-		ready : function(callback, except){
-			var scope = this;
+		ready : function(func, ignore){
+			var self = this;
 			var ready = true;
 			
-			for(dep in scope.dependencies){
-				var temp = scope.dependencies[dep];
+			console.log("Checking if ready",this.dependencies);
+			
+			for(var x in self.dependencies){
+				var dep = self.dependencies[x];
 				
-				//skip this dependency
-				if(typeof except !== "undefined" && except === temp)
+				console.log("Checking",dep);
+				
+				if(typeof ignore !== "undefined" && dep === ignore){
+					console.log("Skiping",dep);
 					continue;
-				
-				if(typeof window[namespace][temp] === "undefined"
-					|| typeof window[namespace][temp].isReady !== "function"
-				){
-					console.log("Dependency not ready ",except, temp, window[namespace][temp]);
-					ready = false;
-					break;
 				}
 				
-				try{
-					if(window[namespace][temp].isReady()) continue;
-				}catch(e){
-					//the object might have existed, but fully loaded
+				if(typeof window[namespace][dep] === "undefined"){
 					ready = false;
+					console.log("Not ready",dep);
 					break;
 				}
 			}
 			
 			if(!ready)
-				setTimeout(function(){scope.ready(callback,except);},50);
-			else if(typeof callback === "function"){
-				console.log("READY ",scope.currentApiObject," all dependencies loaded ",scope.dependencies);
-				callback();
-			}else{
-				console.log("READY ",scope.currentApiObject," all dependencies loaded ",scope.dependencies);
-			}
+				setTimeout(function(){self.ready(func,ignore);},50);
+			else if(typeof func === "function")
+				func();
 			
-			return scope;
+			console.log("READY ",self.name,ignore);
+			
+			return self;
+			
+		},
+		
+		exec : function(url, callback, errCallback){
+			self = this;
+			this.ready(function(){
+				for(var x in self.methods)
+					window[namespace][self.name].addMethod(self.methods[x].m,self.methods[x].t);
+				
+				//call init function on the loaded object
+				if(typeof window[namespace][self.name].init === 'function')
+					  window[namespace][self.name].init();
+				
+				//make api call
+				window[namespace][self.name].execute(url+'&key='+self.key, callback, errCallback);
+				
+			});
+
+			return self;
 		}
-			
+		
 	};
 	return window[namespace].api;
 };

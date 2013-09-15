@@ -39,68 +39,63 @@ var key = '0d49b3910216d445ab7ae098cbdc6adf';
 seo = new SeoApi('http://<?php echo SEO_HOST . '/' . SEO_URI_API_JS; ?>',api,key);
 
 //loads the 
-seo.load('base');
-seo.load('render');
+seo.init('base');
+seo.init('render');
 
 /*
-seo.load('google').depends('render')
-	.addApiMethod('getPageRank','#google-pr')
-	.addApiMethod('getBacklinks','#google-backlinks')
+seo.load('google').extend('base')
+	.addMethod('getPageRank','#google-pr')
+	.addMethod('getBacklinks','#google-backlinks')
 	.exec(url);
 */
-seo.load('body','test').depends('render')
-	.addApiMethod('checkH1','#body-header-tags')
-	.addApiMethod('checkH2','#body-header-tags')
-	.addApiMethod('checkH3','#body-header-tags')
-	.addApiMethod('checkH4','#body-header-tags')
-	.addApiMethod('getKeyWords','#body-keywords')
-	.addApiMethod('getPhrases','#body-keywords2')
-	.addApiMethod('checkLinkTags','#body-inline-style')
-	.addApiMethod('checkInlineCSS','#body-inline-style')
-	.addApiMethod('checkInlineStyle','#body-inline-style')
-	.addApiMethod('getInternalAnchor','#body-anchors')
-	.addApiMethod('getExternalAnchors','#body-anchors')
-	.addApiMethod('checkForFrames','#body-bad-stuff')
-	.addApiMethod('checkForIframes','#body-bad-stuff')
-	.addApiMethod('checkForFlash','#body-bad-stuff')
-	.addApiMethod('checkImages','#body-images')
+seo.load('body').extend('base')
+	.addMethod('checkH1','#body-header-tags')
+	.addMethod('checkH2','#body-header-tags')
+	.addMethod('checkH3','#body-header-tags')
+	.addMethod('checkH4','#body-header-tags')
+	.addMethod('getKeyWords','#body-keywords')
+	.addMethod('getPhrases','#body-keywords2')
+	.addMethod('checkLinkTags','#body-inline-style')
+	.addMethod('checkInlineCSS','#body-inline-style')
+	.addMethod('checkInlineStyle','#body-inline-style')
+	.addMethod('getInternalAnchor','#body-anchors')
+	.addMethod('getExternalAnchors','#body-anchors')
+	.addMethod('checkForFrames','#body-bad-stuff')
+	.addMethod('checkForIframes','#body-bad-stuff')
+	.addMethod('checkForFlash','#body-bad-stuff')
+	.addMethod('checkImages','#body-images')
 	.exec(url);
 
 
-seo.load('head')
-	.depends('render')
-	.addApiMethod('all',"#head-info")
+seo.load('head').extend('base')
+	.addMethod('all',"#head-info")
 	.exec(url);
 
-seo.load('head','head2')
-	.addApiMethod('getTitle',function(result){console.log(result);}).
-	exec('http://www.willsmelser.com');
 
-seo.load('server').depends('render')
-	.addApiMethod('getWhois','#server-whois')
-	.addApiMethod('getHeaderResponseLine','#server-general-info')
-	.addApiMethod('getLoadTime','#server-general-info')
-	.addApiMethod('isGzip','#server-general-info')
-	.addApiMethod('getServer','#server-general-info')
-	.addApiMethod('validateW3C','#w3c-general')
-	.addApiMethod('getValidateW3Cerrors','#w3c-error')
-	.addApiMethod('getValidateW3Cwarnings','#w3c-warning')
-	.exec(url);
-/*
-seo.load('moz').depends('render')
-	.addApiMethod('getMozLinks','#moz-link')
-	.addApiMethod('getMozJustDiscovered','#moz-disc')
+seo.load('server').extend('base')
+	.addMethod('getWhois','#server-whois')
+	.addMethod('getHeaderResponseLine','#server-general-info')
+	.addMethod('getLoadTime','#server-general-info')
+	.addMethod('isGzip','#server-general-info')
+	.addMethod('getServer','#server-general-info')
+	.addMethod('validateW3C','#w3c-general')
+	.addMethod('getValidateW3Cerrors','#w3c-error')
+	.addMethod('getValidateW3Cwarnings','#w3c-warning')
 	.exec(url);
 
-seo.load('semrush').depends('render')
-	.addApiMethod('getDomainReport','#semrush-domain')
-	.addApiMethod('getKeyWordsReport','#semrush-keywords')
+seo.load('moz').extend('base')
+	.addMethod('getMozLinks','#moz-link')
+	.addMethod('getMozJustDiscovered','#moz-disc')
 	.exec(url);
 
-seo.load('social').depends('render')
-	.addApiMethod('all','#social')
+seo.load('semrush').extend('base').addMethod('getDomainReport','#semrush-domain')
+	.addMethod('getKeyWordsReport','#semrush-keywords')
 	.exec(url);
-*/
+
+seo.load('social').extend('base')
+	.addMethod('all','#social')
+	.exec(url);
+
 <?php } ?>
 	
 </script>

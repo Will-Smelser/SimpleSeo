@@ -1,32 +1,57 @@
 (function(){
 	var namespace = $('script[data-seoapi-ns]').attr('data-seoapi-ns');
 	
+	/**
+	 * This is the base class that handles making requests to the api.  Intended to be
+	 * a base class for specific api controller rendering objects.  See head.js for
+	 * an example of an object which is intended to extend this base class.
+	 * 
+	 * @namespace {Object} base
+	 * @memberof! window._SeoApi_
+	 */
 	window[namespace].base = {
 	
 	/**
 	 * Url that api requests are being made for.  The url
 	 * that report data is being generated for
+	 * 
+	 * @type {string}
+	 * @memberof! window._SeoApi_.base
 	 */
 	url : '',
 	
 	/**
-	 * The api url where request should be made
+	 * The api url where request should be made.
+	 * 
+	 * @type {string}
+	 * @memberof! window._SeoApi_.base
 	 */
 	api : '',
-	
-	isReady : function(){
-		return true;
-	},
+
 	
 	dependencies : [],
 	
 	/**
 	 * Once the data is load ensure body is loaded before calling callbacks
+	 * @type {boolean}
+	 * @memberof! window._SeoApi_.base
 	 */
 	waitOnLoad : true,
+	
+	/** 
+	 * The speciall "all" method was given.
+	 * @type {boolean}
+	 * @memberof! window._SeoApi_.base
+	 */
 	methodAll : false,
+	
+	/**
+	 * All methods, exluding "all", which requests will be made for.
+	 */
 	methods : [],
 	targetMap : {},
+	
+	
 	failObj : (function(){return $("<div class='seo-fail'><span>Failed</span><div class='reason'></div></div>");})(),
 	buildRequest : function(url){
 		this.checkApi();
@@ -41,9 +66,10 @@
 		return true;
 	},
 	/**
-	 * add a method for request
+	 * Add a method for request
 	 * @param method The API method to call
 	 * @param target Either dom object or function to callback
+	 * @memberof! window._SeoApi_.base
 	 */
 	addMethod : function(method, target){
 		this.methods.push(method);
@@ -108,6 +134,15 @@
 		  }
 		});
 	},
+	
+	/**
+	 * Make request to api for url for all methods given in the {@link addMethod} call(s).
+	 * @param {string} url The url to collect SEO data on.
+	 * @param {function} callback A callback function to run once request is complete.
+	 * @param {function} errCallback A callback function to run once request is complete 
+	 * and an error was detected
+	 * @memberof! window._SeoApi_.base
+	 */
 	execute : function(url, callback, errCallback){
 		var scope = this;
 		this.url = url;
@@ -159,7 +194,10 @@
 	 */
 	
 	/**
-	 * Which controller the API should use
+	 * Which controller the API should use.  This should be
+	 * overwritten by extending this object.
+	 * @type {string}
+	 * @memberof! window._SeoApi_.base
 	 */
 	apiController : 'controller',
 	
@@ -179,8 +217,9 @@
 	 * http://james.padolsey.com/javascript/prettyprint-for-javascript/.
 	 * 
 	 * This is more like a diagnostic.
-	 * @param data The api returned json objbect
-	 * @param $target The jquery target initially given to this api request.
+	 * @param {JSON} data The api returned json objbect
+	 * @param {Object} $target The jquery target initially given to this api request.
+	 * @memberof! window._SeoApi_.base
 	 */
 	render_apiMethod : function(data, $target){
 				

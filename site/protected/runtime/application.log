@@ -4936,3 +4936,909 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=00000000205e7d6d00000000696b02a0&arg2=1&arg3=1
 ---
+2013/09/11 01:07:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/js/api/test.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/js/api/test.js
+HTTP_REFERER=http://simple-seo-api.local/reports?target=www.inedo.com
+---
+2013/09/11 01:08:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=0000000035af0bc70000000020a749f6&arg2=1&arg3=1
+---
+2013/09/11 01:08:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=0000000035af0bc60000000020a749f6&arg2=1&arg3=1
+---
+2013/09/11 01:08:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=0000000035af0bd50000000020a749f6&arg2=61&arg3=169
+---
+2013/09/11 02:39:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/js/api/test.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/js/api/test.js
+HTTP_REFERER=http://simple-seo-api.local/reports?target=www.inedo.com
+---
+2013/09/11 02:41:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/js/api/null.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/js/api/null.js
+HTTP_REFERER=http://simple-seo-api.local/reports?target=www.inedo.com
+---
+2013/09/11 02:41:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/js/api/null.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/js/api/null.js
+HTTP_REFERER=http://simple-seo-api.local/reports?target=www.inedo.com
+---
+2013/09/11 02:41:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/js/api/null.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/js/api/null.js
+HTTP_REFERER=http://simple-seo-api.local/reports?target=www.inedo.com
+---
+2013/09/11 02:42:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/js/api/test.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/js/api/test.js
+HTTP_REFERER=http://simple-seo-api.local/reports?target=www.inedo.com
+---
+2013/09/11 02:42:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/js/api/null.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/js/api/null.js
+HTTP_REFERER=http://simple-seo-api.local/reports?target=www.inedo.com
+---
+2013/09/11 02:42:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/reports/js/api/null.js".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/reports/...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/reports/js/api/null.js
+HTTP_REFERER=http://simple-seo-api.local/reports?target=www.inedo.com
+---
+2013/09/11 23:22:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/11 23:23:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=00000000483472a00000000002e184c1&arg2=1&arg3=1
+---
+2013/09/11 23:23:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=00000000483472b30000000002e184c1&arg2=61&arg3=169
+---
+2013/09/11 23:23:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=00000000483472a10000000002e184c1&arg2=1&arg3=1
+---
+2013/09/11 23:24:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=0000000054f9f4f00000000052a8f165&arg2=61&arg3=169
+---
+2013/09/11 23:24:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=0000000054f9f4e50000000052a8f165&arg2=1&arg3=1
+---
+2013/09/11 23:24:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=0000000054f9f4e20000000052a8f165&arg2=1&arg3=1
+---
+2013/09/11 23:25:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=000000004ea22a1b000000001498d36d&arg2=61&arg3=169
+---
+2013/09/11 23:25:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=000000004ea22a08000000001498d36d&arg2=1&arg3=1
+---
+2013/09/11 23:25:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=000000004ea22a09000000001498d36d&arg2=1&arg3=1
+---
+2013/09/11 23:28:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=0000000039a0d17f0000000026687972&arg2=61&arg3=169
+---
+2013/09/11 23:28:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=0000000039a0d16d0000000026687972&arg2=1&arg3=1
+---
+2013/09/11 23:28:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=0000000039a0d16a0000000026687972&arg2=1&arg3=1
+---
+2013/09/11 23:29:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=000000005dbeed0c00000000393465a6&arg2=1&arg3=1
+---
+2013/09/11 23:29:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=000000005dbeed0b00000000393465a6&arg2=1&arg3=1
+---
+2013/09/11 23:29:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=000000005dbeed1900000000393465a6&arg2=61&arg3=169
+---
+2013/09/11 23:33:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=000000005930cb8c0000000031149636&arg2=1&arg3=1
+---
+2013/09/11 23:33:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=000000005930cb990000000031149636&arg2=61&arg3=169
+---
+2013/09/11 23:33:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=000000005930cb8b0000000031149636&arg2=1&arg3=1
+---
+2013/09/11 23:34:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=000000007277d2700000000023bab2eb&arg2=61&arg3=169
+---
+2013/09/11 23:34:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=000000007277d2620000000023bab2eb&arg2=1&arg3=1
+---
+2013/09/11 23:34:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=000000007277d2630000000023bab2eb&arg2=1&arg3=1
+---
+2013/09/11 23:39:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=0000000055a9f34100000000147a59e3&arg2=1&arg3=1
+---
+2013/09/11 23:39:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=0000000055a9f35300000000147a59e3&arg2=61&arg3=169
+---
+2013/09/11 23:39:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=0000000055a9f34000000000147a59e3&arg2=1&arg3=1
+---
+2013/09/11 23:40:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=0000000015879320000000005c512d74&arg2=61&arg3=169
+---
+2013/09/11 23:40:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=0000000015879332000000005c512d74&arg2=1&arg3=1
+---
+2013/09/11 23:40:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=0000000015879333000000005c512d74&arg2=1&arg3=1
+---
+2013/09/12 02:48:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=0000000070679c640000000044e2d501&arg2=1&arg3=1
+---
+2013/09/12 02:48:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=0000000070679c650000000044e2d501&arg2=1&arg3=1
+---
+2013/09/12 02:48:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=0000000070679c770000000044e2d501&arg2=61&arg3=169
+---
+2013/09/12 02:49:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "controller".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('controller')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('controller')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/controller')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/api/controller/?request=http://www.willsmelser.com&key=0d49b3910216d445ab7ae098cbdc6adf
+HTTP_REFERER=http://simple-seo-api.local/reports?target=www.inedo.com
+---
+2013/09/12 02:49:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=0000000024efad89000000007ae7ab89&arg2=61&arg3=169
+---
+2013/09/12 02:49:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=0000000024efad9a000000007ae7ab89&arg2=1&arg3=1
+---
+2013/09/12 02:49:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=0000000024efad9b000000007ae7ab89&arg2=1&arg3=1
+---
+2013/09/12 03:01:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=000000001bdcb1fb0000000036c5681c&arg2=1&arg3=1
+---
+2013/09/12 03:01:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=000000001bdcb1e90000000036c5681c&arg2=61&arg3=169
+---
+2013/09/12 03:01:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=000000001bdcb1fa0000000036c5681c&arg2=1&arg3=1
+---
+2013/09/12 03:02:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=0000000018f23ed4000000003bcb1207&arg2=61&arg3=169
+---
+2013/09/12 03:02:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=0000000018f23ec7000000003bcb1207&arg2=1&arg3=1
+---
+2013/09/12 03:02:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=0000000018f23ec6000000003bcb1207&arg2=1&arg3=1
+---
+2013/09/12 03:02:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=0000000037c831900000000035560340&arg2=1&arg3=1
+---
+2013/09/12 03:02:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=0000000037c831970000000035560340&arg2=1&arg3=1
+---
+2013/09/12 03:02:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=0000000037c831820000000035560340&arg2=61&arg3=169
+---
+2013/09/12 03:08:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=0000000013dbbad3000000005f4ea654&arg2=61&arg3=169
+---
+2013/09/12 03:08:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=0000000013dbbac1000000005f4ea654&arg2=1&arg3=1
+---
+2013/09/12 03:08:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=0000000013dbbac0000000005f4ea654&arg2=1&arg3=1
+---
+2013/09/13 00:34:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/13 00:54:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/13 00:57:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/13 00:57:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/13 02:00:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "head/getTitle".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('head/getTitle')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/head/getTitle?request=http://www.willsmelser.com&key=0d49b3910216d445ab7ae098cbdc6adf
+HTTP_REFERER=http://simple-seo-api.local/reports?target=inedo.com
+---
+2013/09/13 02:03:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "head/getTitle".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('head/getTitle')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/head/getTitle?request=http://www.willsmelser.com&key=0d49b3910216d445ab7ae098cbdc6adf
+HTTP_REFERER=http://simple-seo-api.local/reports?target=inedo.com
+---
+2013/09/13 02:17:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "head/getTitle".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('head/getTitle')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/head/getTitle?request=http://www.willsmelser.com&key=0d49b3910216d445ab7ae098cbdc6adf
+HTTP_REFERER=http://simple-seo-api.local/reports?target=inedo.com
+---
+2013/09/14 18:23:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/14 18:23:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "head/getTitle".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('head/getTitle')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/head/getTitle?request=http://www.willsmelser.com&key=0d49b3910216d445ab7ae098cbdc6adf
+HTTP_REFERER=http://simple-seo-api.local/reports?target=www.inedo.com
+---
+2013/09/14 18:25:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "head/getTitle".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('head/getTitle')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/head/getTitle?request=http://www.willsmelser.com&key=0d49b3910216d445ab7ae098cbdc6adf
+HTTP_REFERER=http://simple-seo-api.local/reports?target=www.inedo.com
+---
+2013/09/14 18:26:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/14 18:26:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "head/getTitle".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('head/getTitle')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/head/getTitle?request=http://www.willsmelser.com&key=0d49b3910216d445ab7ae098cbdc6adf
+HTTP_REFERER=http://simple-seo-api.local/reports?target=www.inedo.com
+---
+2013/09/14 20:16:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "head/all".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('head/all')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/head/all?request=www.inedo.com&key=0d49b3910216d445ab7ae098cbdc6adf
+HTTP_REFERER=http://simple-seo-api.local/reports?target=www.inedo.com
+---
+2013/09/14 20:17:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "head/all".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('head/all')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/head/all?request=www.inedo.com&key=0d49b3910216d445ab7ae098cbdc6adf
+---
+2013/09/14 20:55:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=000000007d518c1f00000000099fb9d2&arg2=61&arg3=169
+---
+2013/09/14 20:55:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=000000007d518c0d00000000099fb9d2&arg2=1&arg3=1
+---
+2013/09/14 20:55:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=000000007d518c0a00000000099fb9d2&arg2=1&arg3=1
+---
+2013/09/14 20:55:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=000000001f6541c10000000079df336b&arg2=61&arg3=169
+---
+2013/09/14 20:55:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=000000001f6541d30000000079df336b&arg2=1&arg3=1
+---
+2013/09/14 20:55:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=000000001f6541d40000000079df336b&arg2=1&arg3=1
+---
+2013/09/14 21:22:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=000000006f24fd88000000007dbe07ad&arg2=1&arg3=1
+---
+2013/09/14 21:22:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=000000006f24fd9a000000007dbe07ad&arg2=61&arg3=169
+---
+2013/09/14 21:22:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=000000006f24fd8f000000007dbe07ad&arg2=1&arg3=1
+---
+2013/09/14 21:23:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=0000000079fc9fa1000000002b888fa8&arg2=1&arg3=1
+---
+2013/09/14 21:23:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=0000000079fc9fa6000000002b888fa8&arg2=1&arg3=1
+---
+2013/09/14 21:23:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=0000000079fc9fb4000000002b888fa8&arg2=61&arg3=169
+---
+2013/09/14 21:24:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=00000000388055b9000000002e6c96e9&arg2=61&arg3=169
+---
+2013/09/14 21:24:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=00000000388055ab000000002e6c96e9&arg2=1&arg3=1
+---
+2013/09/14 21:24:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=00000000388055aa000000002e6c96e9&arg2=1&arg3=1
+---
+2013/09/14 21:43:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.inedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=000000002dd3fc6d000000001a99694d&arg2=61&arg3=169
+---
+2013/09/14 21:43:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=000000002dd3fc7f000000001a99694d&arg2=1&arg3=1
+---
+2013/09/14 21:43:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=000000002dd3fc78000000001a99694d&arg2=1&arg3=1
+---
+2013/09/15 05:31:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/15 05:33:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/15 05:39:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Finedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=000000004f895d1400000000786bcb45&arg2=61&arg3=169
+---
+2013/09/15 05:39:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=000000004f895d0600000000786bcb45&arg2=1&arg3=1
+---
+2013/09/15 05:39:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=000000004f895d0700000000786bcb45&arg2=1&arg3=1
+---
+2013/09/15 05:49:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=000000004b442c0c0000000071c5313b&arg2=1&arg3=1
+---
+2013/09/15 05:49:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=000000004b442c0b0000000071c5313b&arg2=1&arg3=1
+---
+2013/09/15 05:49:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Finedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=000000004b442c1e0000000071c5313b&arg2=61&arg3=169
+---
+2013/09/15 05:53:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=000000007186b7f00000000006f64644&arg2=1&arg3=1
+---
+2013/09/15 05:53:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Finedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=000000007186b7e20000000006f64644&arg2=61&arg3=169
+---
+2013/09/15 05:53:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=000000007186b7f70000000006f64644&arg2=1&arg3=1
+---
+2013/09/15 05:55:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=0000000015c690c4000000006dfbb9a6&arg2=1&arg3=1
+---
+2013/09/15 05:55:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Finedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=0000000015c690d6000000006dfbb9a6&arg2=61&arg3=169
+---
+2013/09/15 05:55:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=0000000015c690c3000000006dfbb9a6&arg2=1&arg3=1
+---
+2013/09/15 05:55:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/15 05:55:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Finedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=000000002297810a000000007202af27&arg2=61&arg3=169
+---
+2013/09/15 05:55:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=0000000022978118000000007202af27&arg2=1&arg3=1
+---
+2013/09/15 05:55:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=000000002297811f000000007202af27&arg2=1&arg3=1
+---
+2013/09/15 06:16:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fin.getclicky.com%2F247902ns.gif&arg1=000000002a895da10000000011f677c8&arg2=1&arg3=1
+---
+2013/09/15 06:16:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Finedo.com%2FResources%2FImages%2FLayout%2Flive-help-unavailable-vertical.png&arg1=000000002a895db30000000011f677c8&arg2=61&arg3=169
+---
+2013/09/15 06:16:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/shadow_dancer/class/helpers/ImageParserThread.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/shadow_d...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/themes/shadow_dancer/class/helpers/ImageParserThread.php?arg0=http%3A%2F%2Fwww.googleadservices.com%2Fpagead%2Fconversion%2F1003051128%2F%3Flabel%3DA-ltCIDU1AIQ-LCl3gM%26amp%3Bguid%3DON%26amp%3Bscript%3D0&arg1=000000002a895da60000000011f677c8&arg2=1&arg3=1
+---

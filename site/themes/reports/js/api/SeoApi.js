@@ -6,14 +6,23 @@ SeoApi = function(jsLoc, apiLoc, apiKey){
 	
 	window[namespace] = {};
 	window[namespace].api = {
+		/* User api key */
+		key:apiKey,	
 		
-		key:apiKey,
-		
+		/* The loaded apiObject */
 		object:null,
+		
+		/* name in namespace where this is globally stored */
 		name:null,
 		
-		
+		/* The api location to make requests to */
 		api:null,
+		
+		extended:[],
+		_addExtend : function(extend){
+			if($.inArray(extend, this.extended) < 0)
+				this.extended.push(extend);
+		},
 		
 		dependencies:[],
 		depends : function(apiObject){
@@ -31,26 +40,26 @@ SeoApi = function(jsLoc, apiLoc, apiKey){
 			return this;
 		},
 		
+		_createId : function(){
+			var name = Math.floor(Math.random() * 10000);
+			return (typeof window[namespace][name] === "undefined")?name:this._createId();
+		},
+		
 		init : function(apiObject){
 			return this.load(apiObject,apiObject);
 		},
 		
-		extendBase : function(apiObject, name){
-			return this.load(apiObject,name,'base');
-		},
-		
-		load : function(apiObject, name, extend){
+		load : function(apiObject, name){
 			
 			var self = $.extend(true,{},this);
 			
 			if(typeof name === "undefined")
-				name = Math.floor(Math.random() * 10000);
+				name = self._createId();
 			
 			self.object = apiObject;
 			self.name = name;
 			
 			self.depends(name);
-			self.depends(extend);
 			self.depends(apiObject);
 			
 			$.ajax({
@@ -58,30 +67,27 @@ SeoApi = function(jsLoc, apiLoc, apiKey){
 				  dataType: "script",
 				  cache: true,
 				  success: function(){
-					  self._loadSuccess(apiObject, name, extend);
+					  //copy the loaded api object into the namespace
+					  //if(name !== apiObject)
+					  window[namespace][name] = $.extend(true, {}, window[namespace][apiObject]);
+					  
+					  window[namespace][name].api = apiLoc;
 				  },
 				  failure: function(){
 					  console.log("Failed to load api object ("+name+")");
 					  window[namespace][name] = {};
 				  }
 			});
+			
 			return self;
 		},
 		
-		_extend : function(name, extend, obj){
-			
-		},
-		
-		_loadSuccess : function(apiObject, name, extend){
-			if(typeof extend === "undefined")
-				  window[namespace][name] = $.extend(true, {}, window[namespace][apiObject]);
-			  else
-				  self.ready(function(){
-					  window[namespace][name] = $.extend(true, {}, window[namespace][extend], window[namespace][apiObject]);
-				  }, name);
-			  
-			  //set the api url
-			  window[namespace][name].api = apiLoc;
+		extend : function(extend){
+			var self = this;
+			self.depends(extend);
+			self._addExtend(extend);
+						
+			return self;
 		},
 		
 		ready : function(func, ignore){
@@ -119,8 +125,14 @@ SeoApi = function(jsLoc, apiLoc, apiKey){
 		},
 		
 		exec : function(url, callback, errCallback){
-			self = this;
-			this.ready(function(){
+			console.log("CALLED EXEC ON", this);
+			var self = this;
+			self.ready(function(){
+				//make sure all extends happen
+				for(var x in self.extended)
+					window[namespace][self.name] = $.extend(true, {}, window[namespace][self.extended[x]], window[namespace][self.name]);
+				
+				//make sure we have added all methods for api request
 				for(var x in self.methods)
 					window[namespace][self.name].addMethod(self.methods[x].m,self.methods[x].t);
 				
@@ -129,6 +141,7 @@ SeoApi = function(jsLoc, apiLoc, apiKey){
 					  window[namespace][self.name].init();
 				
 				//make api call
+				console.log("CALLED EXECUTE ON",window[namespace][self.name],self.name);
 				window[namespace][self.name].execute(url+'&key='+self.key, callback, errCallback);
 				
 			});

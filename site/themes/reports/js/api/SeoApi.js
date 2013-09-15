@@ -68,8 +68,8 @@ SeoApi = function(jsLoc, apiLoc, apiKey){
 				  cache: true,
 				  success: function(){
 					  //copy the loaded api object into the namespace
-					  //if(name !== apiObject)
-					  window[namespace][name] = $.extend(true, {}, window[namespace][apiObject]);
+					  if(name !== apiObject)
+						  window[namespace][name] = $.extend(true, {}, window[namespace][apiObject]);
 					  
 					  window[namespace][name].api = apiLoc;
 				  },

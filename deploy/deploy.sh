@@ -66,6 +66,12 @@ git checkout tags/$tagname > /dev/null
 base="../"
 $(cd site/protected/extensions/seo/api && phpdoc.bat -d . -f ${base}/config.php,${base}/class/ServerInfo.php,${base}/api/header.php,${base}/class/Node.php,${base}/class/GoogleInfo.php,${base}/class/helpers/ApiResponse.php  -t ../../../../api-docs --template simpleseo)
 
+
+#
+# JSDOC
+#
+$(cd site && jsdoc themes/reports/js/api/SeoApi.js themes/reports/js/api/base.js -d ./api-docs-js)
+exit
 #
 # Delete Deploy Directory
 #

@@ -1,6 +1,6 @@
 <?php
 
-$mysqlhost = (strpos($_SERVER['HTTP_HOST'],'.local') > 0) ?
+$mysqlhost = (strpos(php_uname(),'WILL-THINK') > 0) ?
 	'localhost' : 'simpleseoapi.db.10693638.hostedresource.com';
 
 // uncomment the following to define a path alias
@@ -140,9 +140,10 @@ return array(
 			'connectionString' => "mysql:host=$mysqlhost;dbname=simpleseoapi",
 			'emulatePrepare' => true,
 			'username' => 'simpleseoapi',
-			'password' => 'Simple1480!',
+			'password' => 'x5J1480!',
 			'charset' => 'utf8',
 			'tablePrefix' => '',
+			'host'=>$mysqlhost
 		),
 		
 		'errorHandler'=>array(

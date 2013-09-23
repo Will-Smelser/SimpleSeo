@@ -13,7 +13,7 @@ read tagname
 gitrepo="https://github.com/Will-Smelser/SimpleSeo.git"
 ftpserver="mediocredeveloper.com"
 ftpuser="willsmelser"
-ftppass="Willis1480!"
+ftppass="x5J1480!"
 ftpdir="simple-seo-api"
 gitname="SimpleSeo"
 phpdeploy="deploy.php"

@@ -134,7 +134,7 @@ class User extends CActiveRecord
 	public function defaultScope()
     {
         return array(
-            'select' => 'id, username, email, createtime, lastvisit, superuser, status',
+            'select' => 'id, username, email, createtime, lastvisit, superuser, status, activkey',
         );
     }
 	

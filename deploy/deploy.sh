@@ -64,21 +64,21 @@ git checkout tags/$tagname > /dev/null
 # PHPDOC
 #
 base="../"
-$(cd site/protected/extensions/seo/api && phpdoc.bat -d . -f ${base}/config.php,${base}/class/ServerInfo.php,${base}/api/header.php,${base}/class/Node.php,${base}/class/GoogleInfo.php,${base}/class/helpers/ApiResponse.php  -t ../../../../api-docs --template simpleseo)
+$(cd site/protected/extensions/seo/api && phpdoc.bat -d . -f ${base}/config.php,${base}/class/ServerInfo.php,${base}/api/header.php,${base}/class/Node.php,${base}/class/GoogleInfo.php,${base}/class/helpers/ApiResponse.php,${base}/class/helpers/ClientHash.php  -t ../../../../api-docs --template simpleseo)
 
 
 #
 # JSDOC
 #
 $(cd site && jsdoc themes/reports/js/api/SeoApi.js themes/reports/js/api/base.js -d ./api-docs-js)
-exit
+
 #
 # Delete Deploy Directory
 #
 echo -e "Deleting deploy directory..."
 rm -Rf deploy
 
-echo -e "\nMake tarball of tagged branch..."
+echo -e "\nMake tarball of release..."
 echo "zip -r ${tarball} *"
 zip -r $tarball * > /dev/null
 
@@ -88,7 +88,7 @@ if [ ! -f $tarball ]; then
 	echo -e "\nFAIL: tar command failed.  Aborting..."
 	exit;
 else
-	echo "File looks good. Continue..."
+	echo "File looks good. Continuing..."
 fi
 
 #check the file has content

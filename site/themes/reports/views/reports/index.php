@@ -1,5 +1,5 @@
 <?php 
-
+exit;
 require_once '../config.php';
 
 if(isset($_GET['data'])){

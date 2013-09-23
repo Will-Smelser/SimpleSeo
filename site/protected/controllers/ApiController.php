@@ -45,8 +45,16 @@ class ApiController extends RController
 		require_once(Yii::getPathOfAlias('ext.seo').'/config.php');
 		
 		$user = null;
-		if(isset($_GET['key']))
-			$user = User::model()->findByAttributes(array('activkey' => $_GET['key']));
+		if(isset($_GET['token']))
+			//lookup the token
+			$token = Tokens::model()->findByAttributes(array('token'=>$_GET['token']));
+		
+			if(empty($token)) return;
+			
+			if($token::isExpired($token->expire)) return;
+		
+			if(isset($token->user_id))
+				$user = User::model()->findByAttributes(array('id' => $token->user_id));
 		
 		//no user
 		if(empty($user)) return;
@@ -114,6 +122,9 @@ class ApiController extends RController
 		//Yii::app()->end();
 	}
 	
+	/* All the "Controller" for the api */
+	
+	
 	public function actionBody(){}
 
 	public function actionGoogle(){}
@@ -127,4 +138,7 @@ class ApiController extends RController
 	public function actionServer(){}
 
 	public function actionSocial(){}
+	
+	
+	
 }

@@ -1,6 +1,5 @@
 <script>
 <?php 
-
 if(isset($_GET['data'])){
 	$vars = explode('/', $_GET['data']);
 	
@@ -28,15 +27,27 @@ var api = "<?php echo 'http://'.SEO_HOST.'/'.SEO_URI_API; ?>";
 window.SeoReport = "<?php echo Yii::app()->theme->baseUrl; ?>";
 
 /**
- * An example of how to use other namesapces to load content.  This allows for
+ * An example of how to use other namespaces to load content.  This allows for
  * multithreaded download of content.  Should be considered that each request
  * to the API requires the api to download the content again and reparse things.
  *//*
 SeoApi2 = new SeoApi('SeoApi2','http://<?php echo SEO_HOST . '/' . SEO_URI_API_JS; ?>');
 SeoApi2.load('body').depends('render').addMethod('checkH1','#body-header-tags').exec(url);
 */
-var key = '0d49b3910216d445ab7ae098cbdc6adf';
-seo = new SeoApi('http://<?php echo SEO_HOST . '/' . SEO_URI_API_JS; ?>',api,key);
+
+<?php
+//got to get a valid token
+require_once SEO_PATH_HELPERS . 'ClientHash.php';
+$token = "TOKEN_GET_FAILED";
+try{
+	$token = \api\clients\ClientHash::getToken('9a24eff8c15a6a141ece27eb6947da0f','admin');
+}catch(Exception $e){
+	//do nothing, just everything will fail.
+}
+
+?>
+var token = "<?php echo $token; ?>";
+seo = new SeoApi('http://<?php echo SEO_HOST . '/' . SEO_URI_API_JS; ?>',api,token);
 
 //loads the 
 seo.init('base');
@@ -99,29 +110,24 @@ seo.load('social').extend('base')
 <?php } ?>
 	
 </script>
-<script src="http://<?php echo SEO_HOST . '/' . SEO_URI_REPORTS; ?>js/basic.js"></script>
 
-<link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/Core/parser.css?family=5&doc=Sampler" />
-<link rel="stylesheet" type="text/css" href="http://<?php echo SEO_HOST . '/' . SEO_URI_REPORTS; ?>css/custom-theme/jquery-ui-1.10.3.custom.css" />
-<link rel="stylesheet" type="text/css" href="http://<?php echo SEO_HOST . '/' . SEO_URI_REPORTS; ?>css/report_basic.css" />
 
-<script src="http://<?php echo SEO_HOST . '/' . SEO_URI_REPORTS; ?>js/jquery-ui-1.10.3.custom.min.js"></script>
-
-</head>
-
-<body>
-<div id="all-content">
 <h1>SEO Report <span class="by-author">by Will Smelser</span></h1>
 <form id="form-run-report" method="GET" action="/reports">
 	<label for="url">URL <input name="target" type="text" id="url" /></label>
 	<input id="run-report" type="submit" value="Run Report" />
 </form>
 
+<div id="all-content">
+
+<script src="http://<?php echo SEO_HOST . '/' . SEO_URI_REPORTS; ?>js/basic.js"></script>
+
+
 <?php if(isset($_GET['target'])){ ?>
 
 <div style="float:right" id="save-edit-wrap">
-	<button id="save" >Save</button>
-	<button id="edit" >Edit</button>
+	<input id="save" type="button" value="Save" />
+	<input id="edit" type="button" value="Edit" />
 </div>
 
 <h2 id="report-title">Report - <?php echo $_GET['target']; ?></h2>
@@ -133,83 +139,83 @@ seo.load('social').extend('base')
 			getHeaderResponseLine, getHeaderField, getServer, getServer, isGzip, getLoadTime, getWhois
 	-->
 	<h4>General Info</h4>
-	<p id="server-general-info" class="loading-text"><?php printLoading(); ?></p>
+	<div id="server-general-info" class="loading-text"><?php printLoading(); ?></div>
 	
 	<h4>Domain Information</h4>
-	<p id="server-whois" class="loading-text"><?php printLoading(); ?></p>
+	<div id="server-whois" class="loading-text"><?php printLoading(); ?></div>
 	
 <!-- api/head -->
 <h3>HTML Head Information <a class='addComment'>add comment</a></h3>
 	
-<p id="head-info" class="loading-text"><?php printLoading(); ?></p>
+<div id="head-info" class="loading-text"><?php printLoading(); ?></div>
 
 <!-- api/body -->
 <h3>HTML Body Information <a class='addComment'>add comment</a></h3>
 	
 	<!-- checkH1, checkH2, checkH3, checkH4 -->
 	<h4>Header Tags</h4>
-	<p id="body-header-tags" class="loading-text"><?php printLoading(); ?></p>
+	<div id="body-header-tags" class="loading-text"><?php printLoading(); ?></div>
 	
 	<h4>Keywords</h4>
-	<p id="body-keywords" class="loading-text"><?php printLoading(); ?></p>
+	<div id="body-keywords" class="loading-text"><?php printLoading(); ?></div>
 	
 	<h4>Inline Styles</h4>
-	<p id="body-inline-style" class="loading-text"><?php printLoading(); ?></p>
+	<div id="body-inline-style" class="loading-text"><?php printLoading(); ?></div>
 	
 	<h4>Link Data</h4>
-	<p id="body-anchors" class="loading-text"><?php printLoading(); ?></p>
+	<div id="body-anchors" class="loading-text"><?php printLoading(); ?></div>
 	
 	<h4>Frames / Object Tags</h4>
-	<p id="body-bad-stuff" class="loading-text"><?php printLoading(); ?></p>
+	<div id="body-bad-stuff" class="loading-text"><?php printLoading(); ?></div>
 	
 	<h4>Image Analysis</h4>
-	<p id="body-images" class="loading-text"><?php printLoading(); ?></p>
+	<div id="body-images" class="loading-text"><?php printLoading(); ?></div>
 
 <h3>W3C Validation <a class='addComment'>add comment</a></h3>
 
 	<!-- /api/server/validateW3C -->
 	<h4>General</h4>
-	<p id="w3c-general" class="loading-text"><?php printLoading(); ?></p>
+	<div id="w3c-general" class="loading-text"><?php printLoading(); ?></div>
 	
 	<!-- api/server/getValidateW3Cerrors -->
 	<h4>Errors</h4>
-	<p id="w3c-error" class="loading-text"><?php printLoading(); ?></p>
+	<div id="w3c-error" class="loading-text"><?php printLoading(); ?></div>
 
 	<!-- /api/server/getValidateW3Cwarnings -->
 	<h4>Warnings</h4>
-	<p id="w3c-warning" class="loading-text"><?php printLoading(); ?></p>
+	<div id="w3c-warning" class="loading-text"><?php printLoading(); ?></div>
 	
 <h3>Social Stats <a class='addComment'>add comment</a></h3>
 	
-	<p id="social" class="loading-text"><?php printLoading(); ?></p>
+	<div id="social" class="loading-text"><?php printLoading(); ?></div>
 	
 <h3>Google Stats <a class='addComment'>add comment</a></h3>
 	
 	<h4>Page Rank: <b id="google-pr" class="loading-text"><?php printLoading(); ?></b></h4>
 
 	<h4>Back Links</h4>
-	<p id="google-backlinks" class="loading-text"><?php printLoading(); ?></p>
+	<div id="google-backlinks" class="loading-text"><?php printLoading(); ?></div>
 	
 <h3>SEO Moz Stats <a class='addComment'>add comment</a></h3>
 	
 	<h4>Moz General Information</h4>
-	<p id="moz-link" class="loading-text"><?php printLoading(); ?></p>
+	<div id="moz-link" class="loading-text"><?php printLoading(); ?></div>
 	
 	<h4>Moz Just Discovered Backlinks</h4>
-	<p id="moz-disc" class="loading-text"><?php printLoading(); ?></p>
+	<div id="moz-disc" class="loading-text"><?php printLoading(); ?></div>
 	
 	
 <h3>SEMrush Stats <a class='addComment'>add comment</a></h3>
 	
 	<h4>Domain Data</h4>
-	<p id="semrush-domain" class="loading-text"><?php printLoading(); ?></p>
+	<div id="semrush-domain" class="loading-text"><?php printLoading(); ?></div>
 	
 	<h4>Domain Keyword Data</h4>
-	<p id="semrush-keywords" class="loading-text"><?php printLoading(); ?></p>
+	<div id="semrush-keywords" class="loading-text"><?php printLoading(); ?></div>
 
 <h3>Keywords (Extended) <a class='addComment'>add comment</a></h3>
 	<h4>Contains phrases using listed key words</h4>
-	<p id="body-keywords2" class="loading-text"><?php printLoading(); ?></p>
+	<div id="body-keywords2" class="loading-text"><?php printLoading(); ?></div>
 
 
 <div id="popup" title="Information">
@@ -218,11 +224,13 @@ seo.load('social').extend('base')
 
 <?php 
 //get the filename, we want this to save as
-$filename = str_replace('/','-',preg_replace('@https?://@i','',$_GET['url'])) . '.html';
+$filename = str_replace('/','-',preg_replace('@https?://@i','',$_GET['target'])) . '.html';
 ?>
-<form id="save-form" action="http://<?php echo SEO_HOST . '/' . SEO_URI_REPORTS; ?>dosave/<?php echo $filename; ?>" method="POST" target="_blank" style="display:none">
+<form id="save-form" action="http://<?php echo SEO_HOST; ?>/reports/save/<?php echo $filename; ?>" method="POST" target="_blank" style="display:none">
 	<textarea name="data" id="save-form-data"></textarea>
 </form>
+
+<script src="http://<?php echo SEO_HOST . '/' . SEO_URI_REPORTS; ?>js/jquery-ui-1.10.3.custom.min.js"></script>
 
 </div>
 

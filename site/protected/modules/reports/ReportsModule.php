@@ -14,9 +14,6 @@ class ReportsModule extends CWebModule
 			'reports.components.*',
 		));
 		
-		Yii::app()->theme = 'reports';
-		
-		require_once(Yii::getPathOfAlias('ext.seo').'/config.php');
 	}
 
 	public function beforeControllerAction($controller, $action)
@@ -30,4 +27,6 @@ class ReportsModule extends CWebModule
 		else
 			return false;
 	}
+	
+
 }

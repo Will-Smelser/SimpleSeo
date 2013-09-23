@@ -27,12 +27,13 @@
  * @constructor
  * @param {string} jsLoc The base directory location to dynamically load scripts from.
  * @param {string} apiLoc The base URL for making api requests
- * @param {string} apiKey The api key needed to make requests.
+ * @param {string} apiToken The api token required to make requests.  These
+ * are tokens from /tokens/getToken uri.
  * 
  * @return {Object} Return a reference to the window._SeoApi_.api object.
  * 
  */
-SeoApi = function(jsLoc, apiLoc, apiKey){
+SeoApi = function(jsLoc, apiLoc, apiToken){
 	//find itself and set the namespace attribute
 	var namespace = $('script[data-seoapi-ns]').attr('data-seoapi-ns');
 	if(namespace == null)
@@ -60,10 +61,10 @@ SeoApi = function(jsLoc, apiLoc, apiKey){
 	window[namespace].api = {
 			
 		/**
-		 * Store the api key required for each request
+		 * Store the api token required for each request
 		 * @type {string}
 		 */
-		key:apiKey,	
+		token:apiToken,	
 		
 		/**
 		 * Store the name of object to be loaded
@@ -320,7 +321,7 @@ SeoApi = function(jsLoc, apiLoc, apiKey){
 				
 				//make api call
 				console.log("CALLED EXECUTE ON",window[namespace][self.name],self.name);
-				window[namespace][self.name].execute(url+'&key='+self.key, callback, errCallback);
+				window[namespace][self.name].execute(url+'&token='+self.token, callback, errCallback);
 				
 			});
 

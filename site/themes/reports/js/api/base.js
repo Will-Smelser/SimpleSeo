@@ -56,7 +56,7 @@
 	buildRequest : function(url){
 		this.checkApi();
 		var method = (this.methodAll) ? 'all' : this.methods.join('|');
-		return this.api+this.apiController+'/'+method+'?request='+url;
+		return this.api+this.apiController+'/'+method+'?request='+url+'&type=jsonp';
 	},
 	checkApi : function(){
 		if(this.api == ''){
@@ -155,37 +155,39 @@
 		if(typeof errCallback != "function")
 			errCallback = this.handleError;
 		
-		//get data
-		$.getJSON(req,function(data){
-			
-			//we dont get nested responses when
-			//only a single method is requested,
-			//this will give us same response regardless
-			var resp = {};
-			if(scope.methods.length === 1){
-				resp[scope.methods[0]] = {
-						data : data.data
-				};
-			}else
-				resp = data.data;
-			
-			if(scope.waitOnLoad){
-				$(document).ready(function(){
-					callback.call(scope, resp);
-				});
-			}else{
-				callback.call(scope, resp);
-			}
-		})
-		.fail(function(){
-			if(scope.waitOnLoad){
-				$(document).ready(function(){
-					errCallback.call(scope);
-				});
-			}else{
-				errCallback.call(scope);
-			}
+		//get the data, crossdomain using jsonp
+		$.ajax({
+			'url':req,
+			'dataType':'jsonp',
+			'success':function(data){
+				//we dont get nested responses when
+				//only a single method is requested,
+				//this will give us same response regardless
+				var resp = {};
+				if(scope.methods.length === 1){
+					resp[scope.methods[0]] = {
+							data : data.data
+					};
+				}else
+					resp = data.data;
 				
+				if(scope.waitOnLoad){
+					$(document).ready(function(){
+						callback.call(scope, resp);
+					});
+				}else{
+					callback.call(scope, resp);
+				}
+			},
+			'error':function(){
+				if(scope.waitOnLoad){
+					$(document).ready(function(){
+						errCallback.call(scope);
+					});
+				}else{
+					errCallback.call(scope);
+				}
+			}
 		});
 	},
 	

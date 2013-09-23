@@ -87,9 +87,26 @@ class ApiResponse{
 	}
 }
 
+/**
+ * Response wrapper for json requests.
+ * @author Will
+ *
+ */
 class ApiResponseJSON extends ApiResponse{
 	function doPrint(){
 		return $this->jsonpp(json_encode($this->toArray()));
+	}
+}
+
+/**
+ * Response wrapper for JSONP requests.
+ * @author Will
+ *
+ */
+class ApiResponseJSONP extends ApiResponse{
+	function doPrint(){
+		$json = $this->jsonpp(json_encode($this->toArray()));
+		echo $_GET['callback'].'('.$json.');';
 	}
 }
 

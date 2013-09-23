@@ -92,12 +92,21 @@ class Controller{
 		return $obj->$method($args);
 	}
 	
-	public function exec(&$obj, $method, $args=null){
+	public function exec(&$obj, $method, $type='json', $args=null){
 		global $FATAL_ERROR;
 		
 		$result = null;
-		$api = new \api\responses\ApiResponseJSON();
 		
+		$api = null;
+		switch($type){
+			case 'jsonp':
+				$api = new \api\responses\ApiResponseJSONP();
+				break;
+			case 'json':
+			default:
+				$api = new \api\responses\ApiResponseJSON();
+				break;
+		}
 		try{
 			
 			$result = $this->execWrapper($obj, $method, $args);

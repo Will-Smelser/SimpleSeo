@@ -58,4 +58,12 @@ $this->breadcrumbs=array(
     ?>
 </td>
 </tr>
+<tr>
+	<th class="label"><?php echo CHtml::encode($model->getAttributeLabel('Api Key')); ?>
+</th>
+    <td><?php echo $model->activkey;
+    ?>
+</td>
+</tr>
+
 </table>

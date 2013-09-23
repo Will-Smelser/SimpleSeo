@@ -54,7 +54,7 @@ $(document).ready(function(){
 	$('#save').button({icons:{primary:"ui-icon-disk"}}).click(function(evt){
 		editOff();
 		
-		var content = '<!DOCTYPE html><html><head>' + $('head').html() + '</head><body><div id="all-content">' + $('#all-content').html() + '</div></body></html>';
+		var content = '<!DOCTYPE html><html><head>' + $('head').html() + '</head><body><h1>SEO Report <span class="by-author">by simple-seo-api.com</span></h1><div id="all-content">' + $('#all-content').html() + '</div></body></html>';
 		$('#save-form textarea:first').val(content).parent().submit();
 		
 	});

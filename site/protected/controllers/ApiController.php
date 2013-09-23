@@ -109,7 +109,9 @@ class ApiController extends RController
 		require_once SEO_PATH_CONTROLLERS . $_CONTROLLER . '.php';
 		
 		//controller will handle actual work and call method
-		$this->apiController = new $_CONTROLLER($_METHOD, $_VARS);
+		$type = (isset($_GET['type'])) ? $_GET['type'] : 'json';
+		
+		$this->apiController = new $_CONTROLLER($_METHOD, $type, $_VARS);
 		
 		return true;
 	}

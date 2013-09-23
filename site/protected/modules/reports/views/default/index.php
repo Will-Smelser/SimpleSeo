@@ -23,6 +23,7 @@ function printLoading(){
  */
 var url = "<?php echo isset($_GET['target']) ? urlencode($_GET['target']):''; ?>";
 var api = "<?php echo 'http://'.SEO_HOST.'/'.SEO_URI_API; ?>";
+//var api = "<?php echo 'http://localhost/simple-seo-api.com/site/'.SEO_URI_API; ?>";
 
 window.SeoReport = "<?php echo Yii::app()->theme->baseUrl; ?>";
 
@@ -53,12 +54,12 @@ seo = new SeoApi('http://<?php echo SEO_HOST . '/' . SEO_URI_API_JS; ?>',api,tok
 seo.init('base');
 seo.init('render');
 
-/*
+
 seo.load('google').extend('base')
 	.addMethod('getPageRank','#google-pr')
 	.addMethod('getBacklinks','#google-backlinks')
 	.exec(url);
-*/
+
 seo.load('body').extend('base')
 	.addMethod('checkH1','#body-header-tags')
 	.addMethod('checkH2','#body-header-tags')

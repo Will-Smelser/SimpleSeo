@@ -99,13 +99,23 @@ class ApiResponseJSON extends ApiResponse{
 }
 
 /**
- * Response wrapper for JSONP requests.
+ * Response wrapper for JSONP requests. Assumes, a "callback"
+ * get parameter has been set. For example:
+ * <code>
+ * //PHP example
+ * $callback = $_GET['callback'];
+ * echo $callback . '(' . $json_data . ')';
+ * </code>
  * @author Will
  *
  */
 class ApiResponseJSONP extends ApiResponse{
 	function doPrint(){
 		$json = $this->jsonpp(json_encode($this->toArray()));
+		
+		//complain about no callback
+		if(!isset($_GET['callback'])) throw new Exception('Callback GET parameter expected, but none given.');
+		
 		echo $_GET['callback'].'('.$json.');';
 	}
 }

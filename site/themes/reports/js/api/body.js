@@ -127,7 +127,7 @@
 				//this is the key=>value data
 				switch(data[x].result){
 				case 0:
-					result = 'Bad Size';
+					result = 'Bad';
 					break;
 				case 1:
 					result = 'Good';
@@ -137,6 +137,8 @@
 					break;
 				}
 					
+				//to save time and effort, the api does not check images which do not have
+				//the css or html with/height attributes set.
 				var sizeHtml = (temp.result === 1) ? temp.htmlWidth + 'x' + temp.htmlHeight : 'N/A';
 				var sizeAct = (temp.result === 1) ? temp.actualWidth + 'x' + temp.actualHeight : 'N/A';
 				
@@ -144,8 +146,8 @@
 				var link = render.newEl('a').attr('href',temp.url).attr('target','_blank').html(short);
 				myresult.push({
 				     'Result':result,
-				     'Html Size':sizeHtml,
-				     'Actual Size':sizeAct,
+				     'Html&nbsp;Size':sizeHtml,
+				     'Actual&nbsp;Size':sizeAct,
 				     'Url':link,
 				     'Alt':temp.alt,
 				     'Title':temp.title

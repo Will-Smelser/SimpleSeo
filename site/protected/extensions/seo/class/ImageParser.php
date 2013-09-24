@@ -155,9 +155,9 @@ class ImageParser{
 	 * @param unknown $imgNodes  An array of img Nodes
 	 * @return ImageLoadResponse An array of ImageLoadResponse Objects
 	 */
-	public static function checkActualDimsThreaded($imgNodes){
+	public static function checkActualDimsThreaded($imgNodes, $token){
 		
-		$loader = new PageLoad('ImageParserThread.php');
+		$loader = new PageLoad('ImageParserThread.php', $token);
 		$result = array();
 		foreach($imgNodes as $node){
 			$data = self::getWidthHeight($node);

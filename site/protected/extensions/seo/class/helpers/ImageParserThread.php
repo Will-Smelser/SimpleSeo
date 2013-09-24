@@ -1,5 +1,5 @@
 <?php
-include '../ImageParser.php';
+include SEO_PATH_CLASS.'/ImageParser.php';
 
 //get start
 $time = microtime();

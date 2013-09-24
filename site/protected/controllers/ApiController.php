@@ -49,9 +49,10 @@ class ApiController extends RController
 			//lookup the token
 			$token = Tokens::model()->findByAttributes(array('token'=>$_GET['token']));
 		
-			if(empty($token)) return;
+		if($this->action->id === 'thread') return true;
 			
-			if($token::isExpired($token->expire)) return;
+		
+			if(empty($token) || $token::isExpired($token->expire)) return;
 		
 			if(isset($token->user_id))
 				$user = User::model()->findByAttributes(array('id' => $token->user_id));
@@ -77,6 +78,8 @@ class ApiController extends RController
 	}
 	
 	public function beforeAction($action){
+		if($action->id === 'thread') return true;
+		
 		//before anything can go wrong, lets ensure the user is no longer logged in
 		$user = Yii::app()->user;
 		if(!empty($user) && !(strtolower($user->getName()) === 'guest'))
@@ -141,6 +144,9 @@ class ApiController extends RController
 
 	public function actionSocial(){}
 	
-	
-	
+	/* FOR PHP THREADED REQUESTS */
+	public function actionThread(){
+		$file = basename($this->actionParams['url']);
+		require_once SEO_PATH_HELPERS . $file;
+	}
 }

@@ -31,11 +31,14 @@ class PageLoad{
 	 * 
 	 * @param string $page The php page to make requests to, but relative
 	 * to self::$loadPage
+	 * @param string $token A valid token for making requests against api
 	 * 
 	 * @see $loadPage
 	 */
-	public function PageLoad($page='PageLoadTime.php'){
-		$this->loadPage = 'http://' . SEO_HOST . '/' . SEO_URI_HELPERS . $page;
+	public function PageLoad($page='PageLoadTime.php',$token){
+		//have to make requests through the api
+		$this->loadPage = 'http://' . SEO_HOST . '/' . SEO_URI_API . 'thread/' . $page . '?token=' . $token;
+		
 		$this->mh = curl_multi_init();
 	}
 	
@@ -51,7 +54,7 @@ class PageLoad{
 		$args = func_get_args();
 		$url = array_shift($args);
 		
-		$url = $this->loadPage . '?arg0=' . urlencode($url);
+		$url = $this->loadPage . '&arg0=' . urlencode($url);
 		
 		foreach($args as $key=>$arg){
 			$temp = $key+1;

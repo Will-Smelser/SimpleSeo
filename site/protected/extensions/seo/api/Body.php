@@ -828,7 +828,10 @@ class Body{
 	
 	/**
 	 * Check document image dimensions are set and good.  This will take
-	 * as long as the longest image takes to load
+	 * as long as the longest image takes to load.
+	 * 
+	 * <b>NOTE:</b> Images which do not have the image width/height set in 
+	 * either css or width/height attribute tags will not be calculated.
 	 * 
 	 * <code>
 	 * class ImageLoadResponse{
@@ -884,7 +887,7 @@ class Body{
 		require_once SEO_PATH_CLASS . "ImageParser.php";
 		
 		$imgs = $this->parser->getTags('img');
-		return \ImageParser::checkActualDimsThreaded($imgs);
+		return \ImageParser::checkActualDimsThreaded($imgs, $_GET['token']);
 	}
 }
 ?>

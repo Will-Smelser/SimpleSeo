@@ -1,6 +1,7 @@
 <?php
 require_once 'HtmlParser.php';
 include_once "PageLoad.php";
+require_once SEO_PATH_HELPERS . 'ApiResponse.php';
 
 /**
  * This is the result of an image dimension check
@@ -56,11 +57,11 @@ class ImageParser{
 	 * Process an image Node object to get the width and height from
 	 * either the width/height attributes or from the style attributes.
 	 * @param Node $node
-	 * @return array(width, height) width/height will be 0 if none set.
+	 * @return array(width, height) width/height will be -1 if none set.
 	 */
 	public static function getWidthHeight(Node $node){
-		$width = 0;
-		$height = 0;
+		$width = -1;
+		$height = -1;
 		
 		//check attributes
 		if(isset($node->attributes['width']))
@@ -157,6 +158,8 @@ class ImageParser{
 	 */
 	public static function checkActualDimsThreaded($imgNodes, $token){
 		
+		$imgResult = array();
+		
 		$loader = new PageLoad('ImageParserThread.php', $token);
 		$result = array();
 		foreach($imgNodes as $node){
@@ -182,9 +185,14 @@ class ImageParser{
 			$resp->alt = (isset($node->attributes['alt'])) ? $node->attributes['alt'] : null;
 			$resp->title = (isset($node->attributes['title'])) ? $node->attributes['title'] : null;
 			
+			$add = false;
+			$msg;
+			
 			//bad image dont need to bother checking
-			if(empty($url) || $width === 0 || $height == 0){
-				//do nothing				
+			if(empty($url) || $width === -1 || $height === -1){
+				//do nothing
+				$add = true;
+				$msg = 'No html image info.  Skipping image.';				
 				
 			//image had the entire http
 			}elseif(preg_match('@^https?://@i',$url)){
@@ -192,6 +200,7 @@ class ImageParser{
 								
 			//data type of image
 			}elseif(preg_match('/^data/',$url)){
+				
 				//data:[<MIME-type>][;charset=<encoding>][;base64],<data>
 				$url = ltrim(strstr($url,','),',');
 				$image = imagecreatefromstring($url);
@@ -203,11 +212,19 @@ class ImageParser{
 				$resp->actualWidth = $x;
 				$resp->actualHeight = $y;
 				
+				$add = true;
+				$msg = 'Image loaded as data encoded string.';
+				
 			//no host given
 			}else{
-				
 				$url = 'http://'.$node->host.'/'.ltrim($node->attributes['src'],'/\\');
 				$loader->addPage($url, $node->hash, $width, $height);
+				
+			}
+			
+			if($add){
+				$temp = (new \api\responses\ApiResponseJSON())->success($msg, $resp);
+				array_push($imgResult, $temp->toArray());
 				
 			}
 			
@@ -217,25 +234,40 @@ class ImageParser{
 		//get the multithread request response
 		$temp = $loader->exec();
 		
-		foreach($temp as $val){
-			if(empty($val)) continue;
+		foreach($temp as $entry){
+			if(empty($entry)) continue;
 			
-			$resp = new ImageLoadResponse();
-			$resp->result = $val->result;
-			$resp->url = $val->url;
-			$resp->hash = $val->hash;
-			$resp->htmlWidth = $val->htmlWidth;
-			$resp->htmlHeight = $val->htmlHeight;
-			$resp->actualWidth = $val->actualWidth;
-			$resp->actualHeight = $val->actualHeight;
-			$resp->time = $val->time;
-			$resp->title = $result[$val->hash]->title;
-			$resp->alt = $result[$val->hash]->alt;
+			$response;
+			if($entry->error){
+				$code = \api\responses\ApiCodes::getCodeByNumber($entry->code);
+				$response = (new \api\responses\ApiResponseJSON())->failure($entry->msg,$code);
+			}else{
 			
-			$result[$val->hash] = $resp;
+				$resp = new ImageLoadResponse();
+				
+				$val = $entry->data;
+				
+				$resp->result = $val->result;
+				$resp->url = $val->url;
+				$resp->hash = $val->hash;
+				$resp->htmlWidth = $val->htmlWidth;
+				$resp->htmlHeight = $val->htmlHeight;
+				$resp->actualWidth = $val->actualWidth;
+				$resp->actualHeight = $val->actualHeight;
+				$resp->time = $val->time;
+				$resp->title = $result[$val->hash]->title;
+				$resp->alt = $result[$val->hash]->alt;
+				
+				$result[$val->hash] = $resp;
+				
+				$code = \api\responses\ApiCodes::getCodeByNumber($entry->code);
+				$response = (new \api\responses\ApiResponseJSON())->success($entry->msg, $resp, $entry->error, $code);
+			}			
+			
+			array_push($imgResult, $response->toArray());
 		}
-		
-		return $result;
+
+		return $imgResult;
 	}
 }
 ?>

@@ -852,40 +852,55 @@ class Body{
 	 <b>Sample Response:</b>
 	 <json>
 {
+    "code":200,
     "response":"Success",
     "error":false,
     "msg":"Success",
-    "data":{
-        "0000000075deb572000000002dc7a631":{
-            "url":"http:\/\/mediocredeveloper.com\/wp\/wp-content\/uploads\/2013\/03\/me2.jpg",
-            "result":0,
-            "hash":"0000000075deb572000000002dc7a631",
-            "time":0.481,
-            "actualWidth":48,
-            "actualHeight":48,
-            "htmlWidth":"50",
-            "htmlHeight":"50",
-            "alt":"willsmelser",
-            "title":null
+    "data":[
+        {
+            "code":200,
+            "response":"Success",
+            "error":false,
+            "msg":"No html image info.  Skipping image.",
+            "data":{
+                "url":"http:\/\/inedo.com\/Resources\/Images\/Layout\/header-logo.png",
+                "result":0,
+                "hash":"00000000160fa10a0000000058fe443c",
+                "time":-1,
+                "actualWidth":-1,
+                "actualHeight":-1,
+                "htmlWidth":-1,
+                "htmlHeight":-1,
+                "alt":"Inedo Logo",
+                "title":"Inedo Logo"
+            }
         },
-        "0000000075deb571000000002dc7a631":{
-            "url":"http:\/\/mediocredeveloper.com\/wp\/wp-content\/uploads\/2013\/03\/me2.jpg",
-            "result":0,
-            "hash":"0000000075deb571000000002dc7a631",
-            "time":0.5196,
-            "actualWidth":48,
-            "actualHeight":48,
-            "htmlWidth":"50",
-            "htmlHeight":"50",
-            "alt":"willsmelser",
-            "title":null
-        }}}	 
+        {
+            "code":200,
+            "response":"Success",
+            "error":false,
+            "msg":"Image load complete.",
+            "data":{
+                "url":"http:\/\/willsmelser.com\/Resources\/Images\/Layout\/live-help-unavailable-vertical.png",
+                "result":1,
+                "hash":"00000000160fa10b0000000058fe443c",
+                "time":0.5843,
+                "actualWidth":61,
+                "actualHeight":169,
+                "htmlWidth":"61",
+                "htmlHeight":"169",
+                "alt":"Start Live Chat",
+                "title":"Live chat is offline. Click here to send a message to the Inedo support or sales team."
+            }
+        }
+    ]
+} 
 	 </json>
 	 </p>
 	 */
 	public function checkImages(){
 		require_once SEO_PATH_CLASS . "ImageParser.php";
-		
+
 		$imgs = $this->parser->getTags('img');
 		return \ImageParser::checkActualDimsThreaded($imgs, $_GET['token']);
 	}

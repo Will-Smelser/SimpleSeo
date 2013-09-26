@@ -3,10 +3,32 @@
 namespace api\responses;
 
 class ApiCodes {
-	static $success = array("200 OK","Success");
-	static $badRequest = array("400 Bad Request","Invalid Request");
-	static $systemError = array("500 Internal Server Error", "Internal Error");
-	static $accessDenied = array("401 Unauthorized","Invalid key or other access error.");
+	static $success = array("200 OK","Success",200);
+	static $badRequest = array("400 Bad Request","Invalid Request",400);
+	static $systemError = array("500 Internal Server Error", "Internal Error",500);
+	static $accessDenied = array("401 Unauthorized","Invalid key or other access error",401);
+	static $notFound = array("404 Not Found","Not found",404);
+	
+	public static function getCodeByNumber($code){
+		$apiCode = self::$systemError;
+		switch($code){
+			case 200:
+				$apiCode = self::$success;
+				break;
+			case 400:
+				$apiCode = self::$badRequest;
+				break;
+			case 500:
+				$apiCode = self::$systemError;
+				break;
+			case 401:
+				$apiCode = self::$accessDenied;
+				break;
+			case 404:
+				$apiCode = self::$notFound;
+		}
+		return $apiCode;
+	}
 }
 
 
@@ -15,24 +37,23 @@ class ApiResponse{
 	protected $error=false;
 	protected $msg="Default Response";
 	protected $data; //should be an associative array
+	protected $code;
 	
-	public function success($msg, $data, $error=false){
-		$resp = $this;
-		$resp->apiCode = ApiCodes::$success;
-		$resp->data = $data;
-		$resp->msg = $msg;
-		$resp->error = $error;
-		$resp->header();
+	public function success($msg, $data, $error=false, $apiCode=null){
+		$this->apiCode = (empty($apiCode))?ApiCodes::$success:$apiCode;
+		$this->data = $data;
+		$this->msg = $msg;
+		$this->error = $error;
+		$this->header();
 		return $this;
 	}
 	
 	public function failure($msg, $apiCode=null){
-		$resp = $this;
-		$resp->apiCode = (empty($apiCode))?ApiCodes::$badRequest:$apiCode;
-		$resp->error = true;
-		$resp->msg = $msg;
-		$resp->data = null;
-		$resp->header();
+		$this->apiCode = (empty($apiCode))?ApiCodes::$badRequest:$apiCode;
+		$this->error = true;
+		$this->msg = $msg;
+		$this->data = null;
+		$this->header();
 		return $this;
 	}
 	
@@ -50,10 +71,11 @@ class ApiResponse{
 	
 	public function toArray(){
 		return array(
+			'code'=>$this->apiCode[2],
 			'response'=>$this->apiCode[1],
 			'error'=>$this->error,
 			'msg'=>$this->msg,
-			'data'=>$this->data
+			'data'=>$this->data,
 		);
 	}
 	

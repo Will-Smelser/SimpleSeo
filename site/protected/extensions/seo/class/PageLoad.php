@@ -37,7 +37,7 @@ class PageLoad{
 	 */
 	public function PageLoad($page='PageLoadTime.php',$token){
 		//have to make requests through the api
-		$this->loadPage = 'http://' . SEO_HOST . '/' . SEO_URI_API . 'thread/' . $page . '?token=' . $token;
+		$this->loadPage = 'http://' . SEO_HOST . '/' . SEO_URI_API . 'thread/' . $page . '?type=json&token=' . $token;
 		
 		$this->mh = curl_multi_init();
 	}

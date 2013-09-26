@@ -49,13 +49,14 @@ class ApiController extends RController
 			//lookup the token
 			$token = Tokens::model()->findByAttributes(array('token'=>$_GET['token']));
 		
+		//access to 'thread' action is protected by only localhost
 		if($this->action->id === 'thread') return true;
 			
-		
-			if(empty($token) || $token::isExpired($token->expire)) return;
-		
-			if(isset($token->user_id))
-				$user = User::model()->findByAttributes(array('id' => $token->user_id));
+		//without a token, no login/access allowed.  Handled by RController (Rights module)
+		if(empty($token) || $token::isExpired($token->expire)) return;
+	
+		if(isset($token->user_id))
+			$user = User::model()->findByAttributes(array('id' => $token->user_id));
 		
 		//no user
 		if(empty($user)) return;
@@ -73,7 +74,15 @@ class ApiController extends RController
 		require_once SEO_PATH_HELPERS . 'ApiResponse.php';
 		
 		$code = \api\responses\ApiCodes::$accessDenied;
-		$response = (new \api\responses\ApiResponseJSON())->failure("Access Denied",$code);
+		
+		$response = null;
+		if(isset($_GET['type']) && $_GET['type'] === 'jsonp'){
+			$response = (new \api\responses\ApiResponseJSONP());
+		}else{
+			$response = (new \api\responses\ApiResponseJSON());
+		}
+		
+		$response->failure("Access Denied",$code);
 		echo $response->doPrint();
 	}
 	
@@ -146,6 +155,10 @@ class ApiController extends RController
 	
 	/* FOR PHP THREADED REQUESTS */
 	public function actionThread(){
+		if (!($_SERVER['SERVER_ADDR'] == $_SERVER['REMOTE_ADDR'])){
+			return $this->accessDenied();
+		}
+		
 		$file = basename($this->actionParams['url']);
 		require_once SEO_PATH_HELPERS . $file;
 	}

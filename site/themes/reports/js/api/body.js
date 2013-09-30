@@ -117,41 +117,60 @@
 		
 		render_checkImages : function(data,$target){
 			var render = this.render;
-			
+			console.log("RESULT",data);
 			//cycle over results an build better representation
 			var myresult = [];
 			for(var x in data){
 				
-				var temp = data[x];
-				var result;
-				//this is the key=>value data
-				switch(data[x].result){
-				case 0:
-					result = 'Bad';
-					break;
-				case 1:
-					result = 'Good';
-					break;
-				default:
-					result = 'Failed';
-					break;
-				}
+				if(data[x].code == 200){
+					var temp = data[x].data;
 					
-				//to save time and effort, the api does not check images which do not have
-				//the css or html with/height attributes set.
-				var sizeHtml = (temp.result === 1) ? temp.htmlWidth + 'x' + temp.htmlHeight : 'N/A';
-				var sizeAct = (temp.result === 1) ? temp.actualWidth + 'x' + temp.actualHeight : 'N/A';
-				
-				var short = (temp.url.length > 30) ? '...'+temp.url.substr((temp.url.length-30),30) : temp.url;
-				var link = render.newEl('a').attr('href',temp.url).attr('target','_blank').html(short);
-				myresult.push({
-				     'Result':result,
-				     'Html&nbsp;Size':sizeHtml,
-				     'Actual&nbsp;Size':sizeAct,
-				     'Url':link,
-				     'Alt':temp.alt,
-				     'Title':temp.title
-				});
+					var result;
+					//this is the key=>value data
+					switch(temp.result){
+					case 0:
+						result = 'Bad';
+						break;
+					case 1:
+						result = 'Good';
+						break;
+					default:
+						result = 'Failed';
+						break;
+					}
+						
+					//to save time and effort, the api does not check images which do not have
+					//the css or html with/height attributes set.
+					var sizeHtml = (temp.result === 1) ? temp.htmlWidth + 'x' + temp.htmlHeight : 'N/A';
+					var sizeAct = (temp.result === 1) ? temp.actualWidth + 'x' + temp.actualHeight : 'N/A';
+					
+					var short = (temp.url.length > 30) ? '...'+temp.url.substr((temp.url.length-30),30) : temp.url;
+					var link = render.newEl('a').attr('href',temp.url).attr('target','_blank').html(short);
+					myresult.push({
+					     'Result':result,
+					     'Html&nbsp;Size':sizeHtml,
+					     'Actual&nbsp;Size':sizeAct,
+					     'Url':link,
+					     'Alt':temp.alt,
+					     'Title':temp.title
+					});
+				//image failed
+				}else{
+					
+					var temp = data[x].data;
+					
+					var short = (temp.url.length > 30) ? '...'+temp.url.substr((temp.url.length-30),30) : temp.url;
+					var link = render.newEl('a').attr('href',temp.url).attr('target','_blank').html(short);
+					
+					myresult.push({
+					     'Result':'Failed',
+					     'Html&nbsp;Size':'N/A',
+					     'Actual&nbsp;Size':'N/A',
+					     'Url':link,
+					     'Alt':'REQUEST FAILED',
+					     'Title':'REQUEST FAILED'
+					});
+				}
 			}
 			
 			$target.append(render.newTbl(myresult));

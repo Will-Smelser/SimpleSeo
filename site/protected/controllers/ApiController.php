@@ -38,11 +38,15 @@ class ApiController extends RController
 	private $apiController = null;
 	public $layout = 'application.views.layouts.empty';
 	
+	private $origionalUserId;
+	
 	public function filters() { return array( 'rights', ); }
 	
 	public function init(){
 		
 		require_once(Yii::getPathOfAlias('ext.seo').'/config.php');
+		
+		$this->origionalUserId = Yii::app()->user->id;
 		
 		$user = null;
 		if(isset($_GET['token']))
@@ -89,10 +93,25 @@ class ApiController extends RController
 	public function beforeAction($action){
 		if($action->id === 'thread') return true;
 		
-		//before anything can go wrong, lets ensure the user is no longer logged in
 		$user = Yii::app()->user;
-		if(!empty($user) && !(strtolower($user->getName()) === 'guest'))
+		
+		//if the user was origionally logged in, keep them logged in
+		if(!empty($this->origionalUserId)){
+			//var_dump($this->origionalUser->id,$this->origionalUser->username,$this->origionalUser);exit;
+			$user = User::model()->findByAttributes(array('id' => $this->origionalUserId));
+			
+			//special username that site uses for examples
+			if($user->username !== 'sample'){
+				$newIdentity = new SwitchIdentity( $user->id, $user->username );
+				Yii::app()->user->login( $newIdentity );
+			}else{
+				Yii::app()->user->logout();
+			}
+
+		//before anything can go wrong, lets ensure the user is no longer logged in
+		}elseif(!empty($user) && !(strtolower($user->getName()) === 'guest')){
 			Yii::app()->user->logout();
+		}
 				
 		$url = $params['url'] = str_replace('\\','/',$_GET['url']);
 		$_VARS = explode('/',$url);

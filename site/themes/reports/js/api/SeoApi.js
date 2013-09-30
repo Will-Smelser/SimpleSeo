@@ -107,7 +107,7 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 		
 		/**
 		 * Add a dependency to this object.  All this does
-		 * is forces this object to finish its construciton
+		 * is forces this object to finish its construction
 		 * once all dependencies have loaded.<br/><br/>
 		 * Using {@link window._SeoApi_.api.extend} will
 		 * force a dependency as well.

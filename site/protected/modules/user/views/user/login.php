@@ -5,8 +5,6 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h1><?php echo UserModule::t("Login"); ?></h1>
-
 <?php if(Yii::app()->user->hasFlash('loginMessage')): ?>
 
 <div class="success">
@@ -14,6 +12,9 @@ $this->breadcrumbs=array(
 </div>
 
 <?php endif; ?>
+
+<div class="span-11">
+<h1><?php echo UserModule::t("Login"); ?></h1>
 
 <p><?php echo UserModule::t("Please fill out the following form with your login credentials:"); ?></p>
 
@@ -45,14 +46,18 @@ $this->breadcrumbs=array(
 		<?php echo CHtml::activeLabelEx($model,'rememberMe'); ?>
 	</div>
 	
-	<?php $this->widget('ext.hoauth.widgets.HOAuth'); ?>
-
 	<div class="row submit">
 		<?php echo CHtml::submitButton(UserModule::t("Login")); ?>
 	</div>
 	
-<?php echo CHtml::endForm(); ?>
-</div><!-- form -->
+	<?php echo CHtml::endForm(); ?>
+	</div><!-- form -->
+</div>
+<div class="span-12 last">
+	<h1>Social Login</h1>
+	<?php $this->widget('ext.hoauth.widgets.HOAuth'); ?>
+</div>
+	
 
 
 <?php

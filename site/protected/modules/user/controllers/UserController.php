@@ -31,6 +31,7 @@ class UserController extends RController
 	 */
 	public function actionIndex()
 	{
+		echo "HELLO WORLD";return false;exit;
 		$dataProvider=new CActiveDataProvider('User', array(
 			'criteria'=>array(
 		        'condition'=>'status>'.User::STATUS_BANED,

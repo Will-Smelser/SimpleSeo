@@ -1,5 +1,5 @@
 <?php
-
+require_once(Yii::getPathOfAlias('ext.seo').'/config.php');
 class SiteController extends Controller
 {
 	/**

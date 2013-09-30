@@ -1,250 +1,131 @@
 <?php  
-  $baseUrl = Yii::app()->theme->baseUrl; 
-  $cs = Yii::app()->getClientScript();
-  $cs->registerScriptFile('http://www.google.com/jsapi');
-  $cs->registerCoreScript('jquery');
-  $cs->registerScriptFile($baseUrl.'/js/jquery.gvChart-1.0.1.min.js');
-  $cs->registerScriptFile($baseUrl.'/js/pbs.init.js');
-  $cs->registerCssFile($baseUrl.'/css/jquery.css');
+$baseUrl = Yii::app()->theme->baseUrl;
+$cs = Yii::app()->getClientScript();
+
+//jquery and google scripts
+$cs->registerScriptFile('http://www.google.com/jsapi');
+$cs->registerScriptFile('http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js');
+
+//jquery ui
+$cs->registerCssFile('/themes/reports/css/custom-theme/jquery-ui-1.10.3.custom.css');
+$cs->registerScriptFile('/themes/reports/js/jquery-ui-1.10.3.custom.min.js',CClientScript::POS_END);
+
+//api
+$cs->registerScriptFile('/themes/reports/js/api/SeoApi.js',CClientScript::POS_HEAD,array('data-seoapi-ns'=>'_SeoApi_'));
+
+//syntax highlighting
+$cs->registerCssFile('http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css');
+$cs->registerScriptFile('http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js',CClientScript::POS_END);
+$cs->registerScriptFile('http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js',CClientScript::POS_END);
+$cs->registerScriptFile('http://agorbatchev.typepad.com/pub/sh/3_0_83/scripts/shBrushJScript.js',CClientScript::POS_END);
+
+
+//got to get a valid token
+require_once SEO_PATH_HELPERS . 'ClientHash.php';
+$token = "TOKEN_GET_FAILED";
+try{
+	$token = \api\clients\ClientHash::getToken('80997ad7db55c92b61a3ef907a67ef28','sample');
+}catch(Exception $e){
+	//do nothing, just everything will fail.
+}
+
+$example = 'http://www.mediocreDeveloper.com';
 
 ?>
 
-<?php $this->pageTitle=Yii::app()->name; ?>
 
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i> Dashboard</h1>
-<div class="flash-error">This is an example of an error message to show you that things have gone wrong.</div>
-<div class="flash-notice">This is an example of a notice message.</div>
-<div class="flash-success">This is an example of a success message to show you that things have gone according to plan.</div>
-<div class="span-23 showgrid">
-<div class="dashboardIcons span-16">
-    <div class="dashIcon span-3">
-        <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/big_icons/icon-inbox.png" alt="Inbox" /></a>
-        <div class="dashIconText "><a href="#">Inbox</a></div>
-    </div>
-    
-    <div class="dashIcon span-3">
-        <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/big_icons/icon-shopping-cart2.png" alt="Order History" /></a>
-        <div class="dashIconText"><a href="#">Order History</a></div>
-    </div>
-    
-    <div class="dashIcon span-3">
-        <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/big_icons/icon-cash2.png" alt="Manage Prices" /></a>
-        <div class="dashIconText"><a href="#">Manage Prices</a></div>
-    </div>
-    
-    <div class="dashIcon span-3">
-        <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/big_icons/icon-people.png" alt="Customers" /></a>
-        <div class="dashIconText"><a href="#">Customers</a></div>
-    </div>
-    
-    <div class="dashIcon span-3">
-        <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/big_icons/icon-chart.png" alt="Page" /></a>
-        <div class="dashIconText"><a href="#">Reports</a></div>
-    </div>
-    
-    <div class="dashIcon span-3">
-        <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/big_icons/icon-barcode.png" alt="Products" /></a>
-        <div class="dashIconText"><a href="#">Products</a></div>
-    </div>
-    
-    <div class="dashIcon span-3">
-        <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/big_icons/icon-address-book.png" alt="Contacts" /></a>
-        <div class="dashIconText"><a href="#">Contacts</a></div>
-    </div>
-    
-    <div class="dashIcon span-3">
-        <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/big_icons/icon-calendar.png" alt="Calendar" /></a>
-        <div class="dashIconText"><a href="#">Calendar</a></div>
-    </div>
-    
-    <div class="dashIcon span-3">
-        <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/big_icons/icon-recycle-bin.png" alt="Trash" /></a>
-        <div class="dashIconText"><a href="#">Trash</a></div>
-    </div>
-    
-    <div class="dashIcon span-3">
-        <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/big_icons/icon-warning.png" alt="System Alerts" /></a>
-        <div class="dashIconText"><a href="#">System Alerts</a></div>
-    </div>
-   
-    
-</div><!-- END OF .dashIcons -->
+<?php $this->pageTitle='Simple Seo Api - Reporting Tool'; ?>
+
+<h1>A Reporting Tool for Search Engine Optimization</h1>
+<div class="span-23 showgrid last">
+	<input id="get-url" class="inputfield ui-button ui-corner-all" type="text" value="<?php echo $example; ?>" style="width: 240px" />
+	<button id="get-btn">Get Word Count</button>
+</div>
+
+<div class="span-16" style="overflow:hidden;height:300px;" id="test">	
+	<h3 style="padding:40px 0px 0px 40px;">Loading...</h3>		
+</div>
+
 <div class="span-7 last">
-
-            Domains Used: 45/100
-			<?php
-			$this->widget('zii.widgets.jui.CJuiProgressBar', array(
-				'value'=>45,
-				'htmlOptions'=>array(
-					'style'=>'height:10px;',
-					'class'=>'shadowprogressbar'
-				),
-			));
-			?>
-            <br />
-            Space Used: 95%
-            <?php
-			$this->widget('zii.widgets.jui.CJuiProgressBar', array(
-				'value'=>95,
-				'htmlOptions'=>array(
-					'style'=>'height:10px;',
-					'class'=>'shadowprogressbar'
-				),
-			));
-			?>
-            <br />
-            Bandwidth Used: 10%
-            <?php
-			$this->widget('zii.widgets.jui.CJuiProgressBar', array(
-				'value'=>10,
-				'htmlOptions'=>array(
-					'style'=>'height:10px;',
-					'class'=>'shadowprogressbar'
-				),
-			));
-			?>
-            <br />
-            Conversion Rate: 25%            
-            <?php
-			$this->widget('zii.widgets.jui.CJuiProgressBar', array(
-				'value'=>25,
-				'htmlOptions'=>array(
-					'style'=>'height:10px;',
-					'class'=>'shadowprogressbar'
-				),
-			));
-			?>
-            <br />
-            Success Rate: 55%            
-            <?php
-			$this->widget('zii.widgets.jui.CJuiProgressBar', array(
-				'value'=>55,
-				'htmlOptions'=>array(
-					'style'=>'height:10px;',
-					'class'=>'shadowprogressbar'
-				),
-			));
-			?>
-</div>
-                
-<div class="span-10">
-<?php
-$this->beginWidget('zii.widgets.CPortlet', array(
-	'title'=>'Pie Chart',
-));
-?>
-<div class="chart2">
-<div>
-        <div class="text">
-            <table class="myChart">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Jan</th>
-                        <th>Feb</th>
-                        <th>Mar</th>
-                        <th>Apr</th>
-                        <th>May</th>
-                        <th>Jun</th>
-                        <th>Jul</th>
-                    </tr>
-                </thead>
-    
-                <tbody>
-                    <tr>
-                      <th>Sales</th>
-                      <td>3923</td>
-                      <td>2923</td>
-                      <td>2931</td>
-                      <td>3942</td>
-                      <td>4921</td>
-                      <td>6934</td>
-                      <td>5934</td>
-                    </tr>
-                    <tr>
-                      <th>Quotes</th>
-                      <td>3623</td>
-                      <td>2623</td>
-                      <td>2831</td>
-                      <td>3842</td>
-                      <td>4821</td>
-                      <td>6534</td>
-                      <td>5134</td>
-                    </tr>
-                    <tr>
-                      <th>Visitors </th>
-                        <td>3523</td>
-                        <td>2223</td>
-                        <td>2531</td>
-                        <td>3342</td>
-                        <td>4521</td>
-                        <td>6234</td>
-                        <td>5434</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            
-      </div>
-  </div>
-</div>
-<?php $this->endWidget();?>
-</div>
-<div class="span-13 last">
-<?php
-$this->beginWidget('zii.widgets.CPortlet', array(
-	'title'=>'Line Chart',
-));
-?>
-<div class="chart3">
-    <div>
-        <div class="text">
-            <table class="myChart">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Jan</th>
-                        <th>Feb</th>
-                        <th>Mar</th>
-                        <th>Apr</th>
-                        <th>May</th>
-                        <th>Jun</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <th>Quotes</th>
-                        <td>39523</td>
-                        <td>26123</td>
-                        <td>29031</td>
-                        <td>34342</td>
-                        <td>48321</td>
-                        <td>42234</td>
-                    </tr>
-                    <tr>
-                        <th>Sales</th>
-                        <td>34523</td>
-                        <td>22123</td>
-                        <td>25031</td>
-                        <td>30342</td>
-                        <td>45321</td>
-                        <td>46234</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            
-        </div>
-    </div>
-</div>
-<?php $this->endWidget();?>
+	<div class="dashIcon span-3">
+		<a href="/user/login"><img
+			src="/themes/shadow_dancer/images/big_icons/icon-people.png"
+			alt="Sign Up" /> </a>
+		<div class="dashIconText">
+			<a href="/user/login">Sign Up</a>
+		</div>
+	</div>
+	<div class="dashIcon span-3">
+		<a href="/reports"><img
+			src="/themes/shadow_dancer/images/big_icons/icon-chart.png"
+			alt="SEO Reports" /> </a>
+		<div class="dashIconText">
+			<a href="/reports">Reports</a>
+		</div>
+	</div>
+	
+	<div class="dashIcon span-3">
+		<a href="/api-docs/namespaces/api.html" target="_blank">
+			<img src="/themes/shadow_dancer/images/big_icons/icon-book3.png"
+				alt="SEO API Documentatoin" /> </a>
+		<div class="dashIconText">
+			<a href="/api-docs/namespaces/api.html">API Docs</a>
+		</div>
+	</div>
+	<div class="dashIcon span-3">
+		<a href="/api-docs-js/SeoApi.html" target="_blank">
+			<img src="/themes/shadow_dancer/images/big_icons/icon-book3.png"
+				alt="SEO API JS Documentation" />
+		</a>
+		<div class="dashIconText">
+			<a href="/api-docs-js/SeoApi.html">JS API Docs</a>
+		</div>
+	</div>
 </div>
 
+<hr/>
 
-<div class="flash-notice span-22 last">
-<p>This is a "static" page. You may change the content of this page
-by updating the file <tt><?php echo __FILE__; ?></tt>.</p>
+<div class="span-16 showgrid" style="overflow:hidden">
+	<pre class="brush: javascript; gutter: true; toolbar: false; tab-size: 2;">
+		
+//initialize the api
+seo = new SeoApi('/themes/reports/js/api/charts/','/api/',
+	'<?php echo $token; ?>');
+seo.load('base');
+
+//run api request and render results
+seo.load('body').extend('base')
+	.addMethod('getKeyWords','#test')
+	.exec('<?php echo $example; ?>');
+
+	</pre>
 </div>
 
+<div class="span-7 last">
+	<h2>Example Code</h2>
+	<p>
+		The sample code to the left shows how simple it is to use the
+		javascript api to embed SEO reporting contents into your
+		document.
+	</p>
 </div>
+		
+<script>
+
+google.load('visualization', '1.0', {'packages':['corechart']});
+
+var token = "<?php echo $token; ?>";
+
+seo = new SeoApi('/themes/reports/js/api/charts/','/api/',token);
+seo.load('base');
+$(document).ready(function(){
+	SyntaxHighlighter.all();
+	
+	$('#get-btn').button().click(function(){
+		$('#test').html('<h3 style="padding:40px 0px 0px 40px;">Loading...</h3>');
+		seo.load('body').extend('base')
+			.addMethod('getKeyWords','#test')
+			.exec($('#get-url').val());
+	}).click();
+});
+</script>

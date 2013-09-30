@@ -6,6 +6,13 @@
 }
 
 
+input.inputfield {
+    border:solid #CCC 1px;
+    text-align:left;
+    cursor:text;
+}
+
+
 body
 {
 	margin: 0;

@@ -54,18 +54,18 @@ seo = new SeoApi('http://<?php echo SEO_HOST . '/' . SEO_URI_API_JS; ?>',api,tok
 seo.init('base');
 seo.init('render');
 
-
+/*
 seo.load('google').extend('base')
 	.addMethod('getPageRank','#google-pr')
 	.addMethod('getBacklinks','#google-backlinks')
 	.exec(url);
-
+*/
 seo.load('body').extend('base')
-	.addMethod('checkH1','#body-header-tags')
+	/*.addMethod('checkH1','#body-header-tags')
 	.addMethod('checkH2','#body-header-tags')
 	.addMethod('checkH3','#body-header-tags')
-	.addMethod('checkH4','#body-header-tags')
-	.addMethod('getKeyWords','#body-keywords')
+	.addMethod('checkH4','#body-header-tags')*/
+	.addMethod('getKeyWords','#body-keywords').exec(url);/*
 	.addMethod('getPhrases','#body-keywords2')
 	.addMethod('checkLinkTags','#body-inline-style')
 	.addMethod('checkInlineCSS','#body-inline-style')
@@ -107,7 +107,7 @@ seo.load('semrush').extend('base').addMethod('getDomainReport','#semrush-domain'
 seo.load('social').extend('base')
 	.addMethod('all','#social')
 	.exec(url);
-
+*/
 <?php } ?>
 	
 </script>

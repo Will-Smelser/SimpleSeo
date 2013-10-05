@@ -10,12 +10,13 @@ $cs->registerCssFile('/themes/reports/css/custom-theme/jquery-ui-1.10.3.custom.c
 $cs->registerScriptFile('/themes/reports/js/jquery-ui-1.10.3.custom.min.js',CClientScript::POS_END);
 
 //syntax highlighting
-$cs->registerCssFile('http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css');
-$cs->registerScriptFile('http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js',CClientScript::POS_END);
-$cs->registerScriptFile('http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js',CClientScript::POS_END);
-$cs->registerScriptFile('http://agorbatchev.typepad.com/pub/sh/3_0_83/scripts/shBrushJScript.js',CClientScript::POS_END);
-$cs->registerScriptFile('http://agorbatchev.typepad.com/pub/sh/3_0_83/scripts/shBrushXml.js',CClientScript::POS_END);
-$cs->registerScriptFile('http://agorbatchev.typepad.com/pub/sh/3_0_83/scripts/shBrushPhp.js',CClientScript::POS_END);
+$cs->registerCssFile('/syntaxhighlighter/styles/shCore.css');
+$cs->registerCssFile('/syntaxhighlighter/styles/shThemeDefault.css');
+$cs->registerScriptFile('/syntaxhighlighter/scripts/shCore.js',CClientScript::POS_END);
+$cs->registerScriptFile('/syntaxhighlighter/scripts/shAutoloader.js',CClientScript::POS_END);
+$cs->registerScriptFile('/syntaxhighlighter/scripts/shBrushJScript.js',CClientScript::POS_END);
+$cs->registerScriptFile('/syntaxhighlighter/scripts/shBrushXml.js',CClientScript::POS_END);
+$cs->registerScriptFile('/syntaxhighlighter/scripts/shBrushPhp.js',CClientScript::POS_END);
 
 
 

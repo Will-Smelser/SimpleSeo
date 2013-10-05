@@ -706,5 +706,13 @@ ul.yiiPager a:visited
 	text-shadow:#CCC 0.1em 0.1em 0.1em;
 }
 	
-
-
+.shadow{
+	-moz-box-shadow: 0 0 5px 5px #888;
+	-webkit-box-shadow: 0 0 5px 5px#888;
+	box-shadow: 0 0 5px 5px #888;
+}
+.margin-0{
+	margin:0px;
+}
+.getKey{font-weight:bold;}
+.getVal{font-style:italic;}

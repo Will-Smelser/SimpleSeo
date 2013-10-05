@@ -55,7 +55,8 @@
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Get Started', 'url'=>array('/site/page', 'view'=>'getstarted')),
+				array('label'=>'Get Started', 'url'=>array('/site/pages/getstarted')),
+				array('label'=>'Examples', 'url'=>array('/site/pages/examples/index')),
 				/*
 				array('url'=>Yii::app()->getModule('user')->loginUrl, 'label'=>Yii::app()->getModule('user')->t("Login"), 'visible'=>Yii::app()->user->isGuest),
 				array('url'=>Yii::app()->getModule('user')->registrationUrl, 'label'=>Yii::app()->getModule('user')->t("Register"), 'visible'=>Yii::app()->user->isGuest),

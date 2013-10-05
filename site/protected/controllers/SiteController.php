@@ -45,6 +45,11 @@ class SiteController extends Controller
 				$this->render('error', $error);
 		}
 	}
+	
+	public function actionPages(){
+		$params = $this->getActionParams();
+		$this->render('/'.$params['url']);
+	}
 
 	/**
 	 * Displays the contact page

@@ -14,10 +14,11 @@ $cs->registerScriptFile('/themes/reports/js/jquery-ui-1.10.3.custom.min.js',CCli
 $cs->registerScriptFile('/themes/reports/js/api/SeoApi.js',CClientScript::POS_HEAD,array('data-seoapi-ns'=>'_SeoApi_'));
 
 //syntax highlighting
-$cs->registerCssFile('http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css');
-$cs->registerScriptFile('http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js',CClientScript::POS_END);
-$cs->registerScriptFile('http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js',CClientScript::POS_END);
-$cs->registerScriptFile('http://agorbatchev.typepad.com/pub/sh/3_0_83/scripts/shBrushJScript.js',CClientScript::POS_END);
+$cs->registerCssFile('/syntaxhighlighter/styles/shCore.css');
+$cs->registerCssFile('/syntaxhighlighter/styles/shThemeDefault.css');
+$cs->registerScriptFile('/syntaxhighlighter/scripts/shCore.js',CClientScript::POS_END);
+$cs->registerScriptFile('/syntaxhighlighter/scripts/shAutoloader.js',CClientScript::POS_END);
+$cs->registerScriptFile('/syntaxhighlighter/scripts/shBrushJScript.js',CClientScript::POS_END);
 
 
 //got to get a valid token
@@ -86,8 +87,7 @@ $example = 'http://www.mediocreDeveloper.com';
 <hr/>
 
 <div class="span-16 showgrid" style="overflow:hidden">
-	<pre class="brush: javascript; gutter: true; toolbar: false; tab-size: 2;">
-		
+	<pre class="brush: javascript; gutter: true; toolbar: false; tab-size: 2;">		
 //initialize the api
 seo = new SeoApi('/themes/reports/js/api/charts/','/api/',
 	'<?php echo $token; ?>');
@@ -97,7 +97,6 @@ seo.load('base');
 seo.load('body').extend('base')
 	.addMethod('getKeyWords','#test')
 	.exec('<?php echo $example; ?>');
-
 	</pre>
 </div>
 

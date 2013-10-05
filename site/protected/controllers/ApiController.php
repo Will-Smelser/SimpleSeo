@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL);
 /**
  * Have to create a dummy identity class in order to
  * login user
@@ -40,6 +40,8 @@ class ApiController extends RController
 	
 	private $origionalUserId;
 	
+	private $apiStats;
+	
 	public function filters() { return array( 'rights', ); }
 	
 	public function init(){
@@ -52,10 +54,7 @@ class ApiController extends RController
 		if(isset($_GET['token']))
 			//lookup the token
 			$token = Tokens::model()->findByAttributes(array('token'=>$_GET['token']));
-		
-		//access to 'thread' action is protected by only localhost
-		if($this->action->id === 'thread') return true;
-			
+					
 		//without a token, no login/access allowed.  Handled by RController (Rights module)
 		if(empty($token) || $token::isExpired($token->expire)) return;
 	
@@ -64,6 +63,10 @@ class ApiController extends RController
 		
 		//no user
 		if(empty($user)) return;
+		
+		//we will have some stats
+		$this->apiStats = new Apistats();
+		$this->apiStats->user = $token->user_id;
 		
 		$newIdentity = new SwitchIdentity( $user->id, $user->username );
 		Yii::app()->user->login( $newIdentity );
@@ -97,7 +100,7 @@ class ApiController extends RController
 		
 		//if the user was origionally logged in, keep them logged in
 		if(!empty($this->origionalUserId)){
-			//var_dump($this->origionalUser->id,$this->origionalUser->username,$this->origionalUser);exit;
+			
 			$user = User::model()->findByAttributes(array('id' => $this->origionalUserId));
 			
 			//special username that site uses for examples
@@ -135,6 +138,8 @@ class ApiController extends RController
 		if(!preg_match('@^(https?://)@i',$_GET['request']))
 			$_GET['request'] = 'http://'.ltrim($_GET['request'],'/');
 		
+		$this->apiStats->request = $_GET['request'];
+		
 		
 		require_once SEO_PATH_CONTROLLERS . 'Controller.php';
 		require_once SEO_PATH_CONTROLLERS . $_CONTROLLER . '.php';
@@ -144,6 +149,11 @@ class ApiController extends RController
 		
 		$this->apiController = new $_CONTROLLER($_METHOD, $type, $_VARS);
 		
+		//save the stats
+		$this->apiStats->controller = $_CONTROLLER;
+		$this->apiStats->method = $_METHOD;
+		$this->apiStats->save();
+		
 		return true;
 	}
 	
@@ -152,6 +162,7 @@ class ApiController extends RController
 	}
 	
 	public function afterRender($view, &$output){
+		
 		//Yii::app()->end();
 	}
 	

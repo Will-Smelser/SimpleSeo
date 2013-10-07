@@ -3,8 +3,10 @@ $this->breadcrumbs=array(
 	UserModule::t("Profile")=>array('profile'),
 	UserModule::t("Edit"),
 );
-?><h2><?php echo UserModule::t('Edit profile'); ?></h2>
+?>
 <?php echo $this->renderPartial('menu'); ?>
+
+<h1><?php echo UserModule::t('Edit profile'); ?></h1>
 
 <?php if(Yii::app()->user->hasFlash('profileMessage')): ?>
 <div class="success">

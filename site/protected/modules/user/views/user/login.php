@@ -3,16 +3,12 @@ $this->pageTitle=Yii::app()->name . ' - '.UserModule::t("Login");
 $this->breadcrumbs=array(
 	UserModule::t("Login"),
 );
+
+
+foreach(Yii::app()->user->getFlashes() as $key => $message) {
+	echo '<div class="flash-' . $key . '">' . $message . "</div>\n";
+}
 ?>
-
-<?php if(Yii::app()->user->hasFlash('loginMessage')): ?>
-
-<div class="success">
-	<?php echo Yii::app()->user->getFlash('loginMessage'); ?>
-</div>
-
-<?php endif; ?>
-
 <div class="span-11">
 <h1><?php echo UserModule::t("Login"); ?></h1>
 

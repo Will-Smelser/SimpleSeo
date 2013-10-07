@@ -142,7 +142,7 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 		 * from the api.
 		 * </ul>
 		 * 
-		 * @returns {object} A reference to this.  Useful for chainging.
+		 * @returns {object} A reference to this.  Useful for chaining.
 		 * @memberof! window._SeoApi_.api
 		 */
 		addMethod : function(method,target){

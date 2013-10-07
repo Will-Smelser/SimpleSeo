@@ -5,8 +5,9 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h2><?php echo UserModule::t("Change password"); ?></h2>
 <?php echo $this->renderPartial('menu'); ?>
+
+<h1><?php echo UserModule::t("Change password"); ?></h1>
 
 <div class="form">
 <?php $form=$this->beginWidget('UActiveForm', array(

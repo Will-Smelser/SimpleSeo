@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL);
+
 /**
  * Have to create a dummy identity class in order to
  * login user
@@ -39,13 +39,11 @@ class ApiController extends RController
 	public $layout = 'application.views.layouts.empty';
 	
 	private $origionalUserId;
-	
-	private $apiStats;
+	private $tokenUserId;
 	
 	public function filters() { return array( 'rights', ); }
 	
 	public function init(){
-		
 		require_once(Yii::getPathOfAlias('ext.seo').'/config.php');
 		
 		$this->origionalUserId = Yii::app()->user->id;
@@ -57,19 +55,18 @@ class ApiController extends RController
 					
 		//without a token, no login/access allowed.  Handled by RController (Rights module)
 		if(empty($token) || $token::isExpired($token->expire)) return;
-	
+		
+		$this->tokenUserId = $token->user_id;
+			
 		if(isset($token->user_id))
 			$user = User::model()->findByAttributes(array('id' => $token->user_id));
-		
+
 		//no user
 		if(empty($user)) return;
 		
-		//we will have some stats
-		$this->apiStats = new Apistats();
-		$this->apiStats->user = $token->user_id;
-		
 		$newIdentity = new SwitchIdentity( $user->id, $user->username );
 		Yii::app()->user->login( $newIdentity );
+		//Yii::app()->user->changeIdentity($user->id,$user->username);
 		
 	}
 	
@@ -95,6 +92,8 @@ class ApiController extends RController
 	
 	public function beforeAction($action){
 		if($action->id === 'thread') return true;
+		
+		if(empty($this->tokenUserId)) return $this->accessDenied('Failed to lookup user.');
 		
 		$user = Yii::app()->user;
 		
@@ -138,21 +137,24 @@ class ApiController extends RController
 		if(!preg_match('@^(https?://)@i',$_GET['request']))
 			$_GET['request'] = 'http://'.ltrim($_GET['request'],'/');
 		
-		$this->apiStats->request = $_GET['request'];
-		
-		
 		require_once SEO_PATH_CONTROLLERS . 'Controller.php';
 		require_once SEO_PATH_CONTROLLERS . $_CONTROLLER . '.php';
 		
 		//controller will handle actual work and call method
 		$type = (isset($_GET['type'])) ? $_GET['type'] : 'json';
 		
-		$this->apiController = new $_CONTROLLER($_METHOD, $type, $_VARS);
 		
 		//save the stats
-		$this->apiStats->controller = $_CONTROLLER;
-		$this->apiStats->method = $_METHOD;
-		$this->apiStats->save();
+		$apiStats = new Apistats();
+		$apiStats->request = $_GET['request'];
+		$apiStats->user = $this->tokenUserId;
+		$apiStats->controller = $_CONTROLLER;
+		$apiStats->method = $_METHOD;
+		$apiStats->save();
+		
+		
+		$this->apiController = new $_CONTROLLER($_METHOD, $type, $_VARS);
+		
 		
 		return true;
 	}

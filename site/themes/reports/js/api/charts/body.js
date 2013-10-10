@@ -15,10 +15,20 @@
 			for(var i=0; i < 10 && i < data.length; i++)
 				gdata.addRow([data[i].words[0],data[i].count]);
 
+			var fontColor = '#FFF';
+			var fsize = 16;
 			var options = {
-	          title: 'Top Words for '+$('#get-url').val(),
+			  fontSize:16,
+	          //title: 'Top Words for '+$('#get-url').val(),
 	          vAxis: {title: 'Words'}, hAxis: {title:'Word Count'},
-	          width: 500, height:300,
+	          width: '100%', height:300,
+	          backgroundColor:'transparent', 
+	          hAxis:{baselineColor:fontColor,gridlines:{color:fontColor},textStyle:{'color':fontColor},titleTextStyle:{color:fontColor}},
+	          vAxis:{baselineColor:fontColor,textStyle:{'color':fontColor},titleTextStyle:{color:fontColor}},
+	          titleTextStyle:{color:fontColor},
+	          legend:{textStyle:{color:fontColor}},
+	          colors:['#f26e34'],
+	          chartArea:{top:0,left:100, width:"auto", height:"90%"}
 	        };
 			
 			new google.visualization.BarChart($target[0]).draw(gdata, options);

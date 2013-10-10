@@ -30,7 +30,7 @@ try{
 	//do nothing, just everything will fail.
 }
 
-$example = 'http://www.mediocreDeveloper.com';
+$example = 'http://www.inedo.com';
 
 ?>
 

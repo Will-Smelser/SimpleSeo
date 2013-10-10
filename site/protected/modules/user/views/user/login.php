@@ -80,3 +80,5 @@ $form = new CForm(array(
     ),
 ), $model);
 ?>
+
+<div class="clear"></div>

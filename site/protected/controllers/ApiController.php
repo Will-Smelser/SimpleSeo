@@ -66,7 +66,7 @@ class ApiController extends RController
 		
 		$newIdentity = new SwitchIdentity( $user->id, $user->username );
 		Yii::app()->user->login( $newIdentity );
-		//Yii::app()->user->changeIdentity($user->id,$user->username);
+		
 		
 	}
 	
@@ -74,7 +74,9 @@ class ApiController extends RController
 	 * Default behavior would send us to login
 	 * @see RController::accessDenied()
 	 */
-	public function accessDenied($message=null){
+	public function accessDenied($message='Access Denied.'){
+		Yii::app()->user->logout();
+		
 		require_once SEO_PATH_HELPERS . 'ApiResponse.php';
 		
 		$code = \api\responses\ApiCodes::$accessDenied;
@@ -86,7 +88,7 @@ class ApiController extends RController
 			$response = (new \api\responses\ApiResponseJSON());
 		}
 		
-		$response->failure("Access Denied",$code);
+		$response->failure($message,$code);
 		echo $response->doPrint();
 	}
 	
@@ -96,6 +98,12 @@ class ApiController extends RController
 		if(empty($this->tokenUserId)) return $this->accessDenied('Failed to lookup user.');
 		
 		$user = Yii::app()->user;
+		$userId = $user->id;
+		
+		if(!Apicredits::hasCredit(Apicredits::$typeApi)){
+			
+			return $this->accessDenied('User does not have enough credits.');
+		}
 		
 		//if the user was origionally logged in, keep them logged in
 		if(!empty($this->origionalUserId)){
@@ -152,9 +160,10 @@ class ApiController extends RController
 		$apiStats->method = $_METHOD;
 		$apiStats->save();
 		
+		//use a credit
+		Apicredits::useCredit($userId,Apicredits::$typeApi);
 		
 		$this->apiController = new $_CONTROLLER($_METHOD, $type, $_VARS);
-		
 		
 		return true;
 	}

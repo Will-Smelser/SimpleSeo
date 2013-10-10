@@ -112,6 +112,7 @@ var addListener = function(){
 			var url = '/user/stats/methods?start='+columnDate+'&stop='+columnDate;
 			$.getJSON(url)
 				.done(function(data){
+					
 					var gdata = google.visualization.arrayToDataTable(data);
 
 					var ht = getHeight(data.length);

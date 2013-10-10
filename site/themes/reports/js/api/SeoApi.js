@@ -304,7 +304,8 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 		 * @memberof! window._SeoApi_.api
 		 */
 		exec : function(url, callback, errCallback){
-			console.log("CALLED EXEC ON", this);
+			console.log('exec params',url,callback,errCallback);
+			//console.log("CALLED EXEC ON", this);
 			var self = this;
 			self.ready(function(){
 				//make sure all extends happen
@@ -320,7 +321,7 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 					  window[namespace][self.name].init();
 				
 				//make api call
-				console.log("CALLED EXECUTE ON",window[namespace][self.name],self.name);
+				//console.log("CALLED EXECUTE ON",window[namespace][self.name],self.name);
 				window[namespace][self.name].execute(url+'&token='+self.token, callback, errCallback);
 				
 			});

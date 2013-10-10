@@ -9,7 +9,7 @@ class Body extends Controller{
 		
 		parent::__construct($method, $args);
 		
-		$content = file_get_contents($_GET['request']);
+		$content = @file_get_contents($_GET['request']);
 		
 		$parser = new HtmlParser($content, $_GET['request']);
 		$html = new \api\Body($parser, $_GET['request']);

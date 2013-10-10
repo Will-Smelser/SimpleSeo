@@ -15,10 +15,16 @@
  */
 class Apicredits extends CActiveRecord
 {
+	
+	public static $defaultApiCredits = 500;
+	public static $defaultReportCredits = 2;
+	
 	/**
 	 * Valid product types
 	 * @var unknown
 	 */
+	public static $typeReport = 'report';
+	public static $typeApi = 'api';
 	public static $types = array(
 			'report'=>array(
 					'unit'=>0.50,'caseSize'=>1.0,'desc'=>'Report Credit (%d reports)','title'=>'Report Credit(s)'
@@ -117,5 +123,40 @@ class Apicredits extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+	
+	public static function useCredit($userid, $type){
+		if(empty($type)) return false;
+		if(!isset(Apicredits::$types[$type])) return false;
+		
+		
+		$sql = 'update `apicredits` set `cnt` = `cnt` - 1 where user_id = :userid and type = :type limit 1';
+		
+		$connection=Yii::app()->db;
+		$command=$connection->createCommand($sql);
+		$command->bindParam(":userid",$userid,PDO::PARAM_INT);
+		$command->bindParam(":type",$type,PDO::PARAM_STR);
+		
+		return ($command->execute() === 1);
+	}
+	
+	public static function hasCredit($type){
+		if(empty($type)) return false;
+		if(!isset(Apicredits::$types[$type])) return false;
+		$id = Yii::app()->user->id;
+		$credit = Apicredits::model()->findByAttributes(array('user_id'=>$id,'type'=>$type));
+		
+		return ($credit->cnt > 0);
+	}
+	
+	public static function addDefaultCredits($userid){
+		$sql = 'insert into `apicredits` (user_id,type,cnt) values (:userid,"api",:apiCnt),(:userid,"report",:reportCnt)';
+		
+		$connection=Yii::app()->db;
+		$command=$connection->createCommand($sql);
+		$command->bindParam(":userid",$userid,PDO::PARAM_INT);
+		$command->bindParam(":apiCnt",self::$defaultApiCredits,PDO::PARAM_INT);
+		$command->bindParam(":reportCnt",self::$defaultReportCredits,PDO::PARAM_INT);
+		$command->execute();
 	}
 }

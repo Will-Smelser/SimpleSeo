@@ -80,11 +80,10 @@ body
 	
 }
 
-#content
+#content, .content
 {
-    margin:10px 0px 20px 0px;
+    margin:10px 0px;
     padding: 20px;
-    padding: 2.50em 2.50em;
 	background: #FFFFFF;
 	border: 1px solid #e0e0e0;
 	border-radius: 5px;
@@ -192,21 +191,21 @@ body
   overflow-x:hidden;
   overflow-y:hidden;
 }
-.dashIcon {
+div.dashIcon.right{
+	float:right;
+}
+div.dashIcon {
   float:left;
-  /*padding-left:4px;width:123px;*/
   border: solid 1px #CCCCCC;	
   background-color:#F9F9F9;
-  padding-top:8px;
-  margin-bottom:10px;
   text-align:center;
   border-radius:6px;
-  
+  margin:0px 0px 10px 10px;
 }
 
 .blue-bg .dashIcon{
 	float:right;
-	margin:0px 20px 20px 0px;
+	margin:0px 20px 0px 20px;
 }
 
 .dashIconText{
@@ -769,5 +768,130 @@ background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(54,54,54,0) 79%
 background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(54,54,54,0) 79%,rgba(0,0,0,0.14) 100%); /* IE10+ */
 background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(54,54,54,0) 79%,rgba(0,0,0,0.14) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#24000000',GradientType=0 ); /* IE6-9 */
+
+}
+
+
+
+
+
+
+
+
+#noTrespassingOuterBarG{
+height:27px;
+width:500px;
+border:1px solid #E6E6E6;
+overflow:hidden;
+background-color:#f26e34;
+border-radius:6px;
+position:relative;
+}
+
+#loadingTxt{
+	position:absolute;
+	width:500px;
+	text-align:center;
+	padding-top:5px;
+	font-size:16px;
+	font-weight:bold;
+	color:#000;
+	z-index:10;
+}
+
+.noTrespassingBarLineG{
+opacity:0.9;
+background-color:#E6E6E6;
+float:left;
+width:14px;
+height:120px;
+margin-right:24px;
+margin-top:-28px;
+-moz-transform:rotate(45deg);
+-webkit-transform:rotate(45deg);
+-ms-transform:rotate(45deg);
+-o-transform:rotate(45deg);
+transform:rotate(45deg);
+}
+
+.noTrespassingAnimationG{
+width:620px;
+-moz-animation-name:noTrespassingAnimationG;
+-moz-animation-duration:0.9s;
+-moz-animation-iteration-count:infinite;
+-moz-animation-timing-function:linear;
+-webkit-animation-name:noTrespassingAnimationG;
+-webkit-animation-duration:0.9s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-timing-function:linear;
+-ms-animation-name:noTrespassingAnimationG;
+-ms-animation-duration:0.9s;
+-ms-animation-iteration-count:infinite;
+-ms-animation-timing-function:linear;
+-o-animation-name:noTrespassingAnimationG;
+-o-animation-duration:0.9s;
+-o-animation-iteration-count:infinite;
+-o-animation-timing-function:linear;
+animation-name:noTrespassingAnimationG;
+animation-duration:0.9s;
+animation-iteration-count:infinite;
+animation-timing-function:linear;
+}
+
+#noTrespassingFrontBarG{
+}
+
+@-moz-keyframes noTrespassingAnimationG{
+0%{
+margin-left:-38px;
+}
+
+100%{
+margin-left:0px;
+}
+
+}
+
+@-webkit-keyframes noTrespassingAnimationG{
+0%{
+margin-left:-38px;
+}
+
+100%{
+margin-left:0px;
+}
+
+}
+
+@-ms-keyframes noTrespassingAnimationG{
+0%{
+margin-left:-38px;
+}
+
+100%{
+margin-left:0px;
+}
+
+}
+
+@-o-keyframes noTrespassingAnimationG{
+0%{
+margin-left:-38px;
+}
+
+100%{
+margin-left:0px;
+}
+
+}
+
+@keyframes noTrespassingAnimationG{
+0%{
+margin-left:-38px;
+}
+
+100%{
+margin-left:0px;
+}
 
 }

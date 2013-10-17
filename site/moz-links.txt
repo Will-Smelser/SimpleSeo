@@ -7,50 +7,53 @@
 
   <meta name="description" content="Open Site Explorer is Moz's Search Engine for Links. Perform competitive link research, explore backlinks, anchor text, and more for free." />
   <meta content="authenticity_token" name="csrf-param" />
-<meta content="Mg+Cprm39a/iFleTUPU4x4syWyCTh/08CCjOr6ZRz+Q=" name="csrf-token" />
+<meta content="gyzoz7kNUmnitKWPVPUPxcSCLQs0WXMICf5GPgXgPpc=" name="csrf-token" />
   <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/themes/ui-lightness/jquery-ui.css" media="all" rel="stylesheet" type="text/css" />
-  <link href="/stylesheets/jquery.ui.selectmenu.css?1379699303" media="all" rel="stylesheet" type="text/css" />
-  <link href="/stylesheets/application.css?1379699303" media="all" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/jquery.ui.selectmenu.css?1381162704" media="all" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/application.css?1381162704" media="all" rel="stylesheet" type="text/css" />
     
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js" type="text/javascript"></script>
   <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.8.1/jquery.validate.min.js" type="text/javascript"></script>
-  <!--[if lte IE 8]><script src="/javascripts/lib/flot/excanvas.min.js?1379699303" type="text/javascript"></script><![endif]-->
-  <script src="/javascripts/lib/jquery.tools.min.js?1379699303" type="text/javascript"></script>
-  <script src="/javascripts/lib/jshashtable-2.1.js?1379699303" type="text/javascript"></script>
-<script src="/javascripts/lib/jquery.numberformatter-1.2.1.min.js?1379699303" type="text/javascript"></script>
-  <script src="/javascripts/lib/jquery.ui.selectmenu.js?1379699303" type="text/javascript"></script>
-  <script src="/javascripts/lib/jquery.placeholder.js?1379699303" type="text/javascript"></script>
-  <script src="/javascripts/app/application.js?1379699303" type="text/javascript"></script>
+  <!--[if lte IE 8]><script src="/javascripts/lib/flot/excanvas.min.js?1381162704" type="text/javascript"></script><![endif]-->
+  <script src="/javascripts/lib/jquery.tools.min.js?1381162704" type="text/javascript"></script>
+  <script src="/javascripts/lib/jshashtable-2.1.js?1381162704" type="text/javascript"></script>
+<script src="/javascripts/lib/jquery.numberformatter-1.2.1.min.js?1381162704" type="text/javascript"></script>
+  <script src="/javascripts/lib/jquery.ui.selectmenu.js?1381162704" type="text/javascript"></script>
+  <script src="/javascripts/lib/jquery.placeholder.js?1381162704" type="text/javascript"></script>
+  <script src="/javascripts/app/application.js?1381162704" type="text/javascript"></script>
 
   <link rel="shortcut icon" href="/favicon.ico?v=2" />
   
   <script>
-    window._token = "Mg+Cprm39a/iFleTUPU4x4syWyCTh/08CCjOr6ZRz+Q=";
+    window._token = "gyzoz7kNUmnitKWPVPUPxcSCLQs0WXMICf5GPgXgPpc=";
   </script>
     <script>
     // If we are filtering links coming from a single domain
     var SINGLE_DOMAIN = false;
   </script>
-  <script src="/javascripts/app/links_index.js?1379699303" type="text/javascript"></script>
-  <link href="/stylesheets/links.css?1379699303" media="all" rel="stylesheet" type="text/css" />
+  <script src="/javascripts/app/links_index.js?1381162704" type="text/javascript"></script>
+  <link href="/stylesheets/links.css?1381162704" media="all" rel="stylesheet" type="text/css" />
   <script>
-    var REPORT_SITE = "kafekerouac.com";
+    var REPORT_SITE = "www.google.com";
+      $(function() {
+        checkRedirect("www.google.com");
+      });
   </script>
 
-  <script src="/javascripts/lib/jquery.cookies.js?1379699303" type="text/javascript"></script>
-  <script src="/javascripts/lib/neteye/jquery.activity-indicator-1.0.0.min.js?1379699303" type="text/javascript"></script>
-  <script src="/javascripts/lib/flot/jquery.flot.min.js?1379699303" type="text/javascript"></script>
-  <script src="/javascripts/lib/flot/jquery.flot.pie.min.js?1379699303" type="text/javascript"></script>
-  <script src="/javascripts/app/comparisons_index.js?1379699303" type="text/javascript"></script>
+  <script src="/javascripts/lib/jquery.cookies.js?1381162704" type="text/javascript"></script>
+  <script src="/javascripts/lib/neteye/jquery.activity-indicator-1.0.0.min.js?1381162704" type="text/javascript"></script>
+  <script src="/javascripts/lib/flot/jquery.flot.min.js?1381162704" type="text/javascript"></script>
+  <script src="/javascripts/lib/flot/jquery.flot.pie.min.js?1381162704" type="text/javascript"></script>
+  <script src="/javascripts/app/comparisons_index.js?1381162704" type="text/javascript"></script>
 
-  <link href="/stylesheets/reports.css?1379699303" media="all" rel="stylesheet" type="text/css" />
-  <link href="/stylesheets/compare_dialog.css?1379699303" media="all" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/reports.css?1381162704" media="all" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/compare_dialog.css?1381162704" media="all" rel="stylesheet" type="text/css" />
   <script>
     $(function () {
       var options = {maxComparisons: 5};
         options.completion = function () {
-          var baseUrl = "/comparisons?site=kafekerouac.com";
+          var baseUrl = "/comparisons?site=www.google.com";
           $(".add-sites input:visible").each(function (index) {
             baseUrl += "&comparisons[" + index + "]=" + $(this).val();
           });
@@ -58,15 +61,15 @@
           return false;
         };
       var manager = $("#add-comparisons").manageComparisons(options);
-
+    
       $("#compare-button").click(function () {
         manager.manageComparisons("open");
         return false;
       });
 
     $("table.comparison").comparison({manager: manager});
-    $("table.comparison").comparison("populate", "kafekerouac.com", [{"anchor_text":"Kafe Kerouac","canonical_source_url":"heidirubymiller.blogspot.com/","canonical_target_url":"kafekerouac.com/","domain_authority":95.06639669879699,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440288,"internal_source_url_id":13560968882,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":3287089,"num_root_domain_links_to_page":116,"off_screen?":false,"page_authority":55.077012430639215,"rel_canonical?":false,"root_domain":"blogspot.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Heidi Ruby Miller","via_301?":false},{"anchor_text":"Kafe Kerouac","canonical_source_url":"www.deadoceans.com/artist.php?name=luyas","canonical_target_url":"kafekerouac.com/","domain_authority":57.33761923062909,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440430,"internal_source_url_id":17672245695,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":1107,"num_root_domain_links_to_page":31,"off_screen?":false,"page_authority":54.04641205496914,"rel_canonical?":false,"root_domain":"deadoceans.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"\n\tThe Luyas :: Dead Oceans\t","via_301?":false},{"anchor_text":"Kafe Kerouac","canonical_source_url":"www.kickstarter.com/projects/368750018/print-promote-and-provide-wild-harmony-to-all/posts/400193","canonical_target_url":"kafekerouac.com/","domain_authority":95.51956535542405,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440593,"internal_source_url_id":27850978691,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":142631,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":45.73341123082074,"rel_canonical?":false,"root_domain":"kickstarter.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Get the word out on WILD HARMONY - book promotion by James Coyne &raquo; Wild Harmony Conclusion &mdash; Kickstarter","via_301?":false},{"anchor_text":"Kafe Kerouac","canonical_source_url":"deadoceans.com/artist.php?name=luyas","canonical_target_url":"kafekerouac.com/","domain_authority":57.33761923062909,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440447,"internal_source_url_id":17672246743,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":1107,"num_root_domain_links_to_page":9,"off_screen?":false,"page_authority":45.4451139624873,"rel_canonical?":false,"root_domain":"deadoceans.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"\n\tThe Luyas :: Dead Oceans\t","via_301?":false},{"anchor_text":"Kafe Kerouac","canonical_source_url":"www.kickstarter.com/projects/poorelvis/poor-elvis-7-inch-vinyl-and-rust-belt-tour","canonical_target_url":"kafekerouac.com/","domain_authority":95.51956535542405,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440594,"internal_source_url_id":27851933969,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":142631,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":45.325481126721215,"rel_canonical?":false,"root_domain":"kickstarter.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Poor Elvis - 7-inch Vinyl & Rust Belt Tour by Poor Elvis &mdash; Kickstarter","via_301?":true},{"anchor_text":"kafekerouac.com","canonical_source_url":"www.thisweeknews.com/content/stories/2013/06/26/fischers-fab-10-9.html","canonical_target_url":"kafekerouac.com/","domain_authority":70.06165247081961,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440657,"internal_source_url_id":41334216200,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":3178,"num_root_domain_links_to_page":2,"off_screen?":false,"page_authority":44.665716672961054,"rel_canonical?":false,"root_domain":"thisweeknews.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Fischer&#039;s Fab 10 (9) | ThisWeek Community News","via_301?":true},{"anchor_text":"","canonical_source_url":"kafekerouac.com/","canonical_target_url":"kafekerouac.com/","domain_authority":34.668667632210074,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440580,"internal_source_url_id":27517337218,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":78,"num_root_domain_links_to_page":65,"off_screen?":false,"page_authority":44.22189294355361,"rel_canonical?":true,"root_domain":"kafekerouac.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Kafe Kerouac - A clean, well lighted cafe was a very different thing.","via_301?":false},{"anchor_text":"","canonical_source_url":"www.kafekerouac.com/","canonical_target_url":"kafekerouac.com/","domain_authority":34.668667632210074,"feed?":false,"http_301?":true,"http_302?":false,"internal_link_id":242245440579,"internal_source_url_id":27517337206,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":78,"num_root_domain_links_to_page":38,"off_screen?":false,"page_authority":44.09062519336911,"rel_canonical?":false,"root_domain":"kafekerouac.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":true,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"","via_301?":false},{"anchor_text":"Kafe Kerouac","canonical_source_url":"dogstarbooks.blogspot.com/","canonical_target_url":"kafekerouac.com/","domain_authority":95.06639669879699,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440287,"internal_source_url_id":13549210681,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":3287089,"num_root_domain_links_to_page":24,"off_screen?":false,"page_authority":43.43258486991334,"rel_canonical?":false,"root_domain":"blogspot.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"DOG STAR BOOKS","via_301?":false},{"anchor_text":"Kafe Kerouac","canonical_source_url":"www.gorelets.com/blog/","canonical_target_url":"kafekerouac.com/","domain_authority":46.55176578699859,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440522,"internal_source_url_id":22997570298,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":308,"num_root_domain_links_to_page":20,"off_screen?":false,"page_authority":42.58108643828879,"rel_canonical?":false,"root_domain":"gorelets.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"gorelets.com -   blog","via_301?":false},{"anchor_text":"Kafe Kerouac","canonical_source_url":"d6.simplyliving.org/content/community-calendar","canonical_target_url":"kafekerouac.com/","domain_authority":41.11137719342926,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440708,"internal_source_url_id":67944406241,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":158,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":40.79953232707193,"rel_canonical?":false,"root_domain":"simplyliving.org/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Community Calendar  | Simply Living","via_301?":true},{"anchor_text":"Kafe Kerouac","canonical_source_url":"secure.hostmonster.com/%7Eblackair/OPENMIC_front.htm","canonical_target_url":"kafekerouac.com/","domain_authority":89.94368373593157,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440528,"internal_source_url_id":24701504855,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":79471,"num_root_domain_links_to_page":3,"off_screen?":false,"page_authority":37.747099368426845,"rel_canonical?":false,"root_domain":"hostmonster.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Writers' Block Poetry Night - Columbus, Ohio","via_301?":false},{"anchor_text":"Official Venue Website","canonical_source_url":"www.jambase.com/shows/Shows.aspx?ArtistID=&VenueID=123036&City=&State=&Zip=&StartDate=&EndDate=&Rec=False","canonical_target_url":"kafekerouac.com/","domain_authority":74.76429513367412,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440536,"internal_source_url_id":26345981028,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":9992,"num_root_domain_links_to_page":2,"off_screen?":false,"page_authority":37.642902576984625,"rel_canonical?":false,"root_domain":"jambase.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"\r\n\tShows at Kafe Kerouac in Columbus, OH from 6/27/2013 to 6/27/2014 on JamBase\r\n","via_301?":true},{"anchor_text":"http://www.kafekerouac.com","canonical_source_url":"happyhour.columbusalive.com/columbus/places/74691-Kafe-Kerouac-Campus-Columbus","canonical_target_url":"kafekerouac.com/","domain_authority":65.82840540246312,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440293,"internal_source_url_id":16382708991,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":true,"noscript?":false,"num_domain_links_to_domain":1938,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":37.326851847977814,"rel_canonical?":false,"root_domain":"columbusalive.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Kafe Kerouac in Campus, Columbus | Columbus Alive","via_301?":true},{"anchor_text":"Kafe Kerouac","canonical_source_url":"users.wowway.com/%7Eefavers0976/OPENMIC_front.htm","canonical_target_url":"kafekerouac.com/","domain_authority":73.80748314075396,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440668,"internal_source_url_id":44955229120,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":2223,"num_root_domain_links_to_page":5,"off_screen?":false,"page_authority":36.90330200834701,"rel_canonical?":false,"root_domain":"wowway.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Writers' Block Poetry Night - Columbus, Ohio","via_301?":false},{"anchor_text":"Kafe Kerouac","canonical_source_url":"michaelarnzen.com/","canonical_target_url":"kafekerouac.com/","domain_authority":25.738108485530976,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440599,"internal_source_url_id":30802556658,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":13,"num_root_domain_links_to_page":12,"off_screen?":false,"page_authority":36.26280579308495,"rel_canonical?":false,"root_domain":"michaelarnzen.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"\nmichael arnzen\n","via_301?":false},{"anchor_text":"Kafe Kerouac","canonical_source_url":"secure.hostmonster.com/%7Eblackair/OPENMIC_Slam.htm","canonical_target_url":"kafekerouac.com/","domain_authority":89.94368373593157,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440527,"internal_source_url_id":24701504854,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":79471,"num_root_domain_links_to_page":3,"off_screen?":false,"page_authority":36.13333305720997,"rel_canonical?":false,"root_domain":"hostmonster.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Writers Block Poetry OPEN MIC Slam Schedule","via_301?":false},{"anchor_text":"kafekerouac.com","canonical_source_url":"www.thisweeknews.com/content/stories/2013/03/05/fischers-fab-five.html","canonical_target_url":"kafekerouac.com/","domain_authority":70.06165247081961,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440656,"internal_source_url_id":41334216000,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":3178,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":35.2327616194445,"rel_canonical?":false,"root_domain":"thisweeknews.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Fischer&#039;s Fab Five | ThisWeek Community News","via_301?":true},{"anchor_text":"Kafe Kerouac","canonical_source_url":"beta.jacketflap.com/megablog/index.asp?tagid=1478&tag=humor","canonical_target_url":"kafekerouac.com/","domain_authority":58.998124911131896,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440531,"internal_source_url_id":26312716098,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":1765,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":34.7696637293065,"rel_canonical?":false,"root_domain":"jacketflap.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Children's Publishing Blogs - humor blog posts","via_301?":false},{"anchor_text":"Kafe Kerouac","canonical_source_url":"beta.jacketflap.com/megablog/index.asp?tagid=590&tag=Literature","canonical_target_url":"kafekerouac.com/","domain_authority":58.998124911131896,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440534,"internal_source_url_id":26312774568,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":1765,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":34.44107129271889,"rel_canonical?":false,"root_domain":"jacketflap.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Children's Publishing Blogs - Literature blog posts","via_301?":false},{"anchor_text":"Learn More","canonical_source_url":"www.natecurrin.com/tour/","canonical_target_url":"kafekerouac.com/","domain_authority":30.365673537595388,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440603,"internal_source_url_id":32134769486,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":50,"num_root_domain_links_to_page":2,"off_screen?":false,"page_authority":34.32687081280975,"rel_canonical?":false,"root_domain":"natecurrin.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"TOUR DATES | The Official Website of Nate Currin","via_301?":false},{"anchor_text":"Kafe Kerouac","canonical_source_url":"deadoceans.com/blog/tag/dead-oceans/","canonical_target_url":"kafekerouac.com/","domain_authority":57.33761923062909,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440459,"internal_source_url_id":17672250767,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":1107,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":34.29423779703957,"rel_canonical?":false,"root_domain":"deadoceans.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"\n\t  dead oceans News :: Dead Oceans\t","via_301?":false},{"anchor_text":"Kafe Kerouac","canonical_source_url":"beta.jacketflap.com/megablog/index.asp?tagid=590&tag=literature","canonical_target_url":"kafekerouac.com/","domain_authority":58.998124911131896,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440535,"internal_source_url_id":26312774569,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":1765,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":33.391582038443175,"rel_canonical?":false,"root_domain":"jacketflap.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Children's Publishing Blogs - literature blog posts","via_301?":false},{"anchor_text":"Kafe Kerouac","canonical_source_url":"beta.jacketflap.com/megablog/index.asp?tagid=1478&tag=Humor","canonical_target_url":"kafekerouac.com/","domain_authority":58.998124911131896,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440530,"internal_source_url_id":26312716097,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":1765,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":33.303303234388935,"rel_canonical?":false,"root_domain":"jacketflap.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Children's Publishing Blogs - Humor blog posts","via_301?":false},{"anchor_text":"Kafe Kerouac","canonical_source_url":"deadoceans.com/blog/tag/the-luyas/","canonical_target_url":"kafekerouac.com/","domain_authority":57.33761923062909,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440463,"internal_source_url_id":17672254160,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":1107,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":32.79430742839247,"rel_canonical?":false,"root_domain":"deadoceans.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"\n\t  the luyas News :: Dead Oceans\t","via_301?":false},{"anchor_text":"Website","canonical_source_url":"columbus.schmap.com/shopping","canonical_target_url":"kafekerouac.com/","domain_authority":62.811966447411876,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440639,"internal_source_url_id":37364686141,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":2296,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":32.46746223540478,"rel_canonical?":false,"root_domain":"schmap.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Columbus Shopping","via_301?":true},{"anchor_text":"Website","canonical_source_url":"columbus.schmap.com/health-and-beauty","canonical_target_url":"kafekerouac.com/","domain_authority":62.811966447411876,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440637,"internal_source_url_id":37364685811,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":2296,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":32.46552550192156,"rel_canonical?":false,"root_domain":"schmap.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Columbus Health, Beauty & Fitness","via_301?":true},{"anchor_text":"Website","canonical_source_url":"columbus.schmap.com/","canonical_target_url":"kafekerouac.com/","domain_authority":62.811966447411876,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440633,"internal_source_url_id":37364685589,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":2296,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":32.44732153723897,"rel_canonical?":false,"root_domain":"schmap.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Columbus - Real-time local buzz","via_301?":true},{"anchor_text":"Kafe Kerouac","canonical_source_url":"beta.jacketflap.com/megablog/index.asp?tagid=16643&tag=National+Poetry+Month","canonical_target_url":"kafekerouac.com/","domain_authority":58.998124911131896,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440532,"internal_source_url_id":26312720876,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":1765,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":32.05679152211465,"rel_canonical?":false,"root_domain":"jacketflap.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Children's Publishing Blogs - National Poetry Month blog posts","via_301?":false},{"anchor_text":"Kafe Kerouac","canonical_source_url":"www.americansongwriter.com/2012/10/the-american-songwriter-coffeehouse-tour-journal-andrew-kelley-simons/","canonical_target_url":"kafekerouac.com/","domain_authority":66.64060624653365,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440273,"internal_source_url_id":10739731693,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":2860,"num_root_domain_links_to_page":2,"off_screen?":false,"page_authority":31.422921795776563,"rel_canonical?":false,"root_domain":"americansongwriter.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"The American Songwriter Coffeehouse Tour Journal: Andrew Kelley Simons | American Songwriter","via_301?":false},{"anchor_text":"Kafe Kerouac","canonical_source_url":"beta.jacketflap.com/megablog/index.asp?tagid=16643&tag=national+poetry+month","canonical_target_url":"kafekerouac.com/","domain_authority":58.998124911131896,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440533,"internal_source_url_id":26312720877,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":1765,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":31.36353920745092,"rel_canonical?":false,"root_domain":"jacketflap.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Children's Publishing Blogs - national poetry month blog posts","via_301?":false},{"anchor_text":"Kafe Kerouac","canonical_source_url":"www.cringe.com/current/index.php","canonical_target_url":"kafekerouac.com/","domain_authority":41.19844186419222,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440297,"internal_source_url_id":16852903502,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":336,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":31.055070141155475,"rel_canonical?":false,"root_domain":"cringe.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Cringe.com :: The Columbus Sound :: Columbus, Ohio Music News and Resources","via_301?":false},{"anchor_text":"kafekerouac.com","canonical_source_url":"www.thisweeknews.com/content/stories/2012/07/31/fischers-fab-five.html","canonical_target_url":"kafekerouac.com/","domain_authority":70.06165247081961,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440655,"internal_source_url_id":41334215803,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":3178,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":30.95293729819379,"rel_canonical?":false,"root_domain":"thisweeknews.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Fischer&#039;s Fab Five | ThisWeek Community News","via_301?":true},{"anchor_text":"Kafe Kerouac","canonical_source_url":"ericnassau.naladahc.com/content/tours/2006dates.html","canonical_target_url":"kafekerouac.com/","domain_authority":34.75130638854063,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440602,"internal_source_url_id":32059753688,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":70,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":30.85821301518379,"rel_canonical?":false,"root_domain":"naladahc.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"eric nassau | x-country - 2006 tour dates","via_301?":true},{"anchor_text":"Kafe Kerouac","canonical_source_url":"beta.jacketflap.com/megablog/?blogid=3110","canonical_target_url":"kafekerouac.com/","domain_authority":58.998124911131896,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440529,"internal_source_url_id":26312318565,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":1765,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":30.66397631933104,"rel_canonical?":false,"root_domain":"jacketflap.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Children's Publishing Blog: The (Mostly) Official Blog of Thurber House","via_301?":false},{"anchor_text":"Kafe Kerouac","canonical_source_url":"deadoceans.com/blog/category/artists-dead-oceans/luyas/","canonical_target_url":"kafekerouac.com/","domain_authority":57.33761923062909,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440450,"internal_source_url_id":17672249370,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":1107,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":30.58763801946537,"rel_canonical?":false,"root_domain":"deadoceans.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"\n\t  Luyas News :: Dead Oceans\t","via_301?":false},{"anchor_text":"Website","canonical_source_url":"columbus.schmap.com/cafes","canonical_target_url":"kafekerouac.com/","domain_authority":62.811966447411876,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440635,"internal_source_url_id":37364685686,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":2296,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":30.105427573279258,"rel_canonical?":false,"root_domain":"schmap.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Columbus - Columbus Cafes","via_301?":true},{"anchor_text":"Kafe Kerouac","canonical_source_url":"mobile.cringe.com/shows.php","canonical_target_url":"kafekerouac.com/","domain_authority":41.19844186419222,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440296,"internal_source_url_id":16852901070,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":336,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":30.029788208197917,"rel_canonical?":false,"root_domain":"cringe.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"CRINGE MOBILE - Columbus, Ohio Music","via_301?":false},{"anchor_text":"Website","canonical_source_url":"columbus.schmap.com/bookshops","canonical_target_url":"kafekerouac.com/","domain_authority":62.811966447411876,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440634,"internal_source_url_id":37364685680,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":2296,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":29.921647904379604,"rel_canonical?":false,"root_domain":"schmap.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Columbus - Columbus Bookshops","via_301?":true},{"anchor_text":"Website","canonical_source_url":"columbus.schmap.com/cafes?s=buzz","canonical_target_url":"kafekerouac.com/","domain_authority":62.811966447411876,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440636,"internal_source_url_id":37364685712,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":2296,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":29.88706993967001,"rel_canonical?":false,"root_domain":"schmap.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Columbus - Columbus Cafes","via_301?":true},{"anchor_text":"a funky coffeehouse, Kafe Kerouac","canonical_source_url":"derfcity.com/blog/blahblahblah.html","canonical_target_url":"kafekerouac.com/","domain_authority":50.18188955790028,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440476,"internal_source_url_id":17848604269,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":304,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":29.802003842385083,"rel_canonical?":false,"root_domain":"derfcity.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Derf's Blog","via_301?":false},{"anchor_text":"Website","canonical_source_url":"columbus.schmap.com/health-and-beauty/","canonical_target_url":"kafekerouac.com/","domain_authority":62.811966447411876,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440638,"internal_source_url_id":37364685812,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":2296,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":29.705785568913562,"rel_canonical?":false,"root_domain":"schmap.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Columbus Health, Beauty & Fitness","via_301?":true},{"anchor_text":"kafekerouac.com","canonical_source_url":"maxinkcomix.squarespace.com/blink-store/","canonical_target_url":"kafekerouac.com/","domain_authority":91.60034445467673,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440641,"internal_source_url_id":39237747009,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":130056,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":29.448541701073527,"rel_canonical?":false,"root_domain":"squarespace.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":" - Where to buy BLINK books/t-shirts/prints/etc...","via_301?":true},{"anchor_text":"Kafe Kerouac","canonical_source_url":"www.gorelets.com/blog/feed/","canonical_target_url":"kafekerouac.com/","domain_authority":46.55176578699859,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440523,"internal_source_url_id":22997570521,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":308,"num_root_domain_links_to_page":3,"off_screen?":false,"page_authority":29.345078995278037,"rel_canonical?":false,"root_domain":"gorelets.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"gorelets.com | Creative Horror by Michael A. Arnzen","via_301?":false},{"anchor_text":"a funky coffeehouse, Kafe Kerouac","canonical_source_url":"derfcity.com/blog/blah_0213.html","canonical_target_url":"kafekerouac.com/","domain_authority":50.18188955790028,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440472,"internal_source_url_id":17848604242,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":304,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":29.02760205881715,"rel_canonical?":false,"root_domain":"derfcity.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Derf's Blog","via_301?":false},{"anchor_text":"a funky coffeehouse, Kafe Kerouac","canonical_source_url":"derfcity.com/blog/blah_0513.html","canonical_target_url":"kafekerouac.com/","domain_authority":50.18188955790028,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440473,"internal_source_url_id":17848604250,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":304,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":29.02760205881715,"rel_canonical?":false,"root_domain":"derfcity.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Derf's Blog","via_301?":false},{"anchor_text":"a funky coffeehouse, Kafe Kerouac","canonical_source_url":"derfcity.com/blog/blah_0613.html","canonical_target_url":"kafekerouac.com/","domain_authority":50.18188955790028,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440474,"internal_source_url_id":17848604253,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":304,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":29.02760205881715,"rel_canonical?":false,"root_domain":"derfcity.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Derf's Blog","via_301?":false},{"anchor_text":"a funky coffeehouse, Kafe Kerouac","canonical_source_url":"derfcity.com/blog/blah_1212.html","canonical_target_url":"kafekerouac.com/","domain_authority":50.18188955790028,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440475,"internal_source_url_id":17848604267,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":304,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":29.02760205881715,"rel_canonical?":false,"root_domain":"derfcity.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Derf's Blog","via_301?":false},{"anchor_text":"Kafe Kerouac&ltbr&gt;    ","canonical_source_url":"writersblockpoetry.rewritingovid.net/Schedule.php","canonical_target_url":"kafekerouac.com/","domain_authority":28.74806472390608,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440674,"internal_source_url_id":62520639025,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":10,"num_root_domain_links_to_page":2,"off_screen?":false,"page_authority":28.59599687091539,"rel_canonical?":false,"root_domain":"rewritingovid.net/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Writers' Block Poetry Night - Schedule","via_301?":false},{"anchor_text":"Kafe Kerouac","canonical_source_url":"pattycakeveganbakery.com/faq.html","canonical_target_url":"kafekerouac.com/","domain_authority":37.495553688507755,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":242245440614,"internal_source_url_id":33949257467,"internal_target_url_id":27517337218,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":116,"num_root_domain_links_to_page":1,"off_screen?":false,"page_authority":27.65068031936826,"rel_canonical?":false,"root_domain":"pattycakeveganbakery.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"kafekerouac.com/","target_subdomain":"kafekerouac.com/","title":"Pattycake Bakery  |  3009 N. High Street Columbus OH, 43202","via_301?":true}], 0);
-    $("table.comparison").comparison("social", "kafekerouac.com", 0);
+    $("table.comparison").comparison("populate", "www.google.com", [{"anchor_text":"","canonical_source_url":"google.com/","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":true,"http_302?":false,"internal_link_id":218165193075,"internal_source_url_id":27846350403,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":141338,"off_screen?":false,"page_authority":96.49602296960207,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":true,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"","via_301?":false},{"anchor_text":"&ltimg alt=\"Google\" src=\"//www.google.com/images/logos/google_logo_41.png\"&gt;","canonical_source_url":"www.google.com/reader/about/","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165192062,"internal_source_url_id":27821018659,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":49616,"off_screen?":false,"page_authority":96.38126441728429,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"\n      Google Reader – Google\n    ","via_301?":false},{"anchor_text":"Google","canonical_source_url":"www.google.com/analytics/","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165188556,"internal_source_url_id":27774957100,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":53117,"off_screen?":false,"page_authority":96.34465640807336,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"\n      Google Analytics Official Website – Web Analytics &amp; Reporting\n    ","via_301?":false},{"anchor_text":"Google","canonical_source_url":"www.google.com/doubleclick/","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165189144,"internal_source_url_id":27818313856,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":48291,"off_screen?":false,"page_authority":95.85909182904314,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"\n      DoubleClick\n    ","via_301?":false},{"anchor_text":"&ltimg alt=\"Google\" src=\"//www.google.com/images/logos/google_logo_41.png\"&gt;","canonical_source_url":"www.google.com/intl/en/policies/privacy/","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165190134,"internal_source_url_id":27819412183,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":12045,"off_screen?":false,"page_authority":95.5309087981554,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Privacy Policy – Policies &amp; Principles – Google","via_301?":false},{"anchor_text":"&ltnobr&gt;&ltnobr&gt;Google&nbsp;Home&lt/nobr&gt;&lt/nobr&gt;","canonical_source_url":"books.google.com/","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165165778,"internal_source_url_id":27698332824,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":13098,"off_screen?":false,"page_authority":94.79824841879287,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":true,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Google Books","via_301?":false},{"anchor_text":"Close","canonical_source_url":"www.google.com/ig","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165189584,"internal_source_url_id":27818758263,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":10135,"off_screen?":false,"page_authority":94.38946962129121,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"iGoogle","via_301?":false},{"anchor_text":"Google Inc.","canonical_source_url":"www.phoca.cz/phocamaps","canonical_target_url":"www.google.com/","domain_authority":98.48354047143742,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218178841568,"internal_source_url_id":59300500424,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":232619,"num_root_domain_links_to_page":20153,"off_screen?":false,"page_authority":94.37967381916148,"rel_canonical?":false,"root_domain":"phoca.cz/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"","via_301?":false},{"anchor_text":"Google","canonical_source_url":"www.google.com/hangouts/","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165189565,"internal_source_url_id":27818493119,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":12080,"off_screen?":false,"page_authority":94.31972035059636,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"\n      Google+ Hangouts – Google Hangouts\n    ","via_301?":false},{"anchor_text":"Google","canonical_source_url":"www.google.com/analytics/learn/privacy.html","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165188612,"internal_source_url_id":27774957902,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":10157,"off_screen?":false,"page_authority":94.2600881062923,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"\n      Safeguarding Your Google Analytics Data – Google Analytics\n    ","via_301?":false},{"anchor_text":"News","canonical_source_url":"www.google.com/alerts","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165188510,"internal_source_url_id":27774941220,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":15413,"off_screen?":false,"page_authority":94.23017168648425,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Google Alerts - Monitor the Web for interesting new content","via_301?":false},{"anchor_text":"Google","canonical_source_url":"www.google.com/enterprise/apps/business/","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165189249,"internal_source_url_id":27818320918,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":10295,"off_screen?":false,"page_authority":94.15959051685286,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"\n      Google Apps for Business | United States\n    ","via_301?":false},{"anchor_text":"Google","canonical_source_url":"www.android.com/","canonical_target_url":"www.google.com/","domain_authority":95.28250701211194,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218157943898,"internal_source_url_id":13548258761,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":52854,"num_root_domain_links_to_page":12803,"off_screen?":false,"page_authority":93.56031375744675,"rel_canonical?":false,"root_domain":"android.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"\n      Android\n    ","via_301?":false},{"anchor_text":"&copy; 2013 Google","canonical_source_url":"www.google.com/culturalinstitute/project/art-project","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165189121,"internal_source_url_id":27817969693,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":7931,"off_screen?":false,"page_authority":93.550630735346,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Art Project - Google Cultural Institute","via_301?":false},{"anchor_text":"&ltimg alt=\"Google\" src=\n          \"//www.google.com/images/logos/google_logo_41.png\"&gt;","canonical_source_url":"www.google.com/webmasters/","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165193014,"internal_source_url_id":27846321067,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":8429,"off_screen?":false,"page_authority":93.53400103810722,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"\n      Webmasters – Google\n    ","via_301?":false},{"anchor_text":"Google","canonical_source_url":"www.allaboutcookies.org/manage-cookies/","canonical_target_url":"www.google.com/","domain_authority":95.04189932353319,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218188966667,"internal_source_url_id":78490760180,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":43084,"num_root_domain_links_to_page":3978,"off_screen?":false,"page_authority":93.53365535900598,"rel_canonical?":false,"root_domain":"allaboutcookies.org/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Managing Cookies, How to enable &amp; disable a Cookie - All about Cookies","via_301?":false},{"anchor_text":"&ltimg id=\"logo\" src=\"//www.google.com/images/logos/google_logo_41.png\" alt=\"Google\"&gt;","canonical_source_url":"www.google.com/intl/en/about/products/","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165189973,"internal_source_url_id":27819353413,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":3087,"off_screen?":false,"page_authority":93.49300285575721,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Google  - Products","via_301?":false},{"anchor_text":"Google","canonical_source_url":"code.google.com/","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165167255,"internal_source_url_id":27712845098,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":7146,"off_screen?":false,"page_authority":93.32466854921219,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":true,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Google Code","via_301?":false},{"anchor_text":"Google","canonical_source_url":"www.google.com/googlenotebook/faq.html","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165189550,"internal_source_url_id":27818481496,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":2864,"off_screen?":false,"page_authority":93.1992506189148,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"\n      Google Notebook\n    ","via_301?":false},{"anchor_text":"&ltimg src=\"http://www.google.com/intl/en/logos/Logo_25wht.gif\" alt=\"Google\"&gt;","canonical_source_url":"sethgodin.typepad.com/","canonical_target_url":"www.google.com/","domain_authority":94.33990335291848,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218176679270,"internal_source_url_id":52546709729,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":401885,"num_root_domain_links_to_page":13930,"off_screen?":false,"page_authority":92.97024185625354,"rel_canonical?":false,"root_domain":"typepad.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Seth's Blog","via_301?":false},{"anchor_text":"Google","canonical_source_url":"www.w3.org/XML/","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218191630434,"internal_source_url_id":82328773260,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":1229026,"num_root_domain_links_to_page":4949,"off_screen?":false,"page_authority":92.9453049974247,"rel_canonical?":false,"root_domain":"w3.org/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Extensible Markup Language (XML)","via_301?":false},{"anchor_text":"Google","canonical_source_url":"www.google.com/earth/index.html","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165189190,"internal_source_url_id":27818318881,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":5978,"off_screen?":false,"page_authority":92.93205948404737,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"\n      Google Earth\n    ","via_301?":false},{"anchor_text":"&ltimg alt=\"Google\" src=\"//www.google.com/images/logos/google_logo_41.png\"&gt;","canonical_source_url":"www.google.com/intl/de/policies/privacy/","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165189872,"internal_source_url_id":27819352046,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":7863,"off_screen?":false,"page_authority":92.90940355457128,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Datenschutzerklärung – Datenschutzerklärung &amp; Nutzungsbedingungen – Google","via_301?":false},{"anchor_text":"Google","canonical_source_url":"www.google.com/wallet/","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165192992,"internal_source_url_id":27846313108,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":4229,"off_screen?":false,"page_authority":92.87688288984631,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"\n      A smart, virtual wallet for in-store and online shopping – Google Wallet\n    ","via_301?":false},{"anchor_text":"Google","canonical_source_url":"googleblog.blogspot.com/","canonical_target_url":"www.google.com/","domain_authority":94.6247358793974,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218159450028,"internal_source_url_id":16713647074,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":3136864,"num_root_domain_links_to_page":6974,"off_screen?":false,"page_authority":92.77158235993011,"rel_canonical?":false,"root_domain":"blogspot.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"\nOfficial Blog\n","via_301?":false},{"anchor_text":"&ltimg id=\"logo\" src=\"//www.google.com/images/logos/google_logo_41.png\" alt=\"Google\"&gt;","canonical_source_url":"www.google.com/intl/en/about/","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165189965,"internal_source_url_id":27819353348,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":1304,"off_screen?":false,"page_authority":92.58306807865816,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Google  - About Google","via_301?":false},{"anchor_text":"&ltimg alt=\"Google\" src=\"//www.google.com/images/logos/google_logo_41.png\"&gt;","canonical_source_url":"www.google.com/intl/en/policies/","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165190132,"internal_source_url_id":27819412177,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":772,"off_screen?":false,"page_authority":92.44142276898745,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Policies &amp; Principles – Google","via_301?":false},{"anchor_text":"Wikipedia","canonical_source_url":"en.wikipedia.org/wiki/HTML","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218191678669,"internal_source_url_id":82441807826,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":true,"noscript?":false,"num_domain_links_to_domain":2919271,"num_root_domain_links_to_page":4470,"off_screen?":false,"page_authority":92.40785558895467,"rel_canonical?":false,"root_domain":"wikipedia.org/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"HTML - Wikipedia, the free encyclopedia","via_301?":false},{"anchor_text":"Google","canonical_source_url":"www.apache.org/foundation/thanks.html","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218189002096,"internal_source_url_id":78576881410,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":155425,"num_root_domain_links_to_page":751,"off_screen?":false,"page_authority":92.35568803635331,"rel_canonical?":false,"root_domain":"apache.org/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Thanks","via_301?":false},{"anchor_text":"Google&nbsp;Home","canonical_source_url":"www.google.com/webmasters/tools/richsnippets","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165193019,"internal_source_url_id":27846321816,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":5356,"off_screen?":false,"page_authority":92.34307196012509,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Google Structured Data Testing Tool","via_301?":false},{"anchor_text":"&ltimg src=\"/images/get-logos/google.png\" alt=\"Google\" /&gt;","canonical_source_url":"openid.net/get-an-openid/","canonical_target_url":"www.google.com/","domain_authority":95.09433358412632,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218187448747,"internal_source_url_id":75337965279,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":32009,"num_root_domain_links_to_page":1798,"off_screen?":false,"page_authority":92.32262834234442,"rel_canonical?":false,"root_domain":"openid.net/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Get an OpenID® | OpenID","via_301?":true},{"anchor_text":"AFP","canonical_source_url":"www.wired.com/geekdad/","canonical_target_url":"www.google.com/","domain_authority":97.92006435937742,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218177703341,"internal_source_url_id":54946812346,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":191396,"num_root_domain_links_to_page":892,"off_screen?":false,"page_authority":92.14384712846018,"rel_canonical?":false,"root_domain":"wired.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"GeekDad - Parents, Kids and the Stuff We Obsess About | Wired.com","via_301?":false},{"anchor_text":"&ltimg alt=\"Google\" src=\"//www.google.com/images/logos/google_logo_41.png\"&gt;\n          AdWords","canonical_source_url":"www.google.com/adwords/thirdpartypartners/","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165188507,"internal_source_url_id":27774940121,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":1351,"off_screen?":false,"page_authority":92.00901971924361,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"\n      Advertiser Guide: working with a third-party partner – Google AdWords\n    ","via_301?":false},{"anchor_text":"&ltimg alt=\"Google\" src=\"//www.google.com/images/logos/google_logo_41.png\"&gt;","canonical_source_url":"www.google.com/about/jobs/","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165188233,"internal_source_url_id":27772743323,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":1517,"off_screen?":false,"page_authority":91.95660249377596,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Google Jobs","via_301?":false},{"anchor_text":"Google","canonical_source_url":"www.google.com/mobile/","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218165191543,"internal_source_url_id":27820421706,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":5883078,"num_root_domain_links_to_page":2610,"off_screen?":false,"page_authority":91.84615558043382,"rel_canonical?":false,"root_domain":"google.com/","same_cblock?":true,"same_ip?":true,"same_root_domain?":true,"same_sub_domain?":true,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"\n      Google Mobile\n    ","via_301?":false},{"anchor_text":"google.com","canonical_source_url":"en.wikipedia.org/wiki/Google","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218191678662,"internal_source_url_id":82441723811,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":true,"noscript?":false,"num_domain_links_to_domain":2919271,"num_root_domain_links_to_page":3780,"off_screen?":false,"page_authority":91.84600111294742,"rel_canonical?":false,"root_domain":"wikipedia.org/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Google - Wikipedia, the free encyclopedia","via_301?":true},{"anchor_text":"Google","canonical_source_url":"www.google.org/","canonical_target_url":"www.google.com/","domain_authority":91.77785435779033,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218189887470,"internal_source_url_id":79974557491,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":14443,"num_root_domain_links_to_page":3002,"off_screen?":false,"page_authority":91.72514582805474,"rel_canonical?":false,"root_domain":"google.org/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"\n      Home – Google.org\n    ","via_301?":false},{"anchor_text":"Google","canonical_source_url":"www.dmoz.org/add.html","canonical_target_url":"www.google.com/","domain_authority":96.73291703015803,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218189512277,"internal_source_url_id":79362938012,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":84455,"num_root_domain_links_to_page":2554,"off_screen?":false,"page_authority":91.5525222457361,"rel_canonical?":false,"root_domain":"dmoz.org/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Suggesting a Site to The Open Directory Project","via_301?":false},{"anchor_text":"&ltimg alt=\"Google logo\" class=\"align-middle\" src=\"/images/google.gif\" style=\"width: 162px; height: 60px;\" /&gt;","canonical_source_url":"www.python.org/psf/","canonical_target_url":"www.google.com/","domain_authority":96.28497097058822,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218191013098,"internal_source_url_id":81438287563,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":44105,"num_root_domain_links_to_page":592,"off_screen?":false,"page_authority":91.44804787073923,"rel_canonical?":false,"root_domain":"python.org/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Python Software Foundation","via_301?":false},{"anchor_text":"Googlers","canonical_source_url":"t3-framework.org/","canonical_target_url":"www.google.com/","domain_authority":88.3140213332825,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218191368077,"internal_source_url_id":81970466254,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":17076,"num_root_domain_links_to_page":16505,"off_screen?":false,"page_authority":90.66595059292952,"rel_canonical?":false,"root_domain":"t3-framework.org/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Home - T3 - Joomla Template Framework","via_301?":false},{"anchor_text":"&ltimg src=\"http://www.google.com/intl/en/logos/Logo_25wht.gif\" alt=\"Google\"&gt;","canonical_source_url":"sethgodin.typepad.com/seths_blog/","canonical_target_url":"www.google.com/","domain_authority":94.33990335291848,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218176679275,"internal_source_url_id":52546710496,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":401885,"num_root_domain_links_to_page":3192,"off_screen?":false,"page_authority":90.27898280608866,"rel_canonical?":false,"root_domain":"typepad.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Seth's Blog","via_301?":false},{"anchor_text":"Google","canonical_source_url":"www.robotstxt.org/","canonical_target_url":"www.google.com/","domain_authority":91.49115565717277,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218191116263,"internal_source_url_id":81581525484,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":12090,"num_root_domain_links_to_page":3196,"off_screen?":false,"page_authority":90.25124227531532,"rel_canonical?":false,"root_domain":"robotstxt.org/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"The Web Robots Pages","via_301?":false},{"anchor_text":"Google","canonical_source_url":"www.google.org/crisisresponse/","canonical_target_url":"www.google.com/","domain_authority":91.77785435779033,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218189887473,"internal_source_url_id":79974558671,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":14443,"num_root_domain_links_to_page":1999,"off_screen?":false,"page_authority":90.19386355493272,"rel_canonical?":false,"root_domain":"google.org/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"\n      Making critical information more accessible in times of disaster – Google Crisis Response\n    ","via_301?":false},{"anchor_text":"Quick Escape","canonical_source_url":"www.thehotline.org/","canonical_target_url":"www.google.com/","domain_authority":87.6472691452984,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218191419564,"internal_source_url_id":82048303794,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":10599,"num_root_domain_links_to_page":10133,"off_screen?":false,"page_authority":90.06077266321165,"rel_canonical?":false,"root_domain":"thehotline.org/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":" National Domestic Violence Hotline","via_301?":false},{"anchor_text":"Google, Inc.","canonical_source_url":"www.w3.org/Consortium/Member/List","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218191630376,"internal_source_url_id":82328675750,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":true,"noscript?":false,"num_domain_links_to_domain":1229026,"num_root_domain_links_to_page":517,"off_screen?":false,"page_authority":89.66841033740046,"rel_canonical?":false,"root_domain":"w3.org/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Current Members - W3C","via_301?":false},{"anchor_text":"Google","canonical_source_url":"www.catb.org/%7Eesr/faqs/smart-questions.html","canonical_target_url":"www.google.com/","domain_authority":89.07508395205078,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218189229666,"internal_source_url_id":78932494917,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":13119,"num_root_domain_links_to_page":2297,"off_screen?":false,"page_authority":89.14162193336477,"rel_canonical?":false,"root_domain":"catb.org/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"How To Ask Questions The Smart Way","via_301?":false},{"anchor_text":"Google","canonical_source_url":"www.w3.org/TR/css3-selectors/","canonical_target_url":"www.google.com/","domain_authority":100,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218191630415,"internal_source_url_id":82328750340,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":1229026,"num_root_domain_links_to_page":1243,"off_screen?":false,"page_authority":89.04530669320565,"rel_canonical?":false,"root_domain":"w3.org/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Selectors Level 3","via_301?":false},{"anchor_text":"Google","canonical_source_url":"moz.com/beginners-guide-to-seo","canonical_target_url":"www.google.com/","domain_authority":93.30158407313638,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218170054655,"internal_source_url_id":39505409783,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":37018,"num_root_domain_links_to_page":2008,"off_screen?":false,"page_authority":88.95420263857895,"rel_canonical?":false,"root_domain":"moz.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"SEO: The Free Beginner’s Guide From Moz","via_301?":false},{"anchor_text":"Google","canonical_source_url":"www.digitaltrends.com/","canonical_target_url":"www.google.com/","domain_authority":86.68300082553696,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218162240112,"internal_source_url_id":22262970395,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":true,"noscript?":false,"num_domain_links_to_domain":26141,"num_root_domain_links_to_page":2820,"off_screen?":false,"page_authority":88.77477419848047,"rel_canonical?":false,"root_domain":"digitaltrends.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Technology News, Product Reviews and App Reviews | Digital Trends","via_301?":false},{"anchor_text":"&ltimg src=\"Logo_25wht.gif\" WIDTH=75 HEIGHT=32 border=\"0\" alt=\"Google\" align=\"middle\"&gt;&lt/img&gt;","canonical_source_url":"www.refdesk.com/","canonical_target_url":"www.google.com/","domain_authority":86.34272842539733,"feed?":false,"http_301?":false,"http_302?":false,"internal_link_id":218172872907,"internal_source_url_id":45181060596,"internal_target_url_id":27772668587,"meta_nofollow?":false,"meta_refresh?":false,"nofollow?":false,"noscript?":false,"num_domain_links_to_domain":13202,"num_root_domain_links_to_page":8243,"off_screen?":false,"page_authority":88.6677411380535,"rel_canonical?":false,"root_domain":"refdesk.com/","same_cblock?":false,"same_ip?":false,"same_root_domain?":false,"same_sub_domain?":false,"target_root_domain":"google.com/","target_subdomain":"www.google.com/","title":"Reference, Facts, News - Free and Family-friendly Resources -  Refdesk.com","via_301?":false}], 0);
+    $("table.comparison").comparison("social", "www.google.com", 0);
 
   });
   </script>
@@ -175,14 +178,14 @@
                 <a href="http://moz.com/lost-password">Forgot Password?</a>
               </p>
             </div>
-            <input align="absmiddle" alt="Login" id="login_button" onclick="_gaq.push(['_trackPageview', '/vpv/header/login-button/referral']);" src="/images/btn-login.png?1379699303" type="image" />
+            <input align="absmiddle" alt="Login" id="login_button" onclick="_gaq.push(['_trackPageview', '/vpv/header/login-button/referral']);" src="/images/btn-login.png?1381162704" type="image" />
           </form>
         </div>
       </div>
   </div>
 </div>
 
-<a href="/"><img alt="Open Site Explorer - Link Popularity Checker + Backlink Analysis Tool" src="/images/oselogo_small.png?1379699303" /></a>
+<a href="/"><img alt="Open Site Explorer - Link Popularity Checker + Backlink Analysis Tool" src="/images/oselogo_small.png?1381162704" /></a>
 
     </div>
   </div>
@@ -190,10 +193,10 @@
     <div id="header">
     <div class="dark">
   <form id="comparison-form" method="get">
-    http://<input class="ose_site required" name="site" tabindex="1" type="text" value="kafekerouac.com">
+    http://<input class="ose_site required" name="site" tabindex="1" type="text" value="www.google.com">
     <input type="submit" value="Search" />
     <div class="error"></div>
-    <a href="/comparisons?site=kafekerouac.com" id="compare-button">
+    <a href="/comparisons?site=www.google.com" id="compare-button">
       +
       <span class='has-tooltip-hint'>Compare up to 5 sites</span>
     </a>
@@ -212,7 +215,7 @@
         </tr>
         <tr>
           <td>
-              35<span class="subdued">/100</span>
+              100<span class="subdued">/100</span>
           </td>
         </tr>
       </table>
@@ -221,8 +224,8 @@
       <span class="metrics-label">Page Metrics:</span>
 	  <span id="metrics-refresh">
       Just-Discovered Links index updated continuously.
-      Last Mozscape index update: September 16, 2013.
-      Next Mozscape index update: October 14, 2013.
+      Last Mozscape index update: October 9, 2013.
+      Next Mozscape index update: November 6, 2013.
 	  </span>
 	  <div class="clearfix"></div>
 
@@ -247,13 +250,13 @@
         </tr>
         <tr>
           <td>
-              44<span class="subdued">/100</span>
+              98<span class="subdued">/100</span>
           </td>
           <td>
-              65
+              792<span class="unit">k</span>
           </td>
           <td>
-              442
+              42.97<span class="unit">m</span>
           </td>
             <td colspan='4'>
               <span class='learn-more'>
@@ -272,49 +275,49 @@
   <div id="subnav">
     <ul>
   <li>
-    <a class="active" href="/links?site=kafekerouac.com">
+    <a class="active" href="/links?site=www.google.com">
       Inbound Links
       <span class="info-icon has-tooltip"></span>
       <div class="tooltip"><strong>Gauge the site's influence.</strong><br />See inbound links to the URL or domain you've entered and analyze the linking pages.</div>
     </a>
   </li>
   <li>
-    <a class="" href="/pages?site=kafekerouac.com">
+    <a class="" href="/pages?site=www.google.com">
       Top Pages
       <span class="info-icon has-tooltip"></span>
       <div class="tooltip"><strong>Target the best pages to maximize link building.</strong><br/>See top pages on this domain according to Page Authority.</div>
     </a>
   </li>
   <li>
-    <a class="" href="/domains?site=kafekerouac.com">
+    <a class="" href="/domains?site=www.google.com">
       Linking Domains
       <span class="info-icon has-tooltip"></span>
       <div class="tooltip"><strong>Gauge your site's influence.</strong><br/>Analyze the root domains that link to the URL or domain you've entered.</div>
     </a>
   </li>
   <li>
-    <a class="" href="/anchors?site=kafekerouac.com">
+    <a class="" href="/anchors?site=www.google.com">
       Anchor Text
       <span class="info-icon has-tooltip"></span>
       <div class="tooltip"><strong>Learn what keywords the site might be ranking for.</strong><br/>Analyze the phrases and terms most commonly used as anchor text to link to the provided URL or domain.</div>
     </a>
   </li>
   <li>
-    <a class=" compare-link-metrics" href="/comparisons?site=kafekerouac.com">
+    <a class=" compare-link-metrics" href="/comparisons?site=www.google.com">
       Compare Link Metrics
       <span class="info-icon has-tooltip"></span>
       <div class="tooltip"><strong>See detailed metrics</strong> about the URL you've entered on the page level, subdomain level, and root domain level. Compare these metrics for up to five URLs.</div>
     </a>
   </li>
   <li>
-    <a class="" href="/advanced_exports?site=kafekerouac.com">
+    <a class="" href="/advanced_exports?site=www.google.com">
       Advanced Reports
       <span class="info-icon has-tooltip"></span>
       <div class="tooltip"><strong>Request CSV reports</strong> of links, pages, or domains using advanced filters.</div>
     </a>
   </li>
   <li>
-    <a class=" just-discovered" href="/just-discovered?site=kafekerouac.com">
+    <a class=" just-discovered" href="/just-discovered?site=www.google.com">
       Just-Discovered <span class="beta">beta</span>
       <span class="info-icon has-tooltip"></span>
       <div class="tooltip"><strong>Find New Links.</strong><br/>Find links to the domain, subdomain, or URL you've searched within minutes after they're shared.</div>
@@ -333,7 +336,7 @@
 
   <form method="get" id="filters">
   <input type="hidden" name="page" value="1" />
-  <input type="hidden" name="site" value="kafekerouac.com" />
+  <input type="hidden" name="site" value="www.google.com" />
   <input name="sort" type="hidden" value="page_authority" />
   <div class="clearfix"></div>
   <div id="filter-menus">
@@ -383,11 +386,11 @@
 </div>
 
   <span class="pagination-location">
-    <strong>1</strong> - <strong>50</strong> inbound links from <a href="/domains?site=http%3A%2F%2Fkafekerouac.com">65 domains</a>
+    <strong>1</strong> - <strong>50</strong> inbound links from <a href="/domains?site=http%3A%2F%2Fwww.google.com">792,220 domains</a>
     <span class="info-icon has-tooltip"></span>
     <div class="tooltip">Although we do not currently display a count of total links for this filter set, you can still view all the links by paginating or downloading a CSV (up to 25 links per domain).</div>
   </span>
-  <div class="pagination"><em class="current">First</em> <span class="previous_page disabled"></span> <em class="current">1</em> <a rel="next" href="/links.html?group=0&amp;page=2&amp;site=http%3A%2F%2Fkafekerouac.com">2</a> <a href="/links.html?group=0&amp;page=3&amp;site=http%3A%2F%2Fkafekerouac.com">3</a> <a href="/links.html?group=0&amp;page=4&amp;site=http%3A%2F%2Fkafekerouac.com">4</a> <a class="next_page" rel="next" href="/links.html?group=0&amp;page=2&amp;site=http%3A%2F%2Fkafekerouac.com"></a></div>
+  <div class="pagination"><em class="current">First</em> <span class="previous_page disabled"></span> <em class="current">1</em> <a rel="next" href="/links.html?group=0&amp;page=2&amp;site=http%3A%2F%2Fwww.google.com">2</a> <a href="/links.html?group=0&amp;page=3&amp;site=http%3A%2F%2Fwww.google.com">3</a> <a href="/links.html?group=0&amp;page=4&amp;site=http%3A%2F%2Fwww.google.com">4</a> <a class="next_page" rel="next" href="/links.html?group=0&amp;page=2&amp;site=http%3A%2F%2Fwww.google.com"></a></div>
 </div>
 
 <table class=" clearfix" id="results" cellpadding="0" cellspacing="0">
@@ -399,11 +402,11 @@
         <div class="tooltip">The visible, clickable text in a hyperlink.</div>
       </th>
       <th class="page-authority number nowrap">
-        <span class="has-tooltip"><a href="/links.html?group=0&amp;page=1&amp;site=http%3A%2F%2Fkafekerouac.com&amp;sort=page_authority">Page Authority</a></span>
+        <span class="has-tooltip"><a href="/links.html?group=0&amp;page=1&amp;site=http%3A%2F%2Fwww.google.com&amp;sort=page_authority">Page Authority</a></span>
         <div class="tooltip">Predicts this page's ranking potential in the search engines based on an algorithmic combination of all link metrics.</div>
       </th>
       <th class="domain-authority number nowrap">
-        <span class="has-tooltip"><a href="/links.html?group=0&amp;page=1&amp;site=http%3A%2F%2Fkafekerouac.com&amp;sort=domain_authority">Domain Authority</a></span>
+        <span class="has-tooltip"><a href="/links.html?group=0&amp;page=1&amp;site=http%3A%2F%2Fwww.google.com&amp;sort=domain_authority">Domain Authority</a></span>
         <div class="tooltip">Predicts this domain's ranking potential in the search engines based on an algorithmic combination of all link metrics.</div>
       </th>
     </tr>
@@ -414,20 +417,21 @@
 <tr class="even">
   <td>
     <div class="toggle"></div>
+      <span class="flag 301">(301 Redirect)</span>
 
-    <span class="title">Heidi Ruby Miller</span>
+    <span class="title">[No Data]</span>
     <div class="url">
-      <a href="/links?site=heidirubymiller.blogspot.com%2F" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=heidirubymiller.blogspot.com%2F&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://heidirubymiller.blogspot.com/" rel="nofollow" target="_blank" class="canonical">
-        heidirubymiller.blogspot.com/
+      <a href="/links?site=google.com%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=google.com%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://google.com/" rel="nofollow" target="_blank" class="canonical">
+        google.com/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
   </td>
-    <td>Kafe Kerouac</td>
-    <td class="number">55</td>
-    <td class="number">95</td>
+    <td><i>[No Anchor Text]</i></td>
+    <td class="number">96</td>
+    <td class="number">100</td>
 </tr>
 
 
@@ -435,19 +439,19 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title"> The Luyas :: Dead Oceans </span>
+    <span class="title"> Google Reader – Google </span>
     <div class="url">
-      <a href="/links?site=www.deadoceans.com%2Fartist.php%3Fname%3Dluyas" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=www.deadoceans.com%2Fartist.php%3Fname%3Dluyas&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://www.deadoceans.com/artist.php?name=luyas" rel="nofollow" target="_blank" class="canonical">
-        www.deadoceans.com/artist.php?name=luyas
+      <a href="/links?site=www.google.com%2Freader%2Fabout%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Freader%2Fabout%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/reader/about/" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/reader/about/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
   </td>
-    <td>Kafe Kerouac</td>
-    <td class="number">54</td>
-    <td class="number">57</td>
+    <td><div class="flag imgalt">(img alt)</div> Google</td>
+    <td class="number">96</td>
+    <td class="number">100</td>
 </tr>
 
 
@@ -455,19 +459,19 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">Get the word out on WILD HARMONY - book promoti...</span>
+    <span class="title"> Google Analytics Official Website – Web Analyt...</span>
     <div class="url">
-      <a href="/links?site=www.kickstarter.com%2Fprojects%2F368750018%2Fprint-promote-and-provide-wild-harmony-to-all%2Fposts%2F400193" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=www.kickstarter.com%2Fprojects%2F368750018%2Fprint-promote-and-provide-wild-harmony-to-all%2Fposts%2F400193&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://www.kickstarter.com/projects/368750018/print-promote-and-provide-wild-harmony-to-all/posts/400193" rel="nofollow" target="_blank" class="canonical">
-        www.kickstarter.com/projects/368750018/print-promote-and-provide-wild-harmony-to-all/posts/400193
+      <a href="/links?site=www.google.com%2Fanalytics%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Fanalytics%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/analytics/" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/analytics/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
   </td>
-    <td>Kafe Kerouac</td>
-    <td class="number">46</td>
+    <td>Google</td>
     <td class="number">96</td>
+    <td class="number">100</td>
 </tr>
 
 
@@ -475,19 +479,19 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title"> The Luyas :: Dead Oceans </span>
+    <span class="title"> DoubleClick </span>
     <div class="url">
-      <a href="/links?site=deadoceans.com%2Fartist.php%3Fname%3Dluyas" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=deadoceans.com%2Fartist.php%3Fname%3Dluyas&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://deadoceans.com/artist.php?name=luyas" rel="nofollow" target="_blank" class="canonical">
-        deadoceans.com/artist.php?name=luyas
+      <a href="/links?site=www.google.com%2Fdoubleclick%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Fdoubleclick%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/doubleclick/" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/doubleclick/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
   </td>
-    <td>Kafe Kerouac</td>
-    <td class="number">45</td>
-    <td class="number">57</td>
+    <td>Google</td>
+    <td class="number">96</td>
+    <td class="number">100</td>
 </tr>
 
 
@@ -495,19 +499,19 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">Poor Elvis - 7-inch Vinyl &amp; Rust Belt Tour by P...</span>
+    <span class="title">Privacy Policy – Policies &amp; Principles – Google</span>
     <div class="url">
-      <a href="/links?site=www.kickstarter.com%2Fprojects%2Fpoorelvis%2Fpoor-elvis-7-inch-vinyl-and-rust-belt-tour" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=www.kickstarter.com%2Fprojects%2Fpoorelvis%2Fpoor-elvis-7-inch-vinyl-and-rust-belt-tour&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://www.kickstarter.com/projects/poorelvis/poor-elvis-7-inch-vinyl-and-rust-belt-tour" rel="nofollow" target="_blank" class="canonical">
-        www.kickstarter.com/projects/poorelvis/poor-elvis-7-inch-vinyl-and-rust-belt-tour
+      <a href="/links?site=www.google.com%2Fintl%2Fen%2Fpolicies%2Fprivacy%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Fintl%2Fen%2Fpolicies%2Fprivacy%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/intl/en/policies/privacy/" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/intl/en/policies/privacy/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
   </td>
-    <td>Kafe Kerouac</td>
-    <td class="number">45</td>
+    <td><div class="flag imgalt">(img alt)</div> Google</td>
     <td class="number">96</td>
+    <td class="number">100</td>
 </tr>
 
 <td colspan="4" class="limit-notice">
@@ -528,12 +532,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">Fischer&#x27;s Fab 10 (9) | ThisWeek Community News</span>
+    <span class="title">Google Books</span>
     <div class="url">
-      <a href="/links?site=www.thisweeknews.com%2Fcontent%2Fstories%2F2013%2F06%2F26%2Ffischers-fab-10-9.html" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=www.thisweeknews.com%2Fcontent%2Fstories%2F2013%2F06%2F26%2Ffischers-fab-10-9.html&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://www.thisweeknews.com/content/stories/2013/06/26/fischers-fab-10-9.html" rel="nofollow" target="_blank" class="canonical">
-        www.thisweeknews.com/content/stories/2013/06/26/fischers-fab-10-9.html
+      <a href="/links?site=books.google.com%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=books.google.com%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://books.google.com/" rel="nofollow" target="_blank" class="canonical">
+        books.google.com/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -546,12 +550,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">Kafe Kerouac - A clean, well lighted cafe was a...</span>
+    <span class="title">iGoogle</span>
     <div class="url">
-      <a href="/links?site=kafekerouac.com%2F" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=kafekerouac.com%2F&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://kafekerouac.com/" rel="nofollow" target="_blank" class="canonical">
-        kafekerouac.com/
+      <a href="/links?site=www.google.com%2Fig" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Fig&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/ig" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/ig
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -563,14 +567,13 @@
 <tr class="odd">
   <td>
     <div class="toggle"></div>
-      <span class="flag 301">(301 Redirect)</span>
 
     <span class="title">[No Data]</span>
     <div class="url">
-      <a href="/links?site=www.kafekerouac.com%2F" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=www.kafekerouac.com%2F&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://www.kafekerouac.com/" rel="nofollow" target="_blank" class="canonical">
-        www.kafekerouac.com/
+      <a href="/links?site=www.phoca.cz%2Fphocamaps" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.phoca.cz%2Fphocamaps&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.phoca.cz/phocamaps" rel="nofollow" target="_blank" class="canonical">
+        www.phoca.cz/phocamaps
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -583,12 +586,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">DOG STAR BOOKS</span>
+    <span class="title"> Google+ Hangouts – Google Hangouts </span>
     <div class="url">
-      <a href="/links?site=dogstarbooks.blogspot.com%2F" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=dogstarbooks.blogspot.com%2F&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://dogstarbooks.blogspot.com/" rel="nofollow" target="_blank" class="canonical">
-        dogstarbooks.blogspot.com/
+      <a href="/links?site=www.google.com%2Fhangouts%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Fhangouts%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/hangouts/" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/hangouts/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -601,12 +604,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">gorelets.com - blog</span>
+    <span class="title"> Safeguarding Your Google Analytics Data – Goog...</span>
     <div class="url">
-      <a href="/links?site=www.gorelets.com%2Fblog%2F" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=www.gorelets.com%2Fblog%2F&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://www.gorelets.com/blog/" rel="nofollow" target="_blank" class="canonical">
-        www.gorelets.com/blog/
+      <a href="/links?site=www.google.com%2Fanalytics%2Flearn%2Fprivacy.html" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Fanalytics%2Flearn%2Fprivacy.html&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/analytics/learn/privacy.html" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/analytics/learn/privacy.html
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -619,12 +622,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">Community Calendar | Simply Living</span>
+    <span class="title">Google Alerts - Monitor the Web for interesting...</span>
     <div class="url">
-      <a href="/links?site=d6.simplyliving.org%2Fcontent%2Fcommunity-calendar" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=d6.simplyliving.org%2Fcontent%2Fcommunity-calendar&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://d6.simplyliving.org/content/community-calendar" rel="nofollow" target="_blank" class="canonical">
-        d6.simplyliving.org/content/community-calendar
+      <a href="/links?site=www.google.com%2Falerts" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Falerts&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/alerts" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/alerts
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -637,12 +640,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">Writers&#x27; Block Poetry Night - Columbus, Ohio</span>
+    <span class="title"> Google Apps for Business | United States </span>
     <div class="url">
-      <a href="/links?site=secure.hostmonster.com%2F%257Eblackair%2FOPENMIC_front.htm" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=secure.hostmonster.com%2F%257Eblackair%2FOPENMIC_front.htm&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://secure.hostmonster.com/%7Eblackair/OPENMIC_front.htm" rel="nofollow" target="_blank" class="canonical">
-        secure.hostmonster.com/%7Eblackair/OPENMIC_front.htm
+      <a href="/links?site=www.google.com%2Fenterprise%2Fapps%2Fbusiness%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Fenterprise%2Fapps%2Fbusiness%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/enterprise/apps/business/" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/enterprise/apps/business/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -655,12 +658,264 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title"> Shows at Kafe Kerouac in Columbus, OH from 6/2...</span>
+    <span class="title"> Android </span>
     <div class="url">
-      <a href="/links?site=www.jambase.com%2Fshows%2FShows.aspx%3FArtistID%3D%26VenueID%3D123036%26City%3D%26State%3D%26Zip%3D%26StartDate%3D%26EndDate%3D%26Rec%3DFalse" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=www.jambase.com%2Fshows%2FShows.aspx%3FArtistID%3D%26VenueID%3D123036%26City%3D%26State%3D%26Zip%3D%26StartDate%3D%26EndDate%3D%26Rec%3DFalse&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://www.jambase.com/shows/Shows.aspx?ArtistID=&amp;VenueID=123036&amp;City=&amp;State=&amp;Zip=&amp;StartDate=&amp;EndDate=&amp;Rec=False" rel="nofollow" target="_blank" class="canonical">
-        www.jambase.com/shows/Shows.aspx?ArtistID=&amp;VenueID=123036&amp;City=&amp;State=&amp;Zip=&amp;StartDate=&amp;EndDate=&amp;Rec=False
+      <a href="/links?site=www.android.com%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.android.com%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.android.com/" rel="nofollow" target="_blank" class="canonical">
+        www.android.com/
+      </a>
+    </div>
+    <div class="top-links-same-domain">Top links from the same domain:</div>
+  </td>
+    <td colspan="3"></td>
+</tr>
+
+
+<tr class="odd">
+  <td>
+    <div class="toggle"></div>
+
+    <span class="title">Art Project - Google Cultural Institute</span>
+    <div class="url">
+      <a href="/links?site=www.google.com%2Fculturalinstitute%2Fproject%2Fart-project" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Fculturalinstitute%2Fproject%2Fart-project&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/culturalinstitute/project/art-project" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/culturalinstitute/project/art-project
+      </a>
+    </div>
+    <div class="top-links-same-domain">Top links from the same domain:</div>
+  </td>
+    <td colspan="3"></td>
+</tr>
+
+
+<tr class="even">
+  <td>
+    <div class="toggle"></div>
+
+    <span class="title"> Webmasters – Google </span>
+    <div class="url">
+      <a href="/links?site=www.google.com%2Fwebmasters%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Fwebmasters%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/webmasters/" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/webmasters/
+      </a>
+    </div>
+    <div class="top-links-same-domain">Top links from the same domain:</div>
+  </td>
+    <td colspan="3"></td>
+</tr>
+
+
+<tr class="odd">
+  <td>
+    <div class="toggle"></div>
+
+    <span class="title">Managing Cookies, How to enable &amp; disable a Coo...</span>
+    <div class="url">
+      <a href="/links?site=www.allaboutcookies.org%2Fmanage-cookies%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.allaboutcookies.org%2Fmanage-cookies%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.allaboutcookies.org/manage-cookies/" rel="nofollow" target="_blank" class="canonical">
+        www.allaboutcookies.org/manage-cookies/
+      </a>
+    </div>
+    <div class="top-links-same-domain">Top links from the same domain:</div>
+  </td>
+    <td colspan="3"></td>
+</tr>
+
+
+<tr class="even">
+  <td>
+    <div class="toggle"></div>
+
+    <span class="title">Google - Products</span>
+    <div class="url">
+      <a href="/links?site=www.google.com%2Fintl%2Fen%2Fabout%2Fproducts%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Fintl%2Fen%2Fabout%2Fproducts%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/intl/en/about/products/" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/intl/en/about/products/
+      </a>
+    </div>
+    <div class="top-links-same-domain">Top links from the same domain:</div>
+  </td>
+    <td colspan="3"></td>
+</tr>
+
+
+<tr class="odd">
+  <td>
+    <div class="toggle"></div>
+
+    <span class="title">Google Code</span>
+    <div class="url">
+      <a href="/links?site=code.google.com%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=code.google.com%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://code.google.com/" rel="nofollow" target="_blank" class="canonical">
+        code.google.com/
+      </a>
+    </div>
+    <div class="top-links-same-domain">Top links from the same domain:</div>
+  </td>
+    <td colspan="3"></td>
+</tr>
+
+
+<tr class="even">
+  <td>
+    <div class="toggle"></div>
+
+    <span class="title"> Google Notebook </span>
+    <div class="url">
+      <a href="/links?site=www.google.com%2Fgooglenotebook%2Ffaq.html" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Fgooglenotebook%2Ffaq.html&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/googlenotebook/faq.html" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/googlenotebook/faq.html
+      </a>
+    </div>
+    <div class="top-links-same-domain">Top links from the same domain:</div>
+  </td>
+    <td colspan="3"></td>
+</tr>
+
+
+<tr class="odd">
+  <td>
+    <div class="toggle"></div>
+
+    <span class="title">Seth&#x27;s Blog</span>
+    <div class="url">
+      <a href="/links?site=sethgodin.typepad.com%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=sethgodin.typepad.com%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://sethgodin.typepad.com/" rel="nofollow" target="_blank" class="canonical">
+        sethgodin.typepad.com/
+      </a>
+    </div>
+    <div class="top-links-same-domain">Top links from the same domain:</div>
+  </td>
+    <td colspan="3"></td>
+</tr>
+
+
+<tr class="even">
+  <td>
+    <div class="toggle"></div>
+
+    <span class="title">Extensible Markup Language (XML)</span>
+    <div class="url">
+      <a href="/links?site=www.w3.org%2FXML%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.w3.org%2FXML%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.w3.org/XML/" rel="nofollow" target="_blank" class="canonical">
+        www.w3.org/XML/
+      </a>
+    </div>
+    <div class="top-links-same-domain">Top links from the same domain:</div>
+  </td>
+    <td colspan="3"></td>
+</tr>
+
+
+<tr class="odd">
+  <td>
+    <div class="toggle"></div>
+
+    <span class="title"> Google Earth </span>
+    <div class="url">
+      <a href="/links?site=www.google.com%2Fearth%2Findex.html" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Fearth%2Findex.html&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/earth/index.html" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/earth/index.html
+      </a>
+    </div>
+    <div class="top-links-same-domain">Top links from the same domain:</div>
+  </td>
+    <td colspan="3"></td>
+</tr>
+
+
+<tr class="even">
+  <td>
+    <div class="toggle"></div>
+
+    <span class="title">Datenschutzerklärung – Datenschutzerklärung &amp; N...</span>
+    <div class="url">
+      <a href="/links?site=www.google.com%2Fintl%2Fde%2Fpolicies%2Fprivacy%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Fintl%2Fde%2Fpolicies%2Fprivacy%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/intl/de/policies/privacy/" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/intl/de/policies/privacy/
+      </a>
+    </div>
+    <div class="top-links-same-domain">Top links from the same domain:</div>
+  </td>
+    <td colspan="3"></td>
+</tr>
+
+
+<tr class="odd">
+  <td>
+    <div class="toggle"></div>
+
+    <span class="title"> A smart, virtual wallet for in-store and onlin...</span>
+    <div class="url">
+      <a href="/links?site=www.google.com%2Fwallet%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Fwallet%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/wallet/" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/wallet/
+      </a>
+    </div>
+    <div class="top-links-same-domain">Top links from the same domain:</div>
+  </td>
+    <td colspan="3"></td>
+</tr>
+
+
+<tr class="even">
+  <td>
+    <div class="toggle"></div>
+
+    <span class="title"> Official Blog </span>
+    <div class="url">
+      <a href="/links?site=googleblog.blogspot.com%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=googleblog.blogspot.com%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://googleblog.blogspot.com/" rel="nofollow" target="_blank" class="canonical">
+        googleblog.blogspot.com/
+      </a>
+    </div>
+    <div class="top-links-same-domain">Top links from the same domain:</div>
+  </td>
+    <td colspan="3"></td>
+</tr>
+
+
+<tr class="odd">
+  <td>
+    <div class="toggle"></div>
+
+    <span class="title">Google - About Google</span>
+    <div class="url">
+      <a href="/links?site=www.google.com%2Fintl%2Fen%2Fabout%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Fintl%2Fen%2Fabout%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/intl/en/about/" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/intl/en/about/
+      </a>
+    </div>
+    <div class="top-links-same-domain">Top links from the same domain:</div>
+  </td>
+    <td colspan="3"></td>
+</tr>
+
+
+<tr class="even">
+  <td>
+    <div class="toggle"></div>
+
+    <span class="title">Policies &amp; Principles – Google</span>
+    <div class="url">
+      <a href="/links?site=www.google.com%2Fintl%2Fen%2Fpolicies%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Fintl%2Fen%2Fpolicies%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/intl/en/policies/" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/intl/en/policies/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -674,12 +929,12 @@
     <div class="toggle"></div>
       <span class="flag nofollow">(nofollow)</span>
 
-    <span class="title">Kafe Kerouac in Campus, Columbus | Columbus Alive</span>
+    <span class="title">HTML - Wikipedia, the free encyclopedia</span>
     <div class="url">
-      <a href="/links?site=happyhour.columbusalive.com%2Fcolumbus%2Fplaces%2F74691-Kafe-Kerouac-Campus-Columbus" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=happyhour.columbusalive.com%2Fcolumbus%2Fplaces%2F74691-Kafe-Kerouac-Campus-Columbus&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://happyhour.columbusalive.com/columbus/places/74691-Kafe-Kerouac-Campus-Columbus" rel="nofollow" target="_blank" class="canonical">
-        happyhour.columbusalive.com/columbus/places/74691-Kafe-Kerouac-Campus-Columbus
+      <a href="/links?site=en.wikipedia.org%2Fwiki%2FHTML" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=en.wikipedia.org%2Fwiki%2FHTML&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://en.wikipedia.org/wiki/HTML" rel="nofollow" target="_blank" class="canonical">
+        en.wikipedia.org/wiki/HTML
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -692,12 +947,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">Writers&#x27; Block Poetry Night - Columbus, Ohio</span>
+    <span class="title">Thanks</span>
     <div class="url">
-      <a href="/links?site=users.wowway.com%2F%257Eefavers0976%2FOPENMIC_front.htm" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=users.wowway.com%2F%257Eefavers0976%2FOPENMIC_front.htm&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://users.wowway.com/%7Eefavers0976/OPENMIC_front.htm" rel="nofollow" target="_blank" class="canonical">
-        users.wowway.com/%7Eefavers0976/OPENMIC_front.htm
+      <a href="/links?site=www.apache.org%2Ffoundation%2Fthanks.html" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.apache.org%2Ffoundation%2Fthanks.html&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.apache.org/foundation/thanks.html" rel="nofollow" target="_blank" class="canonical">
+        www.apache.org/foundation/thanks.html
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -710,12 +965,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title"> michael arnzen </span>
+    <span class="title">Google Structured Data Testing Tool</span>
     <div class="url">
-      <a href="/links?site=michaelarnzen.com%2F" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=michaelarnzen.com%2F&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://michaelarnzen.com/" rel="nofollow" target="_blank" class="canonical">
-        michaelarnzen.com/
+      <a href="/links?site=www.google.com%2Fwebmasters%2Ftools%2Frichsnippets" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Fwebmasters%2Ftools%2Frichsnippets&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/webmasters/tools/richsnippets" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/webmasters/tools/richsnippets
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -728,12 +983,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">Writers Block Poetry OPEN MIC Slam Schedule</span>
+    <span class="title">Get an OpenID® | OpenID</span>
     <div class="url">
-      <a href="/links?site=secure.hostmonster.com%2F%257Eblackair%2FOPENMIC_Slam.htm" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=secure.hostmonster.com%2F%257Eblackair%2FOPENMIC_Slam.htm&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://secure.hostmonster.com/%7Eblackair/OPENMIC_Slam.htm" rel="nofollow" target="_blank" class="canonical">
-        secure.hostmonster.com/%7Eblackair/OPENMIC_Slam.htm
+      <a href="/links?site=openid.net%2Fget-an-openid%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=openid.net%2Fget-an-openid%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://openid.net/get-an-openid/" rel="nofollow" target="_blank" class="canonical">
+        openid.net/get-an-openid/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -746,12 +1001,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">Fischer&#x27;s Fab Five | ThisWeek Community News</span>
+    <span class="title">GeekDad - Parents, Kids and the Stuff We Obsess...</span>
     <div class="url">
-      <a href="/links?site=www.thisweeknews.com%2Fcontent%2Fstories%2F2013%2F03%2F05%2Ffischers-fab-five.html" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=www.thisweeknews.com%2Fcontent%2Fstories%2F2013%2F03%2F05%2Ffischers-fab-five.html&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://www.thisweeknews.com/content/stories/2013/03/05/fischers-fab-five.html" rel="nofollow" target="_blank" class="canonical">
-        www.thisweeknews.com/content/stories/2013/03/05/fischers-fab-five.html
+      <a href="/links?site=www.wired.com%2Fgeekdad%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.wired.com%2Fgeekdad%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.wired.com/geekdad/" rel="nofollow" target="_blank" class="canonical">
+        www.wired.com/geekdad/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -764,12 +1019,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">Children&#x27;s Publishing Blogs - humor blog posts</span>
+    <span class="title"> Advertiser Guide: working with a third-party p...</span>
     <div class="url">
-      <a href="/links?site=beta.jacketflap.com%2Fmegablog%2Findex.asp%3Ftagid%3D1478%26tag%3Dhumor" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=beta.jacketflap.com%2Fmegablog%2Findex.asp%3Ftagid%3D1478%26tag%3Dhumor&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://beta.jacketflap.com/megablog/index.asp?tagid=1478&amp;tag=humor" rel="nofollow" target="_blank" class="canonical">
-        beta.jacketflap.com/megablog/index.asp?tagid=1478&amp;tag=humor
+      <a href="/links?site=www.google.com%2Fadwords%2Fthirdpartypartners%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Fadwords%2Fthirdpartypartners%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/adwords/thirdpartypartners/" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/adwords/thirdpartypartners/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -782,12 +1037,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">Children&#x27;s Publishing Blogs - Literature blog p...</span>
+    <span class="title">Google Jobs</span>
     <div class="url">
-      <a href="/links?site=beta.jacketflap.com%2Fmegablog%2Findex.asp%3Ftagid%3D590%26tag%3DLiterature" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=beta.jacketflap.com%2Fmegablog%2Findex.asp%3Ftagid%3D590%26tag%3DLiterature&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://beta.jacketflap.com/megablog/index.asp?tagid=590&amp;tag=Literature" rel="nofollow" target="_blank" class="canonical">
-        beta.jacketflap.com/megablog/index.asp?tagid=590&amp;tag=Literature
+      <a href="/links?site=www.google.com%2Fabout%2Fjobs%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Fabout%2Fjobs%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/about/jobs/" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/about/jobs/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -800,12 +1055,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">TOUR DATES | The Official Website of Nate Currin</span>
+    <span class="title"> Google Mobile </span>
     <div class="url">
-      <a href="/links?site=www.natecurrin.com%2Ftour%2F" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=www.natecurrin.com%2Ftour%2F&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://www.natecurrin.com/tour/" rel="nofollow" target="_blank" class="canonical">
-        www.natecurrin.com/tour/
+      <a href="/links?site=www.google.com%2Fmobile%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.com%2Fmobile%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.com/mobile/" rel="nofollow" target="_blank" class="canonical">
+        www.google.com/mobile/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -817,13 +1072,14 @@
 <tr class="odd">
   <td>
     <div class="toggle"></div>
+      <span class="flag nofollow">(nofollow)</span>
 
-    <span class="title"> dead oceans News :: Dead Oceans </span>
+    <span class="title">Google - Wikipedia, the free encyclopedia</span>
     <div class="url">
-      <a href="/links?site=deadoceans.com%2Fblog%2Ftag%2Fdead-oceans%2F" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=deadoceans.com%2Fblog%2Ftag%2Fdead-oceans%2F&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://deadoceans.com/blog/tag/dead-oceans/" rel="nofollow" target="_blank" class="canonical">
-        deadoceans.com/blog/tag/dead-oceans/
+      <a href="/links?site=en.wikipedia.org%2Fwiki%2FGoogle" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=en.wikipedia.org%2Fwiki%2FGoogle&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://en.wikipedia.org/wiki/Google" rel="nofollow" target="_blank" class="canonical">
+        en.wikipedia.org/wiki/Google
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -836,12 +1092,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">Children&#x27;s Publishing Blogs - literature blog p...</span>
+    <span class="title"> Home – Google.org </span>
     <div class="url">
-      <a href="/links?site=beta.jacketflap.com%2Fmegablog%2Findex.asp%3Ftagid%3D590%26tag%3Dliterature" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=beta.jacketflap.com%2Fmegablog%2Findex.asp%3Ftagid%3D590%26tag%3Dliterature&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://beta.jacketflap.com/megablog/index.asp?tagid=590&amp;tag=literature" rel="nofollow" target="_blank" class="canonical">
-        beta.jacketflap.com/megablog/index.asp?tagid=590&amp;tag=literature
+      <a href="/links?site=www.google.org%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.org%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.org/" rel="nofollow" target="_blank" class="canonical">
+        www.google.org/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -854,12 +1110,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">Children&#x27;s Publishing Blogs - Humor blog posts</span>
+    <span class="title">Suggesting a Site to The Open Directory Project</span>
     <div class="url">
-      <a href="/links?site=beta.jacketflap.com%2Fmegablog%2Findex.asp%3Ftagid%3D1478%26tag%3DHumor" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=beta.jacketflap.com%2Fmegablog%2Findex.asp%3Ftagid%3D1478%26tag%3DHumor&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://beta.jacketflap.com/megablog/index.asp?tagid=1478&amp;tag=Humor" rel="nofollow" target="_blank" class="canonical">
-        beta.jacketflap.com/megablog/index.asp?tagid=1478&amp;tag=Humor
+      <a href="/links?site=www.dmoz.org%2Fadd.html" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.dmoz.org%2Fadd.html&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.dmoz.org/add.html" rel="nofollow" target="_blank" class="canonical">
+        www.dmoz.org/add.html
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -872,12 +1128,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title"> the luyas News :: Dead Oceans </span>
+    <span class="title">Python Software Foundation</span>
     <div class="url">
-      <a href="/links?site=deadoceans.com%2Fblog%2Ftag%2Fthe-luyas%2F" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=deadoceans.com%2Fblog%2Ftag%2Fthe-luyas%2F&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://deadoceans.com/blog/tag/the-luyas/" rel="nofollow" target="_blank" class="canonical">
-        deadoceans.com/blog/tag/the-luyas/
+      <a href="/links?site=www.python.org%2Fpsf%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.python.org%2Fpsf%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.python.org/psf/" rel="nofollow" target="_blank" class="canonical">
+        www.python.org/psf/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -890,12 +1146,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">Columbus Shopping</span>
+    <span class="title">Home - T3 - Joomla Template Framework</span>
     <div class="url">
-      <a href="/links?site=columbus.schmap.com%2Fshopping" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=columbus.schmap.com%2Fshopping&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://columbus.schmap.com/shopping" rel="nofollow" target="_blank" class="canonical">
-        columbus.schmap.com/shopping
+      <a href="/links?site=t3-framework.org%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=t3-framework.org%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://t3-framework.org/" rel="nofollow" target="_blank" class="canonical">
+        t3-framework.org/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -908,12 +1164,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">Columbus Health, Beauty &amp; Fitness</span>
+    <span class="title">Seth&#x27;s Blog</span>
     <div class="url">
-      <a href="/links?site=columbus.schmap.com%2Fhealth-and-beauty" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=columbus.schmap.com%2Fhealth-and-beauty&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://columbus.schmap.com/health-and-beauty" rel="nofollow" target="_blank" class="canonical">
-        columbus.schmap.com/health-and-beauty
+      <a href="/links?site=sethgodin.typepad.com%2Fseths_blog%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=sethgodin.typepad.com%2Fseths_blog%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://sethgodin.typepad.com/seths_blog/" rel="nofollow" target="_blank" class="canonical">
+        sethgodin.typepad.com/seths_blog/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -926,12 +1182,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">Columbus - Real-time local buzz</span>
+    <span class="title">The Web Robots Pages</span>
     <div class="url">
-      <a href="/links?site=columbus.schmap.com%2F" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=columbus.schmap.com%2F&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://columbus.schmap.com/" rel="nofollow" target="_blank" class="canonical">
-        columbus.schmap.com/
+      <a href="/links?site=www.robotstxt.org%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.robotstxt.org%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.robotstxt.org/" rel="nofollow" target="_blank" class="canonical">
+        www.robotstxt.org/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -944,12 +1200,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">Children&#x27;s Publishing Blogs - National Poetry M...</span>
+    <span class="title"> Making critical information more accessible in...</span>
     <div class="url">
-      <a href="/links?site=beta.jacketflap.com%2Fmegablog%2Findex.asp%3Ftagid%3D16643%26tag%3DNational%2BPoetry%2BMonth" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=beta.jacketflap.com%2Fmegablog%2Findex.asp%3Ftagid%3D16643%26tag%3DNational%2BPoetry%2BMonth&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://beta.jacketflap.com/megablog/index.asp?tagid=16643&amp;tag=National+Poetry+Month" rel="nofollow" target="_blank" class="canonical">
-        beta.jacketflap.com/megablog/index.asp?tagid=16643&amp;tag=National+Poetry+Month
+      <a href="/links?site=www.google.org%2Fcrisisresponse%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.google.org%2Fcrisisresponse%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.google.org/crisisresponse/" rel="nofollow" target="_blank" class="canonical">
+        www.google.org/crisisresponse/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -962,12 +1218,49 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">The American Songwriter Coffeehouse Tour Journa...</span>
+    <span class="title"> National Domestic Violence Hotline</span>
     <div class="url">
-      <a href="/links?site=www.americansongwriter.com%2F2012%2F10%2Fthe-american-songwriter-coffeehouse-tour-journal-andrew-kelley-simons%2F" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=www.americansongwriter.com%2F2012%2F10%2Fthe-american-songwriter-coffeehouse-tour-journal-andrew-kelley-simons%2F&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://www.americansongwriter.com/2012/10/the-american-songwriter-coffeehouse-tour-journal-andrew-kelley-simons/" rel="nofollow" target="_blank" class="canonical">
-        www.americansongwriter.com/2012/10/the-american-songwriter-coffeehouse-tour-journal-andrew-kelley-simons/
+      <a href="/links?site=www.thehotline.org%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.thehotline.org%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.thehotline.org/" rel="nofollow" target="_blank" class="canonical">
+        www.thehotline.org/
+      </a>
+    </div>
+    <div class="top-links-same-domain">Top links from the same domain:</div>
+  </td>
+    <td colspan="3"></td>
+</tr>
+
+
+<tr class="even">
+  <td>
+    <div class="toggle"></div>
+      <span class="flag nofollow">(nofollow)</span>
+
+    <span class="title">Current Members - W3C</span>
+    <div class="url">
+      <a href="/links?site=www.w3.org%2FConsortium%2FMember%2FList" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.w3.org%2FConsortium%2FMember%2FList&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.w3.org/Consortium/Member/List" rel="nofollow" target="_blank" class="canonical">
+        www.w3.org/Consortium/Member/List
+      </a>
+    </div>
+    <div class="top-links-same-domain">Top links from the same domain:</div>
+  </td>
+    <td colspan="3"></td>
+</tr>
+
+
+<tr class="odd">
+  <td>
+    <div class="toggle"></div>
+
+    <span class="title">How To Ask Questions The Smart Way</span>
+    <div class="url">
+      <a href="/links?site=www.catb.org%2F%257Eesr%2Ffaqs%2Fsmart-questions.html" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.catb.org%2F%257Eesr%2Ffaqs%2Fsmart-questions.html&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.catb.org/%7Eesr/faqs/smart-questions.html" rel="nofollow" target="_blank" class="canonical">
+        www.catb.org/%7Eesr/faqs/smart-questions.html
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -980,12 +1273,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">Children&#x27;s Publishing Blogs - national poetry m...</span>
+    <span class="title">Selectors Level 3</span>
     <div class="url">
-      <a href="/links?site=beta.jacketflap.com%2Fmegablog%2Findex.asp%3Ftagid%3D16643%26tag%3Dnational%2Bpoetry%2Bmonth" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=beta.jacketflap.com%2Fmegablog%2Findex.asp%3Ftagid%3D16643%26tag%3Dnational%2Bpoetry%2Bmonth&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://beta.jacketflap.com/megablog/index.asp?tagid=16643&amp;tag=national+poetry+month" rel="nofollow" target="_blank" class="canonical">
-        beta.jacketflap.com/megablog/index.asp?tagid=16643&amp;tag=national+poetry+month
+      <a href="/links?site=www.w3.org%2FTR%2Fcss3-selectors%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.w3.org%2FTR%2Fcss3-selectors%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.w3.org/TR/css3-selectors/" rel="nofollow" target="_blank" class="canonical">
+        www.w3.org/TR/css3-selectors/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -998,12 +1291,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">Cringe.com :: The Columbus Sound :: Columbus, O...</span>
+    <span class="title">SEO: The Free Beginner’s Guide From Moz</span>
     <div class="url">
-      <a href="/links?site=www.cringe.com%2Fcurrent%2Findex.php" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=www.cringe.com%2Fcurrent%2Findex.php&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://www.cringe.com/current/index.php" rel="nofollow" target="_blank" class="canonical">
-        www.cringe.com/current/index.php
+      <a href="/links?site=moz.com%2Fbeginners-guide-to-seo" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=moz.com%2Fbeginners-guide-to-seo&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://moz.com/beginners-guide-to-seo" rel="nofollow" target="_blank" class="canonical">
+        moz.com/beginners-guide-to-seo
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -1015,13 +1308,14 @@
 <tr class="even">
   <td>
     <div class="toggle"></div>
+      <span class="flag nofollow">(nofollow)</span>
 
-    <span class="title">Fischer&#x27;s Fab Five | ThisWeek Community News</span>
+    <span class="title">Technology News, Product Reviews and App Review...</span>
     <div class="url">
-      <a href="/links?site=www.thisweeknews.com%2Fcontent%2Fstories%2F2012%2F07%2F31%2Ffischers-fab-five.html" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=www.thisweeknews.com%2Fcontent%2Fstories%2F2012%2F07%2F31%2Ffischers-fab-five.html&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://www.thisweeknews.com/content/stories/2012/07/31/fischers-fab-five.html" rel="nofollow" target="_blank" class="canonical">
-        www.thisweeknews.com/content/stories/2012/07/31/fischers-fab-five.html
+      <a href="/links?site=www.digitaltrends.com%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.digitaltrends.com%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.digitaltrends.com/" rel="nofollow" target="_blank" class="canonical">
+        www.digitaltrends.com/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -1034,300 +1328,12 @@
   <td>
     <div class="toggle"></div>
 
-    <span class="title">eric nassau | x-country - 2006 tour dates</span>
+    <span class="title">Reference, Facts, News - Free and Family-friend...</span>
     <div class="url">
-      <a href="/links?site=ericnassau.naladahc.com%2Fcontent%2Ftours%2F2006dates.html" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=ericnassau.naladahc.com%2Fcontent%2Ftours%2F2006dates.html&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://ericnassau.naladahc.com/content/tours/2006dates.html" rel="nofollow" target="_blank" class="canonical">
-        ericnassau.naladahc.com/content/tours/2006dates.html
-      </a>
-    </div>
-    <div class="top-links-same-domain">Top links from the same domain:</div>
-  </td>
-    <td colspan="3"></td>
-</tr>
-
-
-<tr class="even">
-  <td>
-    <div class="toggle"></div>
-
-    <span class="title">Children&#x27;s Publishing Blog: The (Mostly) Offici...</span>
-    <div class="url">
-      <a href="/links?site=beta.jacketflap.com%2Fmegablog%2F%3Fblogid%3D3110" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=beta.jacketflap.com%2Fmegablog%2F%3Fblogid%3D3110&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://beta.jacketflap.com/megablog/?blogid=3110" rel="nofollow" target="_blank" class="canonical">
-        beta.jacketflap.com/megablog/?blogid=3110
-      </a>
-    </div>
-    <div class="top-links-same-domain">Top links from the same domain:</div>
-  </td>
-    <td colspan="3"></td>
-</tr>
-
-
-<tr class="odd">
-  <td>
-    <div class="toggle"></div>
-
-    <span class="title"> Luyas News :: Dead Oceans </span>
-    <div class="url">
-      <a href="/links?site=deadoceans.com%2Fblog%2Fcategory%2Fartists-dead-oceans%2Fluyas%2F" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=deadoceans.com%2Fblog%2Fcategory%2Fartists-dead-oceans%2Fluyas%2F&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://deadoceans.com/blog/category/artists-dead-oceans/luyas/" rel="nofollow" target="_blank" class="canonical">
-        deadoceans.com/blog/category/artists-dead-oceans/luyas/
-      </a>
-    </div>
-    <div class="top-links-same-domain">Top links from the same domain:</div>
-  </td>
-    <td colspan="3"></td>
-</tr>
-
-
-<tr class="even">
-  <td>
-    <div class="toggle"></div>
-
-    <span class="title">Columbus - Columbus Cafes</span>
-    <div class="url">
-      <a href="/links?site=columbus.schmap.com%2Fcafes" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=columbus.schmap.com%2Fcafes&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://columbus.schmap.com/cafes" rel="nofollow" target="_blank" class="canonical">
-        columbus.schmap.com/cafes
-      </a>
-    </div>
-    <div class="top-links-same-domain">Top links from the same domain:</div>
-  </td>
-    <td colspan="3"></td>
-</tr>
-
-
-<tr class="odd">
-  <td>
-    <div class="toggle"></div>
-
-    <span class="title">CRINGE MOBILE - Columbus, Ohio Music</span>
-    <div class="url">
-      <a href="/links?site=mobile.cringe.com%2Fshows.php" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=mobile.cringe.com%2Fshows.php&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://mobile.cringe.com/shows.php" rel="nofollow" target="_blank" class="canonical">
-        mobile.cringe.com/shows.php
-      </a>
-    </div>
-    <div class="top-links-same-domain">Top links from the same domain:</div>
-  </td>
-    <td colspan="3"></td>
-</tr>
-
-
-<tr class="even">
-  <td>
-    <div class="toggle"></div>
-
-    <span class="title">Columbus - Columbus Bookshops</span>
-    <div class="url">
-      <a href="/links?site=columbus.schmap.com%2Fbookshops" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=columbus.schmap.com%2Fbookshops&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://columbus.schmap.com/bookshops" rel="nofollow" target="_blank" class="canonical">
-        columbus.schmap.com/bookshops
-      </a>
-    </div>
-    <div class="top-links-same-domain">Top links from the same domain:</div>
-  </td>
-    <td colspan="3"></td>
-</tr>
-
-
-<tr class="odd">
-  <td>
-    <div class="toggle"></div>
-
-    <span class="title">Columbus - Columbus Cafes</span>
-    <div class="url">
-      <a href="/links?site=columbus.schmap.com%2Fcafes%3Fs%3Dbuzz" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=columbus.schmap.com%2Fcafes%3Fs%3Dbuzz&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://columbus.schmap.com/cafes?s=buzz" rel="nofollow" target="_blank" class="canonical">
-        columbus.schmap.com/cafes?s=buzz
-      </a>
-    </div>
-    <div class="top-links-same-domain">Top links from the same domain:</div>
-  </td>
-    <td colspan="3"></td>
-</tr>
-
-
-<tr class="even">
-  <td>
-    <div class="toggle"></div>
-
-    <span class="title">Derf&#x27;s Blog</span>
-    <div class="url">
-      <a href="/links?site=derfcity.com%2Fblog%2Fblahblahblah.html" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=derfcity.com%2Fblog%2Fblahblahblah.html&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://derfcity.com/blog/blahblahblah.html" rel="nofollow" target="_blank" class="canonical">
-        derfcity.com/blog/blahblahblah.html
-      </a>
-    </div>
-    <div class="top-links-same-domain">Top links from the same domain:</div>
-  </td>
-    <td colspan="3"></td>
-</tr>
-
-
-<tr class="odd">
-  <td>
-    <div class="toggle"></div>
-
-    <span class="title">Columbus Health, Beauty &amp; Fitness</span>
-    <div class="url">
-      <a href="/links?site=columbus.schmap.com%2Fhealth-and-beauty%2F" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=columbus.schmap.com%2Fhealth-and-beauty%2F&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://columbus.schmap.com/health-and-beauty/" rel="nofollow" target="_blank" class="canonical">
-        columbus.schmap.com/health-and-beauty/
-      </a>
-    </div>
-    <div class="top-links-same-domain">Top links from the same domain:</div>
-  </td>
-    <td colspan="3"></td>
-</tr>
-
-
-<tr class="even">
-  <td>
-    <div class="toggle"></div>
-
-    <span class="title"> - Where to buy BLINK books/t-shirts/prints/etc...</span>
-    <div class="url">
-      <a href="/links?site=maxinkcomix.squarespace.com%2Fblink-store%2F" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=maxinkcomix.squarespace.com%2Fblink-store%2F&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://maxinkcomix.squarespace.com/blink-store/" rel="nofollow" target="_blank" class="canonical">
-        maxinkcomix.squarespace.com/blink-store/
-      </a>
-    </div>
-    <div class="top-links-same-domain">Top links from the same domain:</div>
-  </td>
-    <td colspan="3"></td>
-</tr>
-
-
-<tr class="odd">
-  <td>
-    <div class="toggle"></div>
-
-    <span class="title">gorelets.com | Creative Horror by Michael A. Ar...</span>
-    <div class="url">
-      <a href="/links?site=www.gorelets.com%2Fblog%2Ffeed%2F" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=www.gorelets.com%2Fblog%2Ffeed%2F&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://www.gorelets.com/blog/feed/" rel="nofollow" target="_blank" class="canonical">
-        www.gorelets.com/blog/feed/
-      </a>
-    </div>
-    <div class="top-links-same-domain">Top links from the same domain:</div>
-  </td>
-    <td colspan="3"></td>
-</tr>
-
-
-<tr class="even">
-  <td>
-    <div class="toggle"></div>
-
-    <span class="title">Derf&#x27;s Blog</span>
-    <div class="url">
-      <a href="/links?site=derfcity.com%2Fblog%2Fblah_0213.html" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=derfcity.com%2Fblog%2Fblah_0213.html&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://derfcity.com/blog/blah_0213.html" rel="nofollow" target="_blank" class="canonical">
-        derfcity.com/blog/blah_0213.html
-      </a>
-    </div>
-    <div class="top-links-same-domain">Top links from the same domain:</div>
-  </td>
-    <td colspan="3"></td>
-</tr>
-
-
-<tr class="odd">
-  <td>
-    <div class="toggle"></div>
-
-    <span class="title">Derf&#x27;s Blog</span>
-    <div class="url">
-      <a href="/links?site=derfcity.com%2Fblog%2Fblah_0513.html" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=derfcity.com%2Fblog%2Fblah_0513.html&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://derfcity.com/blog/blah_0513.html" rel="nofollow" target="_blank" class="canonical">
-        derfcity.com/blog/blah_0513.html
-      </a>
-    </div>
-    <div class="top-links-same-domain">Top links from the same domain:</div>
-  </td>
-    <td colspan="3"></td>
-</tr>
-
-
-<tr class="even">
-  <td>
-    <div class="toggle"></div>
-
-    <span class="title">Derf&#x27;s Blog</span>
-    <div class="url">
-      <a href="/links?site=derfcity.com%2Fblog%2Fblah_0613.html" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=derfcity.com%2Fblog%2Fblah_0613.html&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://derfcity.com/blog/blah_0613.html" rel="nofollow" target="_blank" class="canonical">
-        derfcity.com/blog/blah_0613.html
-      </a>
-    </div>
-    <div class="top-links-same-domain">Top links from the same domain:</div>
-  </td>
-    <td colspan="3"></td>
-</tr>
-
-
-<tr class="odd">
-  <td>
-    <div class="toggle"></div>
-
-    <span class="title">Derf&#x27;s Blog</span>
-    <div class="url">
-      <a href="/links?site=derfcity.com%2Fblog%2Fblah_1212.html" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=derfcity.com%2Fblog%2Fblah_1212.html&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://derfcity.com/blog/blah_1212.html" rel="nofollow" target="_blank" class="canonical">
-        derfcity.com/blog/blah_1212.html
-      </a>
-    </div>
-    <div class="top-links-same-domain">Top links from the same domain:</div>
-  </td>
-    <td colspan="3"></td>
-</tr>
-
-
-<tr class="even">
-  <td>
-    <div class="toggle"></div>
-
-    <span class="title">Writers&#x27; Block Poetry Night - Schedule</span>
-    <div class="url">
-      <a href="/links?site=writersblockpoetry.rewritingovid.net%2FSchedule.php" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=writersblockpoetry.rewritingovid.net%2FSchedule.php&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://writersblockpoetry.rewritingovid.net/Schedule.php" rel="nofollow" target="_blank" class="canonical">
-        writersblockpoetry.rewritingovid.net/Schedule.php
-      </a>
-    </div>
-    <div class="top-links-same-domain">Top links from the same domain:</div>
-  </td>
-    <td colspan="3"></td>
-</tr>
-
-
-<tr class="odd">
-  <td>
-    <div class="toggle"></div>
-
-    <span class="title">Pattycake Bakery | 3009 N. High Street Columbus...</span>
-    <div class="url">
-      <a href="/links?site=pattycakeveganbakery.com%2Ffaq.html" class="explore" title="Explore">&nbsp;</a>
-      <a href="/comparisons?comparisons%5B0%5D=pattycakeveganbakery.com%2Ffaq.html&amp;site=kafekerouac.com" class="compare-icon" title="Compare">&nbsp;</a>
-      <a href="http://pattycakeveganbakery.com/faq.html" rel="nofollow" target="_blank" class="canonical">
-        pattycakeveganbakery.com/faq.html
+      <a href="/links?site=www.refdesk.com%2F" class="explore" title="Explore">&nbsp;</a>
+      <a href="/comparisons?comparisons%5B0%5D=www.refdesk.com%2F&amp;site=www.google.com" class="compare-icon" title="Compare">&nbsp;</a>
+      <a href="http://www.refdesk.com/" rel="nofollow" target="_blank" class="canonical">
+        www.refdesk.com/
       </a>
     </div>
     <div class="top-links-same-domain">Top links from the same domain:</div>
@@ -1338,12 +1344,12 @@
   </tbody>
 </table>
 <div class="bottom-pagination">
-  <div class="pagination"><em class="current">First</em> <span class="previous_page disabled"></span> <em class="current">1</em> <a rel="next" href="/links.html?group=0&amp;page=2&amp;site=http%3A%2F%2Fkafekerouac.com">2</a> <a href="/links.html?group=0&amp;page=3&amp;site=http%3A%2F%2Fkafekerouac.com">3</a> <a href="/links.html?group=0&amp;page=4&amp;site=http%3A%2F%2Fkafekerouac.com">4</a> <a class="next_page" rel="next" href="/links.html?group=0&amp;page=2&amp;site=http%3A%2F%2Fkafekerouac.com"></a></div>
+  <div class="pagination"><em class="current">First</em> <span class="previous_page disabled"></span> <em class="current">1</em> <a rel="next" href="/links.html?group=0&amp;page=2&amp;site=http%3A%2F%2Fwww.google.com">2</a> <a href="/links.html?group=0&amp;page=3&amp;site=http%3A%2F%2Fwww.google.com">3</a> <a href="/links.html?group=0&amp;page=4&amp;site=http%3A%2F%2Fwww.google.com">4</a> <a class="next_page" rel="next" href="/links.html?group=0&amp;page=2&amp;site=http%3A%2F%2Fwww.google.com"></a></div>
 </div>
 
 <div class="clearfix"></div>
 
-
+      
       <div class="hidden" id="export-progress" data-limit="200">
   <p>
     Hi! Your report has been started. This may take 
@@ -1405,9 +1411,10 @@
   </form>
 
 
+
   <div id="footer">
     Powered by
-    <a href="http://moz.com/"><img alt="Moz" src="/images/../images/footer_moz_logo.png?1379699303" /></a>
+    <a href="http://moz.com/"><img alt="Moz" src="/images/../images/footer_moz_logo.png?1381162704" /></a>
     Analytics software to manage all your inbound marketing. Learn more about
     <a href="http://moz.com/products">Moz Analytics</a> and our <a href="http://moz.com/products/api">Mozscape API</a>.
   </div>
@@ -1460,7 +1467,7 @@
    adroll_segments = "opensiteexplorer"
   </script>
   
-  <!-- This page served from ose7 -->
+  <!-- This page served from ose5 -->
 </body>
 </html>
 

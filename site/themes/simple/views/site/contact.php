@@ -59,9 +59,9 @@ If you have business inquiries or other questions, please fill out the following
 
 	<?php if(CCaptcha::checkRequirements()): ?>
 	<div class="row">
-		<?php echo $form->labelEx($model,'verifyCode'); ?>
+		<?php echo $form->labelEx($model,'verifyCode (click image to refresh)'); ?>
 		<div>
-		<?php $this->widget('CCaptcha'); ?>
+		<?php $this->widget('CCaptcha',array('showRefreshButton'=>false,'clickableImage'=>true)); ?>
         <br />
 		<?php echo $form->textField($model,'verifyCode'); ?>
 		</div>
@@ -72,7 +72,7 @@ If you have business inquiries or other questions, please fill out the following
 	<?php endif; ?>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Submit',array('class'=>'button grey')); ?>
+		<?php echo CHtml::submitButton('Submit',array('class'=>'btn')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

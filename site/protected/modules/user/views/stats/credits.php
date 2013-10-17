@@ -1,4 +1,11 @@
-
+<?php 
+$cs = Yii::app()->getClientScript();
+$cs->registerScriptFile('http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js');
+$cs->registerCssFile('/themes/reports/css/custom-theme/jquery-ui-1.10.3.custom.css');
+$cs->registerCssFile('/themes/simple/css/uiselect.css');
+$cs->registerScriptFile('/themes/reports/js/jquery-ui-1.10.3.custom.min.js',CClientScript::POS_END);
+$cs->registerScriptFile('/themes/simple/js/jquery.uiselect.min.js',CClientScript::POS_END);
+?>
 
 <h1>Your Credits</h1>
 <?php foreach($this->data as $row){ ?>
@@ -59,3 +66,10 @@
 <input type="submit" value="Buy Credits w/Paypal" />
 </form>
 </div>
+
+<script>
+$(document).ready(function(){
+	$("input[type='submit']").button();
+	$('select').uiselect();
+});
+</script>

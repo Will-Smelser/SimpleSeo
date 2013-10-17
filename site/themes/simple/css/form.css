@@ -38,13 +38,13 @@ div.form
 {
 }
 div.form .field_name_help {font-size: 90%; color: #777; }
-div.form input,
+div.form input:not([type='submit']),
 div.form textarea,
 div.form select
 {
 	margin: 0.2em 0 0.5em 0;
 	font-family: Verdana, 'Helvetica Neue', Helvetica, Arial, Geneva, sans-serif;
-	font-size: 12px;
+	font-size: 15px;
 	color: #424242;
 	padding: 6px;
 	border: 1px solid #CCC;

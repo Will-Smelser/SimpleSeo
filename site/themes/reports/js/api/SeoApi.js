@@ -61,6 +61,12 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 	window[namespace].api = {
 			
 		/**
+		 * Global namespace where all objects are stored.
+		 * @type {string}
+		 */
+		namespace:namespace,
+			
+		/**
 		 * Store the api token required for each request
 		 * @type {string}
 		 */
@@ -294,7 +300,10 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 		 * on.  For example, http://www.google.com or google.com.
 		 * 
 		 * @param {Callback} [callback] An optional callback to execute once the
-		 * execute function called on api object is complete.
+		 * execute function called on api object is complete.  This removes default
+		 * behavior of calling all the render_&lt;method&gt; functions.  However,
+		 * this scope of callback is the loaded object.  So for example you can
+		 * call this.handleSuccess() within your callback.
 		 *  
 		 * @param {Callback} [errCallback] An optional callback to execute once the
 		 * execute function called on api object is complete and an error was detected.

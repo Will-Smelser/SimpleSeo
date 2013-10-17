@@ -1,5 +1,4 @@
 <?php
-error_reporting(E_ALL);
 class ReportsModule extends CWebModule
 {
 	
@@ -22,6 +21,7 @@ class ReportsModule extends CWebModule
 		{
 			// this method is called before any module controller action is performed
 			// you may place customized code here
+			
 			return true;
 		}
 		else

@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL);
 class RegistrationController extends Controller
 {
 	public $defaultAction = 'registration';
@@ -55,7 +55,7 @@ class RegistrationController extends Controller
 							$profile->save();
 							
 							//add some credits to the account
-							addDefaultCredits($model->id);
+							ApiCredits::addDefaultCredits($model->id);
 							
 							if (Yii::app()->controller->module->sendActivationMail) {
 								$activation_url = $this->createAbsoluteUrl('/user/activation/activation',array("activkey" => $model->activkey, "email" => $model->email));

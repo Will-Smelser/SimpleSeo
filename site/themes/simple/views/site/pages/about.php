@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 <h1>An SEO Api for Developers</h1>
 
 <p>A while back a friend asked me to help on some search engine
-	optimization for his companies website. In general SEO is very
+	optimization for his company's website. In general SEO is very
 	simple. Just pick your keywords based on how much competition there
 	is and follow some basic principles.</p>
 

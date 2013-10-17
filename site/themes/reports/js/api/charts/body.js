@@ -16,7 +16,7 @@
 				gdata.addRow([data[i].words[0],data[i].count]);
 
 			var fontColor = '#FFF';
-			var fsize = 16;
+			
 			var options = {
 			  fontSize:16,
 	          //title: 'Top Words for '+$('#get-url').val(),

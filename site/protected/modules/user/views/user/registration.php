@@ -1,4 +1,6 @@
 <?php $this->pageTitle=Yii::app()->name . ' - '.UserModule::t("Registration");
+
+error_reporting(E_ALL);
 $this->breadcrumbs=array(
 	UserModule::t("Registration"),
 );

@@ -25,6 +25,8 @@ $cs->registerScriptFile('http://agorbatchev.typepad.com/pub/sh/3_0_83/scripts/sh
 <h1>Basic Tutorials / Examples</h1>
 
 <ul>
+	<li><a href="/api-docs-js/SeoApi.html">JS API Docs</a></li>
+	<li><a href="/api-docs/namespaces/api.html">API Docs</a></li>
 	<li><a href="/site/pages/getstarted">Getting Started</a></li>
 	<li><a href="/site/pages/examples/getapikey">Get API Key</a></li>
 	<li><a href="/site/pages/examples/getapitoken">Get API Token</a></li>

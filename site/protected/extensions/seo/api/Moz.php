@@ -4,8 +4,9 @@ namespace api;
 
 require_once SEO_PATH_CLASS . 'MozConnect.php';
 require_once SEO_PATH_CLASS . 'HtmlParser.php';
+require_once SEO_PATH_ROOT . 'ApiKeys.php';
 
-class Moz{
+class Moz implements ApiKeys{
 	
 	/**
 	 * @ignore
@@ -26,7 +27,7 @@ class Moz{
 	public function __construct($url){
 		$this->url = $url;
 		
-		$this->moz = new \MozConnect('willsmelser@gmail.com','Will1480');
+		$this->moz = new \MozConnect(self::MOZ_USER,self::MOZ_PASS);
 		
 	}
 	

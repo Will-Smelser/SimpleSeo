@@ -11,7 +11,7 @@ $cs->registerCssFile('/themes/simple/css/buttons.css');
 <form id="form-run-report" method="GET" action="/reports/protected">
 	<div class="row">
 	<label for="url" >URL</label>
-	<input class="" name="target" type="text" id="url" />
+	<input class="" name="target" type="text" id="url" style="min-width:350px" />
 	</div>
 	<input id="run-report" class="btn" type="submit" value="Run Report"/>
 </form>

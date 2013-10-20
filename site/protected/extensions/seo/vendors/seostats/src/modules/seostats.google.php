@@ -7,10 +7,10 @@
  *  @updated    2012/06/07
  */
 
-class SEOstats_Google extends SEOstats implements services, default_settings
+class SEOstats_Google extends SEOstats implements services, default_settings, api_keys
 {
-	private $cx = '018110159205303224694:lc6g5a3yxzw';
-	private $key = 'AIzaSyA_wkenQWzwHcxuaozcfIc_gcuMo9E09TM';
+	private $cx = self::GOOGLE_CX;
+	private $key = self::GOOGLE_KEY;
 	
 	
 	private function httpSendWrapper($request){

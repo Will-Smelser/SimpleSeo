@@ -14,8 +14,8 @@ $config = loadConfig();
 $db = $config['components']['db'];
 $link = mysql_connect($mysqlhost,$db['username'],$db['password']);
 
-if(!mysql_query('DELETE FROM simpleseoapi.tokens WHERE  expire < UNIX_TIMESTAMP()',$link))
-	echo 'Delete unused tokens failed.'."\nERROR:\n".mysql_errno()."\n\n";
+if(!mysql_query('DELETE FROM simpleseoapi.ipfilter WHERE  created < ADDDATE(NOW(),INTERVAL 24 HOUR)',$link))
+	echo 'Delete old ip filters failed.'."\nERROR:\n".mysql_errno()."\n\n";
 else
 	echo 'Delete was a success'."\n\n";
 

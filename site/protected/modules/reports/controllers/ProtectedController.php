@@ -1,7 +1,7 @@
 <?php
 class ProtectedController extends Controller
 {
-	private $ipAllowCount = 100;
+	private $ipAllowCount = 2;
 	
 	public function actionIndex()
 	{

@@ -37,7 +37,7 @@ class Moz implements ApiKeys{
 	 */
 	public function getMozLinks(){
 		$html = $this->moz->getData(\MozServices::OSE, $this->url);
-		file_put_contents('moz-links.txt',$html);
+		//file_put_contents('moz-links.txt',$html);
 		$parser = new \HtmlParser($html,$this->url);
 		$data = $parser->getTags('td');
 		
@@ -57,7 +57,7 @@ class Moz implements ApiKeys{
 	 */
 	public function getMozJustDiscovered(){
 		$html = $this->moz->getData(\MozServices::JD, $this->url);
-		file_put_contents('just-discovered.txt',$html);
+		//file_put_contents('just-discovered.txt',$html);
 		$parser = new \HtmlParser($html,$this->url);
 		
 		$tables = $parser->getTags('table');

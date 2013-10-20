@@ -14,7 +14,7 @@ class Whois
 		$errno = 0;
 		$errstr='';
 
-		$result = file_get_contents('http://'.Whois::whoishost.'?type=domain&whois_nic=inedo.com');
+		$result = file_get_contents('http://'.Whois::whoishost.'?type=domain&whois_nic='.$domain);
 		 
 		$raw = strtolower(strip_tags($result));
 		return self::parse($raw);

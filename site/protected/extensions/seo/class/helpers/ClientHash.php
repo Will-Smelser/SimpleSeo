@@ -50,15 +50,18 @@ class ClientHash{
 	
 	/**
 	 * Make the actual http request to the token service
-	 * @param unknown $username
-	 * @param unknown $nonce
-	 * @param unknown $hash
+	 * @param string $username
+	 * @param string $nonce
+	 * @param string $hash
+	 * @param string $host [optional] The host to make request against
 	 * @throws Exception If a token was failed to be created then an error will be thrown.
 	 * @return string
 	 */
-	private static function makeRequest($username, $nonce, $hash){
+	private static function makeRequest($username, $nonce, $hash, $host){
+		if(empty($host)) $host = self::$apiHost;
+		
 		$request = (self::$secure) ? 'https://' : 'http://';
-		$request.= self::$apiHost . self::$api . '?username=%s&nonce=%s&hash=%s';
+		$request.= $host . self::$api . '?username=%s&nonce=%s&hash=%s';
 		
 		$result = file_get_contents(sprintf($request,$username,$nonce,$hash));
 		$result = json_decode($result);

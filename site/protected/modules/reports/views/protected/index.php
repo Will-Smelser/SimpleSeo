@@ -32,7 +32,7 @@ SeoApi2.load('body').depends('render').addMethod('checkH1','#body-header-tags').
 require_once SEO_PATH_HELPERS . 'ClientHash.php';
 $token = "TOKEN_GET_FAILED";
 try{
-	$token = \api\clients\ClientHash::getToken(Yii::app()->params['apiKeyReport'],'report');
+	$token = \api\clients\ClientHash::getToken(Yii::app()->params['apiKeyReport'],'report',SEO_HOST);
 }catch(Exception $e){
 	//do nothing, just everything will fail.
 }

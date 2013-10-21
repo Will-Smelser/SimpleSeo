@@ -25,7 +25,7 @@ $cs->registerScriptFile('/syntaxhighlighter/scripts/shBrushJScript.js',CClientSc
 require_once SEO_PATH_HELPERS . 'ClientHash.php';
 $token = "TOKEN_GET_FAILED";
 try{
-	$token = \api\clients\ClientHash::getToken(Yii::app()->params['apiKeySample'],'sample');
+	$token = \api\clients\ClientHash::getToken(Yii::app()->params['apiKeySample'],'sample',SEO_HOST);
 }catch(Exception $e){
 	//do nothing, just everything will fail.
 }

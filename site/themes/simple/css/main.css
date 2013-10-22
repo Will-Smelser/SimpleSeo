@@ -99,12 +99,34 @@ body
 	padding: 10px;
 	font-size: 0.8em;
 	text-align: center;
-	color: #FFFFFF!important;
+	color: #CCC!important;
 	
 	background-image:url('/themes/simple/images/bg01.jpg');
 	background-repeat: repeat-x;
 }
-#footer a{ color: #FFFFFF!important;}
+#footer a{ color: #ccc!important;}
+#footer ul{
+	margin:0px;
+	padding:0px;
+}
+#footer li{
+	list-style:none;
+	text-align:left;
+	padding-left:40px;
+	margin:0px;
+}
+#footer li a{
+	text-decoration:none;
+}
+#footer h2{
+	font-size:14px;
+	font-weight:bold;
+	color:#ccc;
+	border-bottom:dotted #CCC 1px;
+	padding-bottom:7px;
+	padding-left:20px;
+	text-align:left;
+}
 
 #logo
 {

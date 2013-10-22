@@ -98,9 +98,9 @@
 	
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by webapplicationthemes.com<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
+		<div class="container" >
+			Copyright Simple-SEO-API.com <?php echo date('Y'); ?>
+		</div>
 	</div><!-- footer -->
 
 </div><!-- page -->

@@ -110,9 +110,34 @@
 	<?php echo $content; ?>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by webapplicationthemes.com<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
+		<div class="container">
+		<div class="span-8">
+			<h2>Information</h2>
+			<ul>
+				<li><a href="/site/page?view=about">About</a></li>
+				<li><a href="/site/contact">Contact Us</a></li>
+			</ul>
+		</div>
+		<div class="span-8">
+			<h2>Developers</h2>
+			<ul>
+				<li><a href="/site/pages/getstarted">Getting Started</a></li>
+				<li><a href="/api-docs/namespaces/api.html">API Docs</a></li>
+				<li><a href="/api-docs-js/SeoApi.html">API Docs (JavaScript)</a></li>
+			</ul>
+		</div>
+		<div class="span-8 last">
+			<h2>Examples</h2>
+			<ul>
+				<li><a href="/site/pages/getstarted">Getting Started</a></li>
+				<li><a href="/site/pages/examples/getapikey">Get API Key</a></li>
+				<li><a href="/site/pages/examples/getapitoken">Get API Token</a></li>
+			</ul>
+		</div>
+		</div>
+		<div class="container" style="margin-top:40px">
+			Copyright Simple-SEO-API.com <?php echo date('Y'); ?>
+		</div>
 	</div><!-- footer -->
 
 </div><!-- page -->

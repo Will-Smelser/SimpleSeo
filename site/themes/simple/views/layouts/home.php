@@ -47,9 +47,9 @@
 		</div>
 	</div>
 	<div id="header"  style="padding-top:55px;">
-		<div id="logo" class="container">
-			<div class="span-7">
-			<img src="/themes/simple/images/cool-chart2.png"></img><?php //echo CHtml::encode(Yii::app()->name); ?>
+		<div id="logo" class="container" id="logo-div">
+			<div class="span-7" id="logo-div-home">
+			<img src="/themes/simple/images/logo.png" /><?php //echo CHtml::encode(Yii::app()->name); ?>
 			</div>
 			
 			<div class="span-17 last">

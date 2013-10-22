@@ -26,7 +26,6 @@
 </head>
 
 <body>
-
 <div id="page">
 	<div class="bg-brushed">
 	<div class="bg-fade-up">
@@ -48,8 +47,8 @@
 	</div>
 	<div id="header">
 		<div id="logo" class="container">
-			<div class="span-7">
-			<img src="/themes/simple/images/cool-chart2.png"></img><?php //echo CHtml::encode(Yii::app()->name); ?>
+			<div class="span-7" id="logo-div">
+			<img src="/themes/simple/images/logo.png" /><?php //echo CHtml::encode(Yii::app()->name); ?>
 			</div>
 			
 			<div class="span-17 last">

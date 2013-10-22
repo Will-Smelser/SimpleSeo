@@ -110,6 +110,10 @@ body
 {
 	padding: 10px 20px;
 }
+#logo-div{
+	position:relative;
+	top:-25px;
+}
 
 #mainmenu
 {

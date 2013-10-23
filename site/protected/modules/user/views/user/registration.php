@@ -68,7 +68,7 @@ $this->breadcrumbs=array(
 		} elseif ($field->field_type=="TEXT") {
 			echo$form->textArea($profile,$field->varname,array('rows'=>6, 'cols'=>50));
 		} else {
-			echo $form->textField($profile,$field->varname,array('size'=>60,'maxlength'=>(($field->field_size)?$field->field_size:255)));
+			echo $form->textField($profile,$field->varname);//,array('size'=>60,'maxlength'=>(($field->field_size)?$field->field_size:255)));
 		}
 		 ?>
 		<?php echo $form->error($profile,$field->varname); ?>
@@ -79,10 +79,12 @@ $this->breadcrumbs=array(
 ?>
 	<?php if (UserModule::doCaptcha('registration')): ?>
 	<div class="row">
-		<?php echo $form->labelEx($model,'verifyCode'); ?>
-		
-		<?php $this->widget('CCaptcha'); ?>
+		<?php echo $form->labelEx($model,'verifyCode (click image to refresh)'); ?>
+		<div>
+		<?php $this->widget('CCaptcha',array('showRefreshButton'=>false,'clickableImage'=>true)); ?>
+		<br/>
 		<?php echo $form->textField($model,'verifyCode'); ?>
+		</div>
 		<?php echo $form->error($model,'verifyCode'); ?>
 		
 		<p class="hint"><?php echo UserModule::t("Please enter the letters as they are shown in the image above."); ?>
@@ -91,7 +93,7 @@ $this->breadcrumbs=array(
 	<?php endif; ?>
 	
 	<div class="row submit">
-		<?php echo CHtml::submitButton(UserModule::t("Register")); ?>
+		<?php echo CHtml::submitButton(UserModule::t("Register"),array('class'=>'btn btn-large')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

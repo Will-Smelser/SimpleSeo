@@ -46,7 +46,7 @@ $this->pageTitle='Simple Seo Api - Reporting Tool';
 				<input id="get-url"
 					type="text" value="<?php echo $example;?>"
 					style="width: 300px" />
-				<button id="get-btn" style="padding:10px" class="btn btn-black">Get Word Count</button>
+				<button id="get-btn" class="btn btn-black">Get Word Count</button>
 			</div>
 
 			<div id="loadingWrapper" style="position:relative;" >

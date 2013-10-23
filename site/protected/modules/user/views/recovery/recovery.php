@@ -25,7 +25,7 @@ $this->breadcrumbs=array(
 	</div>
 	
 	<div class="row submit">
-		<?php echo CHtml::submitButton(UserModule::t("Restore")); ?>
+		<?php echo CHtml::submitButton(UserModule::t("Restore"),array('class'=>'btn btn-large')); ?>
 	</div>
 
 <?php echo CHtml::endForm(); ?>

@@ -112,10 +112,10 @@ var addListener = function(){
 			var url = '/user/stats/methods?start='+columnDate+'&stop='+columnDate;
 			$.getJSON(url)
 				.done(function(data){
-					
+					console.log(data);
 					var gdata = google.visualization.arrayToDataTable(data);
-
-					var ht = getHeight(data.length);
+					
+					var ht = getHeight(data[0].length);
 					$('#detailForm').css('height',ht+25+'px').slideDown();
 					
 					if(chart2 === null)
@@ -123,6 +123,7 @@ var addListener = function(){
 					else
 						chart2.clearChart();
 
+					
 					chart1Options.height = ht;
 					chart1Options.chartArea.height = ht - 75;
 					chart2.draw(gdata, chart1Options);

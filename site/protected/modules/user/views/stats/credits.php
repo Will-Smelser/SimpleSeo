@@ -6,9 +6,16 @@ $cs->registerCssFile('/themes/simple/css/uiselect.css');
 $cs->registerScriptFile('/themes/reports/js/jquery-ui-1.10.3.custom.min.js',CClientScript::POS_END);
 $cs->registerScriptFile('/themes/simple/js/jquery.uiselect.min.js',CClientScript::POS_END);
 ?>
-
+<?php echo $this->renderPartial('../profile/menu'); ?>
 <h1>Your Credits</h1>
-<?php foreach($this->data as $row){ ?>
+<?php 
+
+if(empty($this->data)){
+	echo "<h2>No Credits</h2>";
+}else{
+	foreach($this->data as $row){ 
+
+?>
 
 <div>
 <div class="span-6">
@@ -19,7 +26,10 @@ $cs->registerScriptFile('/themes/simple/js/jquery.uiselect.min.js',CClientScript
 </div>
 <div class="clear"></div>
 </div>
-<?php } ?>
+<?php
+	} 
+}
+?>
 
 <h1>Purchase More Report Credits</h1>
 <h2>$ <?php echo number_format(Apicredits::$types['report']['unit'],2); ?> per Report</h2>

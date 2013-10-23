@@ -10,7 +10,7 @@ class StatsController extends RController
 	
 	private $queries = array(
 		'total'=>'SELECT DATE_FORMAT(created,"%%Y-%%m-%%d" ) AS `interval` , COUNT( * ) as `cnt` FROM apistats where user=%d and created > \'%s\' and created < \'%s\' GROUP BY `interval` order by created asc',
-		'method'=>'SELECT DATE_FORMAT(created,"%%Y-%%m-%%d" ) AS `interval` , COUNT( * ) as `cnt`, method FROM apistats where user=%d and created > \'%s\' and created < \'%s\' GROUP BY `interval`,`method` order by created, method asc'
+		'method'=>'SELECT DATE_FORMAT(created,"%%Y-%%m-%%d" ) AS `interval` , COUNT( * ) as `cnt`, controller, method FROM apistats where user=%d and created > \'%s\' and created < \'%s\' GROUP BY `interval`,`controller`,`method` order by created, method asc'
 	);
 	
 	public function actionCredits(){
@@ -83,9 +83,10 @@ class StatsController extends RController
 		
 		//2 pass, get all method, 
 		foreach($result as $row){
-			if(!in_array($row['method'],$methods)){
-				$json .= ",\"{$row['method']}\"";
-				array_push($methods,$row['method']);
+			$temp = $row['controller'] . ':' . $row['method'];
+			if(!in_array($temp,$methods)){
+				$json .= ",\"{$temp}\"";
+				array_push($methods,$temp);
 			}
 		}
 		$json.= ']';
@@ -105,7 +106,8 @@ class StatsController extends RController
 				}
 			}
 			
-			$response[$date][$row['method']] = $row['cnt'];
+			$temp = $row['controller'] . ':' . $row['method'];
+			$response[$date][$temp] = $row['cnt'];
 		}
 		
 		foreach($response as $date=>$info){

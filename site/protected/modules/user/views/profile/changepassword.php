@@ -35,7 +35,7 @@ $this->breadcrumbs=array(
 	
 	
 	<div class="row submit">
-	<?php echo CHtml::submitButton(UserModule::t("Save")); ?>
+	<?php echo CHtml::submitButton(UserModule::t("Save"),array('class'=>'btn')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

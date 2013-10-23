@@ -43,13 +43,13 @@ foreach(Yii::app()->user->getFlashes() as $key => $message) {
 	</div>
 	
 	<div class="row submit">
-		<?php echo CHtml::submitButton(UserModule::t("Login")); ?>
+		<?php echo CHtml::submitButton(UserModule::t("Login"),array('class'=>'btn btn-large')); ?>
 	</div>
 	
 	<?php echo CHtml::endForm(); ?>
 	</div><!-- form -->
 </div>
-<div class="span-12 last">
+<div class="span-11 last">
 	<h1>Social Login</h1>
 	<?php $this->widget('ext.hoauth.widgets.HOAuth'); ?>
 </div>

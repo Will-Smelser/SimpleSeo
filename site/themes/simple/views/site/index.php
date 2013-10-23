@@ -42,11 +42,11 @@ $this->pageTitle='Simple Seo Api - Reporting Tool';
 
 			<h1 style="padding-top: 20px;">A Reporting Tool for Search
 				Engine Optimization</h1>
-			<div class="span-23 showgrid last">
-				<input id="get-url" class="inputfield ui-button ui-corner-all"
+			<div class="span-23 showgrid last form">
+				<input id="get-url"
 					type="text" value="<?php echo $example;?>"
 					style="width: 300px" />
-				<button id="get-btn">Get Word Count</button>
+				<button id="get-btn" style="padding:10px" class="btn btn-black">Get Word Count</button>
 			</div>
 
 			<div id="loadingWrapper" style="position:relative;" >
@@ -162,7 +162,7 @@ $(document).ready(function(){
 
 	SyntaxHighlighter.all();
 	
-	$('#get-btn').button().click(function(){
+	$('#get-btn').click(function(){
 		$('#loadingWrapper').show();
 		seo.load('body').extend('base')
 			.addMethod('getKeyWords','#graphWrapper')

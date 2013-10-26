@@ -223,7 +223,8 @@ class ImageParser{
 			}
 			
 			if($add){
-				$temp = (new \api\responses\ApiResponseJSON())->success($msg, $resp);
+				$temp1 = new \api\responses\ApiResponseJSON();
+				$temp = $temp1->success($msg, $resp);
 				array_push($imgResult, $temp->toArray());
 				
 			}
@@ -240,7 +241,8 @@ class ImageParser{
 			$response;
 			if($entry->error){
 				$code = \api\responses\ApiCodes::getCodeByNumber($entry->code);
-				$response = (new \api\responses\ApiResponseJSON())->failure($entry->msg,$code);
+				$temp = new \api\responses\ApiResponseJSON();
+				$response = $temp->failure($entry->msg,$code);
 			}else{
 			
 				$resp = new ImageLoadResponse();
@@ -261,7 +263,8 @@ class ImageParser{
 				$result[$val->hash] = $resp;
 				
 				$code = \api\responses\ApiCodes::getCodeByNumber($entry->code);
-				$response = (new \api\responses\ApiResponseJSON())->success($entry->msg, $resp, $entry->error, $code);
+				$temp = new \api\responses\ApiResponseJSON();
+				$response = $temp->success($entry->msg, $resp, $entry->error, $code);
 			}			
 			
 			array_push($imgResult, $response->toArray());

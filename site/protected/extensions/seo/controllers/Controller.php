@@ -37,9 +37,11 @@ class Controller{
 			$api = new \api\responses\ApiResponseJSON();
 			
 			try{
-				if($this->isValidMethod($obj, $mthd, $this->skip))
-					$results[$mthd] = $api->success("Success", $obj->$mthd($args))->toArray();
-				else{
+				if($this->isValidMethod($obj, $mthd, $this->skip)){
+					$temp = $obj->$mthd($args);
+					$temp2= $api->success("Success", $temp);
+					$results[$mthd] = $temp2->toArray();
+				}else{
 					throw new BadMethodCallException("No Method - $mthd");
 				}
 			}catch(Exception $e){

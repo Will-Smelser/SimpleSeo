@@ -2,11 +2,11 @@
 
 require_once SEO_PATH_WRAPPERS . 'SemRush.php';
 
-class SemRush extends Controller{
+class Semrush extends Controller{
 	
 	public $skip = array();
 	
-	public function SemRush($method,$args=null){
+	public function Semrush($method,$args=null){
 		parent::__construct($method, $args);
 		
 		$obj = new \api\SemRush($_GET['request']);
@@ -16,4 +16,3 @@ class SemRush extends Controller{
 
 }
 ?>
-

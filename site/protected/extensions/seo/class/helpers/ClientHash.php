@@ -13,7 +13,7 @@ namespace api\clients;
  */
 class ClientHash{
 	private static $secure = false;
-	private static $apiHost = 'simple-seo-api.local';
+	private static $apiHost = 'simple-seo-api.com';
 	private static $api = '/tokens/getToken';
 	
 	/**
@@ -57,7 +57,7 @@ class ClientHash{
 	 * @throws Exception If a token was failed to be created then an error will be thrown.
 	 * @return string
 	 */
-	private static function makeRequest($username, $nonce, $hash, $host){
+	private static function makeRequest($username, $nonce, $hash, $host=null){
 		if(empty($host)) $host = self::$apiHost;
 		
 		$request = (self::$secure) ? 'https://' : 'http://';

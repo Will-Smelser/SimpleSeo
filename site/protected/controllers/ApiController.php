@@ -129,9 +129,9 @@ class ApiController extends RController
 		//remove the "api"
 		@array_shift($_VARS);
 		
-		$_CONTROLLER = $action->id;
+		$_CONTROLLER = ucwords($action->id);
 		
-		$_METHOD = isset($_VARS[1]) ? $_VARS[1] : 'no_method';
+		$_METHOD = isset($_VARS[1]) ? strtolower($_VARS[1]) : 'no_method';
 		
 		@array_shift($_VARS);
 		@array_shift($_VARS);

@@ -24,16 +24,17 @@ class ClientHash{
 	 * 
 	 * @param string $key Your private activation key created when account was initiated.
 	 * @param string $username Your username created at registration time
+	 * @param string $host [optional] The host to make request against
 	 * @return string
 	 * 
 	 * @throws Exception An exception is thrown if the request fails to return a valid token.  Some
 	 * informaiton about the error may be contained int he error message string.
 	 */
-	public static function getToken($key,$username){
+	public static function getToken($key,$username, $host=null){
 		$nonce = substr(str_shuffle(MD5(microtime())),0,7);
 		$hash = self::hash($nonce,$key);
 		
-		return self::makeRequest($username, $nonce, $hash);
+		return self::makeRequest($username, $nonce, $hash, $host);
 	}
 	
 	/**

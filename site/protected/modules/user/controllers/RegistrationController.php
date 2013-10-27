@@ -55,7 +55,7 @@ class RegistrationController extends Controller
 							$profile->save();
 							
 							//add some credits to the account
-							ApiCredits::addDefaultCredits($model->id);
+							Apicredits::addDefaultCredits($model->id);
 							
 							if (Yii::app()->controller->module->sendActivationMail) {
 								$activation_url = $this->createAbsoluteUrl('/user/activation/activation',array("activkey" => $model->activkey, "email" => $model->email));

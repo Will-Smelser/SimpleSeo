@@ -468,6 +468,9 @@ class HOAuthAction extends CAction
 			if($this->useYiiUser){
 				$profile->user_id = $user->primaryKey;
 				
+				//add some credits to the account
+    		    Apicredits::addDefaultCredits($user->primaryKey);
+				
 				// merge the $userProfile data into $profile
 				$this->mergeProfiles($userProfile,$profile);
 				

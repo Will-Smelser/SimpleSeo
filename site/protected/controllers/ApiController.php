@@ -1,34 +1,6 @@
 <?php
 
 /**
- * Have to create a dummy identity class in order to
- * login user
- * @author Will
- *
- */
-class SwitchIdentity extends CBaseUserIdentity {
-	private $_id;
-	private $_name;
-
-	public function SwitchIdentity( $userId, $userName ) {
-		$this->_id = $userId;
-		$this->_name = $userName;
-	}
-
-	public function getId() {
-		return $this->_id;
-	}
-
-	public function getName() {
-		return $this->_name;
-	}
-	
-	public function authenticate(){
-		return true;
-	}
-}
-
-/**
  * The actual ApiController
  * @author Will
  *
@@ -38,15 +10,12 @@ class ApiController extends RController
 	private $apiController = null;
 	public $layout = 'application.views.layouts.empty';
 	
-	private $origionalUserId;
 	private $tokenUserId;
 	
-	public function filters() { return array( 'rights', ); }
+	//public function filters() { return array( 'rights', ); }
 	
 	public function init(){
 		require_once(Yii::getPathOfAlias('ext.seo').'/config.php');
-		
-		$this->origionalUserId = Yii::app()->user->id;
 		
 		$user = null;
 		if(isset($_GET['token']))
@@ -54,20 +23,19 @@ class ApiController extends RController
 			$token = Tokens::model()->findByAttributes(array('token'=>$_GET['token']));
 					
 		//without a token, no login/access allowed.  Handled by RController (Rights module)
-		if(empty($token) || $token::isExpired($token->expire)) return;
-		
-		$this->tokenUserId = $token->user_id;
+		if(empty($token) || $token::isExpired($token->expire))
+			return $this->accessDenied('No valid token given.');
+
 			
-		if(isset($token->user_id))
-			$user = User::model()->findByAttributes(array('id' => $token->user_id));
+		if(!isset($token->user_id))
+			return $this->accessDenied('Token had no user id.');
+			
+		$this->tokenUserId = $token->user_id;
+		$user = User::model()->findByAttributes(array('id' => $token->user_id));
 
 		//no user
-		if(empty($user)) return;
-		
-		$newIdentity = new SwitchIdentity( $user->id, $user->username );
-		Yii::app()->user->login( $newIdentity );
-		
-		
+		if(empty($user))
+			return $this->accessDenied('Token did not have a valid user.');
 	}
 	
 	/**
@@ -75,7 +43,6 @@ class ApiController extends RController
 	 * @see RController::accessDenied()
 	 */
 	public function accessDenied($message='Access Denied.'){
-		Yii::app()->user->logout();
 		
 		require_once SEO_PATH_HELPERS . 'ApiResponse.php';
 		
@@ -93,35 +60,14 @@ class ApiController extends RController
 	}
 	
 	public function beforeAction($action){
+		
 		if($action->id === 'thread') return true;
 		
-		if(empty($this->tokenUserId)) return $this->accessDenied('Failed to lookup user.');
+		if(empty($this->tokenUserId))
+			return $this->accessDenied('Failed to lookup user.');
 		
-		$user = Yii::app()->user;
-		$userId = $user->id;
-		
-		if(!Apicredits::hasCredit(Apicredits::$typeApi)){
-			
+		if(!Apicredits::hasCredit($this->tokenUserId,Apicredits::$typeApi))
 			return $this->accessDenied('User does not have enough credits.');
-		}
-		
-		//if the user was origionally logged in, keep them logged in
-		if(!empty($this->origionalUserId)){
-			
-			$user = User::model()->findByAttributes(array('id' => $this->origionalUserId));
-			
-			//special username that site uses for examples
-			if($user->username !== 'sample'){
-				$newIdentity = new SwitchIdentity( $user->id, $user->username );
-				Yii::app()->user->login( $newIdentity );
-			}else{
-				Yii::app()->user->logout();
-			}
-
-		//before anything can go wrong, lets ensure the user is no longer logged in
-		}elseif(!empty($user) && !(strtolower($user->getName()) === 'guest')){
-			Yii::app()->user->logout();
-		}
 				
 		$url = $params['url'] = str_replace('\\','/',$_GET['url']);
 		$_VARS = explode('/',$url);
@@ -131,7 +77,7 @@ class ApiController extends RController
 		
 		$_CONTROLLER = ucwords($action->id);
 		
-		$_METHOD = isset($_VARS[1]) ? strtolower($_VARS[1]) : 'no_method';
+		$_METHOD = isset($_VARS[1]) ? $_VARS[1] : 'no_method';
 		
 		@array_shift($_VARS);
 		@array_shift($_VARS);

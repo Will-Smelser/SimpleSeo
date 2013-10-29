@@ -122,8 +122,7 @@
 	//need to handle this better
 	defaultRender : function(data, $target){
 		console.log('loading pretty print',data);
-		var rUrl = (typeof window.SeoReport == "undefined") ? "" : "js/";
-		rUrl += 'prettyPrint.js';
+		var rUrl = '/themes/reports/js/api/prettyPrint.js';
 		$.ajax({
 		  url: rUrl,
 		  dataType: "script",

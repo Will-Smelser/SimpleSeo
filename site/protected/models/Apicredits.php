@@ -140,11 +140,11 @@ class Apicredits extends CActiveRecord
 		return ($command->execute() === 1);
 	}
 	
-	public static function hasCredit($type){
+	public static function hasCredit($userid,$type){
 		if(empty($type)) return false;
 		if(!isset(Apicredits::$types[$type])) return false;
-		$id = Yii::app()->user->id;
-		$credit = Apicredits::model()->findByAttributes(array('user_id'=>$id,'type'=>$type));
+		
+		$credit = Apicredits::model()->findByAttributes(array('user_id'=>$userid,'type'=>$type));
 		
 		return ($credit->cnt > 0);
 	}

@@ -64,8 +64,9 @@ class ProtectedController extends Controller
 		//logged in user
 		}else{
 			$creditType = Apicredits::$typeReport;
-			if(Apicredits::hasCredit($creditType)){
-				Apicredits::useCredit(Yii::app()->user->id, $creditType);
+			$userid = Yii::app()->user->id;
+			if(Apicredits::hasCredit($userid,$creditType)){
+				Apicredits::useCredit($userid, $creditType);
 				return true;
 			}else{
 				$this->redirect('/site/pages/noreportcredits');

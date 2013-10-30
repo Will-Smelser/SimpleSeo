@@ -40,6 +40,7 @@ class ProtectedController extends Controller
 
 		Yii::app()->theme = 'reports';
 		
+		//guest or not logged in user
 		if (!Yii::app()->user->id) {
 			$ip = $_SERVER['REMOTE_ADDR'];
 			$entry = Ipfilter::model()->findByAttributes(array('ip'=>$ip));
@@ -67,6 +68,14 @@ class ProtectedController extends Controller
 			$userid = Yii::app()->user->id;
 			if(Apicredits::hasCredit($userid,$creditType)){
 				Apicredits::useCredit($userid, $creditType);
+				
+				//record stats
+				$stats = new Reportstats();
+				$stats->user_id = $userid;
+				$stats->type = $view->getId();
+				$stats->request = $_GET['target'];
+				$stats->save();
+				
 				return true;
 			}else{
 				$this->redirect('/site/pages/noreportcredits');

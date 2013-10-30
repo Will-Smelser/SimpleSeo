@@ -10,7 +10,8 @@ class StatsController extends RController
 	
 	private $queries = array(
 		'total'=>'SELECT DATE_FORMAT(created,"%%Y-%%m-%%d" ) AS `interval` , COUNT( * ) as `cnt` FROM apistats where user=%d and created > \'%s\' and created < \'%s\' GROUP BY `interval` order by created asc',
-		'method'=>'SELECT DATE_FORMAT(created,"%%Y-%%m-%%d" ) AS `interval` , COUNT( * ) as `cnt`, controller, method FROM apistats where user=%d and created > \'%s\' and created < \'%s\' GROUP BY `interval`,`controller`,`method` order by controller, method asc'
+		'method'=>'SELECT DATE_FORMAT(created,"%%Y-%%m-%%d" ) AS `interval` , COUNT( * ) as `cnt`, controller, method FROM apistats where user=%d and created > \'%s\' and created < \'%s\' GROUP BY `interval`,`controller`,`method` order by controller, method asc',
+		'report'=>'SELECT DATE_FORMAT(created,"%%Y-%%m-%%d" ) AS `interval` , COUNT( * ) as `cnt` FROM reportstats where user=%d and created > \'%s\' and created < \'%s\' GROUP BY `interval` order by created asc'
 	);
 	
 	public function actionCredits(){
@@ -41,7 +42,7 @@ class StatsController extends RController
 		$this->render('index');
 	}
 	
-	public function actionTotals($start,$stop){
+	public function actionTotals($start,$stop,$query='total'){
 		$this->layout = 'application.views.layouts.empty';
 		
 		$start = $this->getTime($start,false);
@@ -49,12 +50,16 @@ class StatsController extends RController
 		
 		$id = intval(Yii::app()->user->id);
 		
-		$sql = sprintf($this->queries['total'],$id,$start,$stop);
+		$sql = sprintf($this->queries[$query],$id,$start,$stop);
 		$data = Yii::app()->db->createCommand($sql)->queryAll();
 		
 		$json .= "[[\"Date\",\"Count\"]";
-		foreach($data as $row){
-			$json .= ",[\"{$row['interval']}\",{$row['cnt']}]";
+		if(count($data) == 0){
+			$json .= ",[\"$start\",0]";
+		}else{
+			foreach($data as $row){
+				$json .= ",[\"{$row['interval']}\",{$row['cnt']}]";
+			}
 		}
 		$json .= ']';
 		

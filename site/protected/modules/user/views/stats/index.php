@@ -20,7 +20,7 @@ $cs->registerScriptFile('/themes/reports/js/jquery-ui-1.10.3.custom.min.js',CCli
 
 <?php echo $this->renderPartial('../profile/menu'); ?>
 
-<h1>API Usage Stats</h1>
+<h1>Usage Stats</h1>
 
 
 <!-- BASE GRAPH -->
@@ -43,6 +43,22 @@ $this->beginWidget('zii.widgets.CPortlet', array(
 	
 <?php $this->endWidget();?>
 
+<!-- BASE GRAPH -->
+<?php
+$this->beginWidget('zii.widgets.CPortlet', array(
+	'title'=>'Report Usage Totals',
+));
+?>
+<div id="mainFormr">
+	<input id="startr" type="text" value="<?php echo $this->start; ?>" />
+	<input id="stopr" type="text" value="<?php echo $this->stop; ?>" />
+	<input id="mainBtnr" type="button" value="Update" />
+	<div id="mainGraphr">Loading...</div> 
+</div>
+
+	
+<?php $this->endWidget();?>
+
 
 <script>
 google.load('visualization', '1.0', {'packages':['corechart']});
@@ -50,9 +66,20 @@ google.load('visualization', '1.0', {'packages':['corechart']});
 var chart1 = null;
 var chart1Data = null;
 var chart2 = null;
+var chart3 = null;
+var chart3Data = null;
+
 var chart1Options = {
 	title: 'Total Usage Stats',
     vAxis: {title: 'Date'}, hAxis: {title:'Total API Requests'},
+    width: '100%', height:300, 
+    backgroundColor: { fill:'transparent' },
+    chartArea:{width:"70%",height:"50%"}
+   };
+   
+var chart3Options = {
+	title: 'Total Usage Stats',
+    vAxis: {title: 'Date'}, hAxis: {title:'Total Report Requests'},
     width: '100%', height:300, 
     backgroundColor: { fill:'transparent' },
     chartArea:{width:"70%",height:"50%"}
@@ -99,6 +126,39 @@ var initForms = function(){
 		$('#mainForm').slideDown();
 		$('#detailForm').slideUp();
 	});
+	
+	//This is the reports one
+	$( "#startr" ).datepicker()
+		.datepicker("option","dateFormat",format)
+		.datepicker( "setDate", start );
+	
+	$( "#stopr" ).datepicker()
+	.datepicker("option","dateFormat",format)
+	.datepicker( "setDate", stop );
+	
+	$('#mainBtnr').button().click(function(){
+		var start = $('#startr').val();
+		var stop = $('#stopr').val();
+
+		$.getJSON('/user/stats/totals?start='+start+'&stop='+stop+'&query=report')
+			.done(function(data){
+				
+				chart3Data = google.visualization.arrayToDataTable(data);
+
+				if(chart3 === null){
+					chart3 = new google.visualization.BarChart($('#mainGraphr')[0]);
+				}else
+					chart3.clearChart();
+
+				chart3Options.height =  getHeight(data.length);
+				chart3Options.chartArea.height = chart3Options.height - 75;
+				chart3.draw(chart3Data,chart3Options);
+			})
+			.fail(function(){
+				alert('Sorry, but the request failed.  Try again.');
+			});		
+	});
+	
 };
 
 var addListener = function(){
@@ -145,5 +205,6 @@ var getHeight = function(dataLength){
 $(document).ready(function(){
 	initForms();
 	$('#mainBtn').click();
+	$('#mainBtnr').click();
 });
 </script>

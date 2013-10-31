@@ -107,7 +107,7 @@ class ApiController extends RController
 		$apiStats->save();
 		
 		//use a credit
-		Apicredits::useCredit($userId,Apicredits::$typeApi);
+		Apicredits::useCredit($this->tokenUserId,Apicredits::$typeApi);
 		
 		$this->apiController = new $_CONTROLLER($_METHOD, $type, $_VARS);
 		

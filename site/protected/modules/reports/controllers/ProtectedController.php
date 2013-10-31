@@ -71,7 +71,7 @@ class ProtectedController extends Controller
 				
 				//record stats
 				$stats = new Reportstats();
-				$stats->user_id = $userid;
+				$stats->user = $userid;
 				$stats->type = $view->getId();
 				$stats->request = $_GET['target'];
 				$stats->save();

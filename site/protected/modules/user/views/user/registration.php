@@ -1,18 +1,20 @@
 <?php $this->pageTitle=Yii::app()->name . ' - '.UserModule::t("Registration");
 
-error_reporting(E_ALL);
+
 $this->breadcrumbs=array(
 	UserModule::t("Registration"),
 );
 ?>
 
-<h1><?php echo UserModule::t("Registration"); ?></h1>
-
 <?php if(Yii::app()->user->hasFlash('registration')): ?>
 <div class="success">
+<h1><?php echo UserModule::t("Registration"); ?></h1>
 <?php echo Yii::app()->user->getFlash('registration'); ?>
 </div>
+
 <?php else: ?>
+<div class="span-11">
+<h1><?php echo UserModule::t("Registration"); ?></h1>
 
 <div class="form">
 <?php $form=$this->beginWidget('UActiveForm', array(
@@ -98,4 +100,10 @@ $this->breadcrumbs=array(
 
 <?php $this->endWidget(); ?>
 </div><!-- form -->
+</div>
+<div class="span-11 last">
+	<h1>Social Registration</h1>
+	<?php $this->widget('ext.hoauth.widgets.HOAuth'); ?>
+</div>
+<div class="clear"></div>
 <?php endif; ?>

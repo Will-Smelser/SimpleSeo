@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL);
+
 class RegistrationController extends Controller
 {
 	public $defaultAction = 'registration';

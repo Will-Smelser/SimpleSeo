@@ -7,6 +7,9 @@ $cs->registerCssFile('/themes/simple/css/buttons.css');
 ?>
 
 <h1>SEO Report - <?php echo Yii::app()->name; ?></h1>
+<p>
+Enter a url that you would like to run a report on such as "www.simple-seo-api.com/site/pages/getstarted".
+</p>
 <div class="form">
 <form id="form-run-report" method="GET" action="/reports/protected">
 	<div class="row">

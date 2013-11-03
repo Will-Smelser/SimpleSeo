@@ -59,6 +59,7 @@
 				    <?php
 				    $getstarted = (Yii::app()->request->url == '/site/pages/getstarted')?true:false;
 				    $examples = (strpos(Yii::app()->request->url,'/site/pages/examples')!==false)?true:false;
+				    $reports = (strpos(Yii::app()->request->url,'/reports')!==false)?true:false;
 				    
 				    $this->widget('zii.widgets.CMenu',array(
 						
@@ -67,7 +68,7 @@
 								array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 								array('label'=>'Contact', 'url'=>array('/site/contact')),
 								array('label'=>'Get Started', 'url'=>array('/site/pages/getstarted'),'active'=>$getstarted),
-								array('label'=>'Examples', 'url'=>array('/site/pages/examples/index'),'active'=>$examples),
+								array('label'=>'Reports', 'url'=>array('/reports'),'active'=>$reports),
 								/*
 								array('url'=>Yii::app()->getModule('user')->loginUrl, 'label'=>Yii::app()->getModule('user')->t("Login"), 'visible'=>Yii::app()->user->isGuest),
 								array('url'=>Yii::app()->getModule('user')->registrationUrl, 'label'=>Yii::app()->getModule('user')->t("Register"), 'visible'=>Yii::app()->user->isGuest),
@@ -116,6 +117,7 @@
 			<ul>
 				<li><a href="/site/page?view=about">About</a></li>
 				<li><a href="/site/contact">Contact Us</a></li>
+				<li><a href="/reports">Reports</a></li>
 			</ul>
 		</div>
 		<div class="span-8">

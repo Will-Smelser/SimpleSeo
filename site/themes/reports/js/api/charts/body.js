@@ -27,7 +27,7 @@
 	          vAxis:{baselineColor:fontColor,textStyle:{'color':fontColor},titleTextStyle:{color:fontColor}},
 	          titleTextStyle:{color:fontColor},
 	          legend:{textStyle:{color:fontColor}},
-	          colors:['#f26e34'],
+	          colors:['#FF9900'],
 	          chartArea:{top:0,left:100, width:"auto", height:"90%"}
 	        };
 			

@@ -57,14 +57,19 @@
 			
 				<div id="mainmenu" >
 					<div class="">
-				    <?php $this->widget('zii.widgets.CMenu',array(
+					<?php
+				    $getstarted = (Yii::app()->request->url == '/site/pages/getstarted')?true:false;
+				    $examples = (strpos(Yii::app()->request->url,'/site/pages/examples')!==false)?true:false;
+				    $reports = (strpos(Yii::app()->request->url,'/reports')!==false)?true:false;
+				    
+				    $this->widget('zii.widgets.CMenu',array(
 						
 						'items'=>array(
 								array('label'=>'Home', 'url'=>array('/site/index')),
 								array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 								array('label'=>'Contact', 'url'=>array('/site/contact')),
-								array('label'=>'Get Started', 'url'=>array('/site/pages/getstarted')),
-								array('label'=>'Examples', 'url'=>array('/site/pages/examples/index')),
+								array('label'=>'Get Started', 'url'=>array('/site/pages/getstarted'),'active'=>$getstarted),
+								array('label'=>'Reports', 'url'=>array('/reports'),'active'=>$reports),
 								/*
 								array('url'=>Yii::app()->getModule('user')->loginUrl, 'label'=>Yii::app()->getModule('user')->t("Login"), 'visible'=>Yii::app()->user->isGuest),
 								array('url'=>Yii::app()->getModule('user')->registrationUrl, 'label'=>Yii::app()->getModule('user')->t("Register"), 'visible'=>Yii::app()->user->isGuest),
@@ -98,12 +103,49 @@
 	
 
 	<div id="footer">
-		<div class="container" >
+		<div class="container">
+		<div class="span-8">
+			<h2>Information</h2>
+			<ul>
+				<li><a href="/site/page?view=about">About</a></li>
+				<li><a href="/site/contact">Contact Us</a></li>
+				<li><a href="/reports">Reports</a></li>
+			</ul>
+		</div>
+		<div class="span-8">
+			<h2>Developers</h2>
+			<ul>
+				<li><a href="/site/pages/getstarted">Getting Started</a></li>
+				<li><a href="/api-docs/namespaces/api.html">API Docs</a></li>
+				<li><a href="/api-docs-js/SeoApi.html">API Docs (JavaScript)</a></li>
+			</ul>
+		</div>
+		<div class="span-8 last">
+			<h2>Examples</h2>
+			<ul>
+				<li><a href="/site/pages/getstarted">Getting Started</a></li>
+				<li><a href="/site/pages/examples/getapikey">Get API Key</a></li>
+				<li><a href="/site/pages/examples/getapitoken">Get API Token</a></li>
+			</ul>
+		</div>
+		</div>
+		<div class="container" style="margin-top:40px">
 			Copyright Simple-SEO-API.com <?php echo date('Y'); ?>
 		</div>
 	</div><!-- footer -->
 
 </div><!-- page -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45402047-1', 'simple-seo-api.com');
+  ga('send', 'pageview');
+
+</script>
 
 </body>
 </html>

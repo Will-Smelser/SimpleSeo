@@ -72,6 +72,7 @@ var chart3Data = null;
 var chart1Options = {
 	title: 'Total Usage Stats',
     vAxis: {title: 'Date'}, hAxis: {title:'Total API Requests'},
+    hAxis: {viewWindow:{min:0}},
     width: '100%', height:300, 
     backgroundColor: { fill:'transparent' },
     chartArea:{width:"70%",height:"50%"}
@@ -80,6 +81,7 @@ var chart1Options = {
 var chart3Options = {
 	title: 'Total Usage Stats',
     vAxis: {title: 'Date'}, hAxis: {title:'Total Report Requests'},
+    hAxis: {viewWindow:{min:0}},
     width: '100%', height:300, 
     backgroundColor: { fill:'transparent' },
     chartArea:{width:"70%",height:"50%"}

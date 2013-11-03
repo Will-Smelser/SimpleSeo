@@ -17,9 +17,9 @@ class StatsController extends RController
 	}
 	
 	private $queries = array(
-		'total'=>'SELECT DATE_FORMAT(created,"%%Y-%%m-%%d" ) AS `interval` , COUNT( * ) as `cnt` FROM apistats where user=%d and created => \'%s\' and created <= \'%s\' GROUP BY `interval` order by created asc',
-		'method'=>'SELECT DATE_FORMAT(created,"%%Y-%%m-%%d" ) AS `interval` , COUNT( * ) as `cnt`, controller, method FROM apistats where user=%d and created => \'%s\' and created <= \'%s\' GROUP BY `interval`,`controller`,`method` order by controller, method asc',
-		'report'=>'SELECT DATE_FORMAT(created,"%%Y-%%m-%%d" ) AS `interval` , COUNT( * ) as `cnt` FROM reportstats where user=%d and created => \'%s\' and created <= \'%s\' GROUP BY `interval` order by created asc'
+		'total'=>'SELECT DATE_FORMAT(created,"%%Y-%%m-%%d" ) AS `interval` , COUNT( * ) as `cnt` FROM apistats where user=%d and created >= \'%s\' and created <= \'%s\' GROUP BY `interval` order by created asc',
+		'method'=>'SELECT DATE_FORMAT(created,"%%Y-%%m-%%d" ) AS `interval` , COUNT( * ) as `cnt`, controller, method FROM apistats where user=%d and created >= \'%s\' and created <= \'%s\' GROUP BY `interval`,`controller`,`method` order by controller, method asc',
+		'report'=>'SELECT DATE_FORMAT(created,"%%Y-%%m-%%d" ) AS `interval` , COUNT( * ) as `cnt` FROM reportstats where user=%d and created >= \'%s\' and created <= \'%s\' GROUP BY `interval` order by created asc'
 	);
 	
 	public function actionCredits(){

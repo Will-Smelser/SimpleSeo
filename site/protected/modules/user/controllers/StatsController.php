@@ -54,11 +54,12 @@ class StatsController extends RController
 		$this->layout = 'application.views.layouts.empty';
 		
 		$start = $this->getTime($start,false);
-		$stop = $this->getTime($stop, false);
+        $start2= $start  . ' 00:00:00';
+    	$stop = $this->getTime($stop, false) . ' 23:59:59';
 		
 		$id = intval(Yii::app()->user->id);
 		
-		$sql = sprintf($this->queries[$query],$id,$start,$stop);
+		$sql = sprintf($this->queries[$query],$id,$start2,$stop);
 		$data = Yii::app()->db->createCommand($sql)->queryAll();
 		
 		$json .= "[[\"Date\",\"Count\"]";

@@ -7,8 +7,3 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
 </IfModule>
-
-<IfModule mod_speling.c>
-	CheckSpelling On
-	CheckCaseOnly On
-</IfModule>

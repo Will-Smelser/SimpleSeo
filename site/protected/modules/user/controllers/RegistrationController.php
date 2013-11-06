@@ -16,6 +16,9 @@ class RegistrationController extends Controller
 				'class'=>'CCaptchaAction',
 				'backColor'=>0xFFFFFF,
 			),
+			'oauth' => array(
+					'class'=>'ext.hoauth.HOAuthAction',
+			),
 		);
 	}
 	/**

@@ -103,7 +103,7 @@ $this->breadcrumbs=array(
 </div>
 <div class="span-11 last">
 	<h1>Social Registration</h1>
-	<?php $this->widget('ext.hoauth.widgets.HOAuth'); ?>
+	<?php $this->widget('ext.hoauth.widgets.HOAuth',array('route'=>'user/login')); ?>
 </div>
 <div class="clear"></div>
 <?php endif; ?>

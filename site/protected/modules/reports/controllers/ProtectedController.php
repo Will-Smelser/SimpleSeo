@@ -4,9 +4,14 @@ class ProtectedController extends Controller
 	private $ipAllowCount = 2;
 	
 	public function actionIndex()
-	{
-		
+	{	
+		Yii::app()->theme = 'reports';
 		$this->render('index');
+	}
+	
+	public function actionPretty(){
+		Yii::app()->theme = 'simple';
+		$this->render('pretty');
 	}
 
 	// Uncomment the following methods and override them if needed
@@ -38,7 +43,7 @@ class ProtectedController extends Controller
 	
 	public function beforeAction($view){
 
-		Yii::app()->theme = 'reports';
+		
 		
 		//guest or not logged in user
 		if (!Yii::app()->user->id) {

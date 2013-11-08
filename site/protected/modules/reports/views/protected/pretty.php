@@ -130,21 +130,30 @@ seo.load('social').extend('base')
 <div class="container">
 
 <div class="span-6">
-    <h2>Contents</h2>
     <div style="position:relative">
-    <ul id="info-index" style="position:absolute;top:0px;">
-        <!-- javascript will load this dynamically !-->
-        <li>Loading...</li>
-    </ul>
+        <div id="info-index-wrap">
+            <h1>Contents</h1>
+            <ul id="info-index" >
+                <!-- javascript will load this dynamically !-->
+                <li>Loading...</li>
+            </ul>
+
+            <ul>
+                <li><a href="#top">Top</a></li>
+            </ul>
+
+            <div id="save-edit-wrap">
+                <input id="save" style="width:180px" class="btn btn-large" type="button" value="Save" />
+            </div>
+        </div>
     </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 
 <div class="span-17 last">
 
-<h1>SEO Report - <?php echo $_GET['target']; ?></h1>
-<div style="float:right" id="save-edit-wrap">
-    <input id="save" class="btn btn-large" type="button" value="Save" />
-</div>
+<h1 id="top">SEO Report - <?php echo $_GET['target']; ?></h1>
+
 
 <div id="all-content">
 
@@ -260,24 +269,11 @@ $filename = str_replace('/','-',preg_replace('@https?://@i','',$_GET['target']))
 
 <script>
 $(document).ready(function(){
-    var $list = $('#info-index').empty();
-    var posTop = $list.offset().top;
 
-    $('a[href*=#]:not([href=#])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-            if (target.length) {
-                $('html,body').animate({
-                    scrollTop: target.offset().top
-                }, 1000);
-                $(list).animate({
-                    top: posTop - target.offset().top
-                }, 1000);
-                return false;
-            }
-        }
-    });
+    var $list = $('#info-index').empty();
+    var $index = $('#info-index-wrap');
+    var posTop = $index.offset().top;
+    $index.attr('style','position:fixed;top:'+posTop+'px');
 
     $('h2[id|=info]').each(function(){
         var li = $(document.createElement('li'));
@@ -285,18 +281,31 @@ $(document).ready(function(){
         a.attr('href','#'+$(this).attr('id')).html($(this).html());
         $list.append(li.append(a));
     }).promise().done(function(){
-        $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
+            $('a[href*=#]:not([href=#])').click(function() {
+                if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        /*
+                        $($list).animate({
+                            top: target.offset().top - posTop
+                        }, 1000);
+                        */
+                        return false;
+                    }
                 }
-            }
-        });
+            });
+    });
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > posTop) {
+            $index.attr('style','position:fixed;top:0px');
+        } else {
+            $index.attr('style','position:relative');
+        }
     });
 })
 </script>

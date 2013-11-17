@@ -115,6 +115,7 @@
 		}
 	},
 	handleError : function(){
+        console.log(this.failObj);
 		for(var x in this.methods){
 			$(this.targetMap[this.methods[x]]).html(this.failObj.find('.reason').html('Ajax Request Failure'));
 		}

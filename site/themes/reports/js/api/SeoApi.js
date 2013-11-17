@@ -138,7 +138,7 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 		 * @param {string} method A method that is defined in the seo api.  For example, if
 		 * you are loading "body" api object, then you could add method "checkH1".
 		 * @param {string|Callback} target <ul>
-		 * 
+		 *
 		 * <li>String - If target is a string it should be an 
 		 * id (JQuery form of '#id' or jquery object) to an object in the DOM that is passed to render_"method".  See the base class
 		 * that should be extended for more information on this.<br/><br/></li>

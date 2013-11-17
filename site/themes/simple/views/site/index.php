@@ -45,32 +45,20 @@ $this->pageTitle='Simple Seo Api - Reporting Tool';
 			<div class="span-23 showgrid last form">
 				<input id="get-url"
 					type="text" value="<?php echo $example;?>"
-					style="width: 300px" />
+					style="width: 450px" />
 				<button id="get-btn" class="btn btn-black">Get Word Count</button>
 			</div>
 
 			<div id="loadingWrapper" style="position:relative;" >
-<div  class="span-23" style="position:absolute;top:140px;">					
-<div id="noTrespassingOuterBarG" style="width:500px;margin:0px auto;z-index:9999;">
-<div id="loadingTxt">Loading...</div>
-<div id="noTrespassingFrontBarG" class="noTrespassingAnimationG">
-<div class="noTrespassingBarLineG"></div>
-<div class="noTrespassingBarLineG"></div>
-<div class="noTrespassingBarLineG"></div>
-<div class="noTrespassingBarLineG"></div>
-<div class="noTrespassingBarLineG"></div>
-<div class="noTrespassingBarLineG"></div>
-<div class="noTrespassingBarLineG"></div>
-<div class="noTrespassingBarLineG"></div>
-<div class="noTrespassingBarLineG"></div>
-<div class="noTrespassingBarLineG"></div>
-<div class="noTrespassingBarLineG"></div>
-<div class="noTrespassingBarLineG"></div>
-<div class="noTrespassingBarLineG"></div>
-<div class="noTrespassingBarLineG"></div>
-</div>
-</div>
-</div>
+<?php
+    $this->widget('ext.wloading.Wloading',
+        array(
+            'wrapperClass'=>'span-23',
+            'wrapperStyle'=>'position:absolute;top:140px;',
+            'width'=>'500px'
+        )
+    );
+?>
 			</div>
 			
 			<div class="span-23" style="overflow: hidden; padding-top: 20px; height: 330px" id="graphWrapper"></div>
@@ -164,9 +152,10 @@ $(document).ready(function(){
 	
 	$('#get-btn').click(function(){
 		$('#loadingWrapper').show();
-		seo.load('body').extend('base')
+		seo.load('base').extend('base')
 			.addMethod('getKeyWords','#graphWrapper')
-			.exec($('#get-url').val(),function(data){
+			.exec($('#get-url').val(),
+            function(data){
 				$('#loadingWrapper').fadeOut();
 				this.handleSuccess(data);
 			},function(){

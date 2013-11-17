@@ -90,14 +90,13 @@ class ApiController extends RController
 		//cleanup the request var
 		if(!preg_match('@^(https?://)@i',$_GET['request']))
 			$_GET['request'] = 'http://'.ltrim($_GET['request'],'/');
-		
+
 		require_once SEO_PATH_CONTROLLERS . 'Controller.php';
 		require_once SEO_PATH_CONTROLLERS . $_CONTROLLER . '.php';
-		
+
 		//controller will handle actual work and call method
 		$type = (isset($_GET['type'])) ? $_GET['type'] : 'json';
-		
-		
+
 		//save the stats
 		$apiStats = new Apistats();
 		$apiStats->request = $_GET['request'];
@@ -139,6 +138,8 @@ class ApiController extends RController
 	public function actionServer(){}
 
 	public function actionSocial(){}
+
+    public function actionW3c(){}
 	
 	/* FOR PHP THREADED REQUESTS */
 	public function actionThread(){

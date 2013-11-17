@@ -81,10 +81,14 @@ seo.load('server').extend('base')
 	.addMethod('getLoadTime','#server-general-info')
 	.addMethod('isGzip','#server-general-info')
 	.addMethod('getServer','#server-general-info')
-	.addMethod('validateW3C','#w3c-general')
-	.addMethod('getValidateW3Cerrors','#w3c-error')
-	.addMethod('getValidateW3Cwarnings','#w3c-warning')
 	.exec(url);
+
+seo.load('w3c').extend('base')
+    .addMethod('validateW3C','#w3c-general')
+    .addMethod('getValidateW3Cerrors','#w3c-error')
+    .addMethod('getValidateW3Cwarnings','#w3c-warning')
+    .exec(url);
+
 
 seo.load('moz').extend('base')
 	.addMethod('getMozLinks','#moz-link')

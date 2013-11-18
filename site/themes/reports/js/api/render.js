@@ -39,17 +39,16 @@
 	
 	newTblHead : function(obj, useKeys){
 		if(typeof useKeys === "undefined") useKeys = false;
-		console.log(obj,'th',useKeys);
-		return this.newRow(obj,'th',useKeys);
+		return this.newEl('thead').append(this.newRow(obj,'th',useKeys));
 	},
 	
 	newTbl : function(objRows, objHead){
 		var $tbl = this.newEl('table');
 		if(typeof objHead === "undefined"){
-			console.log(objRows,objRows[0]);
 			$tbl.append(this.newTblHead(objRows[0],false));
-		}else
+		}else{
 			$tbl.append(this.newTblHead(objHead,false));
+        }
 		
 		for(var x in objRows)
 			$tbl.append(this.newRow(objRows[x],'td',true));

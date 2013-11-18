@@ -38,6 +38,14 @@
 	 */
 	waitOnLoad : true,
 
+    /**
+     * Store state from execute() call to retry attempts.
+     * @param {function} callback The success callback for api request completion.
+     * @param {function} callbackErr The error callback for api request failure.
+     * @returns {{methods: Array, targetMap: (extend|*), callback: *, callbackErr: *, maxRetries: number, errorRetries: Array, requestRetries: number}}
+     * @constructor
+     * @memberof! window._SeoApi_.base
+     */
     Context : function(callback, callbackErr){
         var scope = this;
         return {

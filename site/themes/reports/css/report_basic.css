@@ -58,3 +58,10 @@ a{
 .loading-text{
 	font-size:18px;
 }
+
+#all-content thead th{
+    background-color:#efefef;
+}
+#all-content table{
+    width: 100%;
+}

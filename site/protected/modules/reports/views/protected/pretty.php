@@ -8,106 +8,11 @@ define('SEO_URI_REPORTS_LOCAL','themes/reports/');
 //add js and such
 $cs = Yii::app()->getClientScript();
 $cs->registerScriptFile('http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js');
-$cs->registerScriptFile('/themes/reports/js/jquery-ui-1.10.3.custom.min.js',CClientScript::POS_HEAD);
+$cs->registerScriptFile('http://'. SEO_HOST . '/' . SEO_URI_REPORTS_LOCAL . 'js/jquery-ui-1.10.3.custom.min.js',CClientScript::POS_HEAD);
 
 ?>
 
-<style>
-    .title-info{
-        display: none;
-    }
-    #info-index{
-        margin:0px;
-        padding:0px;
-    }
-    #info-index-wrap{
-        position:relative;
-    }
-    #info-index li{
-        list-style: none;
-        display: block;
-        text-align: center;
-        margin-left:0px;
-    }
-    .info-icon{
-        margin:10px;
-        padding:5px;
-        background-color:#efefef;
-        border:solid #ccc 1px;
-        border-radius:5px;
-        width:100px;
-        opacity:.8;
-    }
-    #info-index a{
-        text-decoration: none;
-    }
-    .info-icon:hover{
-        opacity:1;
-        background-color:#DDD;
-    }
-    .info-icon h3{
-        font-size:12px;
-        padding:5px 0px 0px 0px;
-        margin:0px;
-        color:#555;
-    }
-    .loading{
-        display:inline-block;
-        width:30px;
-        background-image:url("/themes/reports/images/loading.gif");
-        background-position: right;
-        background-repeat: no-repeat;
-    }
-    #all-content h2{
-        border-left:solid #CCC 4px;
-        border-bottom:dotted #CCC 1px;
-        padding-left:2px;
-        font-size:24px;
-    }
-    #all-content h2.selected{
-        border-left-color: #ffb506;
-        color:#000;
-    }
-    .info-icon.selected{
-        opacity: 1.0;
-        background-color: #ffb506;
-        color:#FFF;
-    }
-    .info-icon.selected h3{
-        /*color:#FFF;*/
-    }
-
-    /* content section */
-    #all-content .subinfo{
-        padding-left:20px;
-    }
-    #all-content .subinfo li{
-        list-style: none;
-    }
-    #all-content h2{
-        margin-bottom:5px;
-    }
-    #all-content h4{
-        margin: 0px;
-    }
-
-    /* list styles */
-    .title-info li{
-        margin-left:10px;
-    }
-    .title-info li .list-key{
-        width:125px;
-        font-weight:bold;
-        display: inline-block;
-    }
-    h2{
-        margin-top:20px;
-    }
-    h2.first{
-        margin-top:0px;
-    }
-
-</style>
+<link rel="stylesheet" type="text/css" href="<?php echo 'http://'. SEO_HOST . '/' . SEO_URI_REPORTS_LOCAL; ?>css/report_pretty.css">
 
 <script src="http://<?php echo SEO_HOST . '/' . SEO_URI_REPORTS_LOCAL; ?>js/api/SeoApi.js" data-seoapi-ns="_SeoApi_" ></script>
 <script>
@@ -118,7 +23,6 @@ $cs->registerScriptFile('/themes/reports/js/jquery-ui-1.10.3.custom.min.js',CCli
  */
 var url = "<?php echo isset($_GET['target']) ? urlencode($_GET['target']):''; ?>";
 var api = "<?php echo 'http://'.SEO_HOST.'/'.SEO_URI_API; ?>";
-//var api = "<?php echo 'http://localhost/simple-seo-api.com/site/'.SEO_URI_API; ?>";
 
 window.SeoReport = "/themes/reports";
 
@@ -316,8 +220,6 @@ seo.load('social').extend('base')
 
 <div id="all-content">
 
-<script src="http://<?php echo SEO_HOST . '/' . SEO_URI_REPORTS_LOCAL; ?>js/basic.js"></script>
-
 <!-- api/server -->
 <h2 id="info-server" class="first">Server Information <span class="loading">&nbsp;</span></h2>
 	<!-- 
@@ -448,11 +350,7 @@ $(document).ready(function(){
                 $('html,body').animate({
                     scrollTop: target.offset().top
                 }, 1000);
-                /*
-                $($list).animate({
-                    top: target.offset().top - posTop
-                }, 1000);
-                */
+
                 return false;
             }
         }
@@ -467,6 +365,20 @@ $(document).ready(function(){
         } else {
             $index.css('margin-top','0px');
         }
+    });
+
+    $('#save').click(function(evt){
+        $('h2').removeClass('selected');
+        var content = '<!DOCTYPE html><html><head>' +
+            '<link rel="stylesheet" type="text/css" href="<?php echo 'http://'. SEO_HOST . '/' . SEO_URI_REPORTS_LOCAL; ?>/css/report_pretty.css">'+
+            '</head><body><h1>SEO Report <span class="by-author">by <a href="http://simple-seo-api.com">simple-seo-api.com</a></span></h1>'+
+            '<div id="all-content">' + $('#all-content').html() + '</div></body></html>';
+        $('#save-form textarea:first').val(content).parent().submit();
+
+    });
+
+    $('#edit').button({icons:{primary:"ui-icon-pencil"}}).click(function(){
+        (editing) ? editOff() : editOn();
     });
 })
 </script>

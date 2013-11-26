@@ -8673,3 +8673,169 @@ Stack trace:
 REQUEST_URI=/reports?target=inedo.com
 HTTP_REFERER=http://simple-seo-api.local/reports/
 ---
+2013/11/09 18:16:06 [error] [exception.CException] exception 'CException' with message 'Wloading cannot find the view "views/loading.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\widgets\CWidget.php:246
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\extensions\wloading\Wloading.php(12): CWidget->render('views/loading.p...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(173): Wloading->run()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\themes\simple\views\site\index.php(55): CBaseController->widget('ext.wloading.Wl...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#7 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\SiteController.php(34): CController->render('index')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#13 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#14 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/site/index
+HTTP_REFERER=http://simple-seo-api.local/user/profile
+---
+2013/11/09 18:16:23 [error] [exception.CException] exception 'CException' with message 'Wloading cannot find the view "./views/loading.php".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\widgets\CWidget.php:246
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\extensions\wloading\Wloading.php(12): CWidget->render('./views/loading...')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(173): Wloading->run()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\themes\simple\views\site\index.php(55): CBaseController->widget('ext.wloading.Wl...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#7 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\SiteController.php(34): CController->render('index')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#13 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#14 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/site/index
+HTTP_REFERER=http://simple-seo-api.local/user/profile
+---
+2013/11/09 18:25:06 [error] [exception.CException] exception 'CException' with message 'Property "Wloading.wrapperClass" is not defined.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('wrapperClass', 'span-23')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'ext.wloading.Wl...', Array)
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.wloading.Wl...', Array)
+#3 C:\xampp\htdocs\simple-seo-api.com\site\themes\simple\views\site\index.php(57): CBaseController->widget('ext.wloading.Wl...', Array)
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\SiteController.php(34): CController->render('index')
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#14 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#15 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/site/index
+HTTP_REFERER=http://simple-seo-api.local/user/profile
+---
+2013/11/09 18:33:05 [error] [exception.CException] exception 'CException' with message 'Property "Wloading.warpperStyle" is not defined.' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\site\protected\extensions\wloading\Wloading.php(18): CComponent->__get('warpperStyle')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(173): Wloading->run()
+#2 C:\xampp\htdocs\simple-seo-api.com\site\themes\simple\views\site\index.php(59): CBaseController->widget('ext.wloading.Wl...', Array)
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#5 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#7 C:\xampp\htdocs\simple-seo-api.com\site\protected\controllers\SiteController.php(34): CController->render('index')
+#8 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#9 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#13 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#14 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/site/index
+HTTP_REFERER=http://simple-seo-api.local/user/profile
+---
+2013/11/09 18:37:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "controller".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('controller')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('controller')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/controller...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/controller/getKeyWords?request=http://en.wikipedia.org/wiki/Search_engine_optimization&token=TOKEN_GET_FAILED&type=jsonp&callback=jQuery191024415272776968777_1384018664652&_=1384018664653
+HTTP_REFERER=http://simple-seo-api.local/site/index
+---
+2013/11/09 18:42:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "controller".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('controller')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('controller')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/controller...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/controller/getKeyWords%7CgetKeyWords%7CgetKeyWords?request=http://en.wikipedia.org/wiki/Search_engine_optimization&token=TOKEN_GET_FAILED&type=jsonp&callback=jQuery191024415272776968777_1384018664652&_=1384018664654
+HTTP_REFERER=http://simple-seo-api.local/site/index
+---
+2013/11/09 18:51:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "controller".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('controller')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('controller')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/controller...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/controller/getKeyWords?request=http://en.wikipedia.org/wiki/Search_engine_optimization&token=TOKEN_GET_FAILED&type=jsonp&callback=jQuery191027208118373528123_1384019507317&_=1384019507318
+HTTP_REFERER=http://simple-seo-api.local/site/index
+---
+2013/11/09 18:52:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "controller".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('controller')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('controller')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/controller...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/controller/getKeyWords%7CgetKeyWords%7CgetKeyWords?request=http://en.wikipedia.org/wiki/Search_engine_optimization&token=TOKEN_GET_FAILED&type=jsonp&callback=jQuery191027208118373528123_1384019507317&_=1384019507319
+HTTP_REFERER=http://simple-seo-api.local/site/index
+---
+2013/11/09 18:56:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "controller".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('controller')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('controller')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/controller/...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/api/controller/getKeyWords?request=http://en.wikipedia.org/wiki/Search_engine_optimization&token=TOKEN_GET_FAILED&type=jsonp&callback=jQuery191013647315138950944_1384019790676&_=1384019790677
+HTTP_REFERER=http://simple-seo-api.local/site/index
+---
+2013/11/09 18:56:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "controller".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('controller')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('controller')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/controller/...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/api/controller/getKeyWords?request=http://en.wikipedia.org/wiki/Search_engine_optimization&token=TOKEN_GET_FAILED&type=jsonp&callback=jQuery191013647315138950944_1384019790676&_=1384019790678
+HTTP_REFERER=http://simple-seo-api.local/site/index
+---
+2013/11/09 18:56:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "controller".' in C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CController.php(270): CController->missingAction('controller')
+#1 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(282): CController->run('controller')
+#2 C:\xampp\htdocs\simple-seo-api.com\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/controller/...')
+#3 C:\xampp\htdocs\simple-seo-api.com\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\simple-seo-api.com\site\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/api/controller/getKeyWords?request=http://en.wikipedia.org/wiki/Search_engine_optimization&token=TOKEN_GET_FAILED&type=jsonp&callback=jQuery191013647315138950944_1384019790676&_=1384019790679
+HTTP_REFERER=http://simple-seo-api.local/site/index
+---

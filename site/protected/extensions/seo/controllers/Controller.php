@@ -2,6 +2,7 @@
 
 require_once SEO_PATH_HELPERS . 'ApiResponse.php';
 require_once SEO_PATH_HELPERS . 'Vars.php';
+require_once SEO_PATH_LANG . 'Loader.php';
 
 $FATAL_ERROR = true;
 $SUPRESS_ERROR = false;
@@ -10,12 +11,16 @@ class Controller{
 	public $skip = array();
 	
 	private $error = false;
+
+    private $lang;
 	
 	public function __construct(){
 		global $FATAL_ERROR;
 		set_error_handler('Controller::handleError');
 		register_shutdown_function('Controller::shutdown');
 		ERROR_REPORTING(0);
+
+        $this->lang = \api\lang\Loader::getLoader(get_class($this),'en');
 	}
 	
 	public function __destruct(){
@@ -41,6 +46,9 @@ class Controller{
 					$temp = $obj->$mthd($args);
 					$temp2= $api->success("Success", $temp);
 					$results[$mthd] = $temp2->toArray();
+
+                    $results[$mthd]['lang'] = $this->lang->toArray($mthd,$temp);
+
 				}else{
 					throw new BadMethodCallException("No Method - $mthd");
 				}
@@ -49,6 +57,7 @@ class Controller{
 				$temp = new \api\responses\ApiResponseJSON();
 				$err = Controller::errMsg($e->getMessage(),$e->getLine(),$e->getFile());
 				$results[$mthd] = $temp->failure($err)->toArray();
+                $results[$mthd]['lang'] = $this->lang->toArray($mthd,null);
 			}
 		}
 			
@@ -64,11 +73,13 @@ class Controller{
 				try{
 					$temp = $obj->$mthd($args);
 					$results[$mthd] = $api->success("Success", $temp)->toArray();
+                    $results[$mthd]['lang'] = $this->lang->toArray($mthd,$temp);
 				}catch(Exception $e){
 					$this->error = true;
 					$temp = new \api\responses\ApiResponseJSON();
 					$err = Controller::errMsg($e->getMessage(),$e->getLine(),$e->getFile());
 					$results[$mthd] = $temp->failure($err)->toArray();
+                    $results[$mthd]['lang'] = $this->lang->toArray($mthd,null);
 				}
 			}
 		}
@@ -90,8 +101,13 @@ class Controller{
 		}else if(!$this->isValidMethod($obj, $method, $this->skip))
 			throw new BadMethodCallException("No Method - $method");
 			
-		//just run method
-		return $obj->$method($args);
+		//just run method, wrapped in pai response
+        $api = new \api\responses\ApiResponseJSON();
+        //TODO enter lang stuff here
+        $temp = $obj->$method($args);
+		$result[$method]= $api->success("Success", $temp)->toArray();
+        $result[$method]['lang'] = $this->lang->toArray($method,$temp);
+        return $result;
 	}
 	
 	public function exec(&$obj, $method, $type='json', $args=null){
@@ -128,7 +144,7 @@ class Controller{
 
 		//let the shutdown function know there were no untrapped errors
 		$FATAL_ERROR = false;
-		
+
 		echo $api->success("Success", $result, $this->error)->doPrint();
 	}
 

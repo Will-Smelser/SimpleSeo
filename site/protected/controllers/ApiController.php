@@ -54,9 +54,10 @@ class ApiController extends RController
 		}else{
 			$response = (new \api\responses\ApiResponseJSON());
 		}
-		
 		$response->failure($message,$code);
 		echo $response->doPrint();
+
+        Yii::app()->end();
 	}
 	
 	public function beforeAction($action){
@@ -81,7 +82,7 @@ class ApiController extends RController
 		
 		@array_shift($_VARS);
 		@array_shift($_VARS);
-		
+
 		
 		//verify the controller and method exist
 		if(!file_exists(SEO_PATH_CONTROLLERS . $_CONTROLLER . '.php'))

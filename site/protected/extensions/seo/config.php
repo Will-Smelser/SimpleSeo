@@ -13,6 +13,7 @@ define('SEO_PATH_CLASS',SEO_PATH_ROOT.'class/');
 define('SEO_PATH_WRAPPERS',SEO_PATH_ROOT.'api/');
 define('SEO_PATH_VENDORS',SEO_PATH_ROOT.'vendors/');
 define('SEO_PATH_CONTROLLERS',SEO_PATH_ROOT.'controllers/');
+define('SEO_PATH_LANG',SEO_PATH_ROOT.'lang/');
 
 define('SEO_PATH_API_JS',SEO_PATH_ROOT.'reports/js/api/');
 

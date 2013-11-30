@@ -104,17 +104,15 @@ final class Loader {
 
         $langDir = $dir . '/' . $lang;
 
-        if(!file_exists($langDir.'/'.$className.'.php'))
-            throw new \Exception("Unsupported Class ($className) in {$langDir}");
-
         $loader->DIR = $dir;
         $loader->LANGDIR = $langDir;
         $loader->CLASSNAME = $className;
         $loader->LANG = $lang;
 
         self::$loaders[self::makeName($className,$lang)] = $loader;
-
-        include $loader->LANGDIR.'/'.$className.'.php';
+error_reporting(E_ALL);
+        if(file_exists($langDir.'/'.$className.'.php'))
+            include $loader->LANGDIR.'/'.$className.'.php';
 
         return $loader;
     }
@@ -135,8 +133,10 @@ final class Loader {
      * @throws \Exception
      */
     private function getApiMethod($apiMehtod){
-        if(!isset($this->data[$apiMehtod]))
-            throw new \Exception("ApiMethod not loaded ($apiMehtod)");
+        if(!isset($this->data[$apiMehtod])){
+            $temp = function(){Loader::$NONE;};
+            return new Data(null,null,null,null,null,$temp);
+        }
         return $this->data[$apiMehtod];
     }
 

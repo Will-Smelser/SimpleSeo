@@ -3,8 +3,10 @@
 namespace api;
 
 require_once SEO_PATH_CLASS . 'MozConnect.php';
-require_once SEO_PATH_CLASS . 'HtmlParser.php';
 require_once SEO_PATH_ROOT . 'ApiKeys.php';
+
+require_once(SEO_PATH_ROOT.'/../querypath/src/QueryPath.php');
+require_once(SEO_PATH_ROOT.'/../querypath/src/qp.php');
 
 class Moz implements ApiKeys{
 	
@@ -19,16 +21,14 @@ class Moz implements ApiKeys{
 	 * @var unknown
 	 */
 	public $moz;
-	
+
 	/**
 	 * @ignore
 	 * @param unknown $url
 	 */
 	public function __construct($url){
 		$this->url = $url;
-		
 		$this->moz = new \MozConnect(self::MOZ_USER,self::MOZ_PASS);
-		
 	}
 	
 	/**
@@ -38,16 +38,22 @@ class Moz implements ApiKeys{
 	public function getMozLinks(){
 		$html = $this->moz->getData(\MozServices::OSE, $this->url);
 		//file_put_contents('moz-links.txt',$html);
-		$parser = new \HtmlParser($html,$this->url);
-		$data = $parser->getTags('td');
-		
-		
-		
+		$data = //\HtmlParser2::getTags('td',$html);
+
+        $qp = htmlqp($html);
+        $metrics = $qp->find(':root body .metrics .has-tooltip');
+
+        //var_dump($metrics);
+        $da = $metrics->get(0);
+        $pa = $metrics->get(1);
+        $ld = $metrics->get(3);
+        $ti = $metrics->get(4);
+
 		return array(
-			'domainAuthority'=>trim(strip_tags($data[0]->text)),
-			'pageAuthority'=>trim(strip_tags($data[1]->text)),
-			'linkingRootDomains'=>trim(strip_tags($data[2]->text)),
-			'totalInboundLinks'=>trim(strip_tags($data[3]->text)),
+			'domainAuthority'=>trim(preg_replace('/\s+/',' ',$da->textContent)),
+			'pageAuthority'=>trim(preg_replace('/\s+/',' ',$pa->textContent)),
+			'linkingRootDomains'=>trim(preg_replace('/\s+/',' ',$ld->textContent)),
+			'totalInboundLinks'=>trim(preg_replace('/\s+/',' ',$ti->textContent)),
 		);
 	}
 	
@@ -57,54 +63,26 @@ class Moz implements ApiKeys{
 	 */
 	public function getMozJustDiscovered(){
 		$html = $this->moz->getData(\MozServices::JD, $this->url);
-		//file_put_contents('just-discovered.txt',$html);
-		$parser = new \HtmlParser($html,$this->url);
-		
-		$tables = $parser->getTags('table');
-		
-		$results = array();
-		
-		if(count($tables) > 0){
-			$table = null;
-			foreach($tables as $tbl){
-				if(isset($tbl->attributes['id']) && $tbl->attributes['id']==='results'){
-					$table = $tbl;
-					break;	
-				}
-			}
-			
-			//moz has data
-			if(!empty($table)){
-				
-				$p2 = new \HtmlParser($table->raw, $this->url);
-				$rows = $p2->getTags('tr');
-				
-				foreach($rows as $tr){
-					$p3 = new \HtmlParser($tr->raw, $this->url);
-					$tds = $p3->getTags('td');
-					
-					if(!empty($tds[0]->text)){
-						array_push($results, array(
-							'link'=>trim(strip_tags($tds[0]->text)),
-							'text'=>trim(strip_tags($tds[1]->text)),
-							'pageAuthority'=>trim(strip_tags($tds[2]->text)),
-							'DomainAuthority'=>trim(strip_tags($tds[3]->text)),
-							'DiscoveryTime'=>preg_replace('/\s+/',' ',trim(strip_tags($tds[4]->text)))
-						));
-					}
-					
-				}
-			//no moz data
-			}else{
-				array_push($results, array(
-				'link'=>'No Data',
-				'text'=>'No Data',
-				'pageAuthority'=>'No Data',
-				'DomainAuthority'=>'No Data',
-				'DiscoveryTime'=>'No Data'
-				));
-			}
-		}
+
+        $results = array();
+
+        $qp = htmlqp($html,'#results tr');
+        $cnt = $qp->count();
+
+        for($i=0;$i<$cnt;$i++){
+            $tds = $qp->find('td');
+
+            if($tds !== null && $tds->get(0) !== null){
+                array_push($results, array(
+                    'link'=>trim($tds->get(0)->textContent),
+                    'text'=>trim($tds->get(1)->textContent),
+                    'pageAuthority'=>trim($tds->get(2)->textContent),
+                    'DomainAuthority'=>trim($tds->get(3)->textContent),
+                    'DiscoveryTime'=>trim(preg_replace('/\s+/',' ',$tds->get(4)->textContent))
+                ));
+            }
+            $qp = $qp->next();
+        }
 		return $results;
 	}
 }

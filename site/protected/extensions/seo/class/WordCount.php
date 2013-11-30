@@ -104,15 +104,30 @@ class WordCount{
 	
 	/**
 	 * Look for a tag in the given string and remove the tag and its contents.
-	 * Currently assumes non self closing tags and no spaces in closing tag. 
 	 * @param String $tag
 	 * @param String $str
 	 */
 	private function removeTag($tag, &$str){
 		$start = strpos($str, "<$tag");
 		while($start > 0){
+            //check for self closing
+            for($i=$start;$i<1000+$start && $i < strlen($str);$i++){
+                $temp = ($str[$i].$str[$i+1]);
+                //match anything with > except />
+                if(preg_match('@[^/]\>@',$temp)){
+                    break;
+
+                //self closing
+                }elseif($temp == '/>'){
+                    $str = substr($str,0,$start) . substr($str,$i+1);
+                    return;
+                }
+            }
+
+
 			$end = strpos($str, "</$tag");
-			while($str[$end] != '>') $end++;
+			while($str[$end] != '>')$end++;
+
 			$str = substr($str, 0, $start) . substr($str, $end);//, strlen($str));
 			$start = strpos($str, "<$tag");
 		}

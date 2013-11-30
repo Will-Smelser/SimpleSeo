@@ -263,17 +263,8 @@
             'dataType':'jsonp',
             'success':function(data){
                 console.log('Initialize request success');
-                //we dont get nested responses when
-                //only a single method is requested,
-                //this will give us same response format
-                // regardless
-                var resp = {};
-                if(ctx.methods.length === 1){
-                    resp[ctx.methods[0]] = {
-                        data : data.data
-                    };
-                }else
-                    resp = data.data;
+
+                var resp = data.data;
 
                 if(scope.waitOnLoad){
                     $(document).ready(function(){

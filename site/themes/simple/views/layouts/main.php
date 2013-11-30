@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <?php define('LOCAL_THEME_BASE',Yii::app()->createAbsoluteUrl() . Yii::app()->theme->baseUrl); ?>
+    <?php define('LOCAL_THEME_BASE',Yii::app()->createAbsoluteUrl(null) . Yii::app()->theme->baseUrl); ?>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
 

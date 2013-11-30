@@ -197,7 +197,7 @@ class TokensController extends RController
 		$model->expire = $model::getNewExpires();
 	
 		if($model->save()){
-			$result->expire = $expire;
+			$result->expire = $model->expire;
 			$result->scope = $resource;
 			$result->token = $token;
 			$result->message = 'SUCCESS';

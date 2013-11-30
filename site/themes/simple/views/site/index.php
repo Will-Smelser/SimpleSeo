@@ -152,14 +152,14 @@ $(document).ready(function(){
 	
 	$('#get-btn').click(function(){
 		$('#loadingWrapper').show();
-		seo.load('base').extend('base')
+		seo.load('body').extend('base')
 			.addMethod('getKeyWords','#graphWrapper')
 			.exec($('#get-url').val(),
-            function(data){
+            function(data,ctx){
 				$('#loadingWrapper').fadeOut();
-				this.handleSuccess(data);
-			},function(){
-				this.handleError();
+				this.handleSuccess(data,ctx);
+			},function(ctx){
+				this.handleError(ctx);
 				$('#loadingWrapper').fadeOut();
 			});
 	}).click();

@@ -1,6 +1,7 @@
 <?php
 namespace api;
 
+include SEO_PATH_CLASS . 'Node.php';
 include SEO_PATH_CLASS . 'WordCount.php';
 
 /**
@@ -38,7 +39,7 @@ class Body{
 	 * @param HtmlParser $parser The html parser to use.
 	 * @ignore
 	 */
-	public function __construct($parser){
+	public function __construct(&$parser){
 		$this->parser = $parser;
 	}
 	
@@ -76,8 +77,23 @@ class Body{
 		</p>
 	 */
 	public function checkH1(){
-		return $this->parser->getTags('h1');		
+        return $this->parserAdapter('h1');
 	}
+
+    private function parserAdapter($tag){
+        $qp = $this->parser->find($tag);
+        if($qp === null)
+            return null;
+
+        $return = array();
+
+        $cnt = $qp->count();
+        for($i=0;$i<$cnt;$i++){
+            array_push($return, new \Node($tag,$qp->html()));
+            $qp = $qp->next();
+        }
+        return $return;
+    }
 	
 	/**
 	 * Get all h2 tags
@@ -114,7 +130,7 @@ class Body{
 	 *  
 	 */
 	public function checkH2(){
-		return $this->parser->getTags('h2');
+        return $this->parserAdapter('h2');
 	}
 
 	/**
@@ -147,7 +163,7 @@ class Body{
 	 </p>
 	 */
 	public function checkH3(){
-		return $this->parser->getTags('h3');
+        return $this->parserAdapter('h3');
 	}
 	
 	/**
@@ -181,7 +197,7 @@ class Body{
 	 
 	 */
 	public function checkH4(){
-		return $this->parser->getTags('h4');
+        return $this->parserAdapter('h4');
 	}
 	
 	/**
@@ -482,8 +498,9 @@ class Body{
 	 * @return unknown
 	 */
 	private function getWC(){
+
 		if(!is_object($this->wc))
-			$this->wc = new \WordCount($this->parser->dom);
+			$this->wc = new \WordCount($this->parser->html());
 		
 		return $this->wc;
 	}

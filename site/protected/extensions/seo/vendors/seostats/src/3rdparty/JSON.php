@@ -236,7 +236,6 @@ class Services_JSON
     */
     function encode($var)
     {
-    	error_reporting(E_ALL);
         switch (gettype($var)) {
             case 'boolean':
                 return $var ? 'true' : 'false';

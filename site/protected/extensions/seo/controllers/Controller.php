@@ -18,7 +18,6 @@ class Controller{
 		global $FATAL_ERROR;
 		set_error_handler('Controller::handleError');
 		register_shutdown_function('Controller::shutdown');
-		ERROR_REPORTING(0);
 
         $this->lang = \api\lang\Loader::getLoader(get_class($this),'en');
 	}

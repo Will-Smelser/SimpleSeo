@@ -110,7 +110,7 @@ final class Loader {
         $loader->LANG = $lang;
 
         self::$loaders[self::makeName($className,$lang)] = $loader;
-error_reporting(E_ALL);
+
         if(file_exists($langDir.'/'.$className.'.php'))
             include $loader->LANGDIR.'/'.$className.'.php';
 

@@ -1,5 +1,5 @@
 <?php if (!defined('SEOSTATSPATH')) exit('No direct access allowed!');
-error_reporting(E_ALL);
+
 ini_set('display_errors', 1);
 /**
  *  SEOstats extension for SEOmoz' OpenSiteExplorer data.

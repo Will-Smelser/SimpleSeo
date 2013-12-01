@@ -119,7 +119,7 @@ class ImageParser{
 	 */
 	public static function checkActualDimsSingle(Node $img, $width, $height){
 		
-		$image;
+		$image=null;
 		$url = $img->attributes['src'];
 		if(preg_match('@^https?://@i',$url)){
 			$image = imagecreatefromstring(file_get_contents($url));
@@ -157,7 +157,7 @@ class ImageParser{
 	 * @return ImageLoadResponse An array of ImageLoadResponse Objects
 	 */
 	public static function checkActualDimsThreaded($imgNodes, $token){
-		
+
 		$imgResult = array();
 		
 		$loader = new PageLoad('ImageParserThread.php', $token);
@@ -169,9 +169,10 @@ class ImageParser{
 			$height = $data[1];
 			
 			$url = $node->attributes['src'];
+
 			if(!preg_match('@^https?://@i',$url) && !preg_match('/^data/',$url))
-				$url = 'http://'.$node->host.'/'.ltrim($url,'/\\');
-			
+				$url = 'http://'.rtrim($node->host,'/\\').'/'.ltrim($url,'/\\');
+
 			$resp = new ImageLoadResponse();
 			$resp->htmlWidth = $width;
 			$resp->htmlHeight = $height;
@@ -186,7 +187,7 @@ class ImageParser{
 			$resp->title = (isset($node->attributes['title'])) ? $node->attributes['title'] : null;
 			
 			$add = false;
-			$msg;
+			$msg = null;
 			
 			//bad image dont need to bother checking
 			if(empty($url) || $width === -1 || $height === -1){
@@ -238,7 +239,7 @@ class ImageParser{
 		foreach($temp as $entry){
 			if(empty($entry)) continue;
 			
-			$response;
+			$response = null;
 			if($entry->error){
 				$code = \api\responses\ApiCodes::getCodeByNumber($entry->code);
 				$temp = new \api\responses\ApiResponseJSON();

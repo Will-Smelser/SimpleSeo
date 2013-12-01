@@ -1,8 +1,8 @@
 <?php
 namespace api;
 
-include SEO_PATH_CLASS . 'Node.php';
 include SEO_PATH_CLASS . 'WordCount.php';
+
 
 /**
  * <p>These methods focus on parsing a web page's body.</p>  
@@ -24,7 +24,7 @@ class Body{
 	
 	/**
 	 * @ignore
-	 * @var unknown
+	 * @var HtmlParserAdapter
 	 */
 	public $parser;
 	
@@ -39,7 +39,7 @@ class Body{
 	 * @param HtmlParser $parser The html parser to use.
 	 * @ignore
 	 */
-	public function __construct(&$parser){
+	public function __construct(HtmlParserAdapter &$parser){
 		$this->parser = $parser;
 	}
 	
@@ -77,23 +77,8 @@ class Body{
 		</p>
 	 */
 	public function checkH1(){
-        return $this->parserAdapter('h1');
+        return $this->parser->findTags('h1');
 	}
-
-    private function parserAdapter($tag){
-        $qp = $this->parser->find($tag);
-        if($qp === null)
-            return null;
-
-        $return = array();
-
-        $cnt = $qp->count();
-        for($i=0;$i<$cnt;$i++){
-            array_push($return, new \Node($tag,$qp->html()));
-            $qp = $qp->next();
-        }
-        return $return;
-    }
 	
 	/**
 	 * Get all h2 tags
@@ -130,7 +115,7 @@ class Body{
 	 *  
 	 */
 	public function checkH2(){
-        return $this->parserAdapter('h2');
+        return $this->parser->findTags('h2');
 	}
 
 	/**
@@ -163,7 +148,7 @@ class Body{
 	 </p>
 	 */
 	public function checkH3(){
-        return $this->parserAdapter('h3');
+        return $this->parser->findTags('h3');
 	}
 	
 	/**
@@ -197,7 +182,7 @@ class Body{
 	 
 	 */
 	public function checkH4(){
-        return $this->parserAdapter('h4');
+        return $this->parser->findTags('h4');
 	}
 	
 	/**
@@ -540,7 +525,7 @@ class Body{
 	 </p>
 	 */
 	public function checkInlineCSS(){
-		preg_match_all('@style[\s+]?=[\s+]?[\'|"].*?[\'|"]@i', $this->parser->dom, $matches);
+		preg_match_all('@style[\s+]?=[\s+]?[\'|"].*?[\'|"]@i', $this->parser->html(), $matches);
 		return $matches[0];
 	}
 	
@@ -580,7 +565,7 @@ class Body{
 	public function checkLinkTags(){
 		//check link tags
 		$links = array();
-		foreach($this->parser->getTags('link') as $node){
+		foreach($this->parser->findTags('link') as $node){
 			if(isset($node->attributes['rel']) && $node->attributes['rel'] === 'stylesheet'){
 				if(!isset($links[$node->host]))
 					$links[$node->host] = array();
@@ -636,7 +621,7 @@ class Body{
 	 </p>
 	 */
 	public function checkInlineStyle(){
-		return $this->parser->getTags('style');		
+        return $this->parser->findTags('style');
 	}
 	
 	/**
@@ -658,7 +643,7 @@ class Body{
 	 </p>
 	 */
 	public function checkForFrames(){
-		return (count($this->parser->getTags('frame')) > 0);
+		return (count($this->parser->findTags('frame')) > 0);
 	}
 	
 	/**
@@ -680,7 +665,7 @@ class Body{
 	 </p>
 	 */
 	public function checkForIframes(){
-		return (count($this->parser->getTags('iframe')) > 0);
+		return (count($this->parser->findTags('iframe')) > 0);
 	}
 	
 	/**
@@ -702,7 +687,7 @@ class Body{
 	 </p>
 	 */
 	public function checkForFlash(){
-		$object = $this->parser->getTags('object');
+		$object = $this->parser->findTags('object');
 		if(empty($object)) return false;
 		
 		return preg_match($object->raw, '/shockwave\-flash/i');
@@ -840,7 +825,7 @@ class Body{
 		if(!empty($this->anchors))
 			return $this->anchors;
 		else
-			return $this->parser->getTags('a');
+			return $this->parser->findTags('a');
 	}
 	
 	/**
@@ -918,7 +903,7 @@ class Body{
 	public function checkImages(){
 		require_once SEO_PATH_CLASS . "ImageParser.php";
 
-		$imgs = $this->parser->getTags('img');
+		$imgs = $this->parser->findTags('img');
 		return \ImageParser::checkActualDimsThreaded($imgs, $_GET['token']);
 	}
 }

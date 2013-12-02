@@ -27,9 +27,9 @@ $this->breadcrumbs=array(
 	
 <h2>Take SEO a Step Further</h2>
 
-<p>So I figure this is not enough to lure developer's in and really
-	the tool that useful.  So on top of an API I spent time documenting
-	and adding a javascript api tool to simplify calling the api.
+<p>So I figure this is not enough to lure developers in and really and the api
+    is not that useful on its own.  So on top of an API I spent time documenting
+	and adding a javascript library to simplify calling the api.
 	</p>
 	
 <h2>End Goal for SEO Reporting</h2>

@@ -28,23 +28,30 @@
 	 */
 	api : '',
 
-	
+    /**
+     * The dependencies this object has.
+     * @type {array} An array of strings denoting each dependency, such as 'base' for base.js dependency.
+     * @memberof! window._SeoApi_.base
+     * @private
+     */
 	dependencies : [],
 	
 	/**
-	 * Once the data is load ensure body is loaded before calling callbacks
+	 * Once the data is loaded ensure body is loaded before calling callbacks
 	 * @type {boolean}
 	 * @memberof! window._SeoApi_.base
 	 */
 	waitOnLoad : true,
 
     /**
-     * Store state from execute() call for retry attempts.
+     * Store state from execute() call for retry attempts.  Makes copies of local objects:
+     * <ul><li>methods</li><li>targetMap</li><li>methodAll</li></ul>
      * @param {function} callback The success callback for api request completion.  Passed in from execute() function.
      * @param {function} callbackErr The error callback for api request failure.  Passed in from execute() function.
      * @returns {{methods: Array, targetMap: (extend|*), callback: *, callbackErr: *, maxRetries: number, errorRetries: Array, requestRetries: number}}
      * @constructor
      * @memberof! window._SeoApi_.base
+     * @private
      */
     Context : function(callback, callbackErr){
         var scope = this;
@@ -64,13 +71,24 @@
 	 * The speciall "all" method was given.
 	 * @type {boolean}
 	 * @memberof! window._SeoApi_.base
+     * @private
 	 */
 	methodAll : false,
 	
 	/**
-	 * All methods, exluding "all", which requests will be made for.
+	 * All methods that need to be made for api call.
+     * @memberof! window._SeoApi_.base
+     * @private
+     * @see this.Context()
 	 */
 	methods : [],
+
+    /**
+     * A map of method=&gt;dom object.  This holds what dom target to pass
+     * to render_&lt;ApiMethod&gt; for a given api method.
+     * @memberof! window._SeoApi_.base
+     * @private
+     */
 	targetMap : [],
 	
 	
@@ -81,6 +99,8 @@
      * @param url
      * @param methodList
      * @returns {string}
+     * @private
+     * @memberof! window._SeoApi_.base
      */
 	buildRequest : function(url,methodList){
         if(!this.checkApi())throw "No api url set.";
@@ -94,6 +114,14 @@
         console.log('buildRequest',method);
 		return this.api+this.apiController+'/'+method+'?request='+url+'&type=jsonp';
 	},
+
+    /**
+     * Check wether the api variable has been set.
+     * @see this.api
+     * @memberof! window._SeoApi_.base
+     * @private
+     * @returns {boolean}
+     */
 	checkApi : function(){
 		if(this.api == ''){
 			console.log('local api variable has not been set.');
@@ -114,30 +142,36 @@
 			this.methodAll = true;
 	},
 
+
 	setMethodToAll : function(){this.methodAll = true;},
 
     handleSuccess : function(data, ctx){
         if(typeof ctx == 'undefined' || ctx == null)
             throw "No context given.  See Context() method.";
 
-		//empty content
+		//tracks dom targets which have been used by a method
 		var targets = "";
 
         if(ctx.methodAll){
-            console.log("LOOK",data);
-            this.handleSuccessMethod('all', data, ctx.targetMap.all, ctx);
+            if(typeof ctx.targetMap.all == "function"){
+                this.targetMap.all(data);
+            }else{
+                $(ctx.targetMap.all).empty();
+                this.handleSuccessMethod('all', data, ctx.targetMap.all, ctx);
+            }
         }else{
             for(var method in data){
-                console.log("handleSuccess, looking at method:"+method,ctx);
+
                 //function given as target
                 if(typeof ctx.targetMap[method] == "function"){
                     ctx.targetMap[method](data[method]);
 
                 //dom target given for method
                 }else{
-                    //clear the contents
+                    //clear the contents, if they have not already
+                    //been cleared
                     if(targets.indexOf(ctx.targetMap[method]) < 0)
-                        $(ctx.targetMap[method]).html("");
+                        $(ctx.targetMap[method]).empty();
 
                     targets += ctx.targetMap[method];
 
@@ -159,11 +193,11 @@
      * triggered.  However, errors can still occur at the method
      * level and are dealt with here.
      * @param {string} method The api request method.
-     * TODO: what if the method is special case "all"
      * @param {JSON} data The data returned from API.
      * @param {string} target The target given from addMethod invocation.
-     * This can be a function callback or string in '#<domId>' format
-     * where <domId> is the target dome elements id attribute.
+     * @param {Context} The context object that execute() was called with.
+     * This can be a function callback or string in '#&lt;domId&gt;' format
+     * where &lt;domId&gt; is the target dome elements id attribute.
      */
 	handleSuccessMethod : function(method, data, target, ctx){
         //at this point context could have changed, we are now
@@ -197,6 +231,13 @@
             this[defaultMethod](data, $(target));
         }
 	},
+
+    /**
+     * An error handler for when api request failed.
+     * TODO: Need to better look at this.  Dont think the html replace makes a lot of sense
+     * here.
+     * @param {Context} The context that execute() was called with.
+     */
 	handleError : function(ctx){
 		for(var x in ctx.methods){
 			$(ctx.targetMap[ctx.methods[x]]).html(this.failObj.find('.reason').html('Ajax Request Failure'));

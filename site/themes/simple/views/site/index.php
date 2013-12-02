@@ -21,6 +21,9 @@ $cs->registerScriptFile('/syntaxhighlighter/scripts/shAutoloader.js',CClientScri
 $cs->registerScriptFile('/syntaxhighlighter/scripts/shBrushJScript.js',CClientScript::POS_END);
 
 
+//set canonical url
+$cs->registerLinkTag('canonical',null,Yii::app()->createAbsoluteUrl('/site/index'));
+
 //got to get a valid token
 require_once SEO_PATH_HELPERS . 'ClientHash.php';
 $token = "TOKEN_GET_FAILED";
@@ -158,8 +161,8 @@ $(document).ready(function(){
             function(data,ctx){
 				$('#loadingWrapper').fadeOut();
 				this.handleSuccess(data,ctx);
-			},function(ctx){
-				this.handleError(ctx);
+			},function(){
+				this.handleError();
 				$('#loadingWrapper').fadeOut();
 			});
 	}).click();

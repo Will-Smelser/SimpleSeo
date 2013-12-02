@@ -11,6 +11,7 @@
 		},
 		
 		render_all : function(data,$target){
+            $target.empty();
 			this.render_getTitle(data.getTitle.data,$target);
 			this.render_getMetaDesc(data.getMetaDesc.data, $target);
 			this.render_getMetaKeywords(data.getMetaKeywords.data, $target);

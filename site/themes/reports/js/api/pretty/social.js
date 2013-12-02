@@ -16,6 +16,7 @@
 		 */
 		
 		render_all : function(data, $target){
+            $target.empty();
 			var self = this;
 			for(var x in self){
 				if(x.indexOf("render_") >= 0 && x !== "render_apiMethod" && x !== "render_all" && typeof self[x] === "function"){

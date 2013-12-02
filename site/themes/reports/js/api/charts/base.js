@@ -39,9 +39,9 @@
 	waitOnLoad : true,
 
     /**
-     * Store state from execute() call to retry attempts.
-     * @param {function} callback The success callback for api request completion.
-     * @param {function} callbackErr The error callback for api request failure.
+     * Store state from execute() call for retry attempts.
+     * @param {function} callback The success callback for api request completion.  Passed in from execute() function.
+     * @param {function} callbackErr The error callback for api request failure.  Passed in from execute() function.
      * @returns {{methods: Array, targetMap: (extend|*), callback: *, callbackErr: *, maxRetries: number, errorRetries: Array, requestRetries: number}}
      * @constructor
      * @memberof! window._SeoApi_.base
@@ -49,13 +49,14 @@
     Context : function(callback, callbackErr){
         var scope = this;
         return {
-            "methods" : scope.methods.slice(0),
-            "targetMap" : $.extend({},scope.targetMap),
+            "methods" : scope.methods.slice(0),//create copy
+            "targetMap" : $.extend({},scope.targetMap),//copy the dom targets
             "callback" : callback,
             "callbackErr" : callbackErr,
             "maxRetries" : 5,
             "errorRetries" : [],
-            "requestRetries" : 0
+            "requestRetries" : 0,
+            "methodAll":scope.methodAll
         }
     },
 	
@@ -121,25 +122,30 @@
 
 		//empty content
 		var targets = "";
-		
-		for(var method in data){
-            console.log("handleSuccess, looking at method:"+method);
-            //function given as target
-			if(typeof ctx.targetMap[method] == "function"){
-				ctx.targetMap[method](data[method]);
 
-            //dom target given for method
-			}else{
-				//clear the contents
-				if(targets.indexOf(ctx.targetMap[method]) < 0)
-					$(ctx.targetMap[method]).html("");
-				
-				targets += ctx.targetMap[method];
+        if(ctx.methodAll){
+            console.log("LOOK",data);
+            this.handleSuccessMethod('all', data, ctx.targetMap.all, ctx);
+        }else{
+            for(var method in data){
+                console.log("handleSuccess, looking at method:"+method,ctx);
+                //function given as target
+                if(typeof ctx.targetMap[method] == "function"){
+                    ctx.targetMap[method](data[method]);
 
-				//render this
-                this.handleSuccessMethod(method, data[method],ctx.targetMap[method],ctx);
-			}
-		}
+                //dom target given for method
+                }else{
+                    //clear the contents
+                    if(targets.indexOf(ctx.targetMap[method]) < 0)
+                        $(ctx.targetMap[method]).html("");
+
+                    targets += ctx.targetMap[method];
+
+                    //render this
+                    this.handleSuccessMethod(method, data[method], ctx.targetMap[method], ctx);
+                }
+            }
+        }
 		
 		//clear everything
 		this.targetMap = [];
@@ -255,7 +261,6 @@
      * @param {Context} ctx The context to make requests within.
      */
     makeRequest : function(req, ctx){
-        console.log(ctx);
         var scope = this;
         //get the data, crossdomain using jsonp
         $.ajax({
@@ -264,7 +269,7 @@
             'success':function(data){
                 console.log('Initialize request success');
 
-                var resp = data.data;
+                var resp = (ctx.methodAll) ? data : data.data;
 
                 if(scope.waitOnLoad){
                     $(document).ready(function(){

@@ -102,7 +102,7 @@ seo.load('semrush').extend('base').addMethod('getDomainReport','#semrush-domain'
 seo.load('social').extend('base')
 	.addMethod('all','#social')
 	.exec(url);
-	
+
 </script>
 
 

@@ -55,7 +55,7 @@ class Controller{
 				$this->error = true;
 				$temp = new \api\responses\ApiResponseJSON();
 				$err = Controller::errMsg($e->getMessage(),$e->getLine(),$e->getFile());
-				$results[$mthd] = $temp->failure($err)->toArray();
+				$results[$mthd] = $temp->failure($err,\api\responses\ApiCodes::$systemError)->toArray();
                 $results[$mthd]['lang'] = $this->lang->toArray($mthd,null);
 			}
 		}
@@ -77,7 +77,7 @@ class Controller{
 					$this->error = true;
 					$temp = new \api\responses\ApiResponseJSON();
 					$err = Controller::errMsg($e->getMessage(),$e->getLine(),$e->getFile());
-					$results[$mthd] = $temp->failure($err)->toArray();
+					$results[$mthd] = $temp->failure($err,\api\responses\ApiCodes::$systemError)->toArray();
                     $results[$mthd]['lang'] = $this->lang->toArray($mthd,null);
 				}
 			}
@@ -102,10 +102,19 @@ class Controller{
 			
 		//just run method, wrapped in pai response
         $api = new \api\responses\ApiResponseJSON();
-        //TODO enter lang stuff here
-        $temp = $obj->$method($args);
-		$result[$method]= $api->success("Success", $temp)->toArray();
-        $result[$method]['lang'] = $this->lang->toArray($method,$temp);
+
+        try{
+            $temp = $obj->$method($args);
+            $result[$method]= $api->success("Success", $temp)->toArray();
+            $result[$method]['lang'] = $this->lang->toArray($method,$temp);
+        }catch(Exception $e){
+
+            $this->error = true;
+            $temp = new \api\responses\ApiResponseJSON();
+            $err = Controller::errMsg($e->getMessage(),$e->getLine(),$e->getFile());
+            $result[$method] = $temp->failure($err,\api\responses\ApiCodes::$systemError)->toArray();
+            $result[$method]['lang'] = $this->lang->toArray($method,null);
+        }
         return $result;
 	}
 	
@@ -135,7 +144,7 @@ class Controller{
 			$this->error = true;
 			
 			$api->setData($result);
-			echo $api->failure(Controller::errMsg($e->getMessage(),$e->getLine(),$e->getFile()))->doPrint();
+			echo $api->failure(self::errMsg($e->getMessage(),$e->getLine(),$e->getFile()))->doPrint();
 			
 			$FATAL_ERROR = false;
 			return;

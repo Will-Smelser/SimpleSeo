@@ -7,6 +7,10 @@ $this->breadcrumbs=array(
 
 <h2 class="error_header">Free Report Usage Limit</h2>
 
-<div class="error error_message">
-Sign up to get more free reports.
-</div>
+<p>
+Anonymous users are given 2 free reports per 24 hour period.  By becoming a member you will
+    be given more free reports.
+</p>
+<p>
+    Click the <a href="/user/registration">register</a> link to join today!
+</p>

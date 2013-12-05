@@ -37,8 +37,6 @@ class Moz implements ApiKeys{
 	 */
 	public function getMozLinks(){
 		$html = $this->moz->getData(\MozServices::OSE, $this->url);
-		//file_put_contents('moz-links.txt',$html);
-		$data = //\HtmlParser2::getTags('td',$html);
 
         $qp = htmlqp($html);
         $metrics = $qp->find(':root body .metrics .has-tooltip');

@@ -60,7 +60,9 @@ class ProtectedController extends Controller
 				$entry->cnt++;
 		
 				if($entry->cnt > $this->ipAllowCount){
-					$this->redirect('/site/pages/ipusagelimit');
+                    Yii::app()->user->setFlash('error','Free report usage limit.  Please register or login to get more reports.  '.
+                        'Anonymous users are limited on a 24 hour period.');
+					$this->redirect('/user/login');
 					return false;
 				}else{
 					$entry->save();

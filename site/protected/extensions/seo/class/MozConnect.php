@@ -105,8 +105,7 @@ class MozConnect{
 		
 		if(curl_errno($ch))
 		{
-			$response = 'error:' . curl_error($ch);
-			//TODO: Handle Error
+			throw new Exception(curl_error($ch));
 		}
 		
 		curl_close($ch);
@@ -119,6 +118,7 @@ class MozConnect{
 	 * @param MozServices $service The service to request
 	 * @param String $url The non urlencoded url to request moz data on.
 	 * @return unknown
+     * @throws Exception This will occur if the Moz site cannot be contacted
 	 */
 	private function getSite($service, $url){
 		$ch = curl_init($service.urlencode($url));
@@ -130,8 +130,7 @@ class MozConnect{
 		
 		if(curl_errno($ch))
 		{
-			//TODO: Handle this error
-			$response = 'error:' . curl_error($ch);
+            throw new Exception(curl_error($ch));
 		}
 		
 		curl_close($ch);
@@ -146,6 +145,7 @@ class MozConnect{
 	 * @param MozServices $service The moz service endpoint attempt to get HTML from
 	 * @param String $url The url you want to load data from.  Raw url, no encoded urls.
 	 * @return String A string of HTML data
+     * @throws Exception This will occur if the Moz site cannot be contacted
 	 */
 	public function getData($service, $url){
 		$data = $this->getSite($service, $url);

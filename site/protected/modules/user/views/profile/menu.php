@@ -44,7 +44,7 @@ if(UserModule::isAdmin()) {
 		src="/themes/shadow_dancer/images/big_icons/icon-key.png"
 		alt="Change Password" /> </a>
 	<div class="dashIconText">
-		<?php echo CHtml::link(UserModule::t('Change password'),array('changepassword')); ?>
+		<?php echo CHtml::link(UserModule::t('Password'),array('changepassword')); ?>
 	</div>
 </div>
 

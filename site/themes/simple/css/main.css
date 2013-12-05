@@ -22,9 +22,11 @@ body
 	margin: 0;
 	padding: 0;
 	color: #555;
-	font: normal 10pt Arial,Helvetica,sans-serif;
+    font-size:12px;
+	font-family:arial, sans-serif;
 	background: #EFEFEF;
 }
+
 
 .blue-bg{
 	color:#FFF;
@@ -87,6 +89,7 @@ body
 	background: #FFFFFF;
 	border: 1px solid #e0e0e0;
 	border-radius: 5px;
+    font-size:14px;
 }
 
 #sidebar
@@ -751,7 +754,7 @@ ul.yiiPager a:visited
 
 /*Error Pages*/
 .error_header{
-	font-size:65px;
+	font-size:32px;
 	font-family:Verdana, Geneva, sans-serif;
 	text-transform:uppercase;
 	text-align:center;
@@ -762,7 +765,7 @@ ul.yiiPager a:visited
 .error_message{
 	font-size:16px;
 	font-family:Verdana, Geneva, sans-serif;
-	text-align:center;
+	text-align:left;
 	color:#F00;
 	text-shadow:#CCC 0.1em 0.1em 0.1em;
 }

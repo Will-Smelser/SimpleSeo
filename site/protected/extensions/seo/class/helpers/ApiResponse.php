@@ -136,7 +136,7 @@ class ApiResponseJSONP extends ApiResponse{
 		$json = $this->jsonpp(json_encode($this->toArray()));
 		
 		//complain about no callback
-		if(!isset($_GET['callback'])) throw new Exception('Callback GET parameter expected, but none given.');
+		if(!isset($_GET['callback'])) throw new \Exception('Callback GET parameter expected, but none given.');
 		
 		echo $_GET['callback'].'('.$json.');';
 	}

@@ -90,9 +90,29 @@
      * @private
      */
 	targetMap : [],
-	
-	
-	failObj : (function(){return $("<div class='seo-fail'><span>Failed</span><div class='reason'></div></div>");})(),
+
+    /**
+     * Builds the default DOM elements that are set when defaultRenderErr function which is called after an api
+     * method call fails repeatedly.
+     * @param msg The detailed message about the error.
+     * @returns {*|jQuery|HTMLElement}
+     * @memberof! window._SeoApi_.base
+     */
+	failObj : function(msg){
+        var $obj = $("<div class='seo-fail'><span>Failed to load (</span><a style='font-size:90%'>more info</a>)<div class='reason' style='display:none'>"+msg+"</div></div>");
+        $obj.find('a').click(function(){$obj.find('.reason').slideToggle();});
+        return $obj;
+    },
+
+    /**
+     * Creates the DOM element that is inserted by default when there was an error loading
+     * an api method.
+     * @returns {*|jQuery|HTMLElement}
+     * @memberof! window._SeoApi_.base
+     */
+    retryObj : function(){
+        return $("<div class='seo-retry'><span>Error,</span> <span>Retrying...</span></div>");
+    },
 
     /**
      * Build a request url with appropriate parameters set
@@ -157,7 +177,7 @@
                 this.targetMap.all(data);
             }else{
                 $(ctx.targetMap.all).empty();
-                this.handleSuccessMethod('all', data, ctx.targetMap.all, ctx);
+                this.handleSuccessMethod('all', data, ctx);
             }
         }else{
             for(var method in data){
@@ -176,7 +196,7 @@
                     targets += ctx.targetMap[method];
 
                     //render this
-                    this.handleSuccessMethod(method, data[method], ctx.targetMap[method], ctx);
+                    this.handleSuccessMethod(method, data[method], ctx);
                 }
             }
         }
@@ -191,19 +211,22 @@
      * Handle success for a given method.  This means
      * that the execute callback for success has been
      * triggered.  However, errors can still occur at the method
-     * level and are dealt with here.
+     * level and are dealt with here.<br/><br/>
+     * If there was an error with the request then either
+     * the error callback function will be triggered or the error
+     * rendering function will be triggered.
      * @param {string} method The api request method.
      * @param {JSON} data The data returned from API.
-     * @param {string} target The target given from addMethod invocation.
      * @param {Context} The context object that execute() was called with.
-     * This can be a function callback or string in '#&lt;domId&gt;' format
-     * where &lt;domId&gt; is the target dome elements id attribute.
      */
-	handleSuccessMethod : function(method, data, target, ctx){
+	handleSuccessMethod : function(method, data, ctx){
+        var target = ctx.targetMap[method];
+
         //at this point context could have changed, we are now
         //in a specific method, so we need to change ctx
-        var newCtx = this.Context(ctx.callback,ctx.callbackErr);
+        var newCtx = this.Context(ctx.callback,ctx.callbackErr, ctx);
         newCtx.methods = [method];
+        newCtx.targetMap[method] = ctx.targetMap[method];
 
         if(typeof ctx.errorRetries[method] == 'undefined')
             newCtx.errorRetries[method] = 0;
@@ -214,7 +237,12 @@
         if(data.error && newCtx.errorRetries[method] < newCtx.maxRetries){
             newCtx.errorRetries[method]++;
             var req = this.buildRequest(this.url,[method]);
-            $(target).html('Error. Retrying...');
+
+            if(typeof target === "function")
+                target(data);
+            else
+                $(target).html(this.retryObj());
+
             return this.makeRequest(req,newCtx);
         }
 
@@ -222,25 +250,28 @@
         var goodMethod = (data.error)?"renderErr_":"render_";
         var defaultMethod = (data.error)?"defaultRenderErr":"defaultRender";
 
-        console.log("Success!!",typeof this[goodMethod+method],goodMethod+method,defaultMethod,target,ctx,newCtx);
-
+        //there is a defined render function
         if(typeof this[goodMethod+method] == "function"){
-            console.log('About to execute: '+goodMethod+method,this,target);
             this[goodMethod+method](temp, $(target));
+        //no defined render function, call the default
         }else{
+            console.log("TEST",target);
             this[defaultMethod](data, $(target));
         }
 	},
 
     /**
-     * An error handler for when api request failed.
-     * TODO: Need to better look at this.  Dont think the html replace makes a lot of sense
-     * here.
+     * An error handler for when api request failed.  This captures ajax request
+     * errors, and not result errors.
      * @param {Context} The context that execute() was called with.
      */
 	handleError : function(ctx){
+        if(typeof ctx == 'undefined' || ctx == null)
+            throw "No context given.  See Context() method.";
+
 		for(var x in ctx.methods){
-			$(ctx.targetMap[ctx.methods[x]]).html(this.failObj.find('.reason').html('Ajax Request Failure'));
+            console.log("Setting error message for "+ctx.methods[x]+".",ctx.targetMap[ctx.methods[x]]);
+			$(ctx.targetMap[ctx.methods[x]]).html(this.failObj('Ajax Request Failure'));
 		}
 	},
     /**
@@ -250,7 +281,7 @@
      * @param $target
      */
     defaultRenderErr : function(data, $target){
-        $target.html("Failed ("+data.msg+")");
+        $target.html(this.failObj(data.msg));
     },
     /**
      * The default render if no method_<api method> function exists.
@@ -259,14 +290,12 @@
      * @param $target
      */
 	defaultRender : function(data, $target){
-		console.log('loading pretty print',data);
 		var rUrl = '/themes/reports/js/api/prettyPrint.js';
 		$.ajax({
 		  url: rUrl,
 		  dataType: "script",
 		  cache: true,
 		  success: function(){
-			  console.log('About to set html content of target',$target,data,$target.html());
 			  $target.html(prettyPrint(data));
 		  }
 		});
@@ -308,7 +337,7 @@
             'url':req,
             'dataType':'jsonp',
             'success':function(data){
-                console.log('Initialize request success');
+                console.log('Initialize request success',req);
 
                 var resp = (ctx.methodAll) ? data : data.data;
 
@@ -327,10 +356,10 @@
                 }
                 if(scope.waitOnLoad){
                     $(document).ready(function(){
-                        ctx.errCallback.call(scope, ctx);
+                        ctx.callbackErr.call(scope, ctx);
                     });
                 }else{
-                    ctx.errCallback.call(scope, ctx);
+                    ctx.callbackErr.call(scope, ctx);
                 }
             }
         });

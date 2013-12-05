@@ -9,5 +9,5 @@ $this->breadcrumbs=array(
 
 <div class="error error_message">
 You have used all your report credits.  Please purchase more, or you can logout
-and receive your daily free reports as an anymous user.
+and receive your daily free reports as an anonymous user.
 </div>

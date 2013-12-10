@@ -62,7 +62,7 @@ class StatsController extends RController
 		$sql = sprintf($this->queries[$query],$id,$start2,$stop);
 		$data = Yii::app()->db->createCommand($sql)->queryAll();
 		
-		$json .= "[[\"Date\",\"Count\"]";
+		$json = "[[\"Date\",\"Count\"]";
 		if(count($data) == 0){
 			$json .= ",[\"$start\",0]";
 		}else{
@@ -108,7 +108,7 @@ class StatsController extends RController
 		//array_push($response,$methods);
 		//array_unshift($response[0],'Date');
 		
-		$date;
+		$date = null;
 		foreach($result as $row){
 			//new data row
 			if($row['interval'] !== $date){

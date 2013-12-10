@@ -1,4 +1,6 @@
 <?php
+$SETTINGS['settings_file'] = 'settings/settings.inc.php';
+$SETTINGS['files_file'] = 'settings/files.inc.php';
 $SETTINGS['page_root'] = '/var/chroot/home/content/38/10693638/html/simple-seo-api/site/';
 $SETTINGS['website'] = 'http://www.simple-seo-api.com/';
 $SETTINGS['crawler_url'] = 'http://www.simple-seo-api.com';
@@ -18,6 +20,8 @@ $SETTINGS['disallow_dir']['1'] = '/include/';
 $SETTINGS['disallow_dir']['2'] = '/logs/';
 $SETTINGS['disallow_dir']['3'] = '/cgi-bin/';
 $SETTINGS['disallow_dir']['4'] = '/sitemap';
+$SETTINGS['disallow_dir']['5'] = '/api-docs-js';
+$SETTINGS['disallow_dir']['6'] = '/api-docs';
 $SETTINGS['disallow_file']['0'] = '.xml';
 $SETTINGS['disallow_file']['1'] = '.inc';
 $SETTINGS['disallow_file']['2'] = '.old';
@@ -51,8 +55,6 @@ $SETTINGS['priority_fixed'] = '0.5';
 $SETTINGS['lastmod'] = 'lastmod_current';
 $SETTINGS['lastmod_format'] = 'long';
 $SETTINGS['compress_sitemap'] = '';
-$SETTINGS['settings_file'] = 'settings/settings.inc.php';
-$SETTINGS['files_file'] = 'settings/files.inc.php';
 $SETTINGS['script'] = '/sitemap/index.php';
 $SETTINGS['debug'] = '';
 $SETTINGS['state'] = 'getSettings';
@@ -62,7 +64,7 @@ $SETTINGS['timeout_automatic'] = '';
 $SETTINGS['sitemap_url'] = '/sitemap.xml';
 $SETTINGS['scan_website_level'] = '0';
 $SETTINGS['timeout_is'] = '';
-$SETTINGS['timeout_time'] = '1383531346.304';
+$SETTINGS['timeout_time'] = '1386645128.0803';
 $SETTINGS['timeout_shutdown'] = '3';
-$SETTINGS['timeout_deadline'] = '1383531433.304';
+$SETTINGS['timeout_deadline'] = '1386645215.0803';
 ?>

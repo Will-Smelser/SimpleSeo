@@ -9,21 +9,19 @@
 namespace api\lang;
 
 final class Data {
-    private $desc,$good,$bad,$warn,$ease,$func;
-    public  function __construct($desc,$good,$bad,$warn,$ease,&$func){
-        $this->desc = $desc;
-        $this->good = $good;
-        $this->bad = $bad;
-        $this->warn = $warn;
-        $this->ease = $ease;
-        $this->func = $func;
+    private $data = array();
+    public  function __construct($desc,$good,$bad,$warn,$difficulty,&$func){
+        $this->data['desc'] = $desc;
+        $this->good['good'] = $good;
+        $this->data['bad'] = $bad;
+        $this->data['warn'] = $warn;
+        $this->data['difficulty'] = $difficulty;
+        $this->data['func'] = $func;
     }
-    public function getDesc(){return $this->desc;}
-    public function getGood(){return $this->good;}
-    public function getBad(){return $this->bad;}
-    public function getEase(){return $this->ease;}
-    public function getWarn(){return $this->warn;}
-    public function getFunc(){return $this->func;}
+
+    public function __get($key){
+        return $this->data[$key];
+    }
 }
 
 /**
@@ -81,7 +79,7 @@ final class Loader {
 
         return array(
             'msg'=>$msg,
-            'ease'=>$data->getEase(),
+            'difficulty'=>$data->getDifficulty(),
             'desc'=>$data->getDesc()
         );
     }
@@ -174,8 +172,8 @@ final class Loader {
      * @param $bad
      * @param $func
      */
-    public function register($apiMethod, $desc, $good, $bad, $warn, $func, $ease=null){
-        $this->data[$apiMethod] = new Data($desc,$good,$bad,$warn, $ease,$func);
+    public function register($apiMethod, $desc, $good, $bad, $warn, $func, $difficulty=null){
+        $this->data[$apiMethod] = new Data($desc,$good,$bad,$warn, $difficulty,$func);
     }
 
 

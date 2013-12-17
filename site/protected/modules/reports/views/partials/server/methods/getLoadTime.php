@@ -1,0 +1,1 @@
+<li>Load Time: <?php $this->widget('ServerEntryWidget',array('data'=>$data)); ?> seconds</li>

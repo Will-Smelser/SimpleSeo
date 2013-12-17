@@ -1,0 +1,1 @@
+<li>GZip Compression: <?php $this->widget('ServerEntryWidget',array('data'=>$data)); ?></li>

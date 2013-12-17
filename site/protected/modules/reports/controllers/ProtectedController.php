@@ -1,10 +1,12 @@
 <?php
-class ProtectedController extends Controller
+
+require_once 'ExtController.php';
+
+class ProtectedController extends ExtController
 {
 	private $ipAllowCount = 2;
 	
-	public function actionIndex()
-	{	
+	public function actionIndex(){
 		Yii::app()->theme = 'reports';
 		$this->render('index');
 	}
@@ -13,6 +15,21 @@ class ProtectedController extends Controller
 		Yii::app()->theme = 'simple';
 		$this->render('pretty');
 	}
+
+    public function actionServer($target){
+        require_once(Yii::getPathOfAlias('ext.seo').'/config.php');
+        require_once(Yii::getPathOfAlias('ext.seo.class').'/SeoApiUserAdapter.php');
+
+        $config = require_once(Yii::getPathOfAlias('ext.seo.apiuser').'/config.php');
+        $config['API_HOST'] = SEO_HOST;
+
+        $key = Yii::app()->params['apiKeyReport'];
+        $seo = new SeoApiUserAdapter($config,$key,'report');
+
+        $data = $seo->execAll($target);
+
+        $this->render('server',array('data'=>$data));
+    }
 
 	// Uncomment the following methods and override them if needed
 	/*

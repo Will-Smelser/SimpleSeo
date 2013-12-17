@@ -9,7 +9,7 @@
  *
  * The method used in this example is a typical example of how QueryPath can 
  * gradually build up content. Other methods include using {@link QPTPL} for 
- * templates, injecting database information with {@link QPDB}, and merging
+ * partials, injecting database information with {@link QPDB}, and merging
  * data from one QueryPath to another.
  *
  * @author M Butcher <matt@aleph-null.tv>

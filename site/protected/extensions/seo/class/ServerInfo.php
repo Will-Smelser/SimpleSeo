@@ -142,7 +142,13 @@ class ServerInfo{
 	 */
 	public function checkRobots(){
 		$info = parse_url($this->url);
-		@$result = file_get_contents('http://'.$info['host'].'/robots.txt');
+        $result = false;
+        try{
+		    $result = file_get_contents('http://'.$info['host'].'/robots.txt');
+        }catch(Exception $e){
+            //do nothing
+        }
+
 		return ($result === false) ? false : true;
 	}
 }

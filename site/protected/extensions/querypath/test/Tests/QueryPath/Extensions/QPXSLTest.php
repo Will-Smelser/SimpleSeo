@@ -43,7 +43,7 @@ class QPXSLTests extends TestCase {
      <xsl:template match="collection">
       <div>
       Hey! Welcome to <xsl:value-of select="$owner"/>\'s sweet CD collection!
-      <xsl:apply-templates/>
+      <xsl:apply-partials/>
       </div>
      </xsl:template>
      <xsl:template match="cd">

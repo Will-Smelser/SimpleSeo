@@ -1,0 +1,1 @@
+<li>Server: <?php $this->widget('ServerEntryWidget',array('data'=>$data)); ?></li>

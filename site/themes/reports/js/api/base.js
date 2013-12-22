@@ -273,21 +273,32 @@
         }
 	},
 
+    _getAjaxErrMsg : function(err){
+        var msg = "Ajax Request Failure.";
+        if(typeof err[0] == "object"){
+            try{
+                msg = err[0].getResponseHeader('Message-Info');
+            }catch(e){
+                msg = "Ajax Request Failure.";
+            }
+        }
+        return msg;
+    },
+
     /**
      * An error handler for when api request failed.  This captures ajax request
      * errors, and not result errors.
      * @param {[jqXHR jqXHR, String textStatus, String errorThrown]} The ajax exception information from jquery/browser.
      * @param {Context} The context that execute() was called with.
      */
-	handleError : function(err, ctx){
+    handleError : function(err, ctx){
         if(typeof ctx == 'undefined' || ctx == null)
             throw "No context given.  See Context() method.";
 
-		for(var x in ctx.methods){
-            console.log("Setting error message for "+ctx.methods[x]+".",ctx.targetMap[ctx.methods[x]]);
-			$(ctx.targetMap[ctx.methods[x]]).html(this.failObj('Ajax Request Failure'));
-		}
-	},
+        for(var x in ctx.methods)
+            $(ctx.targetMap[ctx.methods[x]]).html(this.failObj(this._getAjaxErrMsg(err)));
+    },
+
     /**
      * Default error renderer called when a method
      * api request failed.

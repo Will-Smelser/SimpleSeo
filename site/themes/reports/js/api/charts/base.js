@@ -173,11 +173,15 @@
 		var targets = "";
 
         if(ctx.methodAll){
-            if(typeof ctx.targetMap.all == "function"){
+            if(typeof ctx.targetMap.all === "function"){
                 this.targetMap.all(data);
             }else{
                 $(ctx.targetMap.all).empty();
-                this.handleSuccessMethod('all', data, ctx);
+                for(var x in data){
+                    if(typeof ctx.targetMap[x] === "undefined")
+                        ctx.targetMap[x] = this.targetMap.all;
+                    this.handleSuccessMethod(x, data[x], ctx);
+                }
             }
         }else{
             for(var method in data){
@@ -246,17 +250,18 @@
             return this.makeRequest(req,newCtx);
         }
 
+        //different data layout for "all" method
         var temp = (data.data == null)?[]:data.data;
-        var goodMethod = (data.error)?"renderErr_":"render_";
+
+        var userMethod = (data.error)?"renderErr_":"render_";
         var defaultMethod = (data.error)?"defaultRenderErr":"defaultRender";
 
         //there is a defined render function
-        if(typeof this[goodMethod+method] == "function"){
-            this[goodMethod+method](temp, $(target));
+        if(typeof this[userMethod+method] == "function"){
+            this[userMethod+method](temp, $(target), newCtx);
         //no defined render function, call the default
         }else{
-            console.log("TEST",target);
-            this[defaultMethod](data, $(target));
+            this[defaultMethod](data, $(target), newCtx);
         }
 	},
 
@@ -279,24 +284,32 @@
      * api request failed.
      * @param data
      * @param $target
+     * @param {Context} The context for this api method
      */
-    defaultRenderErr : function(data, $target){
-        $target.html(this.failObj(data.msg));
+    defaultRenderErr : function(data, $target, ctx){
+        if(ctx.methodAll)
+            $target.append(this.failObj(data.msg))
+        else
+            $target.html(this.failObj(data.msg));
     },
     /**
      * The default render if no method_<api method> function exists.
      * Uses prettyPrint.js which is more designed for diagnostics.
      * @param data
      * @param $target
+     * @param {Context} The context for this api method
      */
-	defaultRender : function(data, $target){
+	defaultRender : function(data, $target, ctx){
 		var rUrl = '/themes/reports/js/api/prettyPrint.js';
 		$.ajax({
 		  url: rUrl,
 		  dataType: "script",
 		  cache: true,
 		  success: function(){
-			  $target.html(prettyPrint(data));
+              if(ctx.methodAll)
+                  $target.append(prettyPrint(data))
+              else
+                  $target.html(prettyPrint(data));
 		  }
 		});
 	},
@@ -310,8 +323,7 @@
 	 * @memberof! window._SeoApi_.base
 	 */
 	execute : function(url, callback, errCallback){
-		this.url = url;
-		var req = this.buildRequest(url);
+
 		
 		//make sure we have callbacks defined
 		if(typeof callback != "function")
@@ -322,7 +334,21 @@
 
         //build the context
         var ctx = this.Context(callback, errCallback);
-        this.makeRequest(req, ctx);
+
+        if(typeof url == "string"){
+            this.url = url;
+            var req = this.buildRequest(url);
+            this.makeRequest(req, ctx);
+        }else{
+            var scope = this;
+            if(scope.waitOnLoad){
+                $(document).ready(function(){
+                    ctx.callback.call(scope, url.data, ctx);
+                });
+            }else{
+                ctx.callback.call(scope, url.data, ctx);
+            }
+        }
 	},
 
     /**
@@ -337,16 +363,12 @@
             'url':req,
             'dataType':'jsonp',
             'success':function(data){
-                console.log('Initialize request success',req);
-
-                var resp = (ctx.methodAll) ? data : data.data;
-
                 if(scope.waitOnLoad){
                     $(document).ready(function(){
-                        ctx.callback.call(scope, resp, ctx);
+                        ctx.callback.call(scope, data.data, ctx);
                     });
                 }else{
-                    ctx.callback.call(scope, resp, ctx);
+                    ctx.callback.call(scope, data.data, ctx);
                 }
             },
             'error':function(){

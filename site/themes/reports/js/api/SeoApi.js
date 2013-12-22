@@ -160,7 +160,8 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 		},
 		
 		_createId : function(){
-			var name = Math.floor(Math.random() * 10000);
+            //mozilla injects missing indexes if you use an integer (string or number)
+			var name = 'R'+Math.floor(Math.random() * 1000);
 			return (typeof window[namespace][name] === "undefined")?name:this._createId();
 		},
 		
@@ -191,8 +192,12 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 			
 			var self = $.extend(true,{},this);
 			
-			if(typeof name === "undefined")
+			if(typeof name === "undefined"){
 				name = self._createId();
+                //this works, because js is single threaded, and thus,
+                //this createId and set operation are atomic.
+                window[namespace][name] = null;
+            }
 			
 			self.object = apiObject;
 			self.name = name;
@@ -313,8 +318,7 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 		 * @memberof! window._SeoApi_.api
 		 */
 		exec : function(url, callback, errCallback){
-			console.log('exec params',url,callback,errCallback);
-			//console.log("CALLED EXEC ON", this);
+
 			var self = this;
 			self.ready(function(){
 				//make sure all extends happen
@@ -330,8 +334,8 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 					  window[namespace][self.name].init();
 				
 				//make api call
-				//console.log("CALLED EXECUTE ON",window[namespace][self.name],self.name);
-				window[namespace][self.name].execute(url+'&token='+self.token, callback, errCallback);
+                var exec = (typeof url == "string") ? url+'&token='+self.token : url;
+                window[namespace][self.name].execute(exec,callback,errCallback);
 				
 			});
 

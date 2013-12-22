@@ -312,12 +312,19 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 		 *  
 		 * @param {Callback} [errCallback] An optional callback to execute once the
 		 * execute function called on api object is complete and an error was detected.
+         *
+         * @param {object} [data] An optional data json object to use to load api responses
+         * instead of making actual api calls.  This allows for loading data saved data.  Requires
+         * "callback" and "errCallback" have had values set.  For example,
+         * <code>exec("http://somedomain.com",null,null,{"code":200,"response":"Success",...});</code>
 		 * 
 		 * @returns {Object} A reference to this.  Useful for chaining.
 		 * 
 		 * @memberof! window._SeoApi_.api
 		 */
-		exec : function(url, callback, errCallback){
+		exec : function(url, callback, errCallback, data){
+            if(typeof data == "undefined")
+                data = null;
 
 			var self = this;
 			self.ready(function(){
@@ -334,8 +341,8 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 					  window[namespace][self.name].init();
 				
 				//make api call
-                var exec = (typeof url == "string") ? url+'&token='+self.token : url;
-                window[namespace][self.name].execute(exec,callback,errCallback);
+                window[namespace][self.name]
+                    .execute(url+'&token='+self.token,callback,errCallback,data);
 				
 			});
 

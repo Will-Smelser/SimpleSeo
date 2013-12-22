@@ -144,7 +144,6 @@
      */
 	checkApi : function(){
 		if(this.api == ''){
-			console.log('local api variable has not been set.');
 			return false;
 		}
 		return true;
@@ -162,8 +161,43 @@
 			this.methodAll = true;
 	},
 
+    _exMethodAll : null,
+    _exMethodAll_True:function(data, ctx){
+        if(typeof ctx.targetMap.all === "function"){
+            this.targetMap.all(data);
+        }else{
+            $(ctx.targetMap.all).empty();
+            for(var x in data){
+                if(typeof ctx.targetMap[x] === "undefined")
+                    ctx.targetMap[x] = this.targetMap.all;
+                this.handleSuccessMethod(x, data[x], ctx);
+            }
+        }
+    },
+    _exMethodAll_False:function(data,ctx){
+        //tracks dom targets which have been used by a method
+        var targets = "";
 
-	setMethodToAll : function(){this.methodAll = true;},
+        for(var method in data){
+
+            //function given as target
+            if(typeof ctx.targetMap[method] == "function"){
+                ctx.targetMap[method](data[method]);
+
+                //dom target given for method
+            }else{
+                //clear the contents, if they have not already
+                //been cleared
+                if(targets.indexOf(ctx.targetMap[method]) < 0)
+                    $(ctx.targetMap[method]).empty();
+
+                targets += ctx.targetMap[method];
+
+                //render this
+                this.handleSuccessMethod(method, data[method], ctx);
+            }
+        }
+    },
 
     handleSuccess : function(data, ctx){
         if(typeof ctx == 'undefined' || ctx == null)
@@ -172,44 +206,40 @@
 		//tracks dom targets which have been used by a method
 		var targets = "";
 
-        if(ctx.methodAll){
-            if(typeof ctx.targetMap.all === "function"){
-                this.targetMap.all(data);
-            }else{
-                $(ctx.targetMap.all).empty();
-                for(var x in data){
-                    if(typeof ctx.targetMap[x] === "undefined")
-                        ctx.targetMap[x] = this.targetMap.all;
-                    this.handleSuccessMethod(x, data[x], ctx);
-                }
-            }
-        }else{
-            for(var method in data){
-
-                //function given as target
-                if(typeof ctx.targetMap[method] == "function"){
-                    ctx.targetMap[method](data[method]);
-
-                //dom target given for method
-                }else{
-                    //clear the contents, if they have not already
-                    //been cleared
-                    if(targets.indexOf(ctx.targetMap[method]) < 0)
-                        $(ctx.targetMap[method]).empty();
-
-                    targets += ctx.targetMap[method];
-
-                    //render this
-                    this.handleSuccessMethod(method, data[method], ctx);
-                }
-            }
-        }
+        this._exMethodAll(data,ctx);
 		
 		//clear everything
 		this.targetMap = [];
 		this.methods = [];
 		this.methodAll = false;
 	},
+
+    _retry : function(ctx,method,target){
+        ctx.errorRetries[method]++;
+        var req = this.buildRequest(this.url,[method]);
+
+        if(typeof target === "function")
+            target(data);
+        else
+            $(target).html(this.retryObj());
+
+        this.makeRequest(req,ctx);
+    },
+    _doRender : function(ctx,method,target,data){
+        //different data layout for "all" method
+        var temp = (data.data == null)?[]:data.data;
+
+        var userMethod = (data.error)?"renderErr_":"render_";
+        var defaultMethod = (data.error)?"defaultRenderErr":"defaultRender";
+
+        //there is a defined render function
+        if(typeof this[userMethod+method] == "function"){
+            this[userMethod+method](temp, $(target), ctx);
+            //no defined render function, call the default
+        }else{
+            this[defaultMethod](data, $(target), ctx);
+        }
+    },
 
     /**
      * Handle success for a given method.  This means
@@ -231,37 +261,14 @@
         var newCtx = this.Context(ctx.callback,ctx.callbackErr, ctx);
         newCtx.methods = [method];
         newCtx.targetMap[method] = ctx.targetMap[method];
-
-        if(typeof ctx.errorRetries[method] == 'undefined')
-            newCtx.errorRetries[method] = 0;
-        else
-            newCtx.errorRetries[method] = ctx.errorRetries[method];
+        newCtx.errorRetries[method] = (typeof ctx.errorRetries[method] == 'undefined') ?
+            0 : ctx.errorRetries[method];
 
         //we may want to re-attempt
         if(data.error && newCtx.errorRetries[method] < newCtx.maxRetries){
-            newCtx.errorRetries[method]++;
-            var req = this.buildRequest(this.url,[method]);
-
-            if(typeof target === "function")
-                target(data);
-            else
-                $(target).html(this.retryObj());
-
-            return this.makeRequest(req,newCtx);
-        }
-
-        //different data layout for "all" method
-        var temp = (data.data == null)?[]:data.data;
-
-        var userMethod = (data.error)?"renderErr_":"render_";
-        var defaultMethod = (data.error)?"defaultRenderErr":"defaultRender";
-
-        //there is a defined render function
-        if(typeof this[userMethod+method] == "function"){
-            this[userMethod+method](temp, $(target), newCtx);
-        //no defined render function, call the default
+            this._retry(ctx,method,target);
         }else{
-            this[defaultMethod](data, $(target), newCtx);
+            this._doRender(ctx,method,target,data);
         }
 	},
 
@@ -320,10 +327,13 @@
 	 * @param {function} callback A callback function to run once request is complete.
 	 * @param {function} errCallback A callback function to run once request is complete 
 	 * and an error was detected
+     * @param {object} data The json data to load instead of making api calls.
 	 * @memberof! window._SeoApi_.base
 	 */
-	execute : function(url, callback, errCallback){
+	execute : function(url, callback, errCallback, data){
+        console.log(url,callback,errCallback,data,typeof data);
 
+        this.url = url;
 		
 		//make sure we have callbacks defined
 		if(typeof callback != "function")
@@ -335,21 +345,27 @@
         //build the context
         var ctx = this.Context(callback, errCallback);
 
-        if(typeof url == "string"){
-            this.url = url;
+        //polymorphism, override methods
+        this._exWaitOnLoad = (ctx.waitOnLoad)?this._exWaitOnLoad_True:this._exWaitOnLoad_False;
+        this._exMethodAll  = (ctx.methodAll) ?this._exMethodAll_True :this._exMethodAll_False;
+
+        if(data == null){
             var req = this.buildRequest(url);
             this.makeRequest(req, ctx);
         }else{
-            var scope = this;
-            if(scope.waitOnLoad){
-                $(document).ready(function(){
-                    ctx.callback.call(scope, url.data, ctx);
-                });
-            }else{
-                ctx.callback.call(scope, url.data, ctx);
-            }
+            this._exWaitOnLoad(this,data.data,ctx,ctx.callback);
         }
 	},
+
+    _exWaitOnLoad : null,
+    _exWaitOnLoad_True : function(scope, data, ctx, cb){
+        $(document).ready(function(){
+            cb.call(scope,data,ctx);
+        });
+    },
+    _exWaitOnLoad_False : function(scope, data, ctx, cb){
+        cb.call(scope,data,ctx);
+    },
 
     /**
      * Make the actual AJAX request to api.
@@ -363,26 +379,14 @@
             'url':req,
             'dataType':'jsonp',
             'success':function(data){
-                if(scope.waitOnLoad){
-                    $(document).ready(function(){
-                        ctx.callback.call(scope, data.data, ctx);
-                    });
-                }else{
-                    ctx.callback.call(scope, data.data, ctx);
-                }
+                scope._exWaitOnLoad(scope,data.data,ctx,ctx.callback);
             },
             'error':function(){
                 if(ctx.errorRetries < ctx.maxRetries){
                     ctx.errorRetries++;
                     return scope.makeRequest(req, ctx);
                 }
-                if(scope.waitOnLoad){
-                    $(document).ready(function(){
-                        ctx.callbackErr.call(scope, ctx);
-                    });
-                }else{
-                    ctx.callbackErr.call(scope, ctx);
-                }
+                scope._exWaitOnLoad(scope,data.data,ctx,ctx.callbackErr);
             }
         });
     },

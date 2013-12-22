@@ -43,7 +43,9 @@
             <!-- api/head -->
             <h2 id="info-head">HTML Head Information </h2>
 
-            <div id="head-info" class="loading-text title-info"></div>
+            <div id="head-info" class="loading-text title-info">
+
+            </div>
 
             <!-- api/body -->
             <h2 id="info-body">HTML Body Information </h2>

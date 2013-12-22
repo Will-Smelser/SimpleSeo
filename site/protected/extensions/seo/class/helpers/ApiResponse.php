@@ -63,6 +63,11 @@ class ApiResponse{
 	
 	private function header(){
 		@header("HTTP/1.1 ".$this->apiCode[0]);
+
+        if($this->apiCode[0] != 200){
+            @header('Access-Control-Expose-Headers: Message-Info');
+            @header('Message-Info: '.$this->msg);
+        }
 	}
 	
 	function doPrint(){
@@ -136,9 +141,12 @@ class ApiResponseJSONP extends ApiResponse{
 		$json = $this->jsonpp(json_encode($this->toArray()));
 		
 		//complain about no callback
-		if(!isset($_GET['callback'])) throw new \Exception('Callback GET parameter expected, but none given.');
-		
-		echo $_GET['callback'].'('.$json.');';
+		if(!isset($_GET['callback'])) {
+            echo "/*Error, no callback given. */\n";
+            echo "noCallbackGiven($json);";
+        }else{
+		    echo $_GET['callback'].'('.$json.');';
+        }
 	}
 }
 

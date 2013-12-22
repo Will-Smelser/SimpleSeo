@@ -120,7 +120,7 @@ class Controller{
 	
 	public function exec(&$obj, $method, $type='json', $args=null){
 		global $FATAL_ERROR;
-		
+
 		$result = null;
 		
 		$api = null;
@@ -134,13 +134,12 @@ class Controller{
 				break;
 		}
 		try{
-			
 			$result = $this->execWrapper($obj, $method, $args);
 			
 		//if the exception made its way up here then it is a top level error
 		//meaning it is most likely the failure of a single method call
 		}catch(Exception  $e){
-			
+
 			$this->error = true;
 			
 			$api->setData($result);
@@ -194,7 +193,8 @@ class Controller{
 			case E_NOTICE:
 			case E_USER_NOTICE:
 			case E_USER_WARNING:
-				throw new ErrorException(Controller::errMsg($errstr,$errline,$errfile), 0, $errno, $errfile, $errline);
+                throw new ErrorException(Controller::errMsg($errstr,$errline,$errfile), 0, $errno, $errfile, $errline);
+
 		}
 		
 		return false;

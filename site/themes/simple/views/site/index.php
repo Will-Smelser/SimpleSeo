@@ -149,22 +149,25 @@ var token = "<?php echo $token; ?>";
 
 seo = new SeoApi('/themes/reports/js/api/charts/','/api/',token);
 seo.load('base');
+
+var seoBody = seo.load('body').extend('base')
+    .addMethod('getKeyWords','#graphWrapper');
+
 $(document).ready(function(){
 
 	SyntaxHighlighter.all();
 	
 	$('#get-btn').click(function(){
 		$('#loadingWrapper').show();
-		seo.load('body').extend('base')
-			.addMethod('getKeyWords','#graphWrapper')
-			.exec($('#get-url').val(),
+        seoBody.exec($('#get-url').val(),
             function(data,ctx){
 				$('#loadingWrapper').fadeOut();
 				this.handleSuccess(data,ctx);
-			},function(){
-				this.handleError();
+			},function(error,ctx){
+				this.handleError(error,ctx);
 				$('#loadingWrapper').fadeOut();
-			});
+			}
+        );
 	}).click();
 
 	

@@ -108,8 +108,26 @@ class ApiController extends RController
 		
 		//use a credit
 		Apicredits::useCredit($this->tokenUserId,Apicredits::$typeApi);
-		
-		$this->apiController = new $_CONTROLLER($_METHOD, $type, $_VARS);
+
+        //possible, error can be thrown at object instantiation
+        try{
+		    $this->apiController = new $_CONTROLLER($_METHOD, $type, $_VARS);
+        }catch(Exception $e){
+            $api = null;
+            switch($type){
+                case 'jsonp':
+                    $api = new \api\responses\ApiResponseJSONP();
+                    break;
+                case 'json':
+                default:
+                    $api = new \api\responses\ApiResponseJSON();
+                    break;
+            }
+            $msg = Controller::errMsg($e->getMessage(),$e->getLine(),$e->getFile());
+            $code = api\responses\ApiCodes::$systemError;
+            echo $api->failure($msg,$code)->doPrint();
+            return false;
+        }
 		
 		return true;
 	}

@@ -10,6 +10,11 @@ class ProtectedController extends ExtController
 		Yii::app()->theme = 'reports';
 		$this->render('index');
 	}
+
+    public function actionData(){
+        Yii::app()->theme = 'reports';
+        $this->render('data');
+    }
 	
 	public function actionPretty(){
 		Yii::app()->theme = 'simple';

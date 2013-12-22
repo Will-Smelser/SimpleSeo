@@ -144,6 +144,7 @@
      */
 	checkApi : function(){
 		if(this.api == ''){
+			console.log('local api variable has not been set.');
 			return false;
 		}
 		return true;
@@ -275,9 +276,10 @@
     /**
      * An error handler for when api request failed.  This captures ajax request
      * errors, and not result errors.
+     * @param {[jqXHR jqXHR, String textStatus, String errorThrown]} The ajax exception information from jquery/browser.
      * @param {Context} The context that execute() was called with.
      */
-	handleError : function(ctx){
+	handleError : function(err, ctx){
         if(typeof ctx == 'undefined' || ctx == null)
             throw "No context given.  See Context() method.";
 
@@ -381,12 +383,12 @@
             'success':function(data){
                 scope._exWaitOnLoad(scope,data.data,ctx,ctx.callback);
             },
-            'error':function(){
+            'error':function(jqXHR, status, msg){
                 if(ctx.errorRetries < ctx.maxRetries){
                     ctx.errorRetries++;
                     return scope.makeRequest(req, ctx);
                 }
-                scope._exWaitOnLoad(scope,data.data,ctx,ctx.callbackErr);
+                scope._exWaitOnLoad(scope,[jqXHR,status,msg],ctx,ctx.callbackErr);
             }
         });
     },

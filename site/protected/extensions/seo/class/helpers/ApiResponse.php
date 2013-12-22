@@ -66,7 +66,7 @@ class ApiResponse{
 
         if($this->apiCode[0] != 200){
             @header('Access-Control-Expose-Headers: Message-Info');
-            @header('Message-Info: '.$this->msg);
+            @header('Message-Info: '.str_replace(array("\r\n", "\r"), '',$this->msg));
         }
 	}
 	

@@ -162,44 +162,6 @@
 			this.methodAll = true;
 	},
 
-    _exMethodAll : null,
-    _exMethodAll_True:function(data, ctx){
-        if(typeof ctx.targetMap.all === "function"){
-            this.targetMap.all(data);
-        }else{
-            $(ctx.targetMap.all).empty();
-            for(var x in data){
-                if(typeof ctx.targetMap[x] === "undefined")
-                    ctx.targetMap[x] = this.targetMap.all;
-                this.handleSuccessMethod(x, data[x], ctx);
-            }
-        }
-    },
-    _exMethodAll_False:function(data,ctx){
-        //tracks dom targets which have been used by a method
-        var targets = "";
-
-        for(var method in data){
-
-            //function given as target
-            if(typeof ctx.targetMap[method] == "function"){
-                ctx.targetMap[method](data[method]);
-
-                //dom target given for method
-            }else{
-                //clear the contents, if they have not already
-                //been cleared
-                if(targets.indexOf(ctx.targetMap[method]) < 0)
-                    $(ctx.targetMap[method]).empty();
-
-                targets += ctx.targetMap[method];
-
-                //render this
-                this.handleSuccessMethod(method, data[method], ctx);
-            }
-        }
-    },
-
     handleSuccess : function(data, ctx){
         if(typeof ctx == 'undefined' || ctx == null)
             throw "No context given.  See Context() method.";
@@ -215,6 +177,13 @@
 		this.methodAll = false;
 	},
 
+    /**
+     * Performs a re-attempt for a failed method request.
+     * @param ctx {Context} The contect
+     * @param method {string} The method that failed
+     * @param target {object} The dom ID target or jquery DOM target
+     * @private
+     */
     _retry : function(ctx,method,target){
         ctx.errorRetries[method]++;
         var req = this.buildRequest(this.url,[method]);
@@ -226,6 +195,16 @@
 
         this.makeRequest(req,ctx);
     },
+
+    /**
+     * Decides on the render function to use and call it.  This will
+     * render errors or success
+     * @param ctx {Context} The context to call render from.
+     * @param method {string} The method to render, I think "all" is supported
+     * @param target {object} The dom ID target or jquery DOM target
+     * @param data {object} The JSON object returned from api.
+     * @private
+     */
     _doRender : function(ctx,method,target,data){
         //different data layout for "all" method
         var temp = (data.data == null)?[]:data.data;
@@ -273,6 +252,12 @@
         }
 	},
 
+    /**
+     * Build a response error string from XHR request.
+     * @param err {jqXHR} The error object
+     * @returns {string} Returns the jqXHR error information if it can, or a default message.
+     * @private
+     */
     _getAjaxErrMsg : function(err){
         var msg = "Ajax Request Failure.";
         if(typeof err[0] == "object"){
@@ -298,7 +283,7 @@
         for(var x in ctx.methods)
             $(ctx.targetMap[ctx.methods[x]]).html(this.failObj(this._getAjaxErrMsg(err)));
     },
-        
+
     /**
      * Default error renderer called when a method
      * api request failed.
@@ -369,6 +354,48 @@
             this._exWaitOnLoad(this,data.data,ctx,ctx.callback);
         }
 	},
+
+    /**
+     * All the "_ex" are "extend" the current Object with
+     * one of the "_ex" versions of the function.
+     */
+    _exMethodAll : null,
+    _exMethodAll_True:function(data, ctx){
+        if(typeof ctx.targetMap.all === "function"){
+            this.targetMap.all(data);
+        }else{
+            $(ctx.targetMap.all).empty();
+            for(var x in data){
+                if(typeof ctx.targetMap[x] === "undefined")
+                    ctx.targetMap[x] = this.targetMap.all;
+                this.handleSuccessMethod(x, data[x], ctx);
+            }
+        }
+    },
+    _exMethodAll_False:function(data,ctx){
+        //tracks dom targets which have been used by a method
+        var targets = "";
+
+        for(var method in data){
+
+            //function given as target
+            if(typeof ctx.targetMap[method] == "function"){
+                ctx.targetMap[method](data[method]);
+
+                //dom target given for method
+            }else{
+                //clear the contents, if they have not already
+                //been cleared
+                if(targets.indexOf(ctx.targetMap[method]) < 0)
+                    $(ctx.targetMap[method]).empty();
+
+                targets += ctx.targetMap[method];
+
+                //render this
+                this.handleSuccessMethod(method, data[method], ctx);
+            }
+        }
+    },
 
     _exWaitOnLoad : null,
     _exWaitOnLoad_True : function(scope, data, ctx, cb){

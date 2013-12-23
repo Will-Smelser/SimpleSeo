@@ -1,1 +1,0 @@
-<li>Have robots.txt? <?php $this->widget('ServerEntryWidget',array('data'=>$data)); ?></li>

@@ -1,1 +1,0 @@
-<li><?php echo "Error: {$info->msg}"; ?></li>

@@ -21,20 +21,6 @@ class ProtectedController extends ExtController
 		$this->render('pretty');
 	}
 
-    public function actionServer($target){
-        require_once(Yii::getPathOfAlias('ext.seo').'/config.php');
-        require_once(Yii::getPathOfAlias('ext.seo.class').'/SeoApiUserAdapter.php');
-
-        $config = require_once(Yii::getPathOfAlias('ext.seo.apiuser').'/config.php');
-        $config['API_HOST'] = SEO_HOST;
-
-        $key = Yii::app()->params['apiKeyReport'];
-        $seo = new SeoApiUserAdapter($config,$key,'report');
-
-        $data = $seo->execAll($target);
-
-        $this->render('server',array('data'=>$data));
-    }
 
 	// Uncomment the following methods and override them if needed
 	/*
@@ -64,9 +50,6 @@ class ProtectedController extends ExtController
 	*/
 	
 	public function beforeAction($view){
-
-		
-		
 		//guest or not logged in user
 		if (!Yii::app()->user->id) {
 			$ip = $_SERVER['REMOTE_ADDR'];

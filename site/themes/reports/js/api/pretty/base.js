@@ -44,6 +44,40 @@
 	waitOnLoad : true,
 
     /**
+     * As results from api come in they are stored here.  Use this.completed
+     * object to determine when all requests are complete for this controller.
+     * There is no global callback for everything being completed.
+     */
+    data : null,
+
+    /**
+     * A list of key=>value pairs where the key
+     * is the method name from api and value is a boolean
+     * for wether or not it has completed loading.  If multiple
+     * attempts fail, this will be set to true on the last failure.
+     */
+    completed : {},
+
+    /**
+     * Merge the data, a response from api, to this.data
+     * @param data
+     * @private
+     */
+    _mergeData : function(data){
+        if(this.data == null){
+            this.data = data;
+            for(var x in data.data)
+                this.completed[x] = !data.data[x].error;
+            return;
+        }
+
+        for(var x in data.data){
+            this.data.data[x] = data.data[x];
+            this.completed[x] = !data.data[x].error;
+        }
+    },
+
+    /**
      * Store state from execute() call for retry attempts.  Makes copies of local objects:
      * <ul><li>methods</li><li>targetMap</li><li>methodAll</li></ul>
      * @param {function} callback The success callback for api request completion.  Passed in from execute() function.
@@ -116,9 +150,11 @@
 
     /**
      * Build a request url with appropriate parameters set
-     * @param url
-     * @param methodList
-     * @returns {string}
+     * @param {string} url The url to make request against
+     * @param {array} methodList An array of methods (strings)
+     * @returns {object} An object with 2 attributes: "url" and "methods".
+     * "url" => A string for api request
+     * "methods" => An array of method names
      * @private
      * @memberof! window._SeoApi_.base
      */
@@ -131,8 +167,11 @@
         }else{
             method = (this.methodAll) ? 'all' : this.methods.join('|');
         }
-        console.log('buildRequest',method);
-		return this.api+this.apiController+'/'+method+'?request='+url+'&type=jsonp';
+
+		return {
+            "url": this.api+this.apiController+'/'+method+'?request='+url+'&type=jsonp',
+            "methods": method.split("|")
+        };
 	},
 
     /**
@@ -158,6 +197,7 @@
 	addMethod : function(method, target){
 		this.methods.push(method);
 		this.targetMap[method] = target;
+        this.completed[method] = false;
 		if(method === "all")
 			this.methodAll = true;
 	},
@@ -329,7 +369,6 @@
 	 * @memberof! window._SeoApi_.base
 	 */
 	execute : function(url, callback, errCallback, data){
-        console.log(url,callback,errCallback,data,typeof data);
 
         this.url = url;
 		
@@ -409,16 +448,18 @@
 
     /**
      * Make the actual AJAX request to api.
-     * @param {string} req  The url to make ajax request against.
+     * @param {object} req  Object with 2 attributes: url, methods.  url is
+     * a string and methods is an array of strings representing api method names.
      * @param {Context} ctx The context to make requests within.
      */
     makeRequest : function(req, ctx){
         var scope = this;
         //get the data, crossdomain using jsonp
         $.ajax({
-            'url':req,
+            'url':req.url,
             'dataType':'jsonp',
             'success':function(data){
+                scope._mergeData(data);
                 scope._exWaitOnLoad(scope,data.data,ctx,ctx.callback);
             },
             'error':function(jqXHR, status, msg){
@@ -427,6 +468,10 @@
                     return scope.makeRequest(req, ctx);
                 }
                 scope._exWaitOnLoad(scope,[jqXHR,status,msg],ctx,ctx.callbackErr);
+
+                //mark all methods in the failed request as completed
+                for(var x in req.methods)
+                    scope.completed[x] = true;
             }
         });
     },

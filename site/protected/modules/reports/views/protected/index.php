@@ -46,12 +46,12 @@ seo.init('base');
 seo.init('render');
 
 
-seo.load('google').extend('base')
+var google = seo.load('google').extend('base')
 	.addMethod('getPageRank','#google-pr')
 	.addMethod('getBacklinks','#google-backlinks')
 	.exec(url);
 
-seo.load('body').extend('base')
+var body = seo.load('body').extend('base')
 	.addMethod('checkH1','#body-header-tags')
 	.addMethod('checkH2','#body-header-tags')
 	.addMethod('checkH3','#body-header-tags')
@@ -69,6 +69,9 @@ seo.load('body').extend('base')
 	.addMethod('checkImages','#body-images')
 	.exec(url);
 
+seo.save("/reports/save?token="+token,url,google,body);
+
+/*
 
 seo.load('head').extend('base')
 	.addMethod('all',"#head-info")
@@ -102,7 +105,7 @@ seo.load('semrush').extend('base').addMethod('getDomainReport','#semrush-domain'
 seo.load('social').extend('base')
 	.addMethod('all','#social')
 	.exec(url);
-
+*/
 </script>
 
 

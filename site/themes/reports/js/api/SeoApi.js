@@ -348,7 +348,44 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 			});
 
 			return self;
-		}
+		},
+
+        save : function(){
+            var args = arguments;
+            var scope = this;
+            for(var x=2; x<args.length;x++){
+                var apiObj = window[this.namespace][args[x].name];
+
+                //if we have not finished loading, just call self again with a timeout
+                if(apiObj == null || typeof apiObj.completed == "undefined"
+                    || apiObj.completed.length == 0){
+                    setTimeout(function(){scope.save.apply(scope,args)},50);
+                    return;
+                }
+                for(var y in apiObj.completed){
+                    if(!apiObj.completed[y]){
+                        setTimeout(function(){scope.save.apply(scope,args)},50);
+                        return;
+                    }
+                }
+            }
+
+            //everything is completed, now merge the data
+            var results = {};
+            for(var x=2; x<args.length; x++){
+                var apiObj = window[this.namespace][args[x].name];
+                results[apiObj.apiController] = apiObj.data;
+            }
+
+            //all methods are ready to go
+            $.ajax({
+                type:"POST",
+                url:args[0],
+                data:{"data":JSON.stringify(results),"uri":args[1]},
+                success:function(result){console.log("SAVE RESPONSE",result);},
+                failure:function(){console.log("SAVE FAILED");}
+            });
+        }
 		
 	};
 	return window[namespace].api;

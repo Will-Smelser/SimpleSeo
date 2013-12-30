@@ -76,10 +76,6 @@
             this.data.data[x] = data.data[x];
             this.completed[x] = !data.data[x].error;
         }
-
-        //data was not null, so if the was all, we can set it to true
-        if(typeof this.data.all != "undefined")
-            this.data.all = true;
     },
 
     /**
@@ -202,9 +198,11 @@
 	addMethod : function(method, target){
 		this.methods.push(method);
 		this.targetMap[method] = target;
-        this.completed[method] = false;
+
 		if(method === "all")
 			this.methodAll = true;
+        else
+            this.completed[method] = false;
 	},
 
     handleSuccess : function(data, ctx){

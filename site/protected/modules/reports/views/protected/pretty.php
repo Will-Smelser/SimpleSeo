@@ -61,12 +61,12 @@ seo.init('base');
 seo.init('render');
 
 
-seo.load('google').extend('base')
+var google = seo.load('google').extend('base')
 	.addMethod('getPageRank','#google-pr')
 	.addMethod('getBacklinks','#google-backlinks')
 	.exec(url,function(data,ctx){fnLoadComplete.call(this,'google',data,ctx)});
 
-seo.load('body').extend('base')
+var body = seo.load('body').extend('base')
 	.addMethod('checkH1','#body-header-tags')
 	.addMethod('checkH2','#body-header-tags')
 	.addMethod('checkH3','#body-header-tags')
@@ -88,13 +88,12 @@ seo.load('body').extend('base')
     });
 
 
-seo.load('head').extend('base')
+var head = seo.load('head').extend('base')
 	.addMethod('all',"#head-info")
 	.exec(url, function(data,ctx){fnLoadComplete.call(this,'head-info',data,ctx);});
 
 
-seo.load('server').extend('base')
-
+var server = seo.load('server').extend('base')
 	.addMethod('getWhois','#server-whois')
 	.addMethod('getHeaderResponseLine','#server-general-info')
 	.addMethod('getLoadTime','#server-general-info')
@@ -102,25 +101,29 @@ seo.load('server').extend('base')
 	.addMethod('getServer','#server-general-info')
 	.exec(url, function(data,ctx){fnLoadComplete.call(this,'server',data,ctx);});
 
-seo.load('w3c').extend('base')
+var w3c = seo.load('w3c').extend('base')
     .addMethod('validateW3C','#w3c-general')
     .addMethod('getValidateW3Cerrors','#w3c-error')
     .addMethod('getValidateW3Cwarnings','#w3c-warning')
     .exec(url,function(data,ctx){fnLoadComplete.call(this, 'validateW3C', data, ctx);});
 
-seo.load('moz').extend('base')
+var moz = seo.load('moz').extend('base')
 	.addMethod('getMozLinks','#moz-link')
 	.addMethod('getMozJustDiscovered','#moz-disc')
 	.exec(url, function(data,ctx){fnLoadComplete.call(this,'moz',data,ctx);});
 
-seo.load('semrush').extend('base')
+var semrush = seo.load('semrush').extend('base')
     .addMethod('getDomainReport','#semrush-domain')
 	.addMethod('getKeyWordsReport','#semrush-keywords')
 	.exec(url, function(data,ctx){fnLoadComplete.call(this,'semrush',data,ctx)});
 
-seo.load('social').extend('base')
+var social = seo.load('social').extend('base')
 	.addMethod('all','#social')
 	.exec(url, function(data,ctx){fnLoadComplete.call(this,'social',data,ctx);});
+
+<?php if(!isset($data)){ ?>
+seo.save("/reports/save?token="+token,url,google,body,server,head,w3c,moz,semrush,social);
+<?php } ?>
 
 </script>
 

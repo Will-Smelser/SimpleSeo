@@ -238,6 +238,14 @@ div.dashIcon {
   margin:0px 0px 10px 10px;
 }
 
+div.dashIcon img{
+    width:60%;
+}
+div.dashIcon.span-3{
+    width:75px;
+    padding-top:5px;
+}
+
 .blue-bg .dashIcon{
 	float:right;
 	margin:0px 20px 0px 20px;

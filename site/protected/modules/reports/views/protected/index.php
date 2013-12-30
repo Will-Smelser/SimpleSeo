@@ -12,7 +12,7 @@ function printLoading(){
  * Here is an example of using the supplied javascript framework for
  * dynamically loading api classes and making requests.
  */
-var url = "<?php echo isset($_GET['target']) ? urlencode($_GET['target']):''; ?>";
+var url = "<?php echo isset($target) ? urlencode($target):''; ?>";
 var api = "<?php echo 'http://'.SEO_HOST.'/'.SEO_URI_API; ?>";
 //var api = "<?php echo 'http://localhost/simple-seo-api.com/site/'.SEO_URI_API; ?>";
 
@@ -41,15 +41,19 @@ try{
 var token = "<?php echo $token; ?>";
 seo = new SeoApi('http://<?php echo SEO_HOST . '/' . SEO_URI_API_JS; ?>',api,token);
 
+<?php
+if(isset($data))
+    echo "var data=$data;";
+?>
+
 //loads the 
 seo.init('base');
 seo.init('render');
 
-
 var google = seo.load('google').extend('base')
 	.addMethod('getPageRank','#google-pr')
 	.addMethod('getBacklinks','#google-backlinks')
-	.exec(url);
+    .exec(url <?php if(isset($data)) echo ',null,null,data.google';?>);
 
 var body = seo.load('body').extend('base')
 	.addMethod('checkH1','#body-header-tags')
@@ -67,45 +71,48 @@ var body = seo.load('body').extend('base')
 	.addMethod('checkForIframes','#body-bad-stuff')
 	.addMethod('checkForFlash','#body-bad-stuff')
 	.addMethod('checkImages','#body-images')
-	.exec(url);
+    .exec(url <?php if(isset($data)) echo ',null,null,data.body';?>);
 
-seo.save("/reports/save?token="+token,url,google,body);
 
-/*
 
-seo.load('head').extend('base')
+
+var head = seo.load('head').extend('base')
 	.addMethod('all',"#head-info")
-	.exec(url);
+    .exec(url <?php if(isset($data)) echo ',null,null,data.head';?>);
 
 
-seo.load('server').extend('base')
+var server = seo.load('server').extend('base')
 	.addMethod('getWhois','#server-whois')
 	.addMethod('getHeaderResponseLine','#server-general-info')
 	.addMethod('getLoadTime','#server-general-info')
 	.addMethod('isGzip','#server-general-info')
 	.addMethod('getServer','#server-general-info')
-	.exec(url);
+    .exec(url <?php if(isset($data)) echo ',null,null,data.server';?>);
 
-seo.load('w3c').extend('base')
+var w3c = seo.load('w3c').extend('base')
     .addMethod('validateW3C','#w3c-general')
     .addMethod('getValidateW3Cerrors','#w3c-error')
     .addMethod('getValidateW3Cwarnings','#w3c-warning')
-    .exec(url);
+    .exec(url <?php if(isset($data)) echo ',null,null,data.w3c';?>);
 
 
-seo.load('moz').extend('base')
+var moz = seo.load('moz').extend('base')
 	.addMethod('getMozLinks','#moz-link')
 	.addMethod('getMozJustDiscovered','#moz-disc')
-	.exec(url);
+    .exec(url <?php if(isset($data)) echo ',null,null,data.moz';?>);
 
-seo.load('semrush').extend('base').addMethod('getDomainReport','#semrush-domain')
+var semrush = seo.load('semrush').extend('base').addMethod('getDomainReport','#semrush-domain')
 	.addMethod('getKeyWordsReport','#semrush-keywords')
-	.exec(url);
+    .exec(url <?php if(isset($data)) echo ',null,null,data.semrush';?>);
 
-seo.load('social').extend('base')
+var social = seo.load('social').extend('base')
 	.addMethod('all','#social')
-	.exec(url);
-*/
+    .exec(url <?php if(isset($data)) echo ',null,null,data.social';?>);
+
+<?php if(!isset($data)){ ?>
+seo.save("/reports/save?token="+token,url,google,body,server,head,w3c,moz,semrush,social);
+<?php } ?>
+
 </script>
 
 
@@ -121,7 +128,7 @@ seo.load('social').extend('base')
 	<input id="edit" type="button" value="Edit" />
 </div>
 
-<h2 id="report-title">Report - <?php echo $_GET['target']; ?></h2>
+<h2 id="report-title">Report - <?php echo $target; ?></h2>
 
 <!-- api/server -->
 <h3>Server Information <a class='addComment'>add comment</a></h3>
@@ -215,7 +222,7 @@ seo.load('social').extend('base')
 
 <?php 
 //get the filename, we want this to save as
-$filename = str_replace('/','-',preg_replace('@https?://@i','',$_GET['target'])) . '.html';
+$filename = str_replace('/','-',preg_replace('@https?://@i','',$target)) . '.html';
 ?>
 <form id="save-form" action="http://<?php echo SEO_HOST; ?>/reports/save/<?php echo $filename; ?>" method="POST" target="_blank" style="display:none">
 	<textarea name="data" id="save-form-data"></textarea>

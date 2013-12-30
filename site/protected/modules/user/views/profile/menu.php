@@ -7,7 +7,7 @@ if(UserModule::isAdmin()) {
 		src="/themes/shadow_dancer/images/big_icons/icon-man-tie.png"
 		alt="Admin" /> </a>
 	<div class="dashIconText">
-		<?php echo CHtml::link(UserModule::t('Manage User'),array('/user/admin')); ?>
+		<?php echo CHtml::link(UserModule::t('Manage'),array('/user/admin')); ?>
 	</div>
 </div>
 <?php } ?>
@@ -22,21 +22,12 @@ if(UserModule::isAdmin()) {
 </div>
 
 <div class="dashIcon span-3">
-	<a href="/user/stats"><img
-		src="/themes/shadow_dancer/images/big_icons/icon-chart2.png"
-		alt="Profile" /> </a>
-	<div class="dashIconText">
-		<?php echo CHtml::link(UserModule::t('Stats'),array('/user/stats')); ?>
-	</div>
-</div>
-
-<div class="dashIcon span-3">
-	<a href="/user/profile/edit"><img
-		src="/themes/shadow_dancer/images/big_icons/icon-pencil.png"
-		alt="Edit" /> </a>
-	<div class="dashIconText">
-		<?php echo CHtml::link(UserModule::t('Edit'),array('/user/profile/edit')); ?>
-	</div>
+    <a href="/user/profile/edit"><img
+            src="/themes/shadow_dancer/images/big_icons/icon-pencil.png"
+            alt="Edit" /> </a>
+    <div class="dashIconText">
+        <?php echo CHtml::link(UserModule::t('Edit'),array('/user/profile/edit')); ?>
+    </div>
 </div>
 
 <div class="dashIcon span-3">
@@ -44,8 +35,26 @@ if(UserModule::isAdmin()) {
 		src="/themes/shadow_dancer/images/big_icons/icon-key.png"
 		alt="Change Password" /> </a>
 	<div class="dashIconText">
-		<?php echo CHtml::link(UserModule::t('Password'),array('changepassword')); ?>
+		<?php echo CHtml::link(UserModule::t('Password'),array('/user/profile/changepassword')); ?>
 	</div>
+</div>
+
+<div class="dashIcon span-3">
+    <a href="/user/reports"><img
+            src="/themes/shadow_dancer/images/big_icons/icon-chart.png"
+            alt="Profile" /> </a>
+    <div class="dashIconText">
+        <?php echo CHtml::link(UserModule::t('Reports'),array('/user/reports')); ?>
+    </div>
+</div>
+
+<div class="dashIcon span-3">
+    <a href="/user/stats"><img
+            src="/themes/shadow_dancer/images/big_icons/icon-chart2.png"
+            alt="Profile" /> </a>
+    <div class="dashIconText">
+        <?php echo CHtml::link(UserModule::t('Stats'),array('/user/stats')); ?>
+    </div>
 </div>
 
 <div class="dashIcon span-3">
@@ -53,7 +62,7 @@ if(UserModule::isAdmin()) {
 		src="/themes/shadow_dancer/images/big_icons/icon-cash-bundle.png"
 		alt="View Credits" /> </a>
 	<div class="dashIconText">
-		<?php echo CHtml::link(UserModule::t('Account Credits'),array('/user/stats/credits')); ?>
+		<?php echo CHtml::link(UserModule::t('Credits'),array('/user/stats/credits')); ?>
 	</div>
 </div>
 

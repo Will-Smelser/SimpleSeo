@@ -351,6 +351,7 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 		},
 
         save : function(){
+            console.log("Called Save");
             var args = arguments;
             var scope = this;
             for(var x=2; x<args.length;x++){
@@ -359,6 +360,7 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
                 //if we have not finished loading, just call self again with a timeout
                 if(apiObj == null || typeof apiObj.completed == "undefined"
                     || apiObj.completed.length == 0){
+
                     setTimeout(function(){scope.save.apply(scope,args)},50);
                     return;
                 }

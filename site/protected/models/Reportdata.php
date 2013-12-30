@@ -81,7 +81,7 @@ class Reportdata extends CActiveRecord
 	 * @return CActiveDataProvider the data provider that can return the models
 	 * based on the search/filter conditions.
 	 */
-	public function search()
+	public function search($userid=null)
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
@@ -94,8 +94,17 @@ class Reportdata extends CActiveRecord
 		$criteria->compare('uri',$this->uri,true);
 		$criteria->compare('created',$this->created,true);
 
+       if(!empty($userid))
+            $criteria->addCondition('user_id = '.$userid);
+
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+            'sort'=>array(
+                'defaultOrder' => 'created DESC',
+            ),
+            'pagination'=>array(
+                'pageSize'=>40,
+            ),
 		));
 	}
 

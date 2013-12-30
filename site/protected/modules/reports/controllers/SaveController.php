@@ -7,7 +7,8 @@ class SaveController extends ApiBaseController
 
         //from ApiBaseController, if doesn't exist, then
         //a default error is created
-        $userId = $this->tokenUserId;
+        //$userId = $this->tokenUserId;
+        $userId = Yii::app()->user->id;
 
         $errMsg = "Failed to save data.";
 

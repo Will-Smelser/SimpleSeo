@@ -68,6 +68,7 @@
             this.data = data;
             for(var x in data.data)
                 this.completed[x] = !data.data[x].error;
+            if(this.completed)
             return;
         }
 
@@ -197,9 +198,11 @@
 	addMethod : function(method, target){
 		this.methods.push(method);
 		this.targetMap[method] = target;
-        this.completed[method] = false;
+
 		if(method === "all")
 			this.methodAll = true;
+        else
+            this.completed[method] = false;
 	},
 
     handleSuccess : function(data, ctx){

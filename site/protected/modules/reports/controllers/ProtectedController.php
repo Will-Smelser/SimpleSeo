@@ -8,17 +8,17 @@ class ProtectedController extends ExtController
 	
 	public function actionIndex(){
 		Yii::app()->theme = 'reports';
-		$this->render('index');
+		$this->render('index',array('target'=>$_GET['target']));
 	}
 
     public function actionData(){
         Yii::app()->theme = 'reports';
-        $this->render('data');
+        $this->render('data',array('target'=>$_GET['target']));
     }
 	
 	public function actionPretty(){
 		Yii::app()->theme = 'simple';
-		$this->render('pretty');
+		$this->render('pretty',array('target'=>$_GET['target']));
 	}
 
 

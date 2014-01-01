@@ -350,8 +350,34 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 			return self;
 		},
 
+        /**
+         * Collect all the given seo objects once they have finished loading
+         * and post them to the given url.
+         *
+         * Example:
+         * <code>
+         * var target="http://some-website.com/index.html";
+         * var api="http://www.simple-seo-api.com/api/";
+         * var token="<some generated api token>";
+         *
+         * var seo = new SeoApi("http://www.simple-seo-api.com/themes/reports/js",api,token);
+         * seo.init("base");
+         * seo.init("render");
+         *
+         * var google = seo.load('google').extend('base').addMethod('all','#someId').exec(target);
+         * var body = seo.load('body').extend('base').addMethod('all','#someOtherId').exec(target);
+         *
+         * seo.save("http://my-website.com/saveData.php",target,google,body);
+         * </code>
+         *
+         * @param {string} url The url to post collected data to.
+         * @param {string} request The url api objects collected data on.
+         * @param {Mixed} [...] All api objects that you would like result data amalgamated on.
+         *
+         * @memberof! window._SeoApi_.api
+         */
         save : function(){
-            console.log("Called Save");
+
             var args = arguments;
             var scope = this;
             for(var x=2; x<args.length;x++){

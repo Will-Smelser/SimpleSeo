@@ -5,16 +5,28 @@ require_once 'ExtController.php';
 class ProtectedController extends ExtController
 {
 	private $ipAllowCount = 2;
+
+    /**
+     * A list of report templates
+     * @return array
+     */
+    public static function getTemplates(){
+        return array(
+            'index'=>array(
+                'name'=>'Default Template',
+                'theme'=>'reports'
+            ),
+            'pretty'=>array(
+                'name'=>'Pretty Template',
+                'theme'=>'simple'
+            ),
+        );
+    }
 	
 	public function actionIndex(){
 		Yii::app()->theme = 'reports';
 		$this->render('index',array('target'=>$_GET['target']));
 	}
-
-    public function actionData(){
-        Yii::app()->theme = 'reports';
-        $this->render('data',array('target'=>$_GET['target']));
-    }
 	
 	public function actionPretty(){
 		Yii::app()->theme = 'simple';

@@ -47,6 +47,17 @@ try{
 
 ?>
 var token = "<?php echo $token; ?>";
+var seo = new SeoApi('http://<?php echo SEO_HOST . '/'; ?>themes/reports/js/api/pretty/',api,token);
+var data = <?php echo isset($data) ? $data : "null"; ?>;
+
+var _data = function(name){
+    return (window.data == null || typeof window.data[name] == "undefined")
+        ? null : window.data[name];
+}
+
+//loads the 
+seo.init('base');
+seo.init('render');
 
 var fnLoadComplete = function(id, data, ctx){
     console.log("fnLoadComplete",this);
@@ -54,17 +65,10 @@ var fnLoadComplete = function(id, data, ctx){
     $('#'+id).slideDown().prev('h2').find('span.loading').remove();
 }
 
-var seo = new SeoApi('http://<?php echo SEO_HOST . '/'; ?>themes/reports/js/api/pretty/',api,token);
-
-//loads the 
-seo.init('base');
-seo.init('render');
-
-
 var google = seo.load('google').extend('base')
 	.addMethod('getPageRank','#google-pr')
 	.addMethod('getBacklinks','#google-backlinks')
-	.exec(url,function(data,ctx){fnLoadComplete.call(this,'google',data,ctx)});
+	.exec(url,function(data,ctx){fnLoadComplete.call(this,'google',data,ctx)},null, _data("google"));
 
 var body = seo.load('body').extend('base')
 	.addMethod('checkH1','#body-header-tags')
@@ -85,12 +89,12 @@ var body = seo.load('body').extend('base')
 	.exec(url, function(data,ctx){
         fnLoadComplete.call(this,'body',data,ctx);
         $('#wordsext').slideDown().prev('h2').find('span.loading').remove();
-    });
+    },null,_data("body"));
 
 
 var head = seo.load('head').extend('base')
 	.addMethod('all',"#head-info")
-	.exec(url, function(data,ctx){fnLoadComplete.call(this,'head-info',data,ctx);});
+	.exec(url,function(data,ctx){fnLoadComplete.call(this,'head-info',data,ctx);},null,_data("head"));
 
 
 var server = seo.load('server').extend('base')
@@ -99,43 +103,42 @@ var server = seo.load('server').extend('base')
 	.addMethod('getLoadTime','#server-general-info')
 	.addMethod('isGzip','#server-general-info')
 	.addMethod('getServer','#server-general-info')
-	.exec(url, function(data,ctx){fnLoadComplete.call(this,'server',data,ctx);});
+	.exec(url,function(data,ctx){fnLoadComplete.call(this,'server',data,ctx);},null,_data("server"));
 
 var w3c = seo.load('w3c').extend('base')
     .addMethod('validateW3C','#w3c-general')
     .addMethod('getValidateW3Cerrors','#w3c-error')
     .addMethod('getValidateW3Cwarnings','#w3c-warning')
-    .exec(url,function(data,ctx){fnLoadComplete.call(this, 'validateW3C', data, ctx);});
+    .exec(url,function(data,ctx){fnLoadComplete.call(this, 'validateW3C', data, ctx);},null,_data("w3c"));
 
 var moz = seo.load('moz').extend('base')
 	.addMethod('getMozLinks','#moz-link')
 	.addMethod('getMozJustDiscovered','#moz-disc')
-	.exec(url, function(data,ctx){fnLoadComplete.call(this,'moz',data,ctx);});
+	.exec(url, function(data,ctx){fnLoadComplete.call(this,'moz',data,ctx);},null,_data("moz"));
 
 var semrush = seo.load('semrush').extend('base')
     .addMethod('getDomainReport','#semrush-domain')
 	.addMethod('getKeyWordsReport','#semrush-keywords')
-	.exec(url, function(data,ctx){fnLoadComplete.call(this,'semrush',data,ctx)});
+	.exec(url, function(data,ctx){fnLoadComplete.call(this,'semrush',data,ctx)},null,_data("semrush"));
 
 var social = seo.load('social').extend('base')
 	.addMethod('all','#social')
-	.exec(url, function(data,ctx){fnLoadComplete.call(this,'social',data,ctx);});
+	.exec(url, function(data,ctx){fnLoadComplete.call(this,'social',data,ctx);},null,_data("social"));
 
-<?php if(!isset($data)){ ?>
-seo.save("/reports/save?token="+token,url,google,body,server,head,w3c,moz,semrush,social);
-<?php } ?>
+if(data == null)
+    seo.save("/reports/save?token="+token,url,google,body,server,head,w3c,moz,semrush,social);
 
 </script>
 
 <div class="container">
 
 <div class="span-4">
-    <?php echo $this->renderPartial('../partials/menu'); ?>
+    <?php echo $this->renderPartial('application.modules.reports.views.partials.menu'); ?>
 </div>
 
 <div class="span-19 last">
 
-<h1 id="top">SEO Report - <?php echo $_GET['target']; ?></h1>
+<h1 id="top">SEO Report - <?php echo $target; ?></h1>
 
 
 <div id="all-content">
@@ -241,7 +244,7 @@ seo.save("/reports/save?token="+token,url,google,body,server,head,w3c,moz,semrus
 
 <?php 
 //get the filename, we want this to save as
-$filename = str_replace('/','-',preg_replace('@https?://@i','',$_GET['target'])) . '.html';
+$filename = str_replace('/','-',preg_replace('@https?://@i','',$target)) . '.html';
 ?>
 <form id="save-form" action="http://<?php echo SEO_HOST; ?>/reports/save/<?php echo $filename; ?>" method="POST" target="_blank" style="display:none">
 	<textarea name="data" id="save-form-data"></textarea>

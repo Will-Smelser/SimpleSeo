@@ -39,12 +39,13 @@ try{
 
 ?>
 var token = "<?php echo $token; ?>";
-seo = new SeoApi('http://<?php echo SEO_HOST . '/' . SEO_URI_API_JS; ?>',api,token);
+var seo = new SeoApi('http://<?php echo SEO_HOST . '/' . SEO_URI_API_JS; ?>',api,token);
+var data = <?php echo isset($data) ? $data : "null"; ?>;
 
-<?php
-if(isset($data))
-    echo "var data=$data;";
-?>
+var _data = function(name){
+    return (window.data == null || typeof window.data[name] == "undefined")
+        ? null : window.data[name];
+}
 
 //loads the 
 seo.init('base');
@@ -53,7 +54,7 @@ seo.init('render');
 var google = seo.load('google').extend('base')
 	.addMethod('getPageRank','#google-pr')
 	.addMethod('getBacklinks','#google-backlinks')
-    .exec(url <?php if(isset($data)) echo ',null,null,data.google';?>);
+    .exec(url,null,null,_data("google"));
 
 var body = seo.load('body').extend('base')
 	.addMethod('checkH1','#body-header-tags')
@@ -71,15 +72,11 @@ var body = seo.load('body').extend('base')
 	.addMethod('checkForIframes','#body-bad-stuff')
 	.addMethod('checkForFlash','#body-bad-stuff')
 	.addMethod('checkImages','#body-images')
-    .exec(url <?php if(isset($data)) echo ',null,null,data.body';?>);
-
-
-
+    .exec(url,null,null,_data("body"));
 
 var head = seo.load('head').extend('base')
 	.addMethod('all',"#head-info")
-    .exec(url <?php if(isset($data)) echo ',null,null,data.head';?>);
-
+    .exec(url,null,null,_data("head"));
 
 var server = seo.load('server').extend('base')
 	.addMethod('getWhois','#server-whois')
@@ -87,31 +84,29 @@ var server = seo.load('server').extend('base')
 	.addMethod('getLoadTime','#server-general-info')
 	.addMethod('isGzip','#server-general-info')
 	.addMethod('getServer','#server-general-info')
-    .exec(url <?php if(isset($data)) echo ',null,null,data.server';?>);
+    .exec(url,null,null,_data("server"));
 
 var w3c = seo.load('w3c').extend('base')
     .addMethod('validateW3C','#w3c-general')
     .addMethod('getValidateW3Cerrors','#w3c-error')
     .addMethod('getValidateW3Cwarnings','#w3c-warning')
-    .exec(url <?php if(isset($data)) echo ',null,null,data.w3c';?>);
-
+    .exec(url,null,null,_data("w3c"));
 
 var moz = seo.load('moz').extend('base')
 	.addMethod('getMozLinks','#moz-link')
 	.addMethod('getMozJustDiscovered','#moz-disc')
-    .exec(url <?php if(isset($data)) echo ',null,null,data.moz';?>);
+    .exec(url,null,null,_data("moz"));
 
 var semrush = seo.load('semrush').extend('base').addMethod('getDomainReport','#semrush-domain')
 	.addMethod('getKeyWordsReport','#semrush-keywords')
-    .exec(url <?php if(isset($data)) echo ',null,null,data.semrush';?>);
+    .exec(url,null,null,_data("semrush"));
 
 var social = seo.load('social').extend('base')
 	.addMethod('all','#social')
-    .exec(url <?php if(isset($data)) echo ',null,null,data.social';?>);
+    .exec(url,null,null,_data("social"));
 
-<?php if(!isset($data)){ ?>
-seo.save("/reports/save?token="+token,url,google,body,server,head,w3c,moz,semrush,social);
-<?php } ?>
+if(data == null)
+    seo.save("/reports/save?token="+token,url,google,body,server,head,w3c,moz,semrush,social);
 
 </script>
 

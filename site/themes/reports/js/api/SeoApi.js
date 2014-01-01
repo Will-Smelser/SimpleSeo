@@ -361,12 +361,12 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
                 if(apiObj == null || typeof apiObj.completed == "undefined"
                     || apiObj.completed.length == 0){
 
-                    setTimeout(function(){scope.save.apply(scope,args)},50);
+                    setTimeout(function(){scope.save.apply(scope,args)},200);
                     return;
                 }
                 for(var y in apiObj.completed){
                     if(!apiObj.completed[y]){
-                        setTimeout(function(){scope.save.apply(scope,args)},50);
+                        setTimeout(function(){scope.save.apply(scope,args)},200);
                         return;
                     }
                 }

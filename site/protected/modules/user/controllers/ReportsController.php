@@ -14,21 +14,30 @@ class ReportsController extends RController
         return array('rights');
     }
 
-
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+	public function actionView($id,$template='index')
 	{
-        Yii::app()->theme = 'reports';
+        $this->includeProtectedController();
+        $templates = ProtectedController::getTemplates();
+
+        if(!isset($templates[$template]))
+            throw new CHttpException(404,'Requested template does not exist.');
+
+        Yii::app()->theme = $templates[$template]['theme'];
         $model = $this->loadModel($id);
-		$this->render('reports.views.protected.index',array(
+		$this->render("reports.views.protected.$template",array(
 			'model'=>$model,
             'data'=>$model->data,
             'target'=>$model->uri
 		));
 	}
+
+    private function includeProtectedController(){
+        require_once Yii::getPathOfAlias('application.modules.reports.controllers.ProtectedController') . '.php';
+    }
 
 	/**
 	 * Deletes a particular model.
@@ -58,6 +67,9 @@ class ReportsController extends RController
 	 */
 	public function actionIndex()
 	{
+        $this->includeProtectedController();
+        $templates = ProtectedController::getTemplates();
+
         $userid = intval(Yii::app()->user->id);
 
         $model = new Reportdata('search');
@@ -65,7 +77,7 @@ class ReportsController extends RController
         if(isset($_GET['Reportdata']))
             $model->attributes = $_GET['Reportdata'];
 
-        $this->render('index',array('model'=>$model,'userid'=>$userid));
+        $this->render('index',array('model'=>$model,'userid'=>$userid,'templates'=>$templates));
 
 	}
 

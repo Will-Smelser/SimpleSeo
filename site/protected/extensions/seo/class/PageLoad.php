@@ -49,8 +49,6 @@ class PageLoad{
 	 * the following variable names: arg0, arg1, arg2, etc...
 	 */
 	public function addPage(){
-		$url;
-		
 		$args = func_get_args();
 		$url = array_shift($args);
 		

@@ -91,9 +91,12 @@ class PageLoad{
 			
 		// all done
 		curl_multi_close($this->mh);
-		
-		return $result;
 
+        //reset
+        $this->mh = curl_multi_init();
+        $this->curls = array();
+
+		return $result;
 	}
 	
 }

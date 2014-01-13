@@ -194,3 +194,11 @@ div.wide.form .buttons, div.wide.form .hint, div.wide.form .errorMessage
 	clear: left;
 	padding-left: 110px;
 }
+
+div.form .ui-select input{
+    margin:0px;
+    border:none;
+}
+div.form .ui-select .ui-corner-all{
+    border: 1px solid #CCC;
+}

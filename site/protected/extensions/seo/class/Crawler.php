@@ -16,6 +16,7 @@ class Crawler {
     public $obeyNoFollow;
     public $obeyNoFollowTxt;
     public $loadPage;
+    public $token;
 
     public $urls;
     public $total;
@@ -33,7 +34,7 @@ class Crawler {
      * @param int $maxThreads Maximum number of parellel CURL requests o make.
      * @param int $timeout Maximum amount of time in seconds Crawler will crawl for.
      */
-    public function __construct($start,$loadPage,$obeyNoFollow=true,$maxUrls=999,$maxDepth=3,$maxThreads=10,$timeout=60){
+    public function __construct($start,$loadPage,$token,$obeyNoFollow=true,$maxUrls=999,$maxDepth=3,$maxThreads=10,$timeout=60){
         set_time_limit($timeout+10);
 
         $this->start=$start;
@@ -42,6 +43,7 @@ class Crawler {
         $this->maxUrls=$maxUrls;
         $this->loadPage=$loadPage;
         $this->maxThreads=$maxThreads;
+        $this->token=$token;
 
 
         $this->total = 0;
@@ -49,6 +51,9 @@ class Crawler {
         $this->obeyNoFollowTxt = ($obeyNoFollow) ? 'true' : 'false';
         $this->startTime = round(microtime(true));
         $this->maxTime = $this->startTime+$timeout;
+
+        //var_dump($this->maxUrls,$this->maxThreads,$this->maxDepth);
+
     }
 
     /**
@@ -60,7 +65,7 @@ class Crawler {
         $this->urls = array($this->start);
         $this->total++;
 
-        $loader = new PageLoad($this->loadPage);
+        $loader = new PageLoad($this->loadPage,$this->token);
         $loader->addPage($this->start,$this->obeyNoFollowTxt);
 
         $this->process($loader);

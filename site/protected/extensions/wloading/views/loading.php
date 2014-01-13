@@ -9,7 +9,7 @@
 ?>
 <div  class="<?php echo $this->wrapperClass; ?>" style="<?php echo $this->wrapperStyle ?>">
     <div id="noTrespassingOuterBarG" style="width:<?php echo $this->width; ?>;margin:0px auto;z-index:9999;">
-        <div id="loadingTxt">Loading...</div>
+        <div id="loadingTxt" style="width:<?php echo $this->width; ?>">Loading...</div>
         <div id="noTrespassingFrontBarG" class="noTrespassingAnimationG">
             <div class="noTrespassingBarLineG"></div>
             <div class="noTrespassingBarLineG"></div>

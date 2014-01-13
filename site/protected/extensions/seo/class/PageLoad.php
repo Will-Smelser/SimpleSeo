@@ -38,7 +38,7 @@ class PageLoad{
 	public function PageLoad($page='PageLoadTime.php',$token){
 		//have to make requests through the api
 		$this->loadPage = 'http://' . SEO_HOST . '/' . SEO_URI_API . 'thread/' . $page . '?type=json&token=' . $token;
-		
+
 		$this->mh = curl_multi_init();
 	}
 	
@@ -58,7 +58,7 @@ class PageLoad{
 			$temp = $key+1;
 			$url .= "&arg{$temp}=" . urlencode($arg);
 		}
-		
+
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -98,7 +98,14 @@ class PageLoad{
 
 		return $result;
 	}
-	
+
+    /**
+     * Get number of pages that have been added for curl requests.
+     * @return int
+     */
+    public function getPageCount(){
+        return count($this->curls);
+    }
 }
 
 ?>

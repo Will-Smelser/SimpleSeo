@@ -1,7 +1,7 @@
 <?php
 include_once SEO_PATH_CLASS.'PageLoad.php';
 include_once SEO_PATH_CLASS.'HtmlParser.php';
-include_once SEO_PATH_CLASS.'Crawler.php';
+include_once SEO_PATH_CLASS.'CrawlerUtils.php';
 
 
 $resp = new PageLoadResponse();

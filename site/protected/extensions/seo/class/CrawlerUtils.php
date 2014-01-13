@@ -65,7 +65,7 @@ class CrawlerUtils {
 
         //url hast no protocol or host now
         $url = ltrim($url,'/');
-        $url = Utils::stripAnchor($url);
+        $url = self::stripAnchor($url);
 
         //handle ../
         if(preg_match('@^(\.?\.\/)@',$url)){

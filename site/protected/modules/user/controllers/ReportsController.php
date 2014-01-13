@@ -81,6 +81,37 @@ class ReportsController extends RController
 
 	}
 
+    public function actionCrawler(){
+        $this->render('crawler');
+    }
+
+    public function actionDocrawl($url,$maxLinks,$depth,$nofollow=false){
+        $this->layout = 'application.views.layouts.empty';
+
+        require_once(Yii::getPathOfAlias('ext.seo').'/config.php');
+        require_once SEO_PATH_CLASS . 'Crawler.php';
+        require_once SEO_PATH_HELPERS . 'ClientHash.php';
+
+        //get a token
+        $token = "TOKEN_GET_FAILED";
+        try{
+            $token = \api\clients\ClientHash::getToken(Yii::app()->params['apiKeySample'],'sample',SEO_HOST);
+        }catch(Exception $e){
+            //do nothing, just everything will fail.
+        }
+
+
+
+
+        $nofollow = ($nofollow === 'true') ? true : false;
+
+        $crawler = new Crawler($url,SEO_URI_HELPERS.'PageLoadLinks.php',$token,$nofollow,$maxLinks,$depth);
+        $result = $crawler->start();
+
+        echo json_encode($result);
+        Yii::app()->end();
+    }
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.

@@ -31,11 +31,21 @@ class ClientHash{
 	 * informaiton about the error may be contained int he error message string.
 	 */
 	public static function getToken($key,$username, $host=null){
-		$nonce = substr(str_shuffle(MD5(microtime())),0,7);
+		$nonce = self::nonce();
 		$hash = self::hash($nonce,$key);
 		
 		return self::makeRequest($username, $nonce, $hash, $host);
 	}
+
+    /**
+     * Calculate a nonce.  You can create nonce however you like, this
+     * just provides a simple implamentation; however this is not guranteed
+     * to be unique.
+     * @return string A nonce.
+     */
+    public static function nonce(){
+        return substr(str_shuffle(MD5(microtime())),0,7);
+    }
 	
 	/**
 	 * Create the hash.  Just a wrapper for incase this class is
@@ -45,7 +55,7 @@ class ClientHash{
 	 * @param unknown $key Your private activation key created when account was initiated.
 	 * @return string A hash string for token requests.
 	 */
-	private static function hash($nonce,$key){
+	public static function hash($nonce,$key){
 		return sha1($nonce.$key);
 	}
 	
@@ -55,10 +65,12 @@ class ClientHash{
 	 * @param string $nonce
 	 * @param string $hash
 	 * @param string $host [optional] The host to make request against
+     * @param string $resource [optional] The resource this token will
+     *          make requests for.  Just for stats tracking.
 	 * @throws Exception If a token was failed to be created then an error will be thrown.
 	 * @return string
 	 */
-	private static function makeRequest($username, $nonce, $hash, $host=null){
+	public static function makeRequest($username, $nonce, $hash, $host=null, $resource='/api'){
 		if(empty($host)) $host = self::$apiHost;
 		
 		$request = (self::$secure) ? 'https://' : 'http://';

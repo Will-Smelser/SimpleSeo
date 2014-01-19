@@ -1,4 +1,6 @@
 <?php
+require_once(Yii::getPathOfAlias('ext.seo').'/config.php');
+
 //jquery ui
 $cs = Yii::app()->getClientScript();
 $cs->registerScriptFile('http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js');
@@ -30,6 +32,31 @@ $this->menu=array(
 #loadingTxt{
     font-size:12px;
 }
+.ui-progressbar {
+    position: relative;
+}
+#progress-label {
+    position: absolute;
+    margin-top: 4px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #fff;
+    width:100%;
+    text-align: center;
+}
+.myicon{
+    margin-left:4px;
+    padding-left:18px;
+    background-repeat:no-repeat;
+}
+.myicon.good{
+    background-image:url("/themes/simple/images/small_icons/accept.png");
+}
+.myicon.bad{
+    background-image:url("/themes/simple/images/small_icons/exclamation.png");
+}
+.myicon.warn{
+    background-image:url("/themes/simple/images/small_icons/error.png");
+}
 </style>
 
 <h1>Web Crawler</h1>
@@ -45,9 +72,10 @@ $this->menu=array(
 Enter URL entry point you would like the crawler to access your site from.
 </p>
 <div class="form">
+    <div id="error-summary" class="errorSummary" style="display:none"></div>
     <form id="crawl-form">
     <div class="row">
-	    <label for="url" >Starting URL</label>
+	    <label for="url" class="required" >Starting URL <span class="required">*</span></label>
 	    <input class="" name="url" type="text" id="url" style="width:400px" />
 	</div>
 
@@ -82,31 +110,9 @@ Enter URL entry point you would like the crawler to access your site from.
 </div>
 </div>
 
-<div id="loadingWrapper" style="display:none;">
-    <div>
-    <p>This can take several minutes.  Please be patient.</p>
-    <p><small>Time to crawl is a factor of download speed of your site relative to this
-        web server, depth of crawl, and number of links.  Every resolved link must be downloaded.
-        </small></p>
-    </div>
-    <div>
-    <?php
-    $this->widget('ext.wloading.Wloading',
-        array(
-            'wrapperClass'=>'',
-            'wrapperStyle'=>'position:relative;',
-            'width'=>'100%'
-        )
-    );
-    ?>
-    </div>
-</div>
 <div id="crawl-results" style="display:none">
 <h2>Crawl Results</h2>
 <div>
-    <div>
-        <span class="span-5">Total Found Links:</span><span id="crawl-setting-total"></span>
-    </div>
     <div>
         <span class="span-5">Starting URL:</span><span id="crawl-setting-start"></span>
     </div>
@@ -117,19 +123,220 @@ Enter URL entry point you would like the crawler to access your site from.
         <span class="span-5">Max Links:</span><span id="crawl-setting-links"></span>
     </div>
     <div>
+        <span class="span-5">Total Found Links:</span><span id="crawl-setting-total"></span>
+    </div>
+    <div>
         <span class="span-5">Obey No Follow Links:</span><span id="crawl-setting-nofollow"></span>
     </div>
 
-    <div>
-        Check: <a id="input-all" href="#">all</a> | <a href="#" id="input-none">none</a>
+    <div style="padding-top:20px;">
+        Check: <a id="input-all" style="cursor:pointer">all</a> | <a style="cursor:pointer" id="input-none">none</a>
     </div>
     <hr/>
     <form id="crawl-results-links"></form>
+    <br/>
+    <button id="run-reports" class="btn" >Run Reports</button>
 </div>
 </div>
 
+<div id="loadingWrapper" style="display:none;">
+    <div>
+        <p>This can take several minutes.  Please be patient.</p>
+        <p><small>Time to crawl is a factor of download speed of your site relative to this
+                web server, depth of crawl, and number of links.  Every resolved link must be downloaded.
+            </small></p>
+    </div>
+    <div>
+        <?php
+        $this->widget('ext.wloading.Wloading',
+            array(
+                'wrapperClass'=>'',
+                'wrapperStyle'=>'position:relative;',
+                'width'=>'100%'
+            )
+        );
+        ?>
+    </div>
+</div>
+
+<div id="runningWrapper" style="display:none;">
+    <div>
+        <p>This can take quite some time.  Please do not refresh or leave this page until
+                the reports have finished running.  Leaving this page before completed will
+            stop the execution of your reports.
+            </p>
+    </div>
+    <p>
+        <div id="progressbar"><div id="progress-label">Loading...</div></div>
+    </p>
+    <div id="report-complete-message" style="display:none">
+        <p>Reports have completed!  You can view your reports in your "Reports" page under
+            the user interface or click <a href="/user/reports">here</a>.</p>
+        <p><a class="btn" href="/user/reports">&nbsp;&nbsp;View Reports&nbsp;&nbsp;</a></p>
+        <p>
+            <div style="max-height:100px;overflow:auto" class="grid-view">
+            <table id="report-stats" class="items"></table>
+            </div>
+        </p>
+    </div>
+</div>
+
 <script>
+    var Report = {
+        threads : 3, //this really just number of parellel ajax calls to make
+        links : null,
+        running : {},
+        addStatsRow : function(url,msg){
+            //remove the no errors row
+            $('#report-stats-failures').remove();
+
+            $tr = $(document.createElement("tr"));
+            $td1 = $(document.createElement("td"));
+            $td2 = $(document.createElement("td"));
+
+            $td2.html(msg);
+            $td1.html(url);
+            $tr.append($td1).append($td2);
+            $('#report-stats').append($tr);
+
+            $('#runningWrapper').dialog({position:{ my: "center", at: "center", of: window }});
+        },
+        isRunning : function(){
+            for(var x in this.running)
+                if(this.running[x]) return true;
+            return false;
+        },
+        getCheckedLinks : function(){
+            return $('#crawl-results-links input:checked');
+        },
+        waitOnComplete : function(callback){
+            var scope = this;
+            if(this.isRunning()){
+                console.log("still waiting");
+                setTimeout(function(){scope.waitOnComplete.call(scope,callback);},250);
+            }else{
+                console.log('calling callback');
+                callback.call(scope);
+            }
+        },
+        $progressBar : null,
+        $progressLabel : null,
+        allowClose : false,
+        init : function(){
+            //cleanup error stats
+            var str = '<thead><tr style="color:#FFF;"><th style="border-right:solid #FFF 1px">URL</th><th>Message</th></tr><tr id="report-stats-failures"><td colspan="2">No Failures</td></tr></thead>';
+            $('#report-stats').html(str);
+
+
+            var obj = this;
+            obj.links = this.getCheckedLinks();
+
+            console.log(this.curIndex,this.links.length);
+
+            obj.$progressLabel = $('#progress-label')
+            obj.$progressBar = $('#progressbar').progressbar({
+                value: 0,
+                complete: function() {
+                    obj.$progressLabel.text( "Complete!" );
+                }
+            });
+
+            $('#runningWrapper')
+                .dialog({title:'Running Reports',width:'500px',modal:true,autoOpen:true,draggable:false,
+                    beforeClose:function(){
+                        if(!obj.allowClose){
+                            alert('A lot of resources are allocated during report generation.  Please be patient...');
+                            return false;
+                        }
+                    }
+                });
+
+            obj.updateLoading();
+        },
+        updateLoading : function(){
+            var total = 0;
+            for(var x in this.running)
+                if(!this.running[x]) total++;
+
+            this.$progressLabel.text( total + " of " + this.links.length + " completed" );
+            this.$progressBar.progressbar("value",Math.floor((total/this.links.length)*100));
+
+            //completed
+            if(total >= this.links.length){
+                this.allowClose = true;
+                this.$progressLabel.text( "Completed!" );
+                $('#report-complete-message').slideDown();
+            //still waiting
+            }else{
+                console.log('Loading '+total+' of '+this.links.length);
+            }
+        },
+        ajax : function(link){
+            var $link = $(link);
+            var url = $link.val();
+            this.running[url] = true;
+            var scope = this;
+
+            this.curIndex++;
+
+            console.log("Ajax request on "+url);
+
+            $.ajax({
+                dataType: "json",
+                url: '/user/reports/processReport',
+                data: {"url":url},
+                error:function(jqXhr,status,error){
+                    //alert("Error, please try again.\n\nCode: "+status+"\nMessage: "+error);
+                    scope.addStatsRow(url,error);
+                    $link.addClass('error');
+                    $link.parent().find('span').addClass('bad');
+                },
+                complete:function(){
+                    scope.running[url] = false;
+                    scope.updateLoading();
+                    if(scope.curIndex < scope.links.length){
+                        scope.ajax(scope.links[scope.curIndex]);
+                        return;
+                    }
+                    $('#runningWrapper').dialog({position:{ my: "center", at: "center", of: window }});
+                },
+                success: function(data){
+                    if(!data.result){
+                        scope.addStatsRow(url,"Report failed.");
+                        $link.parent().find('span').addClass('warn');
+                        $link.addClass('warn');
+                    }else{
+                        $link.parent().find('span').addClass('good');
+                    }
+                }
+            });
+        },
+        curIndex : 0,
+        runReports : function(){
+
+            this.updateLoading();
+
+            for(var i=0; i<this.threads && i < this.links.length; i++){
+                this.ajax(this.links[i]);
+            }
+            /*
+            if(this.curIndex  >= this.links.length) return;
+
+            for(var i=this.curIndex; i < this.links.length; i=i+this.threads){
+                for(var j=i;j< this.links.length && j < i+this.threads; j++){
+                    this.ajax(this.links[j]);
+                }
+                this.curIndex = i+this.threads;
+                this.waitOnComplete(this.runReports);
+                return;
+            }*/
+        }
+    };
     $(document).ready(function(){
+        $('#run-reports').click(function(){
+            Report.init();
+            Report.runReports();
+        });
 
         $('#input-all').click(function(){
             $('#crawl-results input').each(function(){
@@ -154,6 +361,21 @@ Enter URL entry point you would like the crawler to access your site from.
             });
 
         $('#run-crawl').click(function(){
+            //check the url
+            var url = $('#url').val();
+
+            var pattern = /https?:\/\/[^ "]+$/;
+            if(!pattern.test(url)){
+                $('#url').addClass("error");
+                $('#error-summary')
+                    .html("Please enter a valid URL.<br/>For example, http://www.google.com")
+                    .slideDown();
+                return;
+            }else{
+                $('#error-summary').slideUp();
+                $('#url').removeClass("error")
+            }
+
             allowClose = false;
             $('#loadingWrapper').dialog('open');
 
@@ -183,8 +405,11 @@ Enter URL entry point you would like the crawler to access your site from.
                             .attr('id',name).attr('name',name)
                             .attr('value',data[x])
                             .attr('checked',true);
+                        var $icon = $(document.createElement('span'))
+                            .addClass("myicon");
                         var $label = $(document.createElement('label'))
-                            .attr('for',name).append($input).append('&nbsp;&nbsp;'+data[x]);
+                            .attr('for',name).append($input).append($icon)
+                            .append('&nbsp;&nbsp;'+data[x]);
                         var $wrap = $(document.createElement('div'))
                             .append($label);
                         $('#crawl-results-links').append($wrap);
@@ -203,4 +428,5 @@ Enter URL entry point you would like the crawler to access your site from.
             return false;
         });
     });
+
 </script>

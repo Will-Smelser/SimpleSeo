@@ -112,6 +112,73 @@ class ReportsController extends RController
         Yii::app()->end();
     }
 
+    public function actionProcessReport($url){
+        error_reporting(E_ALL);
+        $this->layout = 'application.views.layouts.empty';
+
+        require_once Yii::getPathOfAlias('ext.seo').'/config.php';
+        require_once SEO_PATH_HELPERS . 'ClientHash.php';
+        require_once Yii::getPathOfAlias('ext.seo.apiuser.class') . '/PageLoad.php';
+        require_once Yii::getPathOfAlias('ext.seo.apiuser') . '/SeoApi.php';
+
+        $result = null;
+        try{
+            $nonce = \api\clients\ClientHash::nonce();
+            $hash = \api\clients\ClientHash::hash($nonce,Yii::app()->params['apiKeySample']);
+            $token = \api\clients\ClientHash::makeRequest('sample', $nonce, $hash, SEO_HOST, '/user/reports/crawler');
+
+            $config = include Yii::getPathOfAlias('ext.seo.apiuser').'/config.php';
+
+            $thread = new simple_seo_api\PageLoad();
+            $seo = new simple_seo_api\SeoApi($config, $thread, $token);
+
+            $seo->addMethods('Body','all');
+            $seo->addMethods('Server','all');
+            $seo->addMethods('Head','all');
+            $seo->addMethods('Social','all');
+            $seo->addMethods('Google','all');
+            $seo->addMethods('W3c','all');
+            $seo->addMethods('Moz','all');
+            $seo->addMethods('Semrush','all');
+
+            $result = $seo->exec($url);
+
+        }catch(Exception $e){
+            echo '{"result":false}';
+            Yii::app()->end();
+        }
+
+        if(empty($result)){
+            echo '{"result":false}';
+            Yii::app()->end();
+        }
+
+        $userid = Yii::app()->user->id;
+
+        //save the result to db
+        $model=new Reportdata();
+        $model->saveData($userid,$url,$model->apiuserData2JSON($result));
+
+        $creditType = Apicredits::$typeReport;
+
+        if(Apicredits::hasCredit($userid,$creditType)){
+            Apicredits::useCredit($userid, $creditType);
+
+            //record stats
+            $stats = new Reportstats();
+            $stats->user = $userid;
+            $stats->type = 'crawler';
+            $stats->request = $url;
+            $stats->save();
+
+            echo '{"result":true}';
+        }else{
+            echo '{"result":false}';
+        }
+        Yii::app()->end();
+    }
+
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.

@@ -27,6 +27,6 @@ class ReportsModule extends CWebModule
 		else
 			return false;
 	}
-	
+
 
 }

@@ -118,4 +118,39 @@ class Reportdata extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    public function saveData($userId,$uri,$data){
+
+        $model=$this;
+
+        require_once(Yii::getPathOfAlias('application.components').'/Normalizer.php');
+
+        //normalize the url
+        $un = new URL\Normalizer();
+        $un->setUrl($uri);
+        $uri = $un->normalize();
+
+        $model->data=$data;
+        $model->user_id = $userId;
+        $model->domain = $un->parseDomain(parse_url($uri,PHP_URL_HOST));
+        $model->uri = $uri;
+
+        try{
+            if($model->save()){
+                return true;
+            }else{
+               return false;
+            }
+        }catch(Exception $e){
+            return false;
+        }
+    }
+
+    public function apiuserData2JSON($data){
+        $result = '{';
+        foreach($data as $api){
+            $result .= '"'.strtolower($api['info']).'":'.$api['result'].',';
+        }
+        return rtrim($result,',').'}';
+    }
 }

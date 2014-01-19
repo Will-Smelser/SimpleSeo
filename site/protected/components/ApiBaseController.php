@@ -21,7 +21,7 @@ class ApiBaseController extends RController
 		if(isset($_GET['token']))
 			//lookup the token
 			$token = Tokens::model()->findByAttributes(array('token'=>$_GET['token']));
-					
+
 		//without a token, no login/access allowed.  Handled by RController (Rights module)
 		if(empty($token) || $token::isExpired($token->expire))
 			return $this->accessDenied('No valid token given.');

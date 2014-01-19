@@ -29,6 +29,7 @@ class MozConnect{
 	private $formKeyRedirect = 'data[User][redirect]';
 	private $formKeyEmail = 'data[User][login_email]';
 	private $formKeyPass = 'data[User][password]';
+    private $formKeyRemember = 'data[User][remember]';
 	
 	private $user, $pass;
 	
@@ -92,7 +93,7 @@ class MozConnect{
 			$this->formKeyRedirect=>'/',
 			$this->formKeyEmail=>$this->user,
 			$this->formKeyPass=>$this->pass,
-			'data[User][remember]'=>1
+			$this->formKeyRemember=>1
 		);
 		
 		
@@ -102,7 +103,7 @@ class MozConnect{
 		
 		$response = curl_exec($ch);
 		$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-		
+
 		if(curl_errno($ch))
 		{
 			throw new Exception(curl_error($ch));
@@ -151,7 +152,8 @@ class MozConnect{
 		$data = $this->getSite($service, $url);
 		
 		//been forwarded to a login page
-		if(strpos($data,'hit your daily report limit') > 0){
+		if(preg_match('@hit your.*?limit@i',$data)){
+            $this->login();
 			$data = $this->getSite($service, $url);
 		}
 		return $data;

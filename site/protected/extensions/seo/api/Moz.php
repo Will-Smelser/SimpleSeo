@@ -47,12 +47,21 @@ class Moz implements ApiKeys{
         $ld = $metrics->get(3);
         $ti = $metrics->get(4);
 
-		return array(
-			'domainAuthority'=>trim(preg_replace('/\s+/',' ',$da->textContent)),
-			'pageAuthority'=>trim(preg_replace('/\s+/',' ',$pa->textContent)),
-			'linkingRootDomains'=>trim(preg_replace('/\s+/',' ',$ld->textContent)),
-			'totalInboundLinks'=>trim(preg_replace('/\s+/',' ',$ti->textContent)),
-		);
+        if(empty($da) || empty($pa) || empty($ld) || empty($ti)){
+            return array(
+                'domainAuthority'=>'Failed',
+                'pageAuthority'=>'Failed',
+                'linkingRootDomains'=>'Failed',
+                'totalInboundLinks'=>'Failed',
+            );
+        }else{
+            return array(
+                'domainAuthority'=>trim(preg_replace('/\s+/',' ',$da->textContent)),
+                'pageAuthority'=>trim(preg_replace('/\s+/',' ',$pa->textContent)),
+                'linkingRootDomains'=>trim(preg_replace('/\s+/',' ',$ld->textContent)),
+                'totalInboundLinks'=>trim(preg_replace('/\s+/',' ',$ti->textContent)),
+            );
+        }
 	}
 	
 	/**

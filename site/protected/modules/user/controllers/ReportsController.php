@@ -113,7 +113,7 @@ class ReportsController extends RController
     }
 
     public function actionProcessReport($url){
-        error_reporting(E_ALL);
+
         $this->layout = 'application.views.layouts.empty';
 
         require_once Yii::getPathOfAlias('ext.seo').'/config.php';

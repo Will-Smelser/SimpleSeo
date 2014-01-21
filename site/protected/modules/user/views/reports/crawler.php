@@ -62,12 +62,16 @@ $this->menu=array(
 }
 </style>
 
-<h1>Web Crawler</h1>
+<h1>Web Crawler for Reports</h1>
 <h2>About the Crawler</h2>
 <p>
     The web crawler will crawl the links of your website from  a given starting point.  In most cases,
     just set this to your landing page.  For example, http://www.google.com, is an example of a
     starting page.
+</p>
+<p>
+    Once the crawler has created a list of URLs you will be able to choose which URLs you would
+    like to run reports on.
 </p>
 <div id="crawl-settings">
 <h2>Crawler Settings</h2>
@@ -104,7 +108,7 @@ Enter URL entry point you would like the crawler to access your site from.
     </div>
 
     <div class="row">
-        <label for="nofollow" style="display:inline-block;">Obey "nofollow" links?&nbsp;&nbsp;</label>
+        <label title="Links with rel='nofollow' attribute" for="nofollow" style="display:inline-block;">Obey "nofollow" links?&nbsp;&nbsp;</label>
         <input class="" name="nofollow" value="true" type="checkbox" id="nofollow" checked/>
     </div>
     </form>
@@ -185,7 +189,11 @@ Enter URL entry point you would like the crawler to access your site from.
 </div>
 
 <div id="waitOnRunningWrapper" style="display:none">
-    <p>Please wait till current executing reports finish...</p>
+    <p>Current running reports cannot be cancelled.  Please wait till
+    these are completed.</p>
+    <p>Currently running reports:
+    <ul id="runningReportsList"></ul>
+    </p>
 </div>
 
 <script>
@@ -263,8 +271,19 @@ Enter URL entry point you would like the crawler to access your site from.
                     buttons: [ { text: "Cancel", click: function() {
                         //Report.cancelAjax();
                         Report.ajaxCancelled = true;
+
+                        var $list = $('#runningReportsList').empty();
+                        for(var x  in obj.running){
+                            if(obj.running[x])
+                                $list.append($(document.createElement('li')).html(x));
+                        }
+
                         $('#waitOnRunningWrapper').dialog('open');
-                        Report.waitOnNotRunning(function(){Report.allowClose = true;$('#runningWrapper').dialog('close')});
+                        Report.waitOnNotRunning(function(){
+                            Report.allowClose = true;
+                            $('#runningWrapper').dialog('close');
+                            $('#waitOnRunningWrapper').dialog('close');
+                        });
                     } } ]
                 });
 

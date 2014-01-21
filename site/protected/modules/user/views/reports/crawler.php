@@ -57,6 +57,9 @@ $this->menu=array(
 .myicon.warn{
     background-image:url("/themes/simple/images/small_icons/error.png");
 }
+.myicon.wait{
+    background-image:url("/themes/simple/images/small_icons/hourglass.png");
+}
 </style>
 
 <h1>Web Crawler</h1>
@@ -181,7 +184,17 @@ Enter URL entry point you would like the crawler to access your site from.
     </div>
 </div>
 
+<div id="waitOnRunningWrapper" style="display:none">
+    <p>Please wait till current executing reports finish...</p>
+</div>
+
 <script>
+    $('#waitOnRunningWrapper').dialog(
+        {title:'Reports Running',width:'500px',modal:true,autoOpen:false,draggable:false,
+        buttons: [ { text: "Ok", click: function() {
+            $(this).dialog('close');
+        } } ]
+    });
     var Report = {
         threads : 3, //this really just number of parellel ajax calls to make
         links : null,
@@ -209,20 +222,18 @@ Enter URL entry point you would like the crawler to access your site from.
         getCheckedLinks : function(){
             return $('#crawl-results-links input:checked');
         },
-        waitOnComplete : function(callback){
-            var scope = this;
-            if(this.isRunning()){
-                console.log("still waiting");
-                setTimeout(function(){scope.waitOnComplete.call(scope,callback);},250);
-            }else{
-                console.log('calling callback');
-                callback.call(scope);
-            }
-        },
         $progressBar : null,
         $progressLabel : null,
         allowClose : false,
         init : function(){
+            this.curIndex = 0;
+            this.ajaxReqs = [];
+            this.running = {};
+            this.allowClose = false;
+            this.ajaxCancelled = false;
+            $('#report-complete-message').hide();
+            $('.myicon').removeClass('good').removeClass('bad').removeClass('warn').removeClass('wait');
+
             //cleanup error stats
             var str = '<thead><tr style="color:#FFF;"><th style="border-right:solid #FFF 1px">URL</th><th>Message</th></tr><tr id="report-stats-failures"><td colspan="2">No Failures</td></tr></thead>';
             $('#report-stats').html(str);
@@ -233,7 +244,7 @@ Enter URL entry point you would like the crawler to access your site from.
 
             console.log(this.curIndex,this.links.length);
 
-            obj.$progressLabel = $('#progress-label')
+            obj.$progressLabel = $('#progress-label');
             obj.$progressBar = $('#progressbar').progressbar({
                 value: 0,
                 complete: function() {
@@ -248,10 +259,24 @@ Enter URL entry point you would like the crawler to access your site from.
                             alert('A lot of resources are allocated during report generation.  Please be patient...');
                             return false;
                         }
-                    }
+                    },
+                    buttons: [ { text: "Cancel", click: function() {
+                        //Report.cancelAjax();
+                        Report.ajaxCancelled = true;
+                        $('#waitOnRunningWrapper').dialog('open');
+                        Report.waitOnNotRunning(function(){Report.allowClose = true;$('#runningWrapper').dialog('close')});
+                    } } ]
                 });
 
             obj.updateLoading();
+        },
+        waitOnNotRunning : function(callback){
+            var scope = this;
+            if(scope.isRunning()){
+                setTimeout(function(){scope.waitOnNotRunning.call(scope,callback)},100);
+                return;
+            }
+            callback();
         },
         updateLoading : function(){
             var total = 0;
@@ -271,6 +296,13 @@ Enter URL entry point you would like the crawler to access your site from.
                 console.log('Loading '+total+' of '+this.links.length);
             }
         },
+        cancelAjax : function(){
+            this.ajaxCancelled = true;
+            for(var x in this.ajaxReqs)
+                this.ajaxReqs[x].abort();
+        },
+        ajaxCancelled : false,
+        ajaxReqs : [],
         ajax : function(link){
             var $link = $(link);
             var url = $link.val();
@@ -281,7 +313,10 @@ Enter URL entry point you would like the crawler to access your site from.
 
             console.log("Ajax request on "+url);
 
-            $.ajax({
+
+            $link.parent().find('span').addClass('wait');
+
+            this.ajaxReqs.push($.ajax({
                 dataType: "json",
                 url: '/user/reports/processReport',
                 data: {"url":url},
@@ -289,12 +324,12 @@ Enter URL entry point you would like the crawler to access your site from.
                     //alert("Error, please try again.\n\nCode: "+status+"\nMessage: "+error);
                     scope.addStatsRow(url,error);
                     $link.addClass('error');
-                    $link.parent().find('span').addClass('bad');
+                    $link.parent().find('span').removeClass('wait').addClass('bad');
                 },
                 complete:function(){
                     scope.running[url] = false;
                     scope.updateLoading();
-                    if(scope.curIndex < scope.links.length){
+                    if(scope.curIndex < scope.links.length && !scope.ajaxCancelled){
                         scope.ajax(scope.links[scope.curIndex]);
                         return;
                     }
@@ -303,13 +338,13 @@ Enter URL entry point you would like the crawler to access your site from.
                 success: function(data){
                     if(!data.result){
                         scope.addStatsRow(url,"Report failed.");
-                        $link.parent().find('span').addClass('warn');
+                        $link.parent().find('span').removeClass('wait').addClass('warn');
                         $link.addClass('warn');
                     }else{
-                        $link.parent().find('span').addClass('good');
+                        $link.parent().find('span').removeClass('wait').addClass('good');
                     }
                 }
-            });
+            }));
         },
         curIndex : 0,
         runReports : function(){
@@ -319,17 +354,6 @@ Enter URL entry point you would like the crawler to access your site from.
             for(var i=0; i<this.threads && i < this.links.length; i++){
                 this.ajax(this.links[i]);
             }
-            /*
-            if(this.curIndex  >= this.links.length) return;
-
-            for(var i=this.curIndex; i < this.links.length; i=i+this.threads){
-                for(var j=i;j< this.links.length && j < i+this.threads; j++){
-                    this.ajax(this.links[j]);
-                }
-                this.curIndex = i+this.threads;
-                this.waitOnComplete(this.runReports);
-                return;
-            }*/
         }
     };
     $(document).ready(function(){

@@ -333,7 +333,7 @@ Enter URL entry point you would like the crawler to access your site from.
                         scope.ajax(scope.links[scope.curIndex]);
                         return;
                     }
-                    $('#runningWrapper').dialog({position:{ my: "center", at: "center", of: window }});
+                    //$('#runningWrapper').dialog({position:{ my: "center", at: "center", of: window }});
                 },
                 success: function(data){
                     if(!data.result){

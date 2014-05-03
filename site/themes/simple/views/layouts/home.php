@@ -126,6 +126,7 @@
 				<li><a href="/site/pages/getstarted">Getting Started</a></li>
 				<li><a href="/site/pages/examples/getapikey">Get API Key</a></li>
 				<li><a href="/site/pages/examples/getapitoken">Get API Token</a></li>
+                <li><a href="/site/page?view=apiplay">Explore API</a></li>
 			</ul>
 		</div>
 		</div>

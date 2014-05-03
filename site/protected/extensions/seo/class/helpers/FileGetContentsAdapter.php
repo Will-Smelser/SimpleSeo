@@ -9,15 +9,22 @@
 namespace api;
 
 class FileGetContentsAdapter {
-    private static $cachDir = 'C:/xampp/htdocs/simple-seo-api.com/site/protected/extensions/seo/tmp/';
     private static $expireMin = 30;
 
     /* gets the contents of a file if it exists, otherwise grabs and caches */
     public static function get_content($url) {
 
+        $base_path = __DIR__;
+        if (realpath( $base_path ) !== false) {
+            $base_path = realpath($base_path);
+        }
+        $base_path = rtrim($base_path, '/').'/';
+        $base_path = str_replace('\\', '/', $base_path);
+
+        $cachedir = $base_path.'/../../tmp/';
 
         //vars
-        $file = self::$cachDir . md5($url);
+        $file = $cachedir . md5($url);
         $currentTime = time();
         $expireTime = self::$expireMin * 60;
         $fileTime = (file_exists($file)) ? filemtime($file) : 0;

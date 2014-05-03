@@ -29,17 +29,18 @@ class ClientHash{
      * of whomever you want to make the API requests.  If this is your webservice, then it would
      * be the IP of your webserver.  If this is someone using your javascript powered report or API
      * usage, then this would be the client's IP address.
+     * @param boolean $one_time Is this a single use token.
 	 * @return string
 	 * 
 	 * @throws Exception An exception is thrown if the request fails to return a valid token.  Some
 	 * informaiton about the error may be contained int he error message string.
 	 */
-	public static function getToken($key,$username, $host=null, $ip=null){
+	public static function getToken($key,$username, $host=null, $ip=null, $one_time=false){
 
 		$nonce = self::nonce();
 		$hash = self::hash($nonce,$key);
 		
-		return self::makeRequest($username, $nonce, $hash, $host, null, $ip);
+		return self::makeRequest($username, $nonce, $hash, $host, null, $ip, $one_time);
 	}
 
     /**
@@ -75,13 +76,13 @@ class ClientHash{
 	 * @throws Exception If a token was failed to be created then an error will be thrown.
 	 * @return string
 	 */
-	public static function makeRequest($username, $nonce, $hash, $host=null, $resource='/api',$ip=''){
+	public static function makeRequest($username, $nonce, $hash, $host=null, $resource='/api',$ip='',$one_time=false){
 		if(empty($host)) $host = self::$apiHost;
 		
 		$request = (self::$secure) ? 'https://' : 'http://';
-		$request.= $host . self::$api . '?username=%s&nonce=%s&hash=%s&ip=%s';
+		$request.= $host . self::$api . '?username=%s&nonce=%s&hash=%s&ip=%s&one_time=%s';
 
-		$result = file_get_contents(sprintf($request,$username,$nonce,$hash,$ip));
+		$result = file_get_contents(sprintf($request,$username,$nonce,$hash,$ip,$one_time));
 		$result = json_decode($result);
 		
 		if(isset($result->success) && $result->success === 'true'){

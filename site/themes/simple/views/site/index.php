@@ -19,6 +19,7 @@ $cs->registerCssFile('/syntaxhighlighter/styles/shThemeDefault.css');
 $cs->registerScriptFile('/syntaxhighlighter/scripts/shCore.js',CClientScript::POS_END);
 $cs->registerScriptFile('/syntaxhighlighter/scripts/shAutoloader.js',CClientScript::POS_END);
 $cs->registerScriptFile('/syntaxhighlighter/scripts/shBrushJScript.js',CClientScript::POS_END);
+$cs->registerScriptFile('/themes/reports/js/api/libs/aes.js');
 
 
 //set canonical url
@@ -26,12 +27,21 @@ $cs->registerLinkTag('canonical',null,Yii::app()->createAbsoluteUrl('/site/index
 
 //got to get a valid token
 require_once SEO_PATH_HELPERS . 'ClientHash.php';
-$token = "TOKEN_GET_FAILED";
+$token = 'TOKEN_GET_FAILED';
+$userToken = 'TOKEN_GET_FAILED';
 try{
-	$token = \api\clients\ClientHash::getToken(Yii::app()->params['apiKeySample'],'sample',SEO_HOST);
+	$token = \api\clients\ClientHash::getToken(Yii::app()->params['apiKeySample'],'sample',SEO_HOST,$_SERVER['REMOTE_ADDR'],true);
+    $userToken = \api\clients\ClientHash::getToken(Yii::app()->params['apiKeySample'],'sample',SEO_HOST,$_SERVER['REMOTE_ADDR'],false);
 }catch(Exception $e){
 	//do nothing, just everything will fail.
 }
+
+require_once(Yii::getPathOfAlias('ext.captcha')).'/captcha.php';
+$captcha = new SimpleCaptcha();
+$captchaInfo = $captcha->CreateImage();
+
+require_once(Yii::getPathOfAlias('ext.crypto-aes')).'/aes.php';
+$cipher = AesCtr::encrypt($userToken, $captchaInfo[1], 256);
 
 $example = 'http://en.wikipedia.org/wiki/Search_engine_optimization';
 
@@ -141,24 +151,69 @@ seo.load('body').extend('base')
 
 <div id="loading" style="display:none;"></div>
 
+<div id="dialog" style="display:none">
+    <div class="form">
+        <h3>Are you a robot?</h3>
+        <div class="row">
+            <input style="float:left" id="cipherKey"  type="text" />
+            <img  style="position:absolute;top:30px;" src="data:image/png;base64,<?php echo $captchaInfo[0]; ?>"/>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
+
+var token = "<?php echo $token; ?>";
+var cipherTxt = "<?php echo $cipher;?>";
 
 google.load('visualization', '1.0', {'packages':['corechart']});
 
-var token = "<?php echo $token; ?>";
-
-seo = new SeoApi('/themes/reports/js/api/charts/','/api/',token);
-seo.load('base');
-
-var seoBody = seo.load('body').extend('base')
-    .addMethod('getKeyWords','#graphWrapper');
-
 $(document).ready(function(){
 
+
+
+    var seo = new SeoApi('/themes/reports/js/api/charts/','/api/',token);
+    seo.load('base');
+
+    var seoBody = seo.load('body').extend('base')
+        .addMethod('getKeyWords','#graphWrapper');
+
+
+    //dialog
+    $('#dialog').dialog({
+        title:'Sending Request',
+        resizable: false,
+        height:200,
+        width:450,
+        autoOpen:false,
+        modal: true,
+        buttons:{
+            'I am Human': function() {
+                //we have to decode the encrypted token
+                token = Aes.Ctr.decrypt(cipherTxt,$('#cipherKey').val(), 256);
+                seo = new SeoApi('/themes/reports/js/api/charts/','/api/',token);
+                seo.load('base');
+                seoBody = seo.load('body').extend('base')
+                    .addMethod('getKeyWords','#graphWrapper');
+
+                $('#get-btn').click();
+                $( this ).dialog( "close" );
+            }
+        }
+    });
+
+
 	SyntaxHighlighter.all();
-	
+
+	var clickNumber = 0;
 	$('#get-btn').click(function(){
-		$('#loadingWrapper').show();
+
+        if(clickNumber++ === 1){
+            $('#dialog').dialog('open');
+            return;
+        }
+
+        $('#loadingWrapper').show();
         seoBody.exec($('#get-url').val(),
             function(data,ctx){
 				$('#loadingWrapper').fadeOut();
@@ -169,7 +224,6 @@ $(document).ready(function(){
 			}
         );
 	}).click();
-
 	
 });
 </script>

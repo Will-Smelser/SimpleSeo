@@ -38,8 +38,8 @@ class Head{
 	 * @ignore
 	 * @param HtmlParser $parser
 	 */
-	public function __construct($parser){
-		$this->parser = $parser;
+	public function __construct(&$parser){
+		$this->parser = &$parser;
 	}
 	
 	/**

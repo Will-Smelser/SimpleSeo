@@ -63,11 +63,7 @@ $captchaInfo = $captcha->CreateImage();
 
 require_once(Yii::getPathOfAlias('ext.crypto-aes')).'/aes.php';
 $cipher = AesCtr::encrypt($token, $captchaInfo[1], 256);
-/*
-echo $tokenEnct."\n<br/>";
-echo AesCtr::decrypt($tokenEnct, 'test', 256);
-exit;
-*/
+
 ?>
 <style>
     fieldset{border:none;}

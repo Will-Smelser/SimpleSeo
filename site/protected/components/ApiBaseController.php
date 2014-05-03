@@ -40,6 +40,10 @@ class ApiBaseController extends RController
         //check IP
         if(!empty($token->ip) && $token->ip !== $_SERVER['REMOTE_ADDR'])
             return $this->accessDenied('Token was restricted by IP address.');
+
+        //single use token?
+        if(!empty($token->one_time) && $token->one_time)
+            $token->delete();
 	}
 	
 	/**

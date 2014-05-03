@@ -67,6 +67,7 @@ class Tokens extends CActiveRecord
             'ip'=>'IP',
 			'resource' => 'Resource',
 			'expire' => 'Expire',
+            'one_time'=>'Single Use',
 			'created' => 'Created',
 		);
 	}

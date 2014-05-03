@@ -49,6 +49,12 @@ $this->pageTitle='Simple Seo Api - Reporting Tool';
 
 ?>
 
+<style>
+    div.dashIcon.span-3{
+        width:110px;
+    }
+</style>
+
 <div class="blue-bg">
 	<div class="bg-fade-up">
 		<div class="container">

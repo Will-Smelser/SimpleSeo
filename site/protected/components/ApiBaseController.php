@@ -36,6 +36,10 @@ class ApiBaseController extends RController
 		//no user
 		if(empty($user))
 			return $this->accessDenied('Token did not have a valid user.');
+
+        //check IP
+        if(!empty($token->ip) && $token->ip !== $_SERVER['REMOTE_ADDR'])
+            return $this->accessDenied('Token was restricted by IP address.');
 	}
 	
 	/**

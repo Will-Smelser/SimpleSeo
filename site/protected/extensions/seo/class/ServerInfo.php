@@ -1,6 +1,7 @@
 <?php
 
 require_once SEO_PATH_HELPERS.'Utility.php';
+require_once SEO_PATH_HELPERS.'FileGetContentsAdapter.php';
 
 class ServerInfo{
 	/**
@@ -144,7 +145,8 @@ class ServerInfo{
 		$info = parse_url($this->url);
         $result = false;
         try{
-		    $result = file_get_contents('http://'.$info['host'].'/robots.txt');
+            $result = \api\FileGetContentsAdapter::get_content('http://'.$info['host'].'/robots.txt');
+		    //$result = file_get_contents('http://'.$info['host'].'/robots.txt');
         }catch(Exception $e){
             //do nothing
         }

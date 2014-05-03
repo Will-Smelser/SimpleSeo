@@ -9,6 +9,7 @@ class Wloading extends CWidget{
     public $wrapperClass='span-23';
     public $wrapperStyle='position:absolute;top:140px;';
     public $width='500px';
+    public $text='Loading...';
 
     public function init(){}
 
@@ -16,7 +17,8 @@ class Wloading extends CWidget{
         $this->render('loading',array(
             'wrapperStyle'=>$this->wrapperClass,
             'wrapperClass'=>$this->wrapperStyle,
-            'width'=>$this->width
+            'width'=>$this->width,
+            'text'=>$this->text
         ));
     }
 }

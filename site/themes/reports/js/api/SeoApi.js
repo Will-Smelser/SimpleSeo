@@ -189,7 +189,8 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 		 * @memberof! window._SeoApi_.api
 		 */
 		load : function(apiObject, name){
-			
+
+            //make a copy of this object
 			var self = $.extend(true,{},this);
 			
 			if(typeof name === "undefined"){
@@ -198,13 +199,17 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
                 //this createId and set operation are atomic.
                 window[namespace][name] = null;
             }
+
+            //we may have already loaded this, so we want to ensure
+            //ready() does not trigger too soon
+            delete window[namespace][name];
 			
 			self.object = apiObject;
 			self.name = name;
 			
 			self.depends(name);
 			self.depends(apiObject);
-			
+
 			$.ajax({
 				  url: jsLoc + apiObject+'.js',
 				  dataType: "script",
@@ -222,7 +227,7 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 					  window[namespace][name] = {};
 				  }
 			});
-			
+
 			return self;
 		},
 		
@@ -269,9 +274,9 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 			
 			for(var x in self.dependencies){
 				var dep = self.dependencies[x];
-				
+
 				console.log("Checking",dep);
-				
+
 				if(typeof ignore !== "undefined" && dep === ignore){
 					console.log("Skiping",dep);
 					continue;
@@ -282,6 +287,8 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 					console.log("Not ready",dep);
 					break;
 				}
+
+                console.log("Ready", dep);
 			}
 			
 			if(!ready)
@@ -313,6 +320,13 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 		 *  
 		 * @param {Callback} [errCallback] An optional callback to execute once the
 		 * execute function called on api object is complete and an error was detected.
+         * <br><br>This will be called with 2 arguments:
+         * <ol>
+         *     <li>Array Object - [jqXHR,status,message] {@link http://api.jquery.com/jQuery.ajax/#jqXHR}</li>
+         *     <li>Context Object - See javascript api documentation for "base"
+         *     {@link window._SeoApi_.base#Context}</li>
+         * </ol>
+         *
          *
          * @param {object} [data] An optional data json object to use to load api responses
          * instead of making actual api calls.  This allows for loading data saved data.  Requires
@@ -340,7 +354,7 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 				//call init function on the loaded object
 				if(typeof window[namespace][self.name].init === 'function')
 					  window[namespace][self.name].init();
-				
+
 				//make api call
                 window[namespace][self.name]
                     .execute(url+'&token='+self.token,callback,errCallback,data);

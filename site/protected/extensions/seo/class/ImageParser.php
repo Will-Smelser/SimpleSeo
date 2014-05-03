@@ -2,6 +2,7 @@
 require_once 'HtmlParser.php';
 include_once "PageLoad.php";
 require_once SEO_PATH_HELPERS . 'ApiResponse.php';
+require_once SEO_PATH_HELPERS . 'FileGetContentsAdapter.php';
 
 /**
  * This is the result of an image dimension check
@@ -122,12 +123,12 @@ class ImageParser{
 		$image=null;
 		$url = $img->attributes['src'];
 		if(preg_match('@^https?://@i',$url)){
-			$image = imagecreatefromstring(file_get_contents($url));
+			$image = imagecreatefromstring(\api\FileGetContentsAdapter::get_content($url));
 		}elseif(preg_match('/^data/',$url)){
 			$image = imagecreatefromstring($url);
 		}else{
 			$url = 'http://'.$img->host.'/'.ltrim($img->attributes['src'],'/\\');
-			$image = imagecreatefromstring(file_get_contents($url));
+			$image = imagecreatefromstring(\api\FileGetContentsAdapter::get_content($url));
 		}
 		
 		//echo "$url\t\t\t";

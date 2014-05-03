@@ -6,7 +6,7 @@ $this->breadcrumbs=array(
 	'About',
 );
 ?>
-<h2>An SEO Api for Developers</h2>
+<h1>An SEO Api for Developers</h1>
 
 <p>A while back a friend asked me to help on some search engine
 	optimization for his companies website. In general SEO is very

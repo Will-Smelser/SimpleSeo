@@ -1,6 +1,7 @@
 <?php
 include SEO_PATH_CLASS.'ImageParser.php';
 require_once SEO_PATH_HELPERS . 'ApiResponse.php';
+require_once SEO_PATH_HELPERS . 'FileGetContentsAdapter.php';
 
 //get start
 $time = microtime();
@@ -20,7 +21,8 @@ try{
 	//This is a normal url
 	if(preg_match('@^https?://@i',$url)){
 		$turl = str_replace('https://','http://',$url);
-		$image = imagecreatefromstring(file_get_contents($turl));
+        $image = imagecreatefromstring(\api\FileGetContentsAdapter::get_content($turl));
+		//$image = imagecreatefromstring(file_get_contents($turl));
 		
 	//this was a data string...might be problems with request string being too long
 	}elseif(preg_match('/^data/',$url)){

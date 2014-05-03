@@ -166,7 +166,7 @@ class TokensController extends RController
 	}
 	
 	
-	public function actionGetToken($nonce, $username, $hash, $resource='/api'){
+	public function actionGetToken($nonce, $username, $hash, $resource='/api', $ip=null){
 		$this->layout = 'application.views.layouts.empty';
 		
 		//hash = sha1(nonce+key)
@@ -195,6 +195,7 @@ class TokensController extends RController
 		$model->token = $token;
 		$model->resource = $resource;
 		$model->expire = $model::getNewExpires();
+        $model->ip = $ip;
 	
 		if($model->save()){
 			$result->expire = $model->expire;
@@ -216,17 +217,20 @@ class tokenResult{
 	public $scope = null;
 	public $result = null;
 	public $message = null;
+    public $ip = null;
 	
-	function __construct($token=null, $expire=null, $scope=null, $result='false'){
+	function __construct($token=null, $expire=null, $scope=null, $result='false', $ip=null){
 		$this->token = $token;
 		$this->expire = $expire;
 		$this->scope = $scope;
 		$this->result = $result;
+        $this->ip = $ip;
 	}
 	
 	public function toArray(){
 		return array(
 			'token'=>$this->token,
+            'ip'=>$this->ip,
 			'expires'=>$this->expire,
 			'scope'=>$this->scope,
 			'success'=>$this->result,

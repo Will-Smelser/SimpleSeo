@@ -36,6 +36,7 @@ class Tokens extends CActiveRecord
 			array('user_id', 'numerical', 'integerOnly'=>true),
 			array('token', 'length', 'max'=>48),
 			array('resource', 'length', 'max'=>100),
+            array('ip','length', 'max'=>46),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, user_id, token, resource, expire, created', 'safe', 'on'=>'search'),
@@ -63,6 +64,7 @@ class Tokens extends CActiveRecord
 			'id' => 'ID',
 			'user_id' => 'User',
 			'token' => 'Token',
+            'ip'=>'IP',
 			'resource' => 'Resource',
 			'expire' => 'Expire',
 			'created' => 'Created',
@@ -123,4 +125,5 @@ class Tokens extends CActiveRecord
 	public static function createHash($nonce,$key){
 		return sha1($nonce . $key);
 	}
+
 }

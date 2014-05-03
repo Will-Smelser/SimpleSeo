@@ -86,7 +86,7 @@
      * @returns {{methods: Array, targetMap: (extend|*), callback: *, callbackErr: *, maxRetries: number, errorRetries: Array, requestRetries: number}}
      * @constructor
      * @memberof! window._SeoApi_.base
-     * @private
+     * @public
      */
     Context : function(callback, callbackErr){
         var scope = this;

@@ -12,6 +12,7 @@ namespace api;
 //require_once(SEO_PATH_ROOT.'/../querypath/src/qp.php');
 //require_once(SEO_PATH_ROOT . '/../phpquery/phpquery.php');
 require_once(SEO_PATH_CLASS . 'HtmlParser.php');
+require_once(SEO_PATH_HELPERS . 'FileGetContentsAdapter.php');
 
 
 class HtmlParserAdapter {
@@ -25,7 +26,8 @@ class HtmlParserAdapter {
         $info = parse_url($url);
         $this->host = $info['host'];
 
-        $html = file_get_contents($url);
+        //$html = file_get_contents($url);
+        $html = FileGetContentsAdapter::get_content($url);
         $this->parser = new \HtmlParser($html,$url);
 
         /*

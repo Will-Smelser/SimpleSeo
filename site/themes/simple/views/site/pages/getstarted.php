@@ -24,6 +24,10 @@ $cs->registerScriptFile('/syntaxhighlighter/scripts/shBrushPhp.js',CClientScript
 
 <div class="span-23 final" style="overflow:hidden">
 <h1>Getting Started</h1>
+
+<h2>Play with API</h2>
+<p>Don't want to read and just see things in action, then go <a href="/site/page?view=apiplay">here</a>.</p>
+
 <h2>Create an Account</h2>
 <p>Create an <a href="/user/login" target="_blank">account</a> and login.  You will need an
 <b>API Key</b> in order to access the api.
@@ -80,14 +84,17 @@ if(isset($result->success) && $result->success === 'true' && !empty($result->tok
   
 
 //setup the api
-seo = new SeoApi(
+var seo = new SeoApi(
 		'http://simple-seo-api.com/themes/reports/js/api/',
 		'http://simple-seo-api.com/api/',
 		'&lt;?php echo $token; ?>'
 );
 	
 //in almost all cases, we use the base class
-seo.load('base');
+seo.init('base');
+
+//this is the default renderer
+seo.init('render')
 
 //run api request for body and render results
 seo.load('body').extend('base')
@@ -99,6 +106,8 @@ seo.load('body').extend('base')
 	
 	//using base render to add content directly into html 
 	.addMethod('checkH1','#some_document_id')
+
+    //run seo on your URL
 	.exec('http://some/url/to/run/seo/on');  
   
 	

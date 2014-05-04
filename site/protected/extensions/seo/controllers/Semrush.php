@@ -1,6 +1,6 @@
 <?php
 
-require_once SEO_PATH_WRAPPERS . 'SemRush.php';
+require_once SEO_PATH_WRAPPERS . 'Semrush.php';
 
 class Semrush extends Controller{
 	

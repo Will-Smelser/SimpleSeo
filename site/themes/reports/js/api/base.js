@@ -30,7 +30,8 @@
 
     /**
      * The dependencies this object has.
-     * @type {array} An array of strings denoting each dependency, such as 'base' for base.js dependency.
+     * An array of strings denoting each dependency, such as 'base' for base.js dependency.
+     * @type {array}
      * @memberof! window._SeoApi_.base
      * @private
      */
@@ -129,7 +130,7 @@
     /**
      * Builds the default DOM elements that are set when defaultRenderErr function which is called after an api
      * method call fails repeatedly.
-     * @param msg The detailed message about the error.
+     * @param {string} msg The detailed message about the error.
      * @returns {*|jQuery|HTMLElement}
      * @memberof! window._SeoApi_.base
      */
@@ -153,8 +154,8 @@
      * Build a request url with appropriate parameters set
      * @param {string} url The url to make request against
      * @param {array} methodList An array of methods (strings)
-     * @returns {object} An object with 2 attributes: "url" and "methods".
-     * "url" => A string for api request
+     * @returns {object} An object with 2 attributes: "url" and "methods".<br/>
+     * "url" => A string for api request<br/>
      * "methods" => An array of method names
      * @private
      * @memberof! window._SeoApi_.base
@@ -191,8 +192,8 @@
 	},
 	/**
 	 * Add a method for request
-	 * @param method The API method to call
-	 * @param target Either dom object or function to callback
+	 * @param {string} method The API method to call
+	 * @param {string|jQuery} target Either dom object or function to callback
 	 * @memberof! window._SeoApi_.base
 	 */
 	addMethod : function(method, target){
@@ -297,7 +298,7 @@
 
     /**
      * Build a response error string from XHR request.
-     * @param err {jqXHR} The error object
+     * @param {jqXHR} err The error object
      * @returns {string} Returns the jqXHR error information if it can, or a default message.
      * @private
      */
@@ -316,8 +317,8 @@
     /**
      * An error handler for when api request failed.  This captures ajax request
      * errors, and not result errors.
-     * @param {[jqXHR jqXHR, String textStatus, String errorThrown]} The ajax exception information from jquery/browser.
-     * @param {Context} The context that execute() was called with.
+     * @param {jqXHR} err The ajax exception information from jquery/browser.
+     * @param {Context} ctx The context that execute() was called with.
      */
     handleError : function(err, ctx){
         if(typeof ctx == 'undefined' || ctx == null)
@@ -332,7 +333,7 @@
      * api request failed.
      * @param data
      * @param $target
-     * @param {Context} The context for this api method
+     * @param {Context} ctx The context for this api method
      */
     defaultRenderErr : function(data, $target, ctx){
         if(ctx.methodAll)
@@ -495,12 +496,12 @@
 	 * This class is intended to be extended.  So just extend
 	 * this class with $.extend and overwrite your api method
 	 * call with the following format:<br/>
-	 * <code>
+	 * <pre>
 	 * $.extend(SeoApiBase, {render_apiMethod:function(data,$target){
 	 * 		//do some stuff with data
 	 *      //$target.html('Request done');
 	 * }});
-	 * </code>
+	 * </pre>
 	 * 
 	 * If you do not set a render for a given api method, then the
 	 * default handler will be used.  This handler uses prettyPrint.js
@@ -517,12 +518,12 @@
      * This class is intended to be extended.  So just extend
      * this class with $.extend and overwrite your api method
      * call with the following format:<br/>
-     * <code>
+     * <pre>
      * $.extend(SeoApiBase, {render_apiMethod:function(data,$target){
      * 		//do some stuff with data
      *      //$target.html('Request done');
      * }});
-     * </code>
+     * </pre>
      *
      * If you do not set a render for a given api method, then the
      * default handler will be used.  This handler uses prettyPrint.js

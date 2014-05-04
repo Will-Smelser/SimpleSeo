@@ -44,16 +44,27 @@ $methods = array();
 foreach($api as $obj){
     if(!in_array($obj,$defaults)){
         $class = preg_replace('/^action/i','',$obj);
-        array_push($cleaned,$class);
 
-        require_once(Yii::getPathOfAlias('ext.seo.api').'/'.$class.'.php');
-        $methods[$class] = array();
+        try{
+            require_once(Yii::getPathOfAlias('ext.seo.api').'/'.$class.'.php');
 
-        $rclass = new ReflectionClass("\\api\\$class");
-        foreach($rclass->getMethods(ReflectionMethod::IS_PUBLIC) as $cdata){
-            if($cdata->name!=='__construct')
-                array_push($methods[$class],$cdata->name);
+            array_push($cleaned,$class);
+            $methods[$class] = array();
+
+            $rclass = new ReflectionClass("\\api\\$class");
+            foreach($rclass->getMethods(ReflectionMethod::IS_PUBLIC) as $cdata){
+                if($cdata->name!=='__construct')
+                    array_push($methods[$class],$cdata->name);
+            }
+        }catch (Exception $e){
+            if(!isset($methods[$class])){
+                $methods[$class.' - Load Failed'] = array();
+                array_push($methods[$class.' - Load Failed'], "Load Failed");
+            }
         }
+
+        if(isset($methods[$class]) && count($methods[$class]) == 0)
+            array_push($methods[$class], "No Methods");
     }
 }
 

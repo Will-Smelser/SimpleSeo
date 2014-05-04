@@ -322,7 +322,7 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
 		 * execute function called on api object is complete and an error was detected.
          * <br><br>This will be called with 2 arguments:
          * <ol>
-         *     <li>Array Object - [jqXHR,status,message] {@link http://api.jquery.com/jQuery.ajax/#jqXHR}</li>
+         *     <li>Array Object - Array(jqXHR,status,message) {@link http://api.jquery.com/jQuery.ajax/#jqXHR}</li>
          *     <li>Context Object - See javascript api documentation for "base"
          *     {@link window._SeoApi_.base#Context}</li>
          * </ol>
@@ -331,7 +331,7 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
          * @param {object} [data] An optional data json object to use to load api responses
          * instead of making actual api calls.  This allows for loading data saved data.  Requires
          * "callback" and "errCallback" have had values set.  For example,
-         * <code>exec("http://somedomain.com",null,null,{"code":200,"response":"Success",...});</code>
+         * <pre>exec("http://somedomain.com",null,null,{"code":200,"response":"Success",...});</pre>
 		 * 
 		 * @returns {Object} A reference to this.  Useful for chaining.
 		 * 
@@ -369,7 +369,7 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
          * and post them to the given url.
          *
          * Example:
-         * <code>
+         * <pre>
          * var target="http://some-website.com/index.html";
          * var api="http://www.simple-seo-api.com/api/";
          * var token="<some generated api token>";
@@ -382,7 +382,7 @@ SeoApi = function(jsLoc, apiLoc, apiToken){
          * var body = seo.load('body').extend('base').addMethod('all','#someOtherId').exec(target);
          *
          * seo.save("http://my-website.com/saveData.php",target,google,body);
-         * </code>
+         * </pre>
          *
          * @param {string} url The url to post collected data to.
          * @param {string} request The url api objects collected data on.
